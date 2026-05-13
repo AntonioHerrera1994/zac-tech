@@ -259,49 +259,41 @@
 </section>
 
 
-
 <script>
-
-
-// NAV scroll
+// NAV scroll — ID correcto
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('zt-navbar')?.classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // Hero load
-window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
+window.addEventListener('load', () => {
+  document.getElementById('hero')?.classList.add('loaded');
+});
 
-// SCROLL REVEAL — all variants
+// SCROLL REVEAL
 const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
 
-// TRANSITION SECTION — dynamically adjust text color based on scroll position
-// ELFR card starts dark; RF HTOL card ends light
+// TRANSITION SECTION
 function updateTransitionCards() {
   const wrapper = document.querySelector('.tests-transition');
   if (!wrapper) return;
-  const wRect  = wrapper.getBoundingClientRect();
-  const wH     = wrapper.offsetHeight;
-  const vH     = window.innerHeight;
-  // Progress 0 (top of section at bottom of viewport) → 1 (bottom of section passed)
+  const wRect    = wrapper.getBoundingClientRect();
+  const wH       = wrapper.offsetHeight;
+  const vH       = window.innerHeight;
   const progress = Math.max(0, Math.min(1, (vH - wRect.top) / (wH + vH)));
 
-  // RF HTOL card (bottom half of transition) turns light when progress > 0.55
   const rfCard = document.getElementById('rfhtol-card');
-  if (rfCard) {
-    if (progress > 0.58) {
-      rfCard.classList.add('light-text');
-    } else {
-      rfCard.classList.remove('light-text');
-    }
-  }
-  // Mid divider changes color
+  if (rfCard) rfCard.classList.toggle('light-text', progress > 0.58);
+
   const div = document.getElementById('mid-divider');
   if (div) {
     const a = Math.max(0, Math.min(1, (progress - 0.4) / 0.3));
-    div.style.background = `rgba(${Math.round(255*a)},${Math.round(255*a)},${Math.round(255*a)},${0.07+a*0.07})`;
+    div.style.background = `rgba(${Math.round(255*a)},${Math.round(255*a)},${Math.round(255*a)},${0.07 + a * 0.07})`;
   }
 }
 window.addEventListener('scroll', updateTransitionCards, { passive: true });

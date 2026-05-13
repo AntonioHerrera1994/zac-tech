@@ -207,7 +207,7 @@ body {
   padding: 4px 10px; border-radius: 4px;
 }
 .test-num {
-  font-family: 'Syne', sans-serif; font-size: .65rem;
+  font-family: 'Syne', sans-serif; font-size: .8rem;
   font-weight: 700; letter-spacing: .1em; opacity: .3;
 }
 .test-divider {
@@ -216,7 +216,7 @@ body {
   margin-bottom: 22px; border-radius: 2px;
 }
 .test-full-name {
-  font-size: .78rem; font-weight: 500;
+  font-size: 1.15rem; font-weight: 500;
   letter-spacing: .05em; text-transform: uppercase;
   margin-bottom: 14px; opacity: .5;
 }
@@ -227,7 +227,7 @@ body {
   margin-bottom: 16px;
 }
 .test-desc {
-  font-size: .9rem; line-height: 1.85;
+  font-size: 1rem; line-height: 1.85;
   font-weight: 300; margin-bottom: 12px;
 }
 .test-standard {
@@ -245,25 +245,25 @@ body {
 }
 
 /* Dark card text */
-.dark-card .test-num   { color: rgba(255,255,255,.3); }
+.dark-card .test-num   { color: white; }
 .dark-card .test-title { color: var(--white); }
-.dark-card .test-full-name { color: rgba(255,255,255,.4); }
+.dark-card .test-full-name { color: white; }
 .dark-card .test-desc  { color: rgba(255,255,255,.55); }
 
 /* Mid card text (starts dark) */
 .mid-card .test-num    { color: rgba(255,255,255,.3); }
 .mid-card .test-title  { color: var(--white); }
-.mid-card .test-full-name { color: rgba(255,255,255,.4); }
+.mid-card .test-full-name { color: white; }
 .mid-card .test-desc   { color: rgba(255,255,255,.55); }
-.mid-card.light-text .test-num       { color: rgba(0,0,0,.25); }
+.mid-card.light-text .test-num       { color: black; }
 .mid-card.light-text .test-title     { color: var(--black); }
-.mid-card.light-text .test-full-name { color: rgba(0,0,0,.4); }
+.mid-card.light-text .test-full-name { color: black; }
 .mid-card.light-text .test-desc      { color: #555; }
 
 /* Light card text */
-.light-card .test-num       { color: rgba(0,0,0,.22); }
+.light-card .test-num       { color: black; }
 .light-card .test-title     { color: var(--black); }
-.light-card .test-full-name { color: rgba(0,0,0,.42); }
+.light-card .test-full-name { color: black; }
 .light-card .test-desc      { color: #555; }
 
 /* ═══ QUOTE BUTTONS ═══ */

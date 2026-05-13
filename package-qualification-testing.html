@@ -257,11 +257,7 @@
 </section>
 
 <script>
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('zt-navbar');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
+
 
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
@@ -284,6 +280,6 @@ function updateTransitionCards() {
 window.addEventListener('scroll', updateTransitionCards, { passive: true });
 updateTransitionCards();
 </script>
-<script src="components.js"></script>
+<script src="component.js"></script>
 </body>
 </html>

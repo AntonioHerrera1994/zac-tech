@@ -1,8 +1,3 @@
-/* ─────────────────────────────────────────
-   ZAC TECH SEMI — Shared Components
-   Inject navbar + footer into every page
-   ───────────────────────────────────────── */
-
 (function () {
 
   /* ══════════════════════════════════════
@@ -121,8 +116,7 @@ top: calc(100% + 1px);   /* reduce el gap */
   pointer-events: none;
 }
 
-top: calc(100% + 4px);   /* reduce el gap */
-  padding-top: 16px;        /* el espacio ahora está DENTRO del dropdown */
+
 .zt-has-dropdown:hover .zt-dropdown {
   display: block;
   opacity: 1;
@@ -165,9 +159,9 @@ top: calc(100% + 4px);   /* reduce el gap */
   </a>
   <ul class="zt-dropdown">
     <li><a href="reliability-tests.html">Reliability Tests</a></li>
-    <li><a href="package.html">Package Qualification Testing</a></li>
+    <li><a href="package-qualification-testing.html">Package Qualification Testing</a></li>
     <li><a href="esd.html">ESD & Latch-Up</a></li>
-    <li><a href="feature.html">Feature Analysis</a></li>
+    <li><a href="feature.html">Failure Analysis</a></li>
     <li><a href="forensic.html">Forensic Services</a></li>
   </ul>
 </li>
@@ -416,6 +410,12 @@ top: calc(100% + 4px);   /* reduce el gap */
           mobileMenu.classList.remove('open');
         });
       });
+
+      window.addEventListener('scroll', () => {
+  const nav = document.getElementById('zt-navbar');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
     }
 
     // Active link highlight based on current filename
@@ -427,6 +427,7 @@ top: calc(100% + 4px);   /* reduce el gap */
         link.classList.add('active');
       }
     });
+    
   }
 
   // Run when DOM is ready
@@ -435,5 +436,7 @@ top: calc(100% + 4px);   /* reduce el gap */
   } else {
     inject();
   }
+
+
 
 })();

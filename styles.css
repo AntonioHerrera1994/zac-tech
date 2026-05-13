@@ -502,12 +502,14 @@ body {
 .innovation-img-wrap {
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 .innovation-img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 8s ease;
+
 }
 .innovation-img-wrap:hover .innovation-img { transform: scale(1.03); }
 .innovation-img-overlay {
