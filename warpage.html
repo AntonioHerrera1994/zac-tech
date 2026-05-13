@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warpage Analysis — Advanced Chip Characterization</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=Barlow+Condensed:wght@300;500;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="warpage.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect x="1" y="1" width="18" height="18" rx="0" stroke="#00d4ff" stroke-width="1"/>
+      <rect x="5" y="5" width="4" height="4" fill="#00d4ff" opacity="0.6"/>
+      <rect x="11" y="5" width="4" height="4" fill="#00d4ff" opacity="0.3"/>
+      <rect x="5" y="11" width="4" height="4" fill="#00d4ff" opacity="0.3"/>
+      <rect x="11" y="11" width="4" height="4" fill="#00d4ff" opacity="0.6"/>
+    </svg>
+    PackageLab / Warpage Division
+  </div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#comparison">Comparison</a></li>
+    <li><a href="#report">Report</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent-line"></div>
+  <div class="hero-content">
+    <div class="eyebrow fade-in">Advanced Semiconductor Characterization</div>
+    <h1 class="fade-in delay-1">
+      Warpage<br/>
+      <span>Analysis</span><br/>
+      Services
+    </h1>
+    <p class="hero-sub fade-in delay-2">
+      We help companies like SambaNova characterize next-generation AI packages
+      before they reach the market — exposing hidden failure modes before they cost you.
+    </p>
+    <div class="hero-cta fade-in delay-3">
+      <a href="#process" class="btn-primary">See Our Process</a>
+      <a href="#report" class="btn-secondary">Sample Report</a>
+    </div>
+
+    <!-- Inline terminal block -->
+    <div style="margin-top:3rem; font-family:var(--mono); font-size:0.8rem; color:var(--text-dim); border-left:2px solid var(--border); padding-left:1.2rem;" class="fade-in delay-4">
+      <div style="color:var(--cyan-dim); margin-bottom:0.3rem;">&gt; JEDEC JESD22-B112 — Shadow Moiré Standard</div>
+      <div style="color:var(--text-dim)">&gt; IPC/JEDEC Thermal Stress Compliance Active</div>
+      <div>&gt; Status: <span style="color:var(--cyan)">Accepting New Evaluations</span><span class="cursor-blink"></span></div>
+    </div>
+  </div>
+
+  <!-- Hero decorative chip SVG -->
+<!-- Hero decorative chip SVG -->
+<svg style="position:absolute;right:3%;top:50%;transform:translateY(-50%);opacity:1;display:block;filter:drop-shadow(0 0 32px #00d4ff55) drop-shadow(0 0 8px #00d4ff33);" width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chipFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0090b0" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="dieFill1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#004466" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="dieFill2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0a500" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#8a5e00" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="chipClip">
+      <rect x="140" y="140" width="320" height="320"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer substrate board -->
+  <rect x="100" y="100" width="400" height="400" fill="url(#chipFill)" stroke="#00d4ff" stroke-width="1.8"/>
+  <!-- Inner ring -->
+  <rect x="120" y="120" width="360" height="360" stroke="#00d4ff" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.4"/>
+  <!-- Circuit trace lines left -->
+  <line x1="100" y1="185" x2="140" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="100" y1="220" x2="140" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="100" y1="265" x2="140" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="100" y1="300" x2="140" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="100" y1="335" x2="140" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="100" y1="380" x2="140" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <!-- Circuit trace lines right -->
+  <line x1="460" y1="185" x2="500" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="460" y1="220" x2="500" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="460" y1="265" x2="500" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="460" y1="300" x2="500" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="460" y1="335" x2="500" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <line x1="460" y1="380" x2="500" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Capacitor teeth TOP -->
+  <line x1="170" y1="100" x2="170" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="195" y1="100" x2="195" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="220" y1="100" x2="220" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="245" y1="100" x2="245" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="270" y1="100" x2="270" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="295" y1="100" x2="295" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="320" y1="100" x2="320" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="345" y1="100" x2="345" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="370" y1="100" x2="370" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="395" y1="100" x2="395" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <!-- Caps TOP -->
+  <line x1="162" y1="68" x2="178" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="187" y1="68" x2="203" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="212" y1="68" x2="228" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="237" y1="68" x2="253" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="262" y1="68" x2="278" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="287" y1="68" x2="303" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="312" y1="68" x2="328" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="337" y1="68" x2="353" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="362" y1="68" x2="378" y2="68" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="387" y1="68" x2="403" y2="68" stroke="#00d4ff" stroke-width="2"/>
+
+  <!-- Capacitor teeth BOTTOM -->
+  <line x1="170" y1="500" x2="170" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="195" y1="500" x2="195" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="220" y1="500" x2="220" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="245" y1="500" x2="245" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="270" y1="500" x2="270" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="295" y1="500" x2="295" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="320" y1="500" x2="320" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="345" y1="500" x2="345" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="370" y1="500" x2="370" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="395" y1="500" x2="395" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <!-- Caps BOTTOM -->
+  <line x1="162" y1="532" x2="178" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="187" y1="532" x2="203" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="212" y1="532" x2="228" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="237" y1="532" x2="253" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="262" y1="532" x2="278" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="287" y1="532" x2="303" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="312" y1="532" x2="328" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="337" y1="532" x2="353" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="362" y1="532" x2="378" y2="532" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="387" y1="532" x2="403" y2="532" stroke="#00d4ff" stroke-width="2"/>
+
+  <!-- Capacitor teeth LEFT -->
+  <line x1="100" y1="170" x2="68" y2="170" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="195" x2="68" y2="195" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="220" x2="68" y2="220" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="245" x2="68" y2="245" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="270" x2="68" y2="270" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="295" x2="68" y2="295" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="320" x2="68" y2="320" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="345" x2="68" y2="345" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="370" x2="68" y2="370" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="395" x2="68" y2="395" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <!-- Caps LEFT -->
+  <line x1="68" y1="162" x2="68" y2="178" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="187" x2="68" y2="203" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="212" x2="68" y2="228" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="237" x2="68" y2="253" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="262" x2="68" y2="278" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="287" x2="68" y2="303" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="312" x2="68" y2="328" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="337" x2="68" y2="353" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="362" x2="68" y2="378" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="68" y1="387" x2="68" y2="403" stroke="#00d4ff" stroke-width="2"/>
+
+  <!-- Capacitor teeth RIGHT -->
+  <line x1="500" y1="170" x2="532" y2="170" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="195" x2="532" y2="195" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="220" x2="532" y2="220" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="245" x2="532" y2="245" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="270" x2="532" y2="270" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="295" x2="532" y2="295" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="320" x2="532" y2="320" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="345" x2="532" y2="345" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="370" x2="532" y2="370" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <line x1="500" y1="395" x2="532" y2="395" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
+  <!-- Caps RIGHT -->
+  <line x1="532" y1="162" x2="532" y2="178" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="187" x2="532" y2="203" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="212" x2="532" y2="228" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="237" x2="532" y2="253" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="262" x2="532" y2="278" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="287" x2="532" y2="303" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="312" x2="532" y2="328" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="337" x2="532" y2="353" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="362" x2="532" y2="378" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="532" y1="387" x2="532" y2="403" stroke="#00d4ff" stroke-width="2"/>
+
+  <!-- Die 1 — CPU top-left (cyan) -->
+  <rect x="155" y="155" width="130" height="130" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1.5" filter="url(#glow)"/>
+  <rect x="165" y="165" width="110" height="110" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="155" y1="195" x2="285" y2="195" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+  <line x1="155" y1="225" x2="285" y2="225" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+  <line x1="195" y1="155" x2="195" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+  <line x1="245" y1="155" x2="245" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+  <text x="220" y="225" font-family="IBM Plex Mono" font-size="12" fill="#00d4ff" text-anchor="middle" opacity="0.8" font-weight="600">CPU</text>
+
+  <!-- Die 2 — CPU bottom-right (amber) -->
+  <rect x="315" y="315" width="130" height="130" fill="url(#dieFill2)" stroke="#f0a500" stroke-width="1.5" filter="url(#glow)"/>
+  <rect x="325" y="325" width="110" height="110" stroke="#f0a500" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="315" y1="355" x2="445" y2="355" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
+  <line x1="315" y1="385" x2="445" y2="385" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
+  <line x1="355" y1="315" x2="355" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
+  <line x1="405" y1="315" x2="405" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
+  <text x="380" y="385" font-family="IBM Plex Mono" font-size="12" fill="#f0a500" text-anchor="middle" opacity="0.8" font-weight="600">CPU</text>
+
+  <!-- Die 3 — HBM top-right -->
+  <rect x="315" y="155" width="130" height="110" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
+  <line x1="315" y1="185" x2="445" y2="185" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <line x1="315" y1="210" x2="445" y2="210" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <line x1="315" y1="235" x2="445" y2="235" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <text x="380" y="218" font-family="IBM Plex Mono" font-size="9" fill="#00d4ff" text-anchor="middle" opacity="0.7">HBM</text>
+
+  <!-- Die 4 — HBM bottom-left -->
+  <rect x="155" y="315" width="130" height="110" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
+  <line x1="155" y1="345" x2="285" y2="345" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <line x1="155" y1="370" x2="285" y2="370" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <line x1="155" y1="395" x2="285" y2="395" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+  <text x="220" y="373" font-family="IBM Plex Mono" font-size="9" fill="#00d4ff" text-anchor="middle" opacity="0.7">HBM</text>
+
+  <!-- Interconnects between dies -->
+  <line x1="285" y1="210" x2="315" y2="210" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+  <line x1="285" y1="240" x2="315" y2="240" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+  <line x1="210" y1="285" x2="210" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+  <line x1="240" y1="285" x2="240" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+  <line x1="380" y1="265" x2="380" y2="315" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="285" y1="370" x2="315" y2="370" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+
+  <!-- Scanning line animation -->
+  <rect x="140" y="140" width="320" height="4" fill="#00d4ff" opacity="0.12" clip-path="url(#chipClip)">
+    <animate attributeName="y" from="140" to="460" dur="3s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="opacity" values="0;0.18;0.18;0" keyTimes="0;0.05;0.9;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Corner notch markers -->
+  <path d="M100 100 L125 100 M100 100 L100 125" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
+  <path d="M500 100 L475 100 M500 100 L500 125" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
+  <path d="M100 500 L125 500 M100 500 L100 475" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
+  <path d="M500 500 L475 500 M500 500 L500 475" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
+</svg>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-value">~50%</div>
+    <div class="stat-label">Warpage reduction — glass vs. organic</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">&lt;2µm</div>
+    <div class="stat-label">Redistribution layer resolution</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">2500W</div>
+    <div class="stat-label">+ Thermal load on modern AI packages</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">JEDEC</div>
+    <div class="stat-label">JESD22-B112 Compliant Testing</div>
+  </div>
+</div>
+
+<!-- ─────────────────────── PROBLEM ─────────────────────── -->
+<section class="problem-section" id="problem">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">The Challenge</div>
+      <h2 class="section-title">When <span>AI Chips</span> Run Hot,<br/>Packages Fail</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-text">
+        <p>
+          Modern AI accelerators — systems like SambaNova's multi-die GPU packages — integrate
+          multiple processor dies and HBM memory stacks onto a single organic substrate running
+          at <strong>2,500 to 5,000 Watts</strong> of continuous thermal load.
+        </p>
+        <p>
+          The substrate is the green board that holds everything together. It is composed of
+          organic resins (ABF — Ajinomoto Build-up Film) reinforced with glass fiber. At extreme
+          temperatures, the organic material's <strong>Coefficient of Thermal Expansion (CTE)</strong>
+          — around 15 ppm/°C — differs dramatically from the silicon die's CTE of ~2.6 ppm/°C.
+        </p>
+        <p>
+          That mismatch forces the package to bow, twist, and deform with every thermal cycle.
+          In large flip-chip BGA packages, a bare die can exceed <strong>300µm (12 mil)</strong> of
+          warpage — well beyond JEDEC's 200µm tolerance limit for high-reliability assemblies.
+        </p>
+        <p>
+          The industry is converging on glass substrates as a replacement, offering dramatically
+          lower CTE mismatch, superior flatness, and finer redistribution layer routing.
+          But both organic and glass packages must be <strong>characterized before market release</strong>.
+        </p>
+
+        <!-- WARPAGE ANIMATION SVG -->
+        <div class="warp-svg-wrap" style="margin-top:2rem;">
+          <span class="warp-label-svg">CTE Mismatch — Package Warpage Visualization</span>
+          <svg viewBox="0 0 400 140" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="subGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1a3a2a"/>
+                <stop offset="50%" stop-color="#2a5a3a"/>
+                <stop offset="100%" stop-color="#1a3a2a"/>
+              </linearGradient>
+            </defs>
+            <!-- FLAT reference -->
+            <text x="8" y="28" font-family="IBM Plex Mono" font-size="8" fill="#6a8090" letter-spacing="1">ROOM TEMP — FLAT</text>
+            <rect x="20" y="35" width="360" height="18" rx="0" fill="url(#subGrad)" opacity="0.7"/>
+            <rect x="100" y="27" width="80" height="14" rx="0" fill="#00d4ff" opacity="0.2"/>
+            <rect x="220" y="27" width="80" height="14" rx="0" fill="#00d4ff" opacity="0.15"/>
+            <line x1="20" y1="35" x2="380" y2="35" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 2" opacity="0.4"/>
+
+            <!-- WARPED at high temp (animated) -->
+            <text x="8" y="90" font-family="IBM Plex Mono" font-size="8" fill="#ff4040" letter-spacing="1">HIGH TEMP — WARPED</text>
+            <path id="warpPath" d="M 20 110 Q 120 88 200 110 Q 280 132 380 110" stroke="#f0a500" stroke-width="2" fill="none">
+              <animate attributeName="d"
+                values="M 20 110 Q 120 88 200 110 Q 280 132 380 110;
+                        M 20 110 Q 120 78 200 110 Q 280 142 380 110;
+                        M 20 110 Q 120 88 200 110 Q 280 132 380 110"
+                dur="3s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </path>
+            <!-- Substrate fill warped -->
+            <path d="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z" fill="url(#subGrad)" opacity="0.5">
+              <animate attributeName="d"
+                values="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z;
+                        M 20 110 Q 120 78 200 110 Q 280 142 380 110 L 380 125 Q 280 157 200 125 Q 120 93 20 125 Z;
+                        M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z"
+                dur="3s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </path>
+            <!-- dies on top -->
+            <rect x="100" y="96" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.25">
+              <animate attributeName="y"
+                values="96;86;96" dur="3s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </rect>
+            <rect x="220" y="113" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.2">
+              <animate attributeName="y"
+                values="113;123;113" dur="3s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </rect>
+            <!-- warpage arrow -->
+            <line x1="200" y1="35" x2="200" y2="108" stroke="#ff4040" stroke-width="1" stroke-dasharray="3 2" opacity="0.6">
+              <animate attributeName="y2" values="108;98;108" dur="3s" repeatCount="indefinite"
+                calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </line>
+            <text x="205" y="78" font-family="IBM Plex Mono" font-size="7.5" fill="#ff4040">&#916;W</text>
+          </svg>
+        </div>
+      </div>
+
+      <div>
+        <div class="diagram-label">Package Failure Modes from CTE Mismatch</div>
+        <div class="failure-list">
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Package bowing and substrate coplanarity loss
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Solder bump cracking and bridging during reflow
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Low-k dielectric layer cracking
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Underfill delamination from die or substrate
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Alignment errors in fine-pitch interconnects (&lt;2µm)
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Solder mask cracking at die corner stress concentration
+          </div>
+          <div class="failure-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/>
+            </svg>
+            Reduced bonding yield in high-density chiplet assemblies
+          </div>
+        </div>
+
+        <!-- Glass vs Organic mini-comparison -->
+        <div style="margin-top:2rem; background:var(--bg3); border:1px solid var(--border); padding:1.5rem;">
+          <div class="diagram-label" style="margin-bottom:1rem;">Why Glass Substrates Are Emerging</div>
+          <div class="spec-row">
+            <span class="spec-key">Warpage vs. Organic</span>
+            <span class="spec-val" style="color:var(--cyan)">~50% reduction</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Positional Accuracy</span>
+            <span class="spec-val" style="color:var(--cyan)">~35% better</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Routing Layer Resolution</span>
+            <span class="spec-val" style="color:var(--cyan)">&lt;2µm RDL</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Dielectric Loss</span>
+            <span class="spec-val" style="color:var(--cyan)">Very low</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Thermal Stability</span>
+            <span class="spec-val" style="color:var(--cyan)">Excellent</span>
+          </div>
+          <div class="spec-row" style="border:none;">
+            <span class="spec-key">Key Challengers</span>
+            <span class="spec-val">Brittleness / TGV Cost</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────────────── PROCESS ─────────────────────── -->
+<section class="process-section" id="process">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Our Methodology</div>
+      <h2 class="section-title">Three-Phase<br/><span>Characterization</span> Protocol</h2>
+    </div>
+
+    <div class="process-timeline">
+
+      <!-- STEP 1 -->
+      <div class="process-step">
+        <div class="step-number-col">
+          <div class="step-num">01</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-eyebrow">Phase One</div>
+          <h3 class="step-title">Extreme Environment Stress Testing</h3>
+          <p class="step-desc">
+            Before any optical or acoustic inspection, we subject the package to the harshest
+            conditions it will realistically face — and then some. The goal is to induce
+            the maximum possible mechanical and thermal damage in a controlled environment,
+            replicating full board-assembly soldering and field operation cycles.
+            This reveals hidden failure modes before the product ships.
+          </p>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M7 1 L7 13 M1 7 L13 7" stroke="#00d4ff" stroke-width="1.2"/>
+                  <circle cx="7" cy="7" r="5" stroke="#00d4ff" stroke-width="0.8" stroke-dasharray="3 2"/>
+                </svg>
+                Thermal Cycling
+              </div>
+              <div class="step-card-body">
+                Repeated exposure between extreme cold and heat (e.g., -40°C to +150°C per IPC-9701 / JEDEC standards),
+                cycling dozens to hundreds of times to fatigue solder joints and expose CTE-mismatch failures.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="2" y="6" width="10" height="6" stroke="#00d4ff" stroke-width="0.8"/>
+                  <path d="M5 6 L5 2 L9 2 L9 6" stroke="#00d4ff" stroke-width="0.8"/>
+                  <line x1="7" y1="2" x2="7" y2="6" stroke="#00d4ff" stroke-width="0.8"/>
+                </svg>
+                Reflow Simulation
+              </div>
+              <div class="step-card-body">
+                Simulates the solder reflow process used during board assembly — heating the package through
+                a SAC305 lead-free profile up to 260°C — to measure real-time warpage at its most critical moment.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12 Q7 4 12 12" stroke="#00d4ff" stroke-width="0.8" fill="none"/>
+                  <line x1="7" y1="1" x2="7" y2="4" stroke="#00d4ff" stroke-width="1"/>
+                </svg>
+                High-Temp Soak
+              </div>
+              <div class="step-card-body">
+                Sustained dwell at operating temperature to evaluate creep, viscoelastic relaxation, and
+                long-term package stability under conditions that mirror active AI accelerator deployment.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="process-step">
+        <div class="step-number-col">
+          <div class="step-num">02</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-eyebrow">Phase Two</div>
+          <h3 class="step-title">Planarity and Structural Analysis</h3>
+          <p class="step-desc">
+            After stress conditioning, we deploy full-field non-contact optical measurement and
+            acoustic microscopy to build a complete picture of the package's physical state —
+            both surface topology and internal structural integrity.
+          </p>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="4" stroke="#00d4ff" stroke-width="0.8"/>
+                  <circle cx="7" cy="7" r="2" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="2 1"/>
+                  <line x1="1" y1="7" x2="4" y2="7" stroke="#00d4ff" stroke-width="0.8"/>
+                  <line x1="10" y1="7" x2="13" y2="7" stroke="#00d4ff" stroke-width="0.8"/>
+                </svg>
+                Shadow Moire
+              </div>
+              <div class="step-card-body">
+                Full-field non-contact optical technique per JEDEC JESD22-B112. A collimated
+                light source through a Ronchi grating creates interference fringe maps — contour
+                plots of out-of-plane displacement across the entire package surface in real time,
+                including at reflow temperatures up to 260°C.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 11 Q5 7 8 9 Q11 11 13 7" stroke="#00d4ff" stroke-width="0.8" fill="none"/>
+                  <circle cx="2" cy="11" r="1" fill="#00d4ff" opacity="0.6"/>
+                  <circle cx="8" cy="9" r="1" fill="#00d4ff" opacity="0.4"/>
+                </svg>
+                CSAM Acoustic Analysis
+              </div>
+              <div class="step-card-body">
+                C-Mode Scanning Acoustic Microscopy uses high-frequency ultrasound to image
+                the interior of the package layer by layer. Detects delamination, voids, cracks,
+                and underfill separation that are invisible to optical inspection.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="1" y="3" width="12" height="8" stroke="#00d4ff" stroke-width="0.8"/>
+                  <line x1="4" y1="3" x2="4" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/>
+                  <line x1="7" y1="3" x2="7" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/>
+                  <line x1="10" y1="3" x2="10" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/>
+                  <path d="M1 6 Q3.5 5 4 6 Q4.5 7 7 6 Q9.5 5 10 6 Q10.5 7 13 6" stroke="#f0a500" stroke-width="0.8" fill="none"/>
+                </svg>
+                FEM Correlation / DIC
+              </div>
+              <div class="step-card-body">
+                Measured warpage and strain data is correlated against Finite Element Models.
+                Digital Image Correlation (DIC) is used to capture full-field displacement and
+                validate or refine simulation models for next-generation package design.
+              </div>
+            </div>
+          </div>
+
+          <!-- Shadow Moire Diagram -->
+          <div style="margin-top:1.5rem; background:var(--bg3); border:1px solid var(--border); padding:1.5rem;">
+            <div class="diagram-label" style="margin-bottom:1rem;">Shadow Moire Setup — Principle Diagram</div>
+            <svg viewBox="0 0 500 160" width="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Light source -->
+              <rect x="5" y="5" width="60" height="30" rx="0" fill="#0c1219" stroke="#1e2d3d" stroke-width="1"/>
+              <text x="35" y="24" font-family="IBM Plex Mono" font-size="7" fill="#6a8090" text-anchor="middle">LIGHT SOURCE</text>
+              <!-- Light rays at 45deg -->
+              <line x1="65" y1="20" x2="160" y2="65" stroke="#f0a500" stroke-width="1" stroke-dasharray="4 2" opacity="0.6"/>
+              <line x1="65" y1="20" x2="220" y2="65" stroke="#f0a500" stroke-width="0.7" stroke-dasharray="4 2" opacity="0.4"/>
+              <line x1="65" y1="20" x2="280" y2="65" stroke="#f0a500" stroke-width="0.5" stroke-dasharray="4 2" opacity="0.3"/>
+              <text x="90" y="43" font-family="IBM Plex Mono" font-size="6.5" fill="#f0a500" opacity="0.7">45°</text>
+
+              <!-- Grating -->
+              <rect x="140" y="62" width="220" height="10" rx="0" fill="#0c1219" stroke="#00d4ff" stroke-width="1"/>
+              <text x="250" y="57" font-family="IBM Plex Mono" font-size="7" fill="#00d4ff" text-anchor="middle">RONCHI GRATING</text>
+              <!-- Grating lines -->
+              <line x1="155" y1="62" x2="155" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="170" y1="62" x2="170" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="185" y1="62" x2="185" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="200" y1="62" x2="200" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="215" y1="62" x2="215" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="230" y1="62" x2="230" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="245" y1="62" x2="245" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="260" y1="62" x2="260" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="275" y1="62" x2="275" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="290" y1="62" x2="290" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="305" y1="62" x2="305" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="320" y1="62" x2="320" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+              <line x1="335" y1="62" x2="335" y2="72" stroke="#00d4ff" stroke-width="0.7" opacity="0.5"/>
+
+              <!-- Sample (warped substrate) -->
+              <path d="M 140 110 Q 210 100 250 112 Q 290 124 360 110" stroke="#2a5a3a" stroke-width="12" stroke-linecap="butt" fill="none"/>
+              <text x="250" y="135" font-family="IBM Plex Mono" font-size="7" fill="#6a8090" text-anchor="middle">PACKAGE UNDER TEST — WARPED</text>
+
+              <!-- Moire fringes result -->
+              <path d="M 140 108 Q 210 98 250 110 Q 290 122 360 108" stroke="#00d4ff" stroke-width="1" stroke-dasharray="6 3" opacity="0.6" fill="none"/>
+              <path d="M 140 103 Q 210 93 250 105 Q 290 117 360 103" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="5 4" opacity="0.35" fill="none"/>
+              <path d="M 140 113 Q 210 103 250 115 Q 290 127 360 113" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="5 4" opacity="0.35" fill="none"/>
+              <text x="385" y="113" font-family="IBM Plex Mono" font-size="6.5" fill="#00d4ff">MOIRE</text>
+              <text x="385" y="122" font-family="IBM Plex Mono" font-size="6.5" fill="#00d4ff">FRINGES</text>
+
+              <!-- Camera -->
+              <rect x="415" y="5" width="70" height="30" rx="0" fill="#0c1219" stroke="#1e2d3d" stroke-width="1"/>
+              <text x="450" y="24" font-family="IBM Plex Mono" font-size="7" fill="#6a8090" text-anchor="middle">CAMERA (90°)</text>
+              <line x1="415" y1="20" x2="330" y2="90" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.4"/>
+
+              <!-- Phase step arrow -->
+              <line x1="250" y1="72" x2="250" y2="100" stroke="#f0a500" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.5"/>
+              <text x="255" y="89" font-family="IBM Plex Mono" font-size="6" fill="#f0a500" opacity="0.7">phase step</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="process-step">
+        <div class="step-number-col">
+          <div class="step-num">03</div>
+        </div>
+        <div class="step-body">
+          <div class="step-eyebrow">Phase Three</div>
+          <h3 class="step-title">Characterization Report and Findings</h3>
+          <p class="step-desc">
+            All measurement data, acoustic scans, and thermal profiles are consolidated into
+            a structured engineering report. The deliverable gives your design and reliability
+            teams a clear, actionable picture of package performance — and any failures detected.
+          </p>
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="2" y="1" width="10" height="12" stroke="#00d4ff" stroke-width="0.8"/>
+                  <line x1="4" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/>
+                  <line x1="4" y1="6.5" x2="10" y2="6.5" stroke="#00d4ff" stroke-width="0.7"/>
+                  <line x1="4" y1="9" x2="7" y2="9" stroke="#00d4ff" stroke-width="0.7"/>
+                </svg>
+                Warpage Curve Report
+              </div>
+              <div class="step-card-body">
+                Full warpage vs. temperature profile from 25°C through 260°C — including
+                peak warpage values, inflection points, and compliance against JEDEC specifications.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 12 L2 4 L6 2 L12 2 L12 12" stroke="#00d4ff" stroke-width="0.8"/>
+                  <rect x="5" y="7" width="4" height="5" stroke="#00d4ff" stroke-width="0.7"/>
+                  <line x1="6" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/>
+                </svg>
+                Defect Map — CSAM
+              </div>
+              <div class="step-card-body">
+                Layer-by-layer acoustic images identifying voids, delamination zones, cracks,
+                and underfill separation with precise location coordinates for root-cause analysis.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-card-title">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <polyline points="2,10 5,6 8,8 11,3 13,4" stroke="#00d4ff" stroke-width="0.8" fill="none"/>
+                  <line x1="2" y1="12" x2="13" y2="12" stroke="#00d4ff" stroke-width="0.7"/>
+                </svg>
+                Reliability Assessment
+              </div>
+              <div class="step-card-body">
+                Engineering conclusions on solder joint reliability, expected thermal fatigue life,
+                and go/no-go recommendation with pass/fail criteria aligned to your product spec.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── COMPANIES ─────────────────────── -->
+<div class="companies-section">
+  <div class="companies-inner">
+    <div class="companies-label">Industry Context</div>
+    <div class="companies-list">
+      <span class="company-name">Intel</span>
+      <span class="company-name">Samsung</span>
+      <span class="company-name">TSMC</span>
+      <span class="company-name">AMD</span>
+      <span class="company-name">Rapidus</span>
+      <span class="company-name">Corning</span>
+      <span class="company-name">SambaNova</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────── COMPARISON TABLE ─────────────────────── -->
+<section class="table-section" id="comparison">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Material Comparison</div>
+      <h2 class="section-title">Substrate Technology<br/><span>Performance</span> Matrix</h2>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Organic Substrate (ABF)</th>
+          <th>Silicon Interposer</th>
+          <th class="highlight-col">Glass Substrate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feature-name">Cost</td>
+          <td><span class="badge badge-good">Low</span></td>
+          <td><span class="badge badge-bad">Very High</span></td>
+          <td class="highlight-col"><span class="badge badge-mid">Medium</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Warpage</td>
+          <td><span class="badge badge-bad">High</span></td>
+          <td><span class="badge badge-good">Low</span></td>
+          <td class="highlight-col"><span class="badge badge-good">Very Low</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Flatness</td>
+          <td><span class="badge badge-mid">Moderate</span></td>
+          <td><span class="badge badge-good">Excellent</span></td>
+          <td class="highlight-col"><span class="badge badge-good">Excellent</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Routing Density</td>
+          <td><span class="badge badge-mid">Limited</span></td>
+          <td><span class="badge badge-good">Excellent</span></td>
+          <td class="highlight-col"><span class="badge badge-good">Excellent</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">High-Frequency Loss</td>
+          <td><span class="badge badge-bad">Higher</span></td>
+          <td><span class="badge badge-good">Low</span></td>
+          <td class="highlight-col"><span class="badge badge-good">Very Low</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Brittleness</td>
+          <td><span class="badge badge-good">Low</span></td>
+          <td><span class="badge badge-mid">Medium</span></td>
+          <td class="highlight-col"><span class="badge badge-bad">High</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Scalability for Large AI Packages</td>
+          <td><span class="badge badge-bad">Limited</span></td>
+          <td><span class="badge badge-bad">Cost-limited</span></td>
+          <td class="highlight-col"><span class="badge badge-good">Very Promising</span></td>
+        </tr>
+        <tr>
+          <td class="feature-name">Characterization Complexity</td>
+          <td><span class="badge badge-mid">Standard</span></td>
+          <td><span class="badge badge-mid">High</span></td>
+          <td class="highlight-col"><span class="badge badge-bad">Emerging — Critical</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem; color:var(--text-dim); margin-top:1rem; font-family:var(--mono);">
+      Glass substrates require rigorous characterization during the transition from organic packages —
+      TGV (Through-Glass Via) manufacturing complexity and brittleness demand validated test protocols.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────────────── METHODS ─────────────────────── -->
+<section class="method-section" id="methods">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Technical Methods</div>
+      <h2 class="section-title">Measurement <span>Capabilities</span></h2>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-card-title">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="#00d4ff" stroke-width="1"/>
+            <circle cx="11" cy="11" r="3" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="2 1.5"/>
+            <line x1="1" y1="11" x2="6" y2="11" stroke="#00d4ff" stroke-width="1"/>
+            <line x1="16" y1="11" x2="21" y2="11" stroke="#00d4ff" stroke-width="1"/>
+          </svg>
+          Shadow Moire Interferometry
+        </div>
+        <div class="method-card-sub">JEDEC JESD22-B112 — Full-Field Optical Planarity</div>
+        <p>
+          Non-contact, full-field technique that creates contour maps of surface out-of-plane
+          displacement across the entire package. The interference between the reference grating
+          and its shadow on the sample generates fringe patterns — each fringe represents a
+          fixed height interval (typically pitch/2 per fringe).
+        </p>
+        <p>
+          Phase-stepping increases resolution by laterally shifting the grating in sub-pitch
+          increments, enabling sub-micron height sensitivity across large substrate panels.
+          Measurement occurs live through the entire thermal profile.
+        </p>
+        <div class="spec-row"><span class="spec-key">Standard</span><span class="spec-val">JEDEC JESD22-B112</span></div>
+        <div class="spec-row"><span class="spec-key">Temperature Range</span><span class="spec-val">25°C to 260°C</span></div>
+        <div class="spec-row"><span class="spec-key">Method</span><span class="spec-val">Phase Stepping + Full-Field</span></div>
+        <div class="spec-row"><span class="spec-key">Contact</span><span class="spec-val">Non-Contact</span></div>
+        <div class="spec-row" style="border:none"><span class="spec-key">Output</span><span class="spec-val">Warpage vs. Temp Curve</span></div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-card-title">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 18 Q7 12 11 14 Q15 16 19 10" stroke="#00d4ff" stroke-width="1" fill="none"/>
+            <circle cx="3" cy="18" r="1.5" fill="#00d4ff" opacity="0.7"/>
+            <circle cx="11" cy="14" r="1.5" fill="#00d4ff" opacity="0.5"/>
+            <circle cx="19" cy="10" r="1.5" fill="#00d4ff" opacity="0.7"/>
+          </svg>
+          C-SAM Acoustic Microscopy
+        </div>
+        <div class="method-card-sub">C-Mode Scanning Acoustic Microscopy — Internal Defect Imaging</div>
+        <p>
+          High-frequency ultrasonic pulses (typically 15–230 MHz) are focused into the package.
+          Reflections from material boundaries — especially air gaps — produce C-mode images
+          of every internal interface: die-to-underfill, underfill-to-substrate, inter-laminar layers.
+        </p>
+        <p>
+          Delamination, voids, cracks, and moisture-induced damage appear as bright contrast
+          regions. Scanning is performed layer by layer to produce a complete internal defect map
+          before and after stress conditioning.
+        </p>
+        <div class="spec-row"><span class="spec-key">Detection</span><span class="spec-val">Delamination, Voids, Cracks</span></div>
+        <div class="spec-row"><span class="spec-key">Frequency Range</span><span class="spec-val">15 – 230 MHz</span></div>
+        <div class="spec-row"><span class="spec-key">Scan Mode</span><span class="spec-key" style="color:var(--cyan)">C-Mode (layer-by-layer)</span></div>
+        <div class="spec-row"><span class="spec-key">Contact</span><span class="spec-val">Non-Destructive</span></div>
+        <div class="spec-row" style="border:none"><span class="spec-key">Output</span><span class="spec-val">Internal Defect Map</span></div>
+      </div>
+    </div>
+
+    <!-- Additional methods strip -->
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+      <div style="flex:1; min-width:180px; background:var(--bg); border:1px solid var(--border); padding:1.2rem; border-top:2px solid var(--amber);">
+        <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">AI-Enhanced DIC</div>
+        <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Digital Image Correlation for full-field strain mapping and deformation analysis correlated with FEM models.</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:var(--bg); border:1px solid var(--border); padding:1.2rem; border-top:2px solid var(--amber);">
+        <div style="font-family:var(--mono);font-size:.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">Hybrid Interferometry</div>
+        <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Combined optical interferometry methods for multi-scale flatness measurement across large package formats.</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:var(--bg); border:1px solid var(--border); padding:1.2rem; border-top:2px solid var(--amber);">
+        <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">FEM Correlation</div>
+        <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Digital twin and finite element model correlation to validate simulation results and predict package behavior under next-generation loading.</div>
+      </div>
+      <div style="flex:1; min-width:180px; background:var(--bg); border:1px solid var(--border); padding:1.2rem; border-top:2px solid var(--amber);">
+        <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">Inline Vision</div>
+        <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Machine vision warpage estimation for rapid inline quality screening in high-volume manufacturing environments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── REPORT ─────────────────────── -->
+<section class="report-section" id="report">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Deliverables</div>
+      <h2 class="section-title">What You Receive:<br/>The <span>Characterization</span> Report</h2>
+    </div>
+
+    <div class="report-grid">
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <polyline points="8,28 14,18 20,22 28,10 35,13" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
+            <line x1="8" y1="32" x2="35" y2="32" stroke="#1e2d3d" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="report-card-title">Warpage Profile Data</div>
+        <div class="report-card-body">
+          Full warpage vs. temperature curves from 25°C through reflow peak (260°C),
+          including rate-of-change data, comparison against JEDEC tolerance limits,
+          and identification of critical inflection points where package behavior changes.
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <rect x="10" y="10" width="20" height="20" fill="none" stroke="#1e2d3d" stroke-width="0.5"/>
+            <rect x="12" y="12" width="7" height="7" fill="#00d4ff" opacity="0.15" stroke="#00d4ff" stroke-width="0.5"/>
+            <rect x="21" y="12" width="7" height="7" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+            <rect x="12" y="21" width="7" height="7" fill="#ff4040" opacity="0.2" stroke="#ff4040" stroke-width="0.5"/>
+            <text x="14" y="27" font-family="IBM Plex Mono" font-size="5" fill="#ff4040">!</text>
+            <rect x="21" y="21" width="7" height="7" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="report-card-title">Internal Defect Map (CSAM)</div>
+        <div class="report-card-body">
+          Acoustic scan images of every internal interface layer. Identified defects are
+          mapped with precise X-Y coordinates, layer depth, and area coverage — including
+          delamination zones, void clusters, cracks, and underfill separation boundaries.
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="8" y="4" width="24" height="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <line x1="12" y1="12" x2="28" y2="12" stroke="#1e2d3d" stroke-width="1"/>
+            <line x1="12" y1="17" x2="28" y2="17" stroke="#1e2d3d" stroke-width="1"/>
+            <line x1="12" y1="22" x2="22" y2="22" stroke="#1e2d3d" stroke-width="1"/>
+            <circle cx="28" cy="26" r="6" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+            <polyline points="25,26 27,28 31,24" stroke="#00d4ff" stroke-width="1.2" fill="none"/>
+          </svg>
+        </div>
+        <div class="report-card-title">Engineering Conclusions</div>
+        <div class="report-card-body">
+          Structured pass/fail assessment with root-cause analysis for any detected failure,
+          reliability projection for solder joint fatigue life, and engineering recommendations
+          for package redesign, material selection, or process optimization.
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M8 32 L8 14 L20 8 L32 14 L32 32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <path d="M8 14 L20 20 L32 14" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+            <line x1="20" y1="20" x2="20" y2="32" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+            <rect x="15" y="24" width="10" height="8" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="report-card-title">FEM Simulation Validation</div>
+        <div class="report-card-body">
+          Measured warpage and strain data correlated against finite element simulation output.
+          Validates or corrects the package model — feeding directly into next-generation
+          capped-die and advanced packaging design decisions.
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="14" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <path d="M20 8 L20 20 L30 26" stroke="#00d4ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="2" fill="#00d4ff" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="report-card-title">Before / After Comparison</div>
+        <div class="report-card-body">
+          Side-by-side comparison of all measurements before stress conditioning and after,
+          quantifying the physical degradation introduced by thermal cycling and reflow —
+          directly correlating stress exposure to observed failures.
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="10" width="32" height="22" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+            <line x1="4" y1="18" x2="36" y2="18" stroke="#1e2d3d" stroke-width="0.7"/>
+            <line x1="14" y1="10" x2="14" y2="32" stroke="#1e2d3d" stroke-width="0.7"/>
+            <text x="7" y="15" font-family="IBM Plex Mono" font-size="5" fill="#6a8090">FEATURE</text>
+            <text x="18" y="15" font-family="IBM Plex Mono" font-size="5" fill="#6a8090">RESULT</text>
+            <text x="7" y="24" font-family="IBM Plex Mono" font-size="5" fill="#00d4ff">Warpage</text>
+            <text x="18" y="24" font-family="IBM Plex Mono" font-size="5" fill="#00d4ff">142µm</text>
+            <text x="7" y="30" font-family="IBM Plex Mono" font-size="5" fill="#ff4040">Delamination</text>
+            <text x="18" y="30" font-family="IBM Plex Mono" font-size="5" fill="#ff4040">Detected</text>
+          </svg>
+        </div>
+        <div class="report-card-title">Structured Data Export</div>
+        <div class="report-card-body">
+          All measurement data delivered in structured format — warpage tables, fringe maps,
+          acoustic images, and defect coordinates — ready for integration into your
+          design database and reliability qualification records.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── CTA ─────────────────────── -->
+<section class="cta-section">
+  <div class="cta-title">Ready to Characterize<br/>Your Package?</div>
+  <p class="cta-sub">
+    Whether you are developing next-generation AI accelerators, glass substrate packages,
+    or chiplet assemblies — our warpage characterization protocol delivers the data your
+    team needs before market release.
+  </p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="mailto:engineering@packagelab.com" class="btn-primary">Request Evaluation</a>
+    <a href="#process" class="btn-secondary">Review Protocol</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    PackageLab / Warpage Analysis Division<br/>
+    JEDEC JESD22-B112 Compliant — IPC-9701 — JEDEC JESD22-A104
+  </div>
+  <div class="footer-right">
+    Advanced Semiconductor Package Characterization<br/>
+    <span style="color:var(--border)">Shadow Moire · CSAM · Thermal Cycling · Reflow Analysis</span>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll-triggered fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.report-card, .method-card, .step-card, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+
+  // Smooth active nav link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--cyan)' : '';
+    });
+  });
+</script>
+</body>
+</html>
