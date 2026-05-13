@@ -390,7 +390,7 @@
   .diff-item:hover { background: var(--dark); margin: 0 -28px; padding: 28px 28px; border-color: transparent; border-radius: 12px; }
   .diff-num {
     font-family: 'Syne', sans-serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--orange);
     letter-spacing: 0.08em;
