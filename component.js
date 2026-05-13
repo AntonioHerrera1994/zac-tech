@@ -26,7 +26,7 @@
       font-size:1.3rem; color:#FAFAFA;
       letter-spacing:-.02em; text-decoration:none;
     }
-    .zt-logo span { color:#FF5E1A; }
+    .zt-logo span { color:#A07830; }
     .zt-nav-links { display:flex; gap:36px; list-style:none; }
     .zt-nav-links a {
       color:rgba(255,255,255,.7); text-decoration:none;
@@ -35,9 +35,9 @@
       transition:color .2s;
     }
     .zt-nav-links a:hover,
-    .zt-nav-links a.active { color:#FF5E1A; }
+    .zt-nav-links a.active { color:#A07830; }
     .zt-nav-cta {
-      background:#FF5E1A; color:#fff !important;
+      background:#A07830; color:#fff !important;
       padding:9px 22px; border-radius:4px;
       font-weight:500 !important;
       transition:background .2s !important, transform .2s !important;
@@ -77,7 +77,7 @@
       text-decoration:none; letter-spacing:-.02em;
       transition:color .2s;
     }
-    .zt-mobile-menu a:hover { color:#FF5E1A; }
+    .zt-mobile-menu a:hover { color:#A07830; }
     .zt-mobile-menu .zt-nav-cta {
       font-size:1rem !important;
       padding:14px 40px; border-radius:6px;
@@ -141,7 +141,7 @@ top: calc(100% + 4px);   /* reduce el gap */
 }
 .zt-dropdown li a:hover {
   background: rgba(255,94,26,0.12);
-  color: #FF5E1A !important;
+  color: #A07830 !important;
 }
 /* línea separadora decorativa arriba del dropdown */
 .zt-dropdown::before {
@@ -149,7 +149,7 @@ top: calc(100% + 4px);   /* reduce el gap */
   position: absolute;
   top: -5px; left: 50%; transform: translateX(-50%);
   width: 30px; height: 2px;
-  background: #FF5E1A;
+  background: #A07830;
   border-radius: 2px;
 }
   </style>
@@ -220,7 +220,7 @@ top: calc(100% + 4px);   /* reduce el gap */
       font-size:1.4rem; color:#FAFAFA;
       text-decoration:none; display:block; margin-bottom:18px;
     }
-    .zt-footer-logo span { color:#FF5E1A; }
+    .zt-footer-logo span { color:#A07830; }
     .zt-footer-tagline {
       font-size:.83rem; color:rgba(255,255,255,.4);
       line-height:1.75; font-weight:300;
@@ -237,7 +237,7 @@ top: calc(100% + 4px);   /* reduce el gap */
       text-decoration:none;
     }
     .zt-social-btn:hover {
-      border-color:#FF5E1A; color:#FF5E1A;
+      border-color:#A07830; color:#A07830;
       background:rgba(255,94,26,.12);
     }
     .zt-social-btn svg { width:16px; height:16px; }
@@ -251,7 +251,7 @@ top: calc(100% + 4px);   /* reduce el gap */
       font-size:.85rem; color:rgba(255,255,255,.5);
       text-decoration:none; transition:color .2s;
     }
-    .zt-footer-col ul a:hover { color:#FF5E1A; }
+    .zt-footer-col ul a:hover { color:#A07830; }
     .zt-newsletter-p {
       font-size:.83rem; color:rgba(255,255,255,.4);
       margin-bottom:18px; line-height:1.65; font-weight:300;
@@ -266,9 +266,9 @@ top: calc(100% + 4px);   /* reduce el gap */
       transition:border-color .2s;
     }
     .zt-newsletter-input::placeholder { color:rgba(255,255,255,.25); }
-    .zt-newsletter-input:focus { border-color:#FF5E1A; }
+    .zt-newsletter-input:focus { border-color:#A07830; }
     .zt-newsletter-btn {
-      background:#FF5E1A; color:#fff; border:none;
+      background:#A07830; color:#fff; border:none;
       border-radius:8px; padding:12px 20px;
       font-family:'DM Sans',sans-serif; font-size:.85rem;
       font-weight:600; cursor:pointer; transition:background .2s;
@@ -281,7 +281,7 @@ top: calc(100% + 4px);   /* reduce el gap */
     .zt-footer-copy {
       font-size:.75rem; color:rgba(255,255,255,.25); letter-spacing:.03em;
     }
-    .zt-footer-copy span { color:#FF5E1A; }
+    .zt-footer-copy span { color:#A07830; }
     .zt-footer-links-bottom { display:flex; gap:28px; }
     .zt-footer-links-bottom a {
       font-size:.73rem; color:rgba(255,255,255,.25);

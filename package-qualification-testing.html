@@ -10,17 +10,15 @@
 </head>
 <body>
 
-
-
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="breadcrumb">
-      <a href="zactechsemi.html">Home</a>
+      <a href="index.html">Home</a>
       <span class="breadcrumb-sep">›</span>
-      <a href="zactechsemi.html#services">Services</a>
+      <a href="index.html#services">Services</a>
       <span class="breadcrumb-sep">›</span>
       <span class="breadcrumb-cur">Reliability Tests</span>
     </div>
@@ -37,7 +35,7 @@
       </div>
       <div class="hero-meta-item">
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-        6 Specialized Tests
+        7 Specialized Tests
       </div>
     </div>
   </div>
@@ -54,7 +52,8 @@
     <span class="ticker-item"><span class="ticker-dot"></span>PTC</span>
     <span class="ticker-item"><span class="ticker-dot"></span>THB</span>
     <span class="ticker-item"><span class="ticker-dot"></span>HAST</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JESD22-A108</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100</span>
     <span class="ticker-item"><span class="ticker-dot"></span>HTOL</span>
     <span class="ticker-item"><span class="ticker-dot"></span>LTOL</span>
     <span class="ticker-item"><span class="ticker-dot"></span>ELFR</span>
@@ -62,17 +61,17 @@
     <span class="ticker-item"><span class="ticker-dot"></span>PTC</span>
     <span class="ticker-item"><span class="ticker-dot"></span>THB</span>
     <span class="ticker-item"><span class="ticker-dot"></span>HAST</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JESD22-A108</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100</span>
   </div>
 </div>
 
-<!-- ════ DARK SECTION — HTOL + LTOL ════ -->
+<!-- DARK — HTOL + LTOL -->
 <div class="tests-dark">
 
-  <!-- HTOL -->
   <div class="test-card dark-card reveal-left">
     <div class="test-img-col">
-      <img class="test-img" src="/rea1.webp" alt="HTOL Test" loading="lazy">
+      <img class="test-img" src="rea1.webp" alt="HTOL Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -82,7 +81,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">High Temperature Operating Life</div>
       <h2 class="test-title">Stress Testing at<br>Elevated Temps</h2>
-      <p class="test-desc">This test is used to determine the effects of bias conditions and temperature on solid-state devices over time. It simulates the operating status of devices in an accelerated manner, exposing latent defects and failure mechanisms that would otherwise only appear after years of field operation.</p>
+      <p class="test-desc">Conducted at Tj ≥ 125°C with Vcc at or above maximum rated voltage for 1,000 hours, HTOL accelerates thermally activated failure mechanisms — including gate oxide degradation, hot-carrier injection, electromigration, and interface-state generation. Using an Arrhenius-based acceleration model, results are used to calculate activation energies, failure rates in FITs (failures per 10⁹ device-hours), and projected field reliability at use temperature.</p>
+      <div class="test-standard">JESD22-A108 · JESD47 · AEC-Q100</div>
       <a href="#cta" class="btn-quote btn-quote-dark">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -92,10 +92,9 @@
 
   <div class="card-divider-dark"></div>
 
-  <!-- LTOL -->
   <div class="test-card dark-card reverse reveal-right">
     <div class="test-img-col">
-      <img class="test-img" src="/rea2.webp" alt="LTOL Test" loading="lazy">
+      <img class="test-img" src="rea2.webp" alt="LTOL Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -105,7 +104,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">Low Temperature Operating Life</div>
       <h2 class="test-title">Reliability Under<br>Extreme Cold</h2>
-      <p class="test-desc">A reliability test similar to HTOL, but instead of applying high temperature, low temperature (e.g. -40°C or -55°C) is applied while the device is electrically operating. This test reveals failure modes unique to cold-environment semiconductor behavior and ensures performance in automotive and industrial applications.</p>
+      <p class="test-desc">As device geometries shrink below 65nm, Hot Carrier Injection (HCI) becomes a dominant failure mechanism at low temperatures. LTOL applies Tj ≤ −40°C or −55°C with Vcc ≥ Vccmax for 1,000 hours, targeting HCI-induced threshold voltage shift and transconductance degradation. Increasingly specified for automotive, aerospace, and industrial applications where devices operate continuously in sub-zero environments.</p>
+      <div class="test-standard">JESD22-A108 · AEC-Q100 Grade 0</div>
       <a href="#cta" class="btn-quote btn-quote-ghost-dark">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -115,13 +115,12 @@
 
 </div>
 
-<!-- ════ TRANSITION SECTION — ELFR + RF HTOL ════ -->
+<!-- TRANSITION — ELFR + RF HTOL -->
 <div class="tests-transition">
 
-  <!-- ELFR -->
   <div class="test-card mid-card reveal-left" id="elfr-card">
     <div class="test-img-col">
-      <img class="test-img" src="/rea3.webp" alt="ELFR Test" loading="lazy">
+      <img class="test-img" src="rea3.webp" alt="ELFR Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -131,7 +130,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">Early Life Failure Rate of Integrated Circuits</div>
       <h2 class="test-title">Detecting Failures<br>Before They Happen</h2>
-      <p class="test-desc">This test provides failure characteristics early in the life of new or untested technologies when generic data is not available. Essential for qualifying cutting-edge ICs entering mass production, ELFR identifies early-life failure modes and establishes baseline reliability data for your production line.</p>
+      <p class="test-desc">Derived from the "bathtub curve" model, ELFR targets the infant mortality region — a phase of rapidly decreasing failures caused by latent process defects. Devices are stressed at Tj ≥ 125°C for 48–168 hours (per JESD74), and failure data is used to establish PPM reject rates and validate burn-in screening effectiveness before product ships to automotive or high-reliability customers.</p>
+      <div class="test-standard">JESD74 · JESD22-A108 · AEC-Q100</div>
       <a href="#cta" class="btn-quote btn-quote-dark">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -141,10 +141,9 @@
 
   <div class="card-divider-dark" id="mid-divider"></div>
 
-  <!-- RF HTOL -->
   <div class="test-card mid-card reverse reveal-right" id="rfhtol-card">
     <div class="test-img-col">
-      <img class="test-img" src="/rea4.webp" alt="RF HTOL Test" loading="lazy">
+      <img class="test-img" src="rea4.webp" alt="RF HTOL Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -154,7 +153,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">High Temperature Life at Radio Frequency</div>
       <h2 class="test-title">RF Component<br>Life Qualification</h2>
-      <p class="test-desc">This test determines the effects of RF bias conditions and temperature on power amplifier modules (PAMs), switches, transceivers, tuners, and other RF components over time. It simulates the operating status of devices in an accelerated manner — critical for the 5G and wireless communications supply chain.</p>
+      <p class="test-desc">A specialized variant of HTOL designed for GaAs, GaN, and silicon-based RF devices. Applied RF bias replicates real-world stress on power amplifier modules (PAMs), switches, transceivers, tuners, and LNAs. Critical for 5G mmWave and sub-6GHz qualification, where RF-specific failure modes — gain compression, intermodulation distortion drift, and thermal runaway — demand dedicated test vectors beyond standard HTOL protocols.</p>
+      <div class="test-standard">JESD22-A108 · AEC-Q104 (GaN)</div>
       <a href="#cta" class="btn-quote btn-quote-light">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -164,13 +164,12 @@
 
 </div>
 
-<!-- ════ LIGHT SECTION — PTC + THB + HAST ════ -->
+<!-- LIGHT — PTC + THB + HAST -->
 <div class="tests-light">
 
-  <!-- PTC -->
   <div class="test-card light-card reveal-left">
     <div class="test-img-col">
-      <img class="test-img" src="/rea5.webp" alt="PTC Test" loading="lazy">
+      <img class="test-img" src="rea5.webp" alt="PTC Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -180,7 +179,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">Temperature and Power Cycles</div>
       <h2 class="test-title">Withstanding<br>Thermal Extremes</h2>
-      <p class="test-desc">This test is performed to determine the ability of a device to withstand alternating exposures to extreme high and low temperatures with operational biases periodically applied and removed. It validates the mechanical and electrical integrity of semiconductor packages under real-world power cycling conditions.</p>
+      <p class="test-desc">PTC subjects devices to repetitive transitions between temperature extremes while periodically applying and removing operational bias, simulating the on/off thermal cycling of real-world power electronics. The test identifies delamination, solder joint fatigue, wire bond lift-off, and die-attach voiding — failure modes that develop over thousands of thermal cycles in automotive inverters, industrial motor drives, and power management ICs.</p>
+      <div class="test-standard">JESD22-A105 · IEC 60749-34 · AEC-Q100</div>
       <a href="#cta" class="btn-quote btn-quote-light">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -190,10 +190,9 @@
 
   <div class="card-divider-light"></div>
 
-  <!-- THB -->
   <div class="test-card light-card reverse reveal-right">
     <div class="test-img-col">
-      <img class="test-img" src="/rea6.webp" alt="THB Test" loading="lazy">
+      <img class="test-img" src="rea6.webp" alt="THB Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -203,7 +202,8 @@
       <div class="test-divider"></div>
       <div class="test-full-name">Temperature and Humidity Bias Test</div>
       <h2 class="test-title">Humidity & Bias<br>Life Validation</h2>
-      <p class="test-desc">This standard establishes a method and defined conditions for performing a temperature and humidity shelf life test with applied bias. It evaluates the susceptibility of semiconductor packages to moisture-induced degradation and corrosion under active electrical conditions — critical for outdoor and high-humidity applications.</p>
+      <p class="test-desc">Also known as H³TRB, THB applies 85°C / 85% RH with voltage bias for 1,000 hours per JESD22-A101, accelerating moisture-induced corrosion, ionic contamination, and electrochemical migration. Performed after preconditioning (JESD22-A113), it validates hermetic seal integrity and passivation layer robustness — essential for outdoor power modules, EV charging systems, and industrial sensor ICs exposed to condensing environments.</p>
+      <div class="test-standard">JESD22-A101 · IEC 60749-5 · AEC-Q100</div>
       <a href="#cta" class="btn-quote btn-quote-light">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
@@ -213,10 +213,9 @@
 
   <div class="card-divider-light"></div>
 
-   <!-- HAST -->
-   <div class="test-card light-card reveal-left hast">
+  <div class="test-card light-card reveal-left">
     <div class="test-img-col">
-      <img class="test-img" src="/rea7.webp" style="height: 520px;" alt="PTC Test" loading="lazy">
+      <img class="test-img" src="rea7.webp" alt="HAST Test" loading="lazy">
     </div>
     <div class="test-content">
       <div class="test-code-tag">
@@ -226,15 +225,14 @@
       <div class="test-divider"></div>
       <div class="test-full-name">Highly Accelerated Stress Test</div>
       <h2 class="test-title">Humidity Reliability<br>at Extreme Speed</h2>
-      <p class="test-desc">The purpose of this test method is to evaluate the reliability of non-hermetically packaged solid-state devices in humid environments. Using supersaturated steam at pressures above atmospheric, HAST achieves in hours what standard HTHB tests take weeks to complete — without sacrificing result accuracy or reproducibility.</p>
+      <p class="test-desc">HAST uses supersaturated steam at 110–140°C and 85–100% RH in a pressurized chamber — BHAST (biased) or uHAST (unbiased) — achieving in 96–110 hours what standard THB achieves in 1,000 hours. Per JESD22-A110, it evaluates non-hermetic package robustness against moisture penetration, corrosion, and dielectric breakdown, dramatically compressing qualification timelines without sacrificing statistical confidence or result traceability.</p>
+      <div class="test-standard">JESD22-A110 · JESD22-A118 · AEC-Q100</div>
       <a href="#cta" class="btn-quote btn-quote-light">
         Get Your Quote
         <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
     </div>
   </div>
- 
- 
 
 </div>
 
@@ -244,12 +242,12 @@
   <div class="cta-overlay"></div>
   <div class="cta-content reveal">
     <div class="cta-tag">Request a Quote Today</div>
-    <h2 class="cta-title">Ready to Test Your<br><span>Components?</span></h2>
-    <p class="cta-sub">Ensure the reliability and performance of your electronic components with our professional semiconductor services. We provide the insights you need to make informed decisions and prevent costly failures.</p>
+    <h2 class="cta-title">Ready to Qualify Your<br><span>Components?</span></h2>
+    <p class="cta-sub">Ensure the reliability and performance of your electronic components with our accredited semiconductor testing services. We provide the qualification data you need to meet industry standards and prevent costly field failures.</p>
     <div class="cta-perks">
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Fast Response</strong> — Evaluation within 24h</span></div>
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Accurate Results</strong> — State-of-the-art equipment</span></div>
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Custom Solutions</strong> — Tailored to your specs</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Fast Response</strong> — Testing initiated within 24h</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Accurate Results</strong> — Traceable to JEDEC & AEC-Q</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Custom Protocols</strong> — Tailored to your spec</span></div>
     </div>
     <a href="mailto:info@zactechsemi.com" class="cta-btn">
       Get Your Quote Now
@@ -258,56 +256,34 @@
   </div>
 </section>
 
-
-
 <script>
-
-
-// NAV scroll
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  const nav = document.getElementById('zt-navbar');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
 });
-
-// Hero load
 window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
 
-// SCROLL REVEAL — all variants
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
 
-// TRANSITION SECTION — dynamically adjust text color based on scroll position
-// ELFR card starts dark; RF HTOL card ends light
 function updateTransitionCards() {
   const wrapper = document.querySelector('.tests-transition');
   if (!wrapper) return;
-  const wRect  = wrapper.getBoundingClientRect();
-  const wH     = wrapper.offsetHeight;
-  const vH     = window.innerHeight;
-  // Progress 0 (top of section at bottom of viewport) → 1 (bottom of section passed)
-  const progress = Math.max(0, Math.min(1, (vH - wRect.top) / (wH + vH)));
-
-  // RF HTOL card (bottom half of transition) turns light when progress > 0.55
+  const wRect = wrapper.getBoundingClientRect();
+  const progress = Math.max(0, Math.min(1, (window.innerHeight - wRect.top) / (wrapper.offsetHeight + window.innerHeight)));
   const rfCard = document.getElementById('rfhtol-card');
-  if (rfCard) {
-    if (progress > 0.58) {
-      rfCard.classList.add('light-text');
-    } else {
-      rfCard.classList.remove('light-text');
-    }
-  }
-  // Mid divider changes color
+  if (rfCard) rfCard.classList.toggle('light-text', progress > 0.58);
   const div = document.getElementById('mid-divider');
   if (div) {
     const a = Math.max(0, Math.min(1, (progress - 0.4) / 0.3));
-    div.style.background = `rgba(${Math.round(255*a)},${Math.round(255*a)},${Math.round(255*a)},${0.07+a*0.07})`;
+    div.style.background = `rgba(${Math.round(255*a)},${Math.round(255*a)},${Math.round(255*a)},${0.07 + a * 0.07})`;
   }
 }
 window.addEventListener('scroll', updateTransitionCards, { passive: true });
 updateTransitionCards();
 </script>
-
-<script src="/component.js"></script>
+<script src="components.js"></script>
 </body>
 </html>
