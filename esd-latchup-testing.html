@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESD & Latch-Up — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+  /* ── ESD INFO STRIP ── */
+  .esd-strip {
+    background: var(--dark2);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .esd-strip-item {
+    padding: 28px 36px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .esd-strip-item:last-child { border-right: none; }
+  .esd-strip-val {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.6rem; color: var(--gold-light);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .esd-strip-label {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── PARALLAX IMAGE ── */
+  .test-img-col { overflow: hidden; }
+  .test-img {
+    will-change: transform;
+    transform: scale(1.14) translateY(0px);
+    transition: none;
+  }
+  /* Disable the default hover scale since parallax handles it */
+  .test-card:hover .test-img { transform: scale(1.14) translateY(var(--py, 0px)); }
+
+  /* ── CINEMATIC LATCH-UP SECTION ── */
+  .latchup-wrap {
+    position: relative;
+    min-height: 700px;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: var(--dark);
+  }
+  .latchup-bg {
+    position: absolute; inset: 0;
+    will-change: transform;
+  }
+  .latchup-bg img {
+    width: 100%; height: 120%;
+    object-fit: cover; display: block;
+    transform: translateY(0px);
+    will-change: transform;
+  }
+  .latchup-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(10,10,10,0.97) 0%,
+      rgba(10,10,10,0.85) 45%,
+      rgba(10,10,10,0.4) 70%,
+      rgba(10,10,10,0.15) 100%
+    );
+  }
+  .latchup-content {
+    position: relative; z-index: 2;
+    padding: 120px 80px;
+    max-width: 660px;
+  }
+  .latchup-content .test-num { color: rgba(255,255,255,0.25); }
+  .latchup-content .test-title { color: var(--white); font-size: clamp(2rem, 3.5vw, 3rem); }
+  .latchup-content .test-full-name { color: white; }
+  .latchup-content .test-desc { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 520px; }
+
+  /* ── ACCENT LINE on latchup ── */
+  .latchup-accent {
+    position: absolute; top: 0; right: 0;
+    width: 40%; height: 100%;
+    background: linear-gradient(to left, rgba(160,120,48,0.06), transparent);
+    pointer-events: none;
+  }
+  .latchup-accent-line {
+    position: absolute; right: 80px; top: 50%;
+    transform: translateY(-50%);
+    width: 1px; height: 40%;
+    background: linear-gradient(to bottom, transparent, rgba(160,120,48,0.35), transparent);
+  }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    padding: 80px 80px 0;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 40px;
+  }
+  .section-intro-left {}
+  .section-intro-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+  }
+  .section-intro-tag span {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--gold); color: #fff;
+    padding: 4px 10px; border-radius: 4px;
+  }
+  .section-intro-tag em {
+    font-style: normal;
+    font-family: 'Syne', sans-serif; font-size: 0.8rem;
+    font-weight: 700; letter-spacing: 0.1em; opacity: 0.25;
+    text-transform: uppercase;
+  }
+  .section-intro-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+    line-height: 1.1; letter-spacing: -0.03em;
+  }
+  .section-intro-divider {
+    width: 40px; height: 2px;
+    background: var(--gold-gradient);
+    margin-top: 18px; border-radius: 2px;
+  }
+  .section-intro-desc {
+    max-width: 380px; font-size: 0.9rem;
+    font-weight: 300; line-height: 1.75;
+    opacity: 0.5; padding-bottom: 4px;
+  }
+
+  /* dark intro */
+  .intro-dark .section-intro-title { color: var(--white); }
+  .intro-dark em { color: white; }
+
+  /* light intro */
+  .intro-light .section-intro-title { color: var(--black); }
+  .intro-light em { color: black; }
+  .intro-light .section-intro-desc { color: var(--black); }
+
+  @media (max-width: 900px) {
+    .esd-strip { grid-template-columns: repeat(2,1fr); }
+    .section-intro { flex-direction: column; padding: 48px 24px 0; }
+    .latchup-content { padding: 80px 24px; }
+    .latchup-accent, .latchup-accent-line { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('esd1.webp'); background-position: center 30%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#services">Services</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">ESD &amp; Latch-Up</span>
+    </div>
+    <div class="hero-label">ESD Division</div>
+    <h1 class="hero-title">ESD &amp; Latch&#8209;Up<br><em>Testing</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        JEDEC / ESDA / IEC Compliant
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        5 Discharge Models
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Component to System Level
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>HBM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>MM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>CDM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>System-Level ESD</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Latch-Up</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JESD22-A114</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JS-001</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IEC 61000-4-2</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100-011</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>HBM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>MM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>CDM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>System-Level ESD</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Latch-Up</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JESD22-A114</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JS-001</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>IEC 61000-4-2</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100-011</span>
+  </div>
+</div>
+
+<!-- ESD STATS STRIP -->
+<div class="esd-strip">
+  <div class="esd-strip-item">
+    <div class="esd-strip-val">5</div>
+    <div class="esd-strip-label">ESD &amp; Latch-Up Models</div>
+  </div>
+  <div class="esd-strip-item">
+    <div class="esd-strip-val">±8kV</div>
+    <div class="esd-strip-label">System-Level ESD Range</div>
+  </div>
+  <div class="esd-strip-item">
+    <div class="esd-strip-val">HBM·MM·CDM</div>
+    <div class="esd-strip-label">Component Discharge Models</div>
+  </div>
+  <div class="esd-strip-item">
+    <div class="esd-strip-val">JEDEC</div>
+    <div class="esd-strip-label">JS-001 / JESD22-A114 / A115</div>
+  </div>
+</div>
+
+<!-- ════ DARK — HBM + MM ════ -->
+<div class="tests-dark">
+
+  <div class="section-intro intro-dark reveal">
+    <div class="section-intro-left">
+      <div class="section-intro-tag">
+        <span>Component Level</span>
+        <em>01–02 / 05</em>
+      </div>
+      <div class="section-intro-divider"></div>
+      <h2 class="section-intro-title">Discharge Models:<br>Human &amp; Machine</h2>
+    </div>
+    <p class="section-intro-desc">
+      Component-level ESD tests simulate real-world electrostatic events during manufacturing, handling, and operation — establishing the voltage thresholds at which device damage begins.
+    </p>
+  </div>
+
+  <div class="test-card dark-card reveal-left" style="margin-top:48px;">
+    <div class="test-img-col">
+      <img class="test-img" src="esd1.webp" alt="Human Body Model" loading="lazy">
+    </div>
+    <div class="test-content">
+      <div class="test-code-tag">
+        <span class="test-code">HBM</span>
+        <span class="test-num">01 / 05</span>
+      </div>
+      <div class="test-divider"></div>
+      <div class="test-full-name">Human Body Model</div>
+      <h2 class="test-title">When Human Contact<br>Becomes the Threat</h2>
+      <p class="test-desc">Simulates the electrostatic discharge that can occur when a person carrying an electric charge touches a device. It is one of the most common tests used to determine component sensitivity to human handling — a critical qualification gate for consumer electronics, industrial ICs, and automotive semiconductors exposed to frequent manual contact.</p>
+      <div class="test-standard">JEDEC JS-001 · JESD22-A114 · AEC-Q100-002</div>
+      <a href="#cta" class="btn-quote btn-quote-dark">
+        Get Your Quote
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card-divider-dark"></div>
+
+  <div class="test-card dark-card reverse reveal-right">
+    <div class="test-img-col">
+      <img class="test-img" src="esd2.webp" alt="Machine Model" loading="lazy">
+    </div>
+    <div class="test-content">
+      <div class="test-code-tag">
+        <span class="test-code">MM</span>
+        <span class="test-num">02 / 05</span>
+      </div>
+      <div class="test-divider"></div>
+      <div class="test-full-name">Machine Model</div>
+      <h2 class="test-title">Automated Lines,<br>Invisible Discharges</h2>
+      <p class="test-desc">Replicates discharges that may happen through automated equipment, handling tools, or mechanical interfaces, evaluating the potential impact on electronic components in industrial environments. With no human resistance in the discharge path, MM events are faster and more energetic — making them particularly damaging to fine-geometry device nodes.</p>
+      <div class="test-standard">JEDEC JESD22-A115 · AEC-Q100-003</div>
+      <a href="#cta" class="btn-quote btn-quote-ghost-dark">
+        Get Your Quote
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ TRANSITION — SYSTEM ESD + CDM ════ -->
+<div class="tests-transition">
+
+  <div class="section-intro intro-dark reveal" style="padding-top:80px;">
+    <div class="section-intro-left">
+      <div class="section-intro-tag">
+        <span>System &amp; Device Level</span>
+        <em>03–04 / 05</em>
+      </div>
+      <div class="section-intro-divider"></div>
+      <h2 class="section-intro-title">Charged Device &amp;<br>System Response</h2>
+    </div>
+    <p class="section-intro-desc">
+      Beyond component-level testing, real-world ESD events occur at the device and system level — during automated production and after full board assembly in end-user environments.
+    </p>
+  </div>
+
+  <div class="test-card mid-card reveal-left" style="margin-top:48px;" id="elfr-card">
+    <div class="test-img-col">
+      <img class="test-img" src="esd3.webp" alt="System-Level ESD" loading="lazy">
+    </div>
+    <div class="test-content">
+      <div class="test-code-tag">
+        <span class="test-code">S-ESD</span>
+        <span class="test-num">03 / 05</span>
+      </div>
+      <div class="test-divider"></div>
+      <div class="test-full-name">System-Level Electrostatic Discharge</div>
+      <h2 class="test-title">Full-System ESD<br>Immunity Validation</h2>
+      <p class="test-desc">Simulates ESD events after the full assembly of a system or circuit board, evaluating the response of the complete unit to external discharges typical of end-user environments. System-level ESD per IEC 61000-4-2 applies voltages up to ±8kV contact / ±15kV air — conditions that board-level protection circuits, TVS diodes, and layout strategies must collectively withstand.</p>
+      <div class="test-standard">IEC 61000-4-2 · JEDEC JESD251 · AEC-Q100-012</div>
+      <a href="#cta" class="btn-quote btn-quote-dark">
+        Get Your Quote
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card-divider-dark" id="mid-divider"></div>
+
+  <div class="test-card mid-card reverse reveal-right" id="rfhtol-card">
+    <div class="test-img-col">
+      <img class="test-img" src="esd4.webp" alt="Charged Device Model" loading="lazy">
+    </div>
+    <div class="test-content">
+      <div class="test-code-tag">
+        <span class="test-code">CDM</span>
+        <span class="test-num">04 / 05</span>
+      </div>
+      <div class="test-divider"></div>
+      <div class="test-full-name">Charged Device Model</div>
+      <h2 class="test-title">When the Device Itself<br>Becomes the Source</h2>
+      <p class="test-desc">Assesses the susceptibility when the device itself becomes electrostatically charged due to friction or induction, discharging it upon contact with grounded surfaces. This is especially relevant in automated manufacturing processes — CDM events are the fastest of all ESD models (&lt;1ns rise time) and responsible for the majority of ESD failures in modern automated SMT production lines.</p>
+      <div class="test-standard">JEDEC JS-002 · AEC-Q100-011</div>
+      <a href="#cta" class="btn-quote btn-quote-light">
+        Get Your Quote
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ LATCH-UP — CINEMATIC FULL-WIDTH ════ -->
+<div class="latchup-wrap reveal">
+  <div class="latchup-bg">
+    <img src="esd5.webp" alt="Latch-Up Test" id="latchup-img">
+  </div>
+  <div class="latchup-overlay"></div>
+  <div class="latchup-accent"></div>
+  <div class="latchup-accent-line"></div>
+
+  <div class="latchup-content">
+    <div class="test-code-tag">
+      <span class="test-code">LU</span>
+      <span class="test-num" style="color:rgba(255,255,255,0.25);">05 / 05</span>
+    </div>
+    <div class="test-divider"></div>
+    <div class="test-full-name" style="color:white;opacity:0.45;font-size:1rem;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:14px;font-weight:500;">Latch-Up Protection Testing</div>
+    <h2 class="test-title" style="color:var(--white);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:20px;">Overvoltage Resistance.<br>Parasitic Structures.<br><em style="color:var(--gold-light);font-style:normal;">No Margin for Error.</em></h2>
+    <p class="test-desc" style="color:rgba(255,255,255,0.6);font-size:1.02rem;line-height:1.85;max-width:520px;margin-bottom:32px;">
+      This test verifies the resistance of integrated circuits to overvoltage conditions that activate internal parasitic structures (like thyristors), causing a sustained current flow that can permanently damage the device. Latch-up represents a catastrophic failure mode — once triggered, the device draws excessive current and cannot self-recover without power cycling. Critical for CMOS ICs in automotive, industrial, and high-reliability applications.
+    </p>
+    <div class="test-standard" style="color:var(--gold-light);margin-bottom:32px;">JEDEC JESD78 · AEC-Q100-004 · IEC 60749-34</div>
+    <a href="#cta" class="btn-quote btn-quote-dark">
+      Get Your Quote
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content reveal">
+    <div class="cta-tag">Request a Quote Today</div>
+    <h2 class="cta-title">Ready to Qualify Your<br><span>ESD Robustness?</span></h2>
+    <p class="cta-sub">From component-level HBM and CDM to system-level IEC 61000-4-2 and Latch-Up per JEDEC JESD78 — our full ESD qualification suite ensures your devices survive every discharge scenario they will face in the field.</p>
+    <div class="cta-perks">
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>All 5 Models</strong> — HBM, MM, CDM, S-ESD, LU</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>JEDEC &amp; AEC-Q</strong> — Full standard traceability</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Component to System</strong> — Every level covered</span></div>
+    </div>
+    <a href="mailto:info@zactechsemi.com" class="cta-btn">
+      Get Your Quote Now
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<script>
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+/* ── Hero load ── */
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+
+/* ── Parallax on test card images ── */
+const parallaxTargets = [];
+
+document.querySelectorAll('.test-img-col').forEach(col => {
+  const img = col.querySelector('.test-img');
+  if (img) parallaxTargets.push({ col, img });
+});
+
+function runParallax() {
+  const scrollY = window.scrollY;
+  const vh = window.innerHeight;
+
+  parallaxTargets.forEach(({ col, img }) => {
+    const rect = col.getBoundingClientRect();
+    // Only animate if visible in viewport
+    if (rect.bottom < -100 || rect.top > vh + 100) return;
+    const center = rect.top + rect.height / 2 - vh / 2;
+    const offset = center * 0.1; // subtle: 10% of distance-to-center
+    img.style.transform = `scale(1.14) translateY(${offset}px)`;
+  });
+
+  /* ── Latch-Up parallax ── */
+  const luImg = document.getElementById('latchup-img');
+  if (luImg) {
+    const wrap = luImg.closest('.latchup-wrap');
+    const rect = wrap.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < vh) {
+      const center = rect.top + rect.height / 2 - vh / 2;
+      const offset = center * 0.12;
+      luImg.style.transform = `translateY(${offset}px)`;
+    }
+  }
+}
+
+window.addEventListener('scroll', runParallax, { passive: true });
+runParallax();
+
+/* ── Transition card text color ── */
+function updateTransitionCards() {
+  const wrapper = document.querySelector('.tests-transition');
+  if (!wrapper) return;
+  const wRect = wrapper.getBoundingClientRect();
+  const progress = Math.max(0, Math.min(1, (window.innerHeight - wRect.top) / (wrapper.offsetHeight + window.innerHeight)));
+  const rfCard = document.getElementById('rfhtol-card');
+  if (rfCard) rfCard.classList.toggle('light-text', progress > 0.58);
+  const div = document.getElementById('mid-divider');
+  if (div) {
+    const a = Math.max(0, Math.min(1, (progress - 0.4) / 0.3));
+    div.style.background = `rgba(${Math.round(255*a)},${Math.round(255*a)},${Math.round(255*a)},${0.07 + a * 0.07})`;
+  }
+}
+window.addEventListener('scroll', updateTransitionCards, { passive: true });
+updateTransitionCards();
+</script>
+<script src="component.js"></script>
+</body>
+</html>

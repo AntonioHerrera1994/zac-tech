@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forensic Services — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+/* ══════════════════════════════════
+   INTRO SECTION
+══════════════════════════════════ */
+.fsc-intro {
+  background: var(--dark);
+  padding: 100px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.fsc-intro-text {}
+.fsc-intro-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 28px;
+}
+.fsc-intro-badge {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--gold); color: #fff;
+  padding: 4px 10px; border-radius: 4px;
+}
+.fsc-intro-badge-label {
+  font-family: 'Syne', sans-serif; font-size: 0.75rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.fsc-intro-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  color: var(--white); line-height: 1.05;
+  letter-spacing: -0.03em; margin-bottom: 32px;
+}
+.fsc-intro-title em { font-style: normal; color: var(--gold-light); }
+.fsc-intro-divider {
+  width: 40px; height: 2px;
+  background: var(--gold-gradient);
+  margin-bottom: 28px; border-radius: 2px;
+}
+.fsc-intro-body {
+  font-size: 1rem; line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+}
+.fsc-intro-body p { margin-bottom: 16px; }
+.fsc-intro-body p:last-child { margin-bottom: 0; }
+.fsc-intro-img-wrap {
+  position: relative;
+}
+.fsc-intro-img {
+  width: 100%; aspect-ratio: 4/3;
+  object-fit: cover; display: block;
+  border-radius: 18px;
+  position: relative; z-index: 1;
+  transition: transform 7s ease;
+}
+.fsc-intro-img-wrap:hover .fsc-intro-img { transform: scale(1.03); }
+.fsc-intro-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 24px;
+  background: var(--gold-gradient);
+  opacity: 0.12;
+  z-index: 0;
+}
+.fsc-intro-img-wrap::after {
+  content: '';
+  position: absolute;
+  right: -20px; bottom: -20px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(160,120,48,0.18), transparent 70%);
+  z-index: 0;
+}
+
+/* ══════════════════════════════════
+   CAPABILITIES SECTION
+══════════════════════════════════ */
+.fsc-cap-section {
+  background: var(--dark);
+  padding: 100px 80px;
+}
+.fsc-section-header {
+  margin-bottom: 64px;
+  display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 40px;
+}
+.fsc-section-header-left {}
+.fsc-section-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.fsc-section-tag span {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--gold); color: #fff;
+  padding: 4px 10px; border-radius: 4px;
+}
+.fsc-section-tag em {
+  font-style: normal; font-family: 'Syne', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  opacity: 0.22;
+}
+.fsc-section-divider {
+  width: 40px; height: 2px;
+  background: var(--gold-gradient);
+  margin-bottom: 16px; border-radius: 2px;
+}
+.fsc-section-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--white); line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.fsc-section-title em { font-style: normal; color: var(--gold-light); }
+.fsc-section-desc {
+  max-width: 360px; font-size: 0.9rem; font-weight: 300;
+  line-height: 1.75; color: rgba(255,255,255,0.35);
+}
+
+/* Top 3 capability cards */
+.fsc-cap-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+.fsc-cap-card {
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.3s;
+}
+.fsc-cap-card:hover { border-color: rgba(160,120,48,0.3); }
+.fsc-cap-img-wrap {
+  position: relative; overflow: hidden;
+  aspect-ratio: 16/10;
+}
+.fsc-cap-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 6s ease;
+}
+.fsc-cap-card:hover .fsc-cap-img { transform: scale(1.06); }
+.fsc-cap-img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--dark2) 0%, transparent 50%);
+}
+.fsc-cap-body {
+  padding: 28px 30px 36px;
+  flex: 1; display: flex; flex-direction: column;
+}
+.fsc-cap-name {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1.05rem; color: var(--gold-light);
+  letter-spacing: -0.01em; margin-bottom: 10px;
+}
+.fsc-cap-desc {
+  font-size: 0.88rem; font-weight: 300;
+  color: rgba(255,255,255,0.45); line-height: 1.7;
+  margin-bottom: 20px;
+}
+.fsc-cap-apps-label {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 0.65rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 10px;
+}
+.fsc-cap-apps {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+}
+.fsc-cap-apps li {
+  font-size: 0.83rem; font-weight: 300;
+  color: rgba(255,255,255,0.5); line-height: 1.4;
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.fsc-cap-apps li::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Bottom 2 capability cards — horizontal */
+.fsc-cap-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.fsc-cap-card-wide {
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.fsc-cap-card-wide:hover { border-color: rgba(160,120,48,0.3); }
+.fsc-cap-wide-img {
+  position: relative; overflow: hidden;
+}
+.fsc-cap-wide-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 6s ease;
+}
+.fsc-cap-card-wide:hover .fsc-cap-wide-img img { transform: scale(1.06); }
+.fsc-cap-wide-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, var(--dark2) 100%);
+}
+.fsc-cap-wide-body {
+  padding: 32px 36px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+/* ══════════════════════════════════
+   FORENSIC PROCESS SECTION
+══════════════════════════════════ */
+.fsc-process-section {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+/* Reuse test-card alternating layout from services.css */
+.fsc-process-section .test-card.dark-card { min-height: 480px; }
+
+/* ══════════════════════════════════
+   INDUSTRIES SECTION
+══════════════════════════════════ */
+.fsc-industries {
+  background: #f2f2f0;
+  padding: 100px 80px;
+}
+.fsc-industries-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.fsc-ind-left {}
+.fsc-ind-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  color: var(--black); line-height: 1.05;
+  letter-spacing: -0.03em; margin-bottom: 20px;
+}
+.fsc-ind-title em { font-style: normal; color: var(--gold); }
+.fsc-ind-divider {
+  width: 40px; height: 2px;
+  background: var(--gold-gradient);
+  margin-bottom: 28px; border-radius: 2px;
+}
+.fsc-ind-intro {
+  font-size: 0.95rem; font-weight: 300;
+  color: #555; line-height: 1.8; margin-bottom: 36px;
+}
+.fsc-ind-list-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 14px;
+}
+.fsc-ind-list {
+  list-style: none; display: flex;
+  flex-direction: column; gap: 0;
+  margin-bottom: 40px;
+}
+.fsc-ind-list li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-size: 0.92rem; font-weight: 400;
+  color: var(--black);
+  transition: color 0.2s;
+}
+.fsc-ind-list li::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
+.fsc-ind-list li:last-child { border-bottom: none; }
+.fsc-app-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.fsc-app-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 14px;
+  background: rgba(160,120,48,0.1);
+  border: 1px solid rgba(160,120,48,0.25);
+  border-radius: 100px;
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--gold); letter-spacing: 0.02em;
+}
+
+/* Bento image grid */
+.fsc-ind-right {}
+.fsc-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 8px;
+}
+.fsc-bento-item {
+  position: relative; overflow: hidden;
+  border-radius: 10px;
+  cursor: default;
+}
+.fsc-bento-item:nth-child(1) { grid-column: span 2; }
+.fsc-bento-item:nth-child(4) { grid-column: span 2; }
+.fsc-bento-item img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 5s ease;
+  filter: brightness(0.78) saturate(0.85);
+}
+.fsc-bento-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(0.92) saturate(1);
+}
+.fsc-bento-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%);
+}
+.fsc-bento-label {
+  position: absolute; bottom: 10px; left: 14px;
+  z-index: 2;
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 1100px) {
+  .fsc-cap-card-wide { grid-template-columns: 200px 1fr; }
+}
+@media (max-width: 900px) {
+  .fsc-intro         { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+  .fsc-cap-section   { padding: 60px 24px; }
+  .fsc-section-header{ flex-direction: column; align-items: flex-start; }
+  .fsc-cap-top       { grid-template-columns: 1fr; }
+  .fsc-cap-bottom    { grid-template-columns: 1fr; }
+  .fsc-cap-card-wide { grid-template-columns: 1fr; }
+  .fsc-cap-wide-img  { height: 200px; }
+  .fsc-cap-wide-img::after { background: linear-gradient(to top, var(--dark2) 0%, transparent 60%); }
+  .fsc-industries    { padding: 60px 24px; }
+  .fsc-industries-inner { grid-template-columns: 1fr; gap: 48px; }
+  .fsc-bento { grid-template-rows: 140px 140px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('fsc_hero.webp'); background-position: center 40%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#services">Services</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">Forensic Services</span>
+    </div>
+    <div class="hero-label">Forensic Division</div>
+    <h1 class="hero-title">Forensic<br><em>Services</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        SEM · EDX · TEM · X-Ray · C-SAM
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        7 Industries Served
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+        Full Root-Cause Reports
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>SEM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>EDX</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>TEM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>X-Ray 2D / 3D</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>C-SAM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Material Characterization</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Contamination Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>SEM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>EDX</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>TEM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>X-Ray 2D / 3D</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>C-SAM</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Material Characterization</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Contamination Analysis</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SECTION 1 — INTRO
+═══════════════════════════════════ -->
+<section class="fsc-intro reveal">
+  <div class="fsc-intro-text">
+    <div class="fsc-intro-tag">
+      <span class="fsc-intro-badge">Laboratory</span>
+      <span class="fsc-intro-badge-label">Advanced Microscopy &amp; Analysis</span>
+    </div>
+    <h2 class="fsc-intro-title">State-of-the-Art<br>Analytical &amp; <em>Microscopy</em><br>Services</h2>
+    <div class="fsc-intro-divider"></div>
+    <div class="fsc-intro-body">
+      <p>Our laboratory offers state-of-the-art analytical and microscopy services for advanced failure analysis, material characterization, and cross-disciplinary applications.</p>
+      <p>Our techniques are complementary, allowing us to study different types of samples — from electronic devices to biological and industrial materials — within a single integrated workflow.</p>
+      <p>We support multiple industries with high-precision instrumentation and expert interpretation of results, delivering findings that are traceable, reproducible, and actionable.</p>
+    </div>
+  </div>
+  <div class="fsc-intro-img-wrap reveal-right">
+    <img class="fsc-intro-img" src="fsc_wafer.webp" alt="Silicon Wafer under Analysis">
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 2 — CORE ANALYTICAL CAPABILITIES
+═══════════════════════════════════ -->
+<section class="fsc-cap-section">
+  <div class="fsc-section-header reveal">
+    <div class="fsc-section-header-left">
+      <div class="fsc-section-tag">
+        <span>Capabilities</span>
+        <em>5 Analytical Methods</em>
+      </div>
+      <div class="fsc-section-divider"></div>
+      <h2 class="fsc-section-title">Core Analytical<br><em>Capabilities</em></h2>
+    </div>
+    <p class="fsc-section-desc">
+      Five complementary analytical techniques — from surface imaging to deep structural inspection — covering every scale and material type your investigation requires.
+    </p>
+  </div>
+
+  <!-- Top row: SEM · EDX · TEM -->
+  <div class="fsc-cap-top">
+
+    <div class="fsc-cap-card reveal-left">
+      <div class="fsc-cap-img-wrap">
+        <img class="fsc-cap-img" src="fsc_sem.webp" alt="SEM">
+      </div>
+      <div class="fsc-cap-body">
+        <div class="fsc-cap-name">Scanning Electron Microscopy (SEM)</div>
+        <div class="fsc-cap-desc">High-resolution imaging for surface and microstructural analysis of materials — resolving features down to the nanometer scale.</div>
+        <div class="fsc-cap-apps-label">Applications</div>
+        <ul class="fsc-cap-apps">
+          <li>Micro-cracks and fracture analysis</li>
+          <li>Surface contamination identification</li>
+          <li>Metallization and interconnect inspection</li>
+          <li>Morphology of advanced materials</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fsc-cap-card reveal">
+      <div class="fsc-cap-img-wrap">
+        <img class="fsc-cap-img" src="fsc_edx.webp" alt="EDX">
+      </div>
+      <div class="fsc-cap-body">
+        <div class="fsc-cap-name">Energy Dispersive X-ray (EDX)</div>
+        <div class="fsc-cap-desc">Elemental composition analysis directly coupled with SEM imaging — mapping atomic distribution across any region of interest.</div>
+        <div class="fsc-cap-apps-label">Applications</div>
+        <ul class="fsc-cap-apps">
+          <li>Contaminant identification</li>
+          <li>Failure root cause analysis</li>
+          <li>Material phase characterization</li>
+          <li>Foreign particle identification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fsc-cap-card reveal-right">
+      <div class="fsc-cap-img-wrap">
+        <img class="fsc-cap-img" src="fsc_tem.webp" alt="TEM">
+      </div>
+      <div class="fsc-cap-body">
+        <div class="fsc-cap-name">Transmission Electron Microscopy (TEM)</div>
+        <div class="fsc-cap-desc">Ultra-high resolution analysis of internal structures at the nanoscale — imaging through material cross-sections with atomic-level detail.</div>
+        <div class="fsc-cap-apps-label">Applications</div>
+        <ul class="fsc-cap-apps">
+          <li>Crystal defect analysis</li>
+          <li>Interface and layer inspection</li>
+          <li>Nanostructure characterization</li>
+          <li>Advanced semiconductor device analysis</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row: X-Ray · C-SAM -->
+  <div class="fsc-cap-bottom">
+
+    <div class="fsc-cap-card-wide reveal-left">
+      <div class="fsc-cap-wide-img">
+        <img src="fsc_xray.webp" alt="X-Ray Imaging">
+      </div>
+      <div class="fsc-cap-wide-body">
+        <div class="fsc-cap-name">X-Ray Imaging &amp; Diffraction (2D / 3D)</div>
+        <div class="fsc-cap-desc" style="margin-bottom:20px;">Non-destructive internal inspection and structural analysis — penetrating packaging without altering the sample.</div>
+        <div class="fsc-cap-apps-label">Capabilities</div>
+        <ul class="fsc-cap-apps">
+          <li>2D and 3D internal inspection</li>
+          <li>X-Ray diffraction — crystallographic analysis</li>
+          <li>Defect detection in multilayer devices</li>
+          <li>Porosity, voids, and delamination analysis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fsc-cap-card-wide reveal-right">
+      <div class="fsc-cap-wide-img">
+        <img src="fsc_csam.webp" alt="C-SAM">
+      </div>
+      <div class="fsc-cap-wide-body">
+        <div class="fsc-cap-name">C-SAM — Scanning Acoustic Microscopy</div>
+        <div class="fsc-cap-desc" style="margin-bottom:20px;">Advanced acoustic inspection for non-destructive internal analysis — imaging material interfaces layer by layer using high-frequency ultrasound.</div>
+        <div class="fsc-cap-apps-label">Applications</div>
+        <ul class="fsc-cap-apps">
+          <li>Delamination detection</li>
+          <li>Crack propagation mapping</li>
+          <li>Void and interface defect detection</li>
+          <li>Packaging integrity evaluation</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 3 — FORENSIC & FAILURE ANALYSIS
+═══════════════════════════════════ -->
+<div class="fsc-process-section tests-dark">
+  <div class="test-card dark-card reverse reveal-right">
+    <div class="test-img-col">
+      <img class="test-img" src="fsc_lab.webp" alt="Forensic Lab" loading="lazy">
+    </div>
+    <div class="test-content">
+      <div class="test-code-tag">
+        <span class="test-code">Forensic</span>
+        <span class="test-num">FA Services</span>
+      </div>
+      <div class="test-divider"></div>
+      <div class="test-full-name">Root-Cause Analysis for Electronic &amp; Semiconductor Devices</div>
+      <h2 class="test-title">Forensic &amp; Failure<br>Analysis Services</h2>
+      <p class="test-desc">Our forensic analysis process follows a structured methodology to identify the root cause of failures in electronic and semiconductor devices. Each investigation combines non-destructive screening, advanced microscopy, elemental analysis, and expert engineering judgment — producing a defensible, traceable finding supported by documented evidence.</p>
+      <div class="test-standard">JEDEC · AEC-Q · IPC-7711/7721</div>
+      <a href="#cta" class="btn-quote btn-quote-dark">
+        Get Your Quote
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SECTION 4 — INDUSTRIES
+═══════════════════════════════════ -->
+<section class="fsc-industries">
+  <div class="fsc-industries-inner">
+
+    <div class="fsc-ind-left reveal-left">
+      <div class="fsc-section-tag" style="margin-bottom:14px;">
+        <span style="background:var(--gold);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;border-radius:4px;">Industries</span>
+        <em style="font-style:normal;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.25;">We Support</em>
+      </div>
+      <div class="fsc-ind-divider"></div>
+      <h2 class="fsc-ind-title">Industries We<br><em>Support</em></h2>
+      <p class="fsc-ind-intro">Our services are designed to support a wide range of industries — from semiconductor fabs and materials labs to medical research and food safety.</p>
+
+      <div class="fsc-ind-list-title">Industries</div>
+      <ul class="fsc-ind-list">
+        <li>Mining Industry</li>
+        <li>Materials Research Institutions</li>
+        <li>Large-Scale Industrial Consortia</li>
+        <li>Medical &amp; Veterinary Research Centers</li>
+        <li>Electronics &amp; Semiconductor Industry</li>
+        <li>Biopharmaceutical Industry</li>
+        <li>Food Industry</li>
+      </ul>
+
+      <div class="fsc-ind-list-title">Applications Include</div>
+      <div class="fsc-app-tags">
+        <span class="fsc-app-tag">Electronic failure diagnostics</span>
+        <span class="fsc-app-tag">Material degradation analysis</span>
+        <span class="fsc-app-tag">Biological sample imaging</span>
+        <span class="fsc-app-tag">Contamination source ID</span>
+        <span class="fsc-app-tag">Quality control</span>
+        <span class="fsc-app-tag">Process optimization</span>
+      </div>
+    </div>
+
+    <!-- Bento image grid -->
+    <div class="fsc-ind-right reveal-right">
+      <div class="fsc-bento">
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_mining.webp" alt="Mining Industry">
+          <div class="fsc-bento-label">Mining Industry</div>
+        </div>
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_materials.webp" alt="Materials Research">
+          <div class="fsc-bento-label">Materials Research</div>
+        </div>
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_industrial.webp" alt="Industrial">
+          <div class="fsc-bento-label">Industrial</div>
+        </div>
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_medical.webp" alt="Medical">
+          <div class="fsc-bento-label">Medical &amp; Veterinary</div>
+        </div>
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_electronics.webp" alt="Electronics">
+          <div class="fsc-bento-label">Electronics &amp; Semiconductor</div>
+        </div>
+        <div class="fsc-bento-item">
+          <img src="fsc_ind_food.webp" alt="Food Industry">
+          <div class="fsc-bento-label">Food Industry</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content reveal">
+    <div class="cta-tag">Request a Quote Today</div>
+    <h2 class="cta-title">Ready to Start Your<br><span>Investigation?</span></h2>
+    <p class="cta-sub">From wafer-level semiconductor failure to industrial material contamination — our forensic laboratory brings SEM, EDX, TEM, X-Ray, and C-SAM to bear on your most complex analytical challenges.</p>
+    <div class="cta-perks">
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>5 Analytical Methods</strong> — Fully integrated workflow</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Cross-Disciplinary</strong> — Electronics to biological samples</span></div>
+      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Expert Reports</strong> — Traceable, defensible findings</span></div>
+    </div>
+    <a href="mailto:info@zactechsemi.com" class="cta-btn">
+      Get Your Quote Now
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<script>
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+/* ── Hero load ── */
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+
+/* ── Parallax on the forensic process test card image ── */
+const processImg = document.querySelector('.fsc-process-section .test-img');
+if (processImg) {
+  window.addEventListener('scroll', () => {
+    const col = processImg.closest('.test-img-col');
+    const rect = col.getBoundingClientRect();
+    const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+    processImg.style.transform = `scale(1.12) translateY(${center * 0.08}px)`;
+  }, { passive: true });
+}
+
+/* ── Subtle bento hover depth ── */
+document.querySelectorAll('.fsc-bento-item').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    item.style.transform = 'scale(1.015)';
+    item.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+    item.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)';
+    item.style.zIndex = '2';
+  });
+  item.addEventListener('mouseleave', () => {
+    item.style.transform = '';
+    item.style.boxShadow = '';
+    item.style.zIndex = '';
+  });
+});
+</script>
+<script src="component.js"></script>
+</body>
+</html>

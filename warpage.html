@@ -20,12 +20,13 @@
       <rect x="5" y="11" width="4" height="4" fill="#00d4ff" opacity="0.3"/>
       <rect x="11" y="11" width="4" height="4" fill="#00d4ff" opacity="0.6"/>
     </svg>
-    PackageLab / Warpage Division
+    ZacTechSemi / Warpage Division
   </div>
   <ul class="nav-links">
     <li><a href="#asic">ASIC</a></li>
     <li><a href="#problem">Problem</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="#equipment">Equipment</a></li>
     <li><a href="#methods">Methods</a></li>
     <li><a href="#comparison">Comparison</a></li>
     <li><a href="#report">Report</a></li>
@@ -50,7 +51,7 @@
     </p>
     <div class="hero-cta fade-in delay-3">
       <a href="#process" class="btn-primary">See Our Process</a>
-      <a href="#report" class="btn-secondary">Sample Report</a>
+      <a href="#equipment" class="btn-secondary">Our Equipment</a>
     </div>
     <div style="margin-top:3rem;font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);border-left:2px solid var(--border);padding-left:1.2rem;" class="fade-in delay-4">
       <div style="color:var(--cyan-dim);margin-bottom:0.3rem;">&gt; JEDEC JESD22-B112 — Shadow Moiré Standard</div>
@@ -60,7 +61,7 @@
   </div>
 
   <!-- Hero chip SVG -->
-  <svg style="position:absolute;right:3%;top:50%;transform:translateY(-50%);opacity:1;display:block;filter:drop-shadow(0 0 32px #00d4ff55) drop-shadow(0 0 8px #00d4ff33);" width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg style="position:absolute;right:3%;top:50%;transform:translateY(-50%);opacity:1;display:block;filter:drop-shadow(0 0 32px #00d4ff55) drop-shadow(0 0 8px #00d4ff33);" width="560" height="560" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="chipFill" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.12"/><stop offset="100%" stop-color="#0090b0" stop-opacity="0.04"/></linearGradient>
       <linearGradient id="dieFill1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.35"/><stop offset="100%" stop-color="#004466" stop-opacity="0.2"/></linearGradient>
@@ -70,71 +71,38 @@
     </defs>
     <rect x="100" y="100" width="400" height="400" fill="url(#chipFill)" stroke="#00d4ff" stroke-width="1.8"/>
     <rect x="120" y="120" width="360" height="360" stroke="#00d4ff" stroke-width="0.6" stroke-dasharray="6 4" opacity="0.4"/>
-    <!-- Traces left/right -->
-    <line x1="100" y1="185" x2="140" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="100" y1="220" x2="140" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="100" y1="265" x2="140" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="100" y1="300" x2="140" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="100" y1="335" x2="140" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="100" y1="380" x2="140" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="185" x2="500" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="220" x2="500" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="265" x2="500" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="300" x2="500" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="335" x2="500" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <line x1="460" y1="380" x2="500" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
-    <!-- Teeth TOP -->
+    <line x1="100" y1="185" x2="140" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="100" y1="220" x2="140" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="100" y1="265" x2="140" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="100" y1="300" x2="140" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="100" y1="335" x2="140" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="100" y1="380" x2="140" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+    <line x1="460" y1="185" x2="500" y2="185" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="460" y1="220" x2="500" y2="220" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="460" y1="265" x2="500" y2="265" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="460" y1="300" x2="500" y2="300" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="460" y1="335" x2="500" y2="335" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/><line x1="460" y1="380" x2="500" y2="380" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
     <line x1="170" y1="100" x2="170" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="195" y1="100" x2="195" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="220" y1="100" x2="220" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="245" y1="100" x2="245" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="270" y1="100" x2="270" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="295" y1="100" x2="295" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="320" y1="100" x2="320" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="345" y1="100" x2="345" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="370" y1="100" x2="370" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="395" y1="100" x2="395" y2="68" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
     <line x1="162" y1="68" x2="178" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="187" y1="68" x2="203" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="212" y1="68" x2="228" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="237" y1="68" x2="253" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="262" y1="68" x2="278" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="287" y1="68" x2="303" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="312" y1="68" x2="328" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="337" y1="68" x2="353" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="362" y1="68" x2="378" y2="68" stroke="#00d4ff" stroke-width="2"/><line x1="387" y1="68" x2="403" y2="68" stroke="#00d4ff" stroke-width="2"/>
-    <!-- Teeth BOTTOM -->
     <line x1="170" y1="500" x2="170" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="195" y1="500" x2="195" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="220" y1="500" x2="220" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="245" y1="500" x2="245" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="270" y1="500" x2="270" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="295" y1="500" x2="295" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="320" y1="500" x2="320" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="345" y1="500" x2="345" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="370" y1="500" x2="370" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="395" y1="500" x2="395" y2="532" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
     <line x1="162" y1="532" x2="178" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="187" y1="532" x2="203" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="212" y1="532" x2="228" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="237" y1="532" x2="253" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="262" y1="532" x2="278" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="287" y1="532" x2="303" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="312" y1="532" x2="328" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="337" y1="532" x2="353" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="362" y1="532" x2="378" y2="532" stroke="#00d4ff" stroke-width="2"/><line x1="387" y1="532" x2="403" y2="532" stroke="#00d4ff" stroke-width="2"/>
-    <!-- Teeth LEFT -->
     <line x1="100" y1="170" x2="68" y2="170" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="195" x2="68" y2="195" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="220" x2="68" y2="220" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="245" x2="68" y2="245" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="270" x2="68" y2="270" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="295" x2="68" y2="295" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="320" x2="68" y2="320" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="345" x2="68" y2="345" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="370" x2="68" y2="370" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="100" y1="395" x2="68" y2="395" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
     <line x1="68" y1="162" x2="68" y2="178" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="187" x2="68" y2="203" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="212" x2="68" y2="228" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="237" x2="68" y2="253" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="262" x2="68" y2="278" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="287" x2="68" y2="303" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="312" x2="68" y2="328" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="337" x2="68" y2="353" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="362" x2="68" y2="378" stroke="#00d4ff" stroke-width="2"/><line x1="68" y1="387" x2="68" y2="403" stroke="#00d4ff" stroke-width="2"/>
-    <!-- Teeth RIGHT -->
     <line x1="500" y1="170" x2="532" y2="170" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="195" x2="532" y2="195" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="220" x2="532" y2="220" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="245" x2="532" y2="245" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="270" x2="532" y2="270" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="295" x2="532" y2="295" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="320" x2="532" y2="320" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="345" x2="532" y2="345" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="370" x2="532" y2="370" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/><line x1="500" y1="395" x2="532" y2="395" stroke="#00d4ff" stroke-width="2" stroke-linecap="square"/>
     <line x1="532" y1="162" x2="532" y2="178" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="187" x2="532" y2="203" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="212" x2="532" y2="228" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="237" x2="532" y2="253" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="262" x2="532" y2="278" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="287" x2="532" y2="303" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="312" x2="532" y2="328" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="337" x2="532" y2="353" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="362" x2="532" y2="378" stroke="#00d4ff" stroke-width="2"/><line x1="532" y1="387" x2="532" y2="403" stroke="#00d4ff" stroke-width="2"/>
-    <!-- Dies -->
     <rect x="155" y="155" width="130" height="130" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1.5" filter="url(#glow)"/>
     <rect x="165" y="165" width="110" height="110" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.5"/>
-    <line x1="155" y1="195" x2="285" y2="195" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
-    <line x1="155" y1="225" x2="285" y2="225" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
-    <line x1="195" y1="155" x2="195" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
-    <line x1="245" y1="155" x2="245" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+    <line x1="155" y1="195" x2="285" y2="195" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/><line x1="155" y1="225" x2="285" y2="225" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/><line x1="195" y1="155" x2="195" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/><line x1="245" y1="155" x2="245" y2="285" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
     <text x="220" y="218" font-family="IBM Plex Mono" font-size="10" fill="#00d4ff" text-anchor="middle" opacity="0.9" font-weight="600">ASIC</text>
     <text x="220" y="232" font-family="IBM Plex Mono" font-size="7" fill="#00d4ff" text-anchor="middle" opacity="0.6">PROCESSOR</text>
     <rect x="315" y="315" width="130" height="130" fill="url(#dieFill2)" stroke="#f0a500" stroke-width="1.5" filter="url(#glow)"/>
     <rect x="325" y="325" width="110" height="110" stroke="#f0a500" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.5"/>
-    <line x1="315" y1="355" x2="445" y2="355" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
-    <line x1="315" y1="385" x2="445" y2="385" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
-    <line x1="355" y1="315" x2="355" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
-    <line x1="405" y1="315" x2="405" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
+    <line x1="315" y1="355" x2="445" y2="355" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/><line x1="315" y1="385" x2="445" y2="385" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/><line x1="355" y1="315" x2="355" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/><line x1="405" y1="315" x2="405" y2="445" stroke="#f0a500" stroke-width="0.6" opacity="0.4"/>
     <text x="380" y="378" font-family="IBM Plex Mono" font-size="10" fill="#f0a500" text-anchor="middle" opacity="0.9" font-weight="600">ASIC</text>
     <text x="380" y="392" font-family="IBM Plex Mono" font-size="7" fill="#f0a500" text-anchor="middle" opacity="0.6">PROCESSOR</text>
     <rect x="315" y="155" width="130" height="110" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
-    <line x1="315" y1="185" x2="445" y2="185" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
-    <line x1="315" y1="210" x2="445" y2="210" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
-    <line x1="315" y1="235" x2="445" y2="235" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+    <line x1="315" y1="185" x2="445" y2="185" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/><line x1="315" y1="210" x2="445" y2="210" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/><line x1="315" y1="235" x2="445" y2="235" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
     <text x="380" y="218" font-family="IBM Plex Mono" font-size="9" fill="#00d4ff" text-anchor="middle" opacity="0.7">HBM</text>
     <rect x="155" y="315" width="130" height="110" fill="url(#dieFill1)" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
-    <line x1="155" y1="345" x2="285" y2="345" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
-    <line x1="155" y1="370" x2="285" y2="370" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
-    <line x1="155" y1="395" x2="285" y2="395" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
+    <line x1="155" y1="345" x2="285" y2="345" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/><line x1="155" y1="370" x2="285" y2="370" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/><line x1="155" y1="395" x2="285" y2="395" stroke="#00d4ff" stroke-width="0.5" opacity="0.35"/>
     <text x="220" y="373" font-family="IBM Plex Mono" font-size="9" fill="#00d4ff" text-anchor="middle" opacity="0.7">HBM</text>
-    <!-- Interconnects -->
-    <line x1="285" y1="210" x2="315" y2="210" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-    <line x1="285" y1="240" x2="315" y2="240" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-    <line x1="210" y1="285" x2="210" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-    <line x1="240" y1="285" x2="240" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-    <line x1="380" y1="265" x2="380" y2="315" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-    <line x1="285" y1="370" x2="315" y2="370" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-    <!-- Scan line -->
+    <line x1="285" y1="210" x2="315" y2="210" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/><line x1="285" y1="240" x2="315" y2="240" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/><line x1="210" y1="285" x2="210" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/><line x1="240" y1="285" x2="240" y2="315" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
+    <line x1="380" y1="265" x2="380" y2="315" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/><line x1="285" y1="370" x2="315" y2="370" stroke="#f0a500" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
     <rect x="140" y="140" width="320" height="4" fill="#00d4ff" opacity="0.12" clip-path="url(#chipClip)">
       <animate attributeName="y" from="140" to="460" dur="3s" repeatCount="indefinite" calcMode="linear"/>
       <animate attributeName="opacity" values="0;0.18;0.18;0" keyTimes="0;0.05;0.9;1" dur="3s" repeatCount="indefinite"/>
     </rect>
-    <!-- Corner notches -->
     <path d="M100 100 L125 100 M100 100 L100 125" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
     <path d="M500 100 L475 100 M500 100 L500 125" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
     <path d="M100 500 L125 500 M100 500 L100 475" stroke="#00d4ff" stroke-width="2.5" opacity="0.9"/>
@@ -157,17 +125,26 @@
     <div class="stat-label">+ Thermal load on AI ASIC packages</div>
   </div>
   <div class="stat-item">
-    <div class="stat-value">JEDEC</div>
-    <div class="stat-label">JESD22-B112 Compliant ASIC Testing</div>
+    <div class="stat-value">5</div>
+    <div class="stat-label">Specialized instruments in our warpage lab</div>
   </div>
 </div>
 
-<!-- ─────────────────────── ASIC SECTION ─────────────────────── -->
+<!-- ─────────────── ASIC SECTION ─────────────── -->
 <section class="asic-section" id="asic">
   <div class="section-inner">
     <div class="section-header">
       <div class="section-tag">What We Test</div>
       <h2 class="section-title">Application-Specific<br/><span>Integrated Circuits</span></h2>
+    </div>
+
+    <!-- IMAGE ZONE — full width above asic intro -->
+    <div class="img-zone" style="width:100%;height:280px;margin-bottom:3rem;">
+    <img src="/warpage/img1.jpg" alt="ASIC Package Overview"> 
+      <div class="img-zone-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="1" opacity="0.4"/><path d="M4 28 L12 18 L20 23 L28 12 L36 16" stroke="#00d4ff" stroke-width="1" opacity="0.4" fill="none"/></svg>
+ 
+      </div>
     </div>
 
     <div class="asic-intro">
@@ -178,12 +155,8 @@
             An <strong>Application-Specific Integrated Circuit (ASIC)</strong> is a semiconductor chip designed for one specific, dedicated purpose rather than general-purpose use. Unlike CPUs that run diverse software, ASICs are customized to maximize speed, power efficiency, and physical space for a single application — at the cost of flexibility.
           </div>
         </div>
-        <p>
-          Because ASICs are engineered for peak performance in a single task, they push the physical limits of semiconductor packaging far beyond standard off-the-shelf chips. A modern AI inference ASIC may dissipate <strong>2,500 to 5,000 Watts</strong> of heat while integrating multiple processor dies and HBM memory stacks onto a single organic or glass substrate.
-        </p>
-        <p>
-          That level of thermal and mechanical stress makes <strong>ASIC package characterization non-negotiable</strong>. Warpage, delamination, and interconnect failures that go undetected before market release become catastrophic field failures. Our role is to find them first — before your ASIC ships.
-        </p>
+        <p>Because ASICs are engineered for peak performance in a single task, they push the physical limits of semiconductor packaging far beyond standard off-the-shelf chips. A modern AI inference ASIC may dissipate <strong>2,500 to 5,000 Watts</strong> of heat while integrating multiple processor dies and HBM memory stacks onto a single organic or glass substrate.</p>
+        <p>That level of thermal and mechanical stress makes <strong>ASIC package characterization non-negotiable</strong>. Warpage, delamination, and interconnect failures that go undetected before market release become catastrophic field failures. Our role is to find them first — before your ASIC ships.</p>
         <div style="margin-top:1.5rem;background:var(--bg2);border:1px solid var(--border);padding:1.5rem;">
           <div class="diagram-label" style="margin-bottom:1rem;">ASIC vs. Other Semiconductor Types</div>
           <div class="spec-row"><span class="spec-key">ASIC</span><span style="font-size:0.9rem;color:var(--text-dim);font-weight:300;text-align:right;max-width:260px;">One user / one application. AI accelerator, crypto miner, custom camera chip.</span></div>
@@ -195,73 +168,45 @@
       <div>
         <div class="diagram-label" style="margin-bottom:1.2rem;">ASIC Common Use Cases</div>
         <div class="asic-use-cases">
-          <div class="asic-use-item">
-            <span class="asic-use-label">AI / ML</span>
-            <span>AI accelerator ASICs for training and inference — custom chips from Google (TPU), Amazon (Trainium), SambaNova, Cerebras, and Groq designed to run neural networks at maximum efficiency and minimum power per operation.</span>
-          </div>
-          <div class="asic-use-item">
-            <span class="asic-use-label">Networking</span>
-            <span>Packet processing ASICs in high-speed switches and routers, handling terabits of throughput with deterministic latency impossible for general-purpose processors.</span>
-          </div>
-          <div class="asic-use-item">
-            <span class="asic-use-label">Cryptocurrency</span>
-            <span>Bitcoin mining ASICs designed exclusively for SHA-256 hashing — outperform general-purpose GPUs by orders of magnitude for that single computation.</span>
-          </div>
-          <div class="asic-use-item">
-            <span class="asic-use-label">Consumer</span>
-            <span>Image signal processors, audio codecs, and display controllers in smartphones and wearable sensors — always-on, ultra-low-power ASIC designs.</span>
-          </div>
-          <div class="asic-use-item">
-            <span class="asic-use-label">Automotive</span>
-            <span>Safety-critical ASICs in ADAS, radar processing, and EV battery management — subject to AEC-Q100 qualification and extreme temperature reliability requirements.</span>
-          </div>
-          <div class="asic-use-item" style="border:none;">
-            <span class="asic-use-label">RF / Telecom</span>
-            <span>5G base station ASICs, RF transceivers, and beamforming processors operating at high frequencies where organic substrate dielectric loss is a critical design parameter.</span>
-          </div>
+          <div class="asic-use-item"><span class="asic-use-label">AI / ML</span><span>AI accelerator ASICs for training and inference — Google TPU, Amazon Trainium, SambaNova, Cerebras, Groq — custom chips running neural networks at maximum efficiency and minimum power per operation.</span></div>
+          <div class="asic-use-item"><span class="asic-use-label">Networking</span><span>Packet processing ASICs in high-speed switches and routers, handling terabits of throughput with deterministic latency impossible for general-purpose processors.</span></div>
+          <div class="asic-use-item"><span class="asic-use-label">Cryptocurrency</span><span>Bitcoin mining ASICs designed exclusively for SHA-256 hashing — outperform general-purpose GPUs by orders of magnitude for that single computation.</span></div>
+          <div class="asic-use-item"><span class="asic-use-label">Consumer</span><span>Image signal processors, audio codecs, and display controllers in smartphones and wearable sensors — always-on, ultra-low-power ASIC designs.</span></div>
+          <div class="asic-use-item"><span class="asic-use-label">Automotive</span><span>Safety-critical ASICs in ADAS, radar processing, and EV battery management — subject to AEC-Q100 qualification and extreme temperature reliability requirements.</span></div>
+          <div class="asic-use-item" style="border:none;"><span class="asic-use-label">RF / Telecom</span><span>5G base station ASICs, RF transceivers, and beamforming processors operating at high frequencies where organic substrate dielectric loss is a critical design parameter.</span></div>
         </div>
       </div>
     </div>
 
-    <!-- ASIC Types -->
     <div class="diagram-label" style="margin-bottom:1.5rem;">ASIC Architecture Types — Packages We Characterize</div>
     <div class="asic-types">
       <div class="asic-type-card">
         <div class="asic-type-num">Type 01</div>
         <div class="asic-type-name">Full-Custom ASIC</div>
         <span class="asic-type-tag">Maximum Performance — Highest Complexity</span>
-        <div class="asic-type-desc">Every logic cell and physical layout designed from scratch for the specific project. Allows maximum transistor density, performance, and power efficiency. Used in smartphone processors and AI inference chips where performance-per-watt is the primary design constraint. These packages demand the most rigorous warpage characterization.</div>
+        <div class="asic-type-desc">Every logic cell and physical layout designed from scratch. Maximum transistor density, performance, and power efficiency. Used in smartphone processors and AI inference chips where performance-per-watt is the primary design constraint. These packages demand the most rigorous warpage characterization.</div>
       </div>
       <div class="asic-type-card">
         <div class="asic-type-num">Type 02</div>
         <div class="asic-type-name">Semi-Custom ASIC</div>
         <span class="asic-type-tag">Standard Cell — Gate Array</span>
-        <div class="asic-type-desc">Utilizes pre-designed standard cell libraries to speed development and reduce NRE cost. The interconnect layers are customized for the specific application. Widely used in networking, industrial, and mid-volume applications. Warpage behavior depends heavily on the substrate stack-up and die-to-package size ratio.</div>
+        <div class="asic-type-desc">Pre-designed standard cell libraries speed development and reduce NRE cost. Interconnect layers are customized for the application. Widely used in networking, industrial, and mid-volume applications. Warpage behavior depends heavily on the substrate stack-up and die-to-package size ratio.</div>
       </div>
       <div class="asic-type-card featured">
         <div class="asic-type-num">Type 03</div>
         <div class="asic-type-name">SoC — System on Chip</div>
         <span class="asic-type-tag">Most Complex — Warpage Critical</span>
-        <div class="asic-type-desc">A complete computing system on a single die or multi-die package: processor cores, memory controllers, AI accelerators, RF blocks, and I/O — all packaged together. SoC packages generate extreme localized heat gradients that create the most severe CTE mismatch warpage conditions. Chiplet-based SoCs using 2.5D or 3D integration are our most demanding characterization cases.</div>
+        <div class="asic-type-desc">A complete computing system on a single die or multi-die package — processor cores, memory controllers, AI accelerators, RF blocks, and I/O all packaged together. SoC packages generate extreme localized heat gradients and the most severe CTE mismatch warpage conditions. Chiplet-based SoCs using 2.5D or 3D integration are our most demanding characterization cases.</div>
       </div>
     </div>
 
-    <!-- Why ASIC needs warpage banner -->
     <div class="asic-warpage-banner">
       <div class="asic-banner-icon">
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-          <rect x="2" y="2" width="52" height="52" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
-          <path d="M14 42 Q28 24 42 36" stroke="#00d4ff" stroke-width="1.5" fill="none" opacity="0.4"/>
-          <path d="M14 42 Q28 18 42 30" stroke="#f0a500" stroke-width="2" fill="none"/>
-          <line x1="14" y1="42" x2="42" y2="42" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/>
-          <circle cx="28" cy="24" r="3" fill="#f0a500" opacity="0.6"/>
-          <line x1="28" y1="42" x2="28" y2="24" stroke="#ff4040" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
-          <text x="30" y="36" font-family="IBM Plex Mono" font-size="6" fill="#ff4040">&#916;W</text>
-        </svg>
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="2" y="2" width="52" height="52" stroke="#00d4ff" stroke-width="1" opacity="0.3"/><path d="M14 42 Q28 24 42 36" stroke="#00d4ff" stroke-width="1.5" fill="none" opacity="0.4"/><path d="M14 42 Q28 18 42 30" stroke="#f0a500" stroke-width="2" fill="none"/><line x1="14" y1="42" x2="42" y2="42" stroke="#00d4ff" stroke-width="0.7" opacity="0.3"/><circle cx="28" cy="24" r="3" fill="#f0a500" opacity="0.6"/><line x1="28" y1="42" x2="28" y2="24" stroke="#ff4040" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/><text x="30" y="36" font-family="IBM Plex Mono" font-size="6" fill="#ff4040">&#916;W</text></svg>
       </div>
       <div class="asic-banner-text">
         <div class="asic-banner-title">Why ASIC Packages Are Warpage-Critical</div>
-        <div class="asic-banner-body">ASICs are designed to do one thing at maximum efficiency — which means they run hotter, denser, and harder than any general-purpose chip. The organic substrate (ABF) underneath has a CTE of ~15 ppm/°C while the silicon ASIC die is ~2.6 ppm/°C. Every thermal cycle — from reflow soldering during assembly to power cycling in the field — bends, twists, and stresses the package. Our warpage analysis catches those failure modes before your ASIC ever ships.</div>
+        <div class="asic-banner-body">ASICs are designed to do one thing at maximum efficiency — which means they run hotter, denser, and harder than any general-purpose chip. The organic substrate (ABF) has a CTE of ~15 ppm/°C while the silicon ASIC die is ~2.6 ppm/°C. Every thermal cycle bends, twists, and stresses the package. When the substrate reaches its glass transition temperature (Tg) it loses rigidity, dramatically increasing vertical expansion — accelerating warpage failure. Our warpage analysis catches those failure modes before your ASIC ever ships.</div>
       </div>
       <div class="asic-banner-stats">
         <div class="asic-bstat"><span class="asic-bstat-val">300µm</span><span class="asic-bstat-label">Peak warpage — large ASIC FCBGA</span></div>
@@ -274,7 +219,7 @@
 
 <div class="divider"></div>
 
-<!-- ─────────────────────── PROBLEM ─────────────────────── -->
+<!-- ─────────────── PROBLEM ─────────────── -->
 <section class="problem-section" id="problem">
   <div class="section-inner">
     <div class="section-header">
@@ -282,20 +227,28 @@
       <h2 class="section-title">When <span>ASIC Packages</span> Run Hot,<br/>Substrates Fail</h2>
     </div>
 
+    <!-- IMAGE ZONE — problem banner -->
+    <div class="problem-photo">
+     <img src="/warpage/img2.webp" alt="Warped ASIC Package"> 
+      <div class="img-zone-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="1" opacity="0.4"/><path d="M4 28 L12 18 L20 23 L28 12 L36 16" stroke="#00d4ff" stroke-width="1" opacity="0.4" fill="none"/></svg>
+
+      </div>
+      <div class="problem-photo-label">ASIC Package — Thermal Stress Deformation</div>
+    </div>
+
     <div class="problem-grid">
       <div class="problem-text">
-        <p>Modern AI ASIC packages — multi-die systems integrating custom processor dies and HBM memory stacks on a single organic substrate — operate at <strong>2,500 to 5,000 Watts</strong> of continuous thermal load. No general-purpose chip approaches these conditions.</p>
-        <p>The organic substrate (ABF — Ajinomoto Build-up Film) holding the ASIC together is an epoxy resin reinforced with glass fiber. At extreme temperatures, this material's <strong>Coefficient of Thermal Expansion (CTE)</strong> — around 15 ppm/°C — differs dramatically from the silicon ASIC die's CTE of ~2.6 ppm/°C.</p>
-        <p>That mismatch forces the ASIC package to bow, twist, and deform with every thermal cycle — from reflow soldering during board assembly to daily power cycling in the field. In large flip-chip BGA ASIC packages, warpage can exceed <strong>300µm (12 mil)</strong> — well beyond JEDEC's 200µm tolerance limit.</p>
-        <p>The industry is transitioning toward glass substrates for next-generation ASIC packages. But all ASIC packages — organic or glass — must be <strong>fully characterized before market release</strong>.</p>
+        <p>Warpage in PCBs carrying chips subjected to extreme thermal cycles is a structural deformation caused by the difference in the coefficients of thermal expansion (CTE) between the silicon of the component and the substrate materials. When the chip heats or cools, the board and component expand at different rates — generating massive mechanical stress on the solder balls and the internal vias of the PCB.</p>
+        <p>The organic substrate (ABF — Ajinomoto Build-up Film) holding the ASIC together has a CTE of ~15 ppm/°C while the silicon ASIC die sits at ~2.6 ppm/°C. <strong>At high temperatures, the material may exceed its glass transition temperature (Tg)</strong>, losing rigidity and increasing its vertical expansion. At cryogenic temperatures, materials become brittle and prone to contraction-induced fractures.</p>
+        <p>To mitigate this effect, advanced substrates such as polyimide or low-CTE laminates are used, along with techniques such as symmetrical copper balance in the internal layers and the use of fill resins — called <strong>"underfill"</strong> — which help distribute mechanical stress away from critical electrical connections. A design that does not account for this thermal dynamic will inevitably result in solder fatigue failures or PCB delamination.</p>
+        <p>In large flip-chip BGA ASIC packages, warpage can exceed <strong>300µm (12 mil)</strong> — well beyond JEDEC's 200µm tolerance limit. All ASIC packages — organic or glass — must be <strong>fully characterized before market release</strong>.</p>
 
         <div class="warp-svg-wrap" style="margin-top:2rem;">
           <span class="warp-label-svg">ASIC Package — CTE Mismatch Warpage Visualization</span>
           <svg viewBox="0 0 400 140" width="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="subGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#1a3a2a"/><stop offset="50%" stop-color="#2a5a3a"/><stop offset="100%" stop-color="#1a3a2a"/>
-              </linearGradient>
+              <linearGradient id="subGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1a3a2a"/><stop offset="50%" stop-color="#2a5a3a"/><stop offset="100%" stop-color="#1a3a2a"/></linearGradient>
             </defs>
             <text x="8" y="28" font-family="IBM Plex Mono" font-size="8" fill="#6a8090" letter-spacing="1">ASIC PACKAGE — ROOM TEMP — FLAT</text>
             <rect x="20" y="35" width="360" height="18" rx="0" fill="url(#subGrad)" opacity="0.7"/>
@@ -303,21 +256,11 @@
             <rect x="220" y="27" width="80" height="14" rx="0" fill="#00d4ff" opacity="0.15"/>
             <line x1="20" y1="35" x2="380" y2="35" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 2" opacity="0.4"/>
             <text x="8" y="90" font-family="IBM Plex Mono" font-size="8" fill="#ff4040" letter-spacing="1">ASIC PACKAGE — HIGH TEMP — WARPED</text>
-            <path d="M 20 110 Q 120 88 200 110 Q 280 132 380 110" stroke="#f0a500" stroke-width="2" fill="none">
-              <animate attributeName="d" values="M 20 110 Q 120 88 200 110 Q 280 132 380 110;M 20 110 Q 120 78 200 110 Q 280 142 380 110;M 20 110 Q 120 88 200 110 Q 280 132 380 110" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
-            </path>
-            <path d="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z" fill="url(#subGrad)" opacity="0.5">
-              <animate attributeName="d" values="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z;M 20 110 Q 120 78 200 110 Q 280 142 380 110 L 380 125 Q 280 157 200 125 Q 120 93 20 125 Z;M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
-            </path>
-            <rect x="100" y="96" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.25">
-              <animate attributeName="y" values="96;86;96" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
-            </rect>
-            <rect x="220" y="113" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.2">
-              <animate attributeName="y" values="113;123;113" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
-            </rect>
-            <line x1="200" y1="35" x2="200" y2="108" stroke="#ff4040" stroke-width="1" stroke-dasharray="3 2" opacity="0.6">
-              <animate attributeName="y2" values="108;98;108" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
-            </line>
+            <path d="M 20 110 Q 120 88 200 110 Q 280 132 380 110" stroke="#f0a500" stroke-width="2" fill="none"><animate attributeName="d" values="M 20 110 Q 120 88 200 110 Q 280 132 380 110;M 20 110 Q 120 78 200 110 Q 280 142 380 110;M 20 110 Q 120 88 200 110 Q 280 132 380 110" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/></path>
+            <path d="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z" fill="url(#subGrad)" opacity="0.5"><animate attributeName="d" values="M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z;M 20 110 Q 120 78 200 110 Q 280 142 380 110 L 380 125 Q 280 157 200 125 Q 120 93 20 125 Z;M 20 110 Q 120 88 200 110 Q 280 132 380 110 L 380 125 Q 280 147 200 125 Q 120 103 20 125 Z" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/></path>
+            <rect x="100" y="96" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.25"><animate attributeName="y" values="96;86;96" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/></rect>
+            <rect x="220" y="113" width="80" height="12" rx="0" fill="#00d4ff" opacity="0.2"><animate attributeName="y" values="113;123;113" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/></rect>
+            <line x1="200" y1="35" x2="200" y2="108" stroke="#ff4040" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"><animate attributeName="y2" values="108;98;108" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/></line>
             <text x="205" y="78" font-family="IBM Plex Mono" font-size="7.5" fill="#ff4040">&#916;W</text>
           </svg>
         </div>
@@ -332,9 +275,9 @@
           <div class="failure-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/></svg>Underfill delamination from ASIC die or substrate interface</div>
           <div class="failure-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/></svg>Alignment errors in fine-pitch ASIC interconnects (&lt;2µm)</div>
           <div class="failure-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/></svg>Solder mask cracking at ASIC die corner stress zones</div>
+          <div class="failure-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/></svg>Brittle fracture at cryogenic temperatures (contraction)</div>
           <div class="failure-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ff4040" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#ff4040" stroke-width="1.5"/></svg>Reduced bonding yield in SoC chiplet and 2.5D ASIC assemblies</div>
         </div>
-
         <div style="margin-top:2rem;background:var(--bg3);border:1px solid var(--border);padding:1.5rem;">
           <div class="diagram-label" style="margin-bottom:1rem;">Next-Generation ASIC Substrate — Glass</div>
           <div class="spec-row"><span class="spec-key">Warpage vs. Organic</span><span class="spec-val" style="color:var(--cyan)">~50% reduction</span></div>
@@ -351,14 +294,13 @@
 
 <div class="divider"></div>
 
-<!-- ─────────────────────── PROCESS ─────────────────────── -->
+<!-- ─────────────── PROCESS ─────────────── -->
 <section class="process-section" id="process">
   <div class="section-inner">
     <div class="section-header">
       <div class="section-tag">Our Methodology</div>
       <h2 class="section-title">Three-Phase ASIC<br/><span>Characterization</span> Protocol</h2>
     </div>
-
     <div class="process-timeline">
       <!-- STEP 1 -->
       <div class="process-step">
@@ -366,29 +308,29 @@
         <div class="step-body">
           <div class="step-eyebrow">Phase One</div>
           <h3 class="step-title">ASIC Extreme Environment Stress Testing</h3>
-          <p class="step-desc">Before any optical or acoustic inspection, we subject the ASIC package to the harshest conditions it will realistically face — and beyond. The goal is to induce the maximum possible mechanical and thermal damage in a controlled environment, replicating full board-assembly soldering and years of field operation in accelerated time. This reveals hidden failure modes in the ASIC package before the product ships.</p>
+          <p class="step-desc">Before any optical or acoustic inspection, we subject the ASIC package to the harshest conditions it will realistically face — and beyond. The goal is to induce the maximum possible mechanical and thermal damage in a controlled environment, replicating full board-assembly soldering and years of field operation in accelerated time.</p>
           <div class="step-cards">
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1 L7 13 M1 7 L13 7" stroke="#00d4ff" stroke-width="1.2"/><circle cx="7" cy="7" r="5" stroke="#00d4ff" stroke-width="0.8" stroke-dasharray="3 2"/></svg>
-                Thermal Cycling
-              </div>
-              <div class="step-card-body">Repeated exposure between extreme cold and heat (-40°C to +150°C per IPC-9701 / JEDEC standards), cycling hundreds of times to fatigue ASIC solder joints and expose CTE-mismatch failures invisible at room temperature.</div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1 L7 13 M1 7 L13 7" stroke="#00d4ff" stroke-width="1.2"/><circle cx="7" cy="7" r="5" stroke="#00d4ff" stroke-width="0.8" stroke-dasharray="3 2"/></svg>Thermal Cycling</div>
+              <div class="step-card-body">Repeated exposure between extreme cold and heat (-40°C to +150°C per IPC-9701 / JEDEC standards). Simulates the heating and cooling the PCB will experience during manufacturing and field use — showing how the package deforms under differential expansion, helping identify materials or designs that may generate excessive warpage.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="6" width="10" height="6" stroke="#00d4ff" stroke-width="0.8"/><path d="M5 6 L5 2 L9 2 L9 6" stroke="#00d4ff" stroke-width="0.8"/><line x1="7" y1="2" x2="7" y2="6" stroke="#00d4ff" stroke-width="0.8"/></svg>
-                Reflow Simulation
-              </div>
-              <div class="step-card-body">Simulates the solder reflow process during ASIC board assembly — heating through a SAC305 lead-free profile up to 260°C — to measure real-time ASIC warpage at the most mechanically critical moment of the package's life.</div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="6" width="10" height="6" stroke="#00d4ff" stroke-width="0.8"/><path d="M5 6 L5 2 L9 2 L9 6" stroke="#00d4ff" stroke-width="0.8"/><line x1="7" y1="2" x2="7" y2="6" stroke="#00d4ff" stroke-width="0.8"/></svg>Reflow Simulation</div>
+              <div class="step-card-body">The reflow oven is used to solder electronic components onto the PCB through a controlled thermal profile in which solder paste melts to establish electrical connections. PCBs tend to bow due to thermal expansion of materials — measuring deformation before and after reflow allows characterizing and minimizing warpage problems.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 Q7 4 12 12" stroke="#00d4ff" stroke-width="0.8" fill="none"/><line x1="7" y1="1" x2="7" y2="4" stroke="#00d4ff" stroke-width="1"/></svg>
-                High-Temp Soak
-              </div>
-              <div class="step-card-body">Sustained dwell at operating temperature to evaluate creep, viscoelastic relaxation, and long-term ASIC package stability under conditions mirroring active AI accelerator and data center deployment.</div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 Q7 4 12 12" stroke="#00d4ff" stroke-width="0.8" fill="none"/><line x1="7" y1="1" x2="7" y2="4" stroke="#00d4ff" stroke-width="1"/></svg>High-Temp Soak</div>
+              <div class="step-card-body">Sustained dwell at operating temperature to evaluate creep, viscoelastic relaxation, and long-term ASIC package stability under conditions mirroring active AI accelerator and data center deployment environments.</div>
             </div>
+          </div>
+          <!-- IMAGE ZONE — stress test -->
+          <div class="step-img-zone">
+            <img src="/warpage/tnv3.jpg" alt="Thermal Cycling Test"> 
+            <div class="img-zone-placeholder">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 18 L10 12 L14 15 L18 8 L22 11" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+       
+            </div>
+            <div class="step-img-zone-label">Thermal Cycling &amp; Reflow Simulation Equipment</div>
           </div>
         </div>
       </div>
@@ -402,26 +344,26 @@
           <p class="step-desc">After stress conditioning, we deploy full-field non-contact optical measurement and acoustic microscopy to build a complete picture of the ASIC package's physical state — both surface planarity and internal structural integrity down to the die-substrate interface.</p>
           <div class="step-cards">
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4" stroke="#00d4ff" stroke-width="0.8"/><circle cx="7" cy="7" r="2" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="2 1"/><line x1="1" y1="7" x2="4" y2="7" stroke="#00d4ff" stroke-width="0.8"/><line x1="10" y1="7" x2="13" y2="7" stroke="#00d4ff" stroke-width="0.8"/></svg>
-                Shadow Moire
-              </div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4" stroke="#00d4ff" stroke-width="0.8"/><circle cx="7" cy="7" r="2" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="2 1"/><line x1="1" y1="7" x2="4" y2="7" stroke="#00d4ff" stroke-width="0.8"/><line x1="10" y1="7" x2="13" y2="7" stroke="#00d4ff" stroke-width="0.8"/></svg>Shadow Moire</div>
               <div class="step-card-body">Full-field non-contact optical technique per JEDEC JESD22-B112. Creates interference fringe contour maps of out-of-plane displacement across the entire ASIC package surface in real time, including at reflow temperatures up to 260°C.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11 Q5 7 8 9 Q11 11 13 7" stroke="#00d4ff" stroke-width="0.8" fill="none"/><circle cx="2" cy="11" r="1" fill="#00d4ff" opacity="0.6"/><circle cx="8" cy="9" r="1" fill="#00d4ff" opacity="0.4"/></svg>
-                CSAM Acoustic Analysis
-              </div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11 Q5 7 8 9 Q11 11 13 7" stroke="#00d4ff" stroke-width="0.8" fill="none"/><circle cx="2" cy="11" r="1" fill="#00d4ff" opacity="0.6"/><circle cx="8" cy="9" r="1" fill="#00d4ff" opacity="0.4"/></svg>CSAM Acoustic Analysis</div>
               <div class="step-card-body">C-Mode Scanning Acoustic Microscopy uses high-frequency ultrasound (15–230 MHz) to image the ASIC interior layer by layer — detecting delamination, voids, cracks, and underfill separation invisible to any optical method.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" stroke="#00d4ff" stroke-width="0.8"/><line x1="4" y1="3" x2="4" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><line x1="7" y1="3" x2="7" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><line x1="10" y1="3" x2="10" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><path d="M1 6 Q3.5 5 4 6 Q4.5 7 7 6 Q9.5 5 10 6 Q10.5 7 13 6" stroke="#f0a500" stroke-width="0.8" fill="none"/></svg>
-                FEM Correlation / DIC
-              </div>
-              <div class="step-card-body">Measured ASIC warpage and strain data correlated against Finite Element Models. Digital Image Correlation (DIC) captures full-field displacement to validate simulation models for next-generation ASIC package design.</div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" stroke="#00d4ff" stroke-width="0.8"/><line x1="4" y1="3" x2="4" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><line x1="7" y1="3" x2="7" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><line x1="10" y1="3" x2="10" y2="11" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/><path d="M1 6 Q3.5 5 4 6 Q4.5 7 7 6 Q9.5 5 10 6 Q10.5 7 13 6" stroke="#f0a500" stroke-width="0.8" fill="none"/></svg>FEM Correlation / DIC</div>
+              <div class="step-card-body">Measured ASIC warpage and strain data correlated against Finite Element Models. Digital Image Correlation captures full-field displacement to validate simulation models for next-generation ASIC package design.</div>
             </div>
+          </div>
+          <!-- IMAGE ZONE — planarity analysis -->
+          <div class="step-img-zone">
+            <img src="/warpage/img3.webp" alt="Shadow Moire Analysis"> 
+            <div class="img-zone-placeholder">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 18 L10 12 L14 15 L18 8 L22 11" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+             
+            </div>
+            <div class="step-img-zone-label">Shadow Moire Fringe Map &amp; Acoustic Microscopy Scan</div>
           </div>
 
           <div style="margin-top:1.5rem;background:var(--bg3);border:1px solid var(--border);padding:1.5rem;">
@@ -462,30 +404,162 @@
           <p class="step-desc">All measurement data, acoustic scans, and thermal profiles from the ASIC package are consolidated into a structured engineering report — giving your design and reliability teams a clear, actionable picture of ASIC package performance and every failure mode detected.</p>
           <div class="step-cards">
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" stroke="#00d4ff" stroke-width="0.8"/><line x1="4" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/><line x1="4" y1="6.5" x2="10" y2="6.5" stroke="#00d4ff" stroke-width="0.7"/><line x1="4" y1="9" x2="7" y2="9" stroke="#00d4ff" stroke-width="0.7"/></svg>
-                ASIC Warpage Curve
-              </div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" stroke="#00d4ff" stroke-width="0.8"/><line x1="4" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/><line x1="4" y1="6.5" x2="10" y2="6.5" stroke="#00d4ff" stroke-width="0.7"/><line x1="4" y1="9" x2="7" y2="9" stroke="#00d4ff" stroke-width="0.7"/></svg>ASIC Warpage Curve</div>
               <div class="step-card-body">Full warpage vs. temperature profile from 25°C through 260°C — peak values, inflection points, and JEDEC compliance status specific to your ASIC package geometry.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 L2 4 L6 2 L12 2 L12 12" stroke="#00d4ff" stroke-width="0.8"/><rect x="5" y="7" width="4" height="5" stroke="#00d4ff" stroke-width="0.7"/><line x1="6" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/></svg>
-                ASIC Defect Map
-              </div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 L2 4 L6 2 L12 2 L12 12" stroke="#00d4ff" stroke-width="0.8"/><rect x="5" y="7" width="4" height="5" stroke="#00d4ff" stroke-width="0.7"/><line x1="6" y1="4" x2="10" y2="4" stroke="#00d4ff" stroke-width="0.7"/></svg>ASIC Defect Map</div>
               <div class="step-card-body">CSAM layer-by-layer acoustic images identifying voids, delamination zones, and cracks with precise X-Y coordinates and depth for ASIC root-cause analysis.</div>
             </div>
             <div class="step-card">
-              <div class="step-card-title">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,10 5,6 8,8 11,3 13,4" stroke="#00d4ff" stroke-width="0.8" fill="none"/><line x1="2" y1="12" x2="13" y2="12" stroke="#00d4ff" stroke-width="0.7"/></svg>
-                Reliability Assessment
-              </div>
+              <div class="step-card-title"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,10 5,6 8,8 11,3 13,4" stroke="#00d4ff" stroke-width="0.8" fill="none"/><line x1="2" y1="12" x2="13" y2="12" stroke="#00d4ff" stroke-width="0.7"/></svg>Reliability Assessment</div>
               <div class="step-card-body">ASIC pass/fail assessment with root-cause analysis, solder joint fatigue life projection, and engineering recommendations for package redesign or process optimization.</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────── EQUIPMENT SECTION ─────────────── -->
+<section class="equipment-section" id="equipment">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Our Laboratory</div>
+      <h2 class="section-title">Specialized Warpage<br/><span>Instrumentation</span></h2>
+      <p style="color:var(--text-dim);font-weight:300;max-width:700px;margin-top:1rem;font-size:0.95rem;line-height:1.75;">
+        ZacTechSemi and Tech Meol Group operate a dedicated laboratory area exclusively for warpage analysis. The following five instruments work in concert to characterize, control, and reduce ASIC package warpage — ensuring PCBs maintain their form, functionality, and assembly compatibility.
+      </p>
+    </div>
+
+    <!-- Top 3 equipment cards -->
+    <div class="equip-grid">
+
+      <div class="equip-card">
+        <div class="equip-img-zone">
+        <img src="/warpage/thermal.webp" alt="Thermal Shock Chamber"> 
+          <div class="equip-img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 22 L10 14 L16 18 L22 10 L26 13" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+            <span>Insert Equipment Photo</span>
+          </div>
+        </div>
+        <div class="equip-body">
+          <div class="equip-num">Equipment 01 / 05</div>
+          <div class="equip-name">Thermal Warpage Tester</div>
+          <div class="equip-name-full">Thermal Shock Chamber — Elevator System</div>
+          <div class="equip-desc">Subjects PCBs and ASIC packages to precisely controlled heating and cooling cycles, simulating the thermal conditions the board will face during manufacturing and operation. This allows observation of how the package deforms and bends with temperature changes — identifying materials or designs that may produce excessive warpage. Compliant with JEDEC and IPC thermal stress standards.</div>
+          <div class="equip-cost">
+            <span class="equip-cost-label">Approximate Cost</span>
+            <span class="equip-cost-val">$10,000 – $30,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="equip-card">
+        <div class="equip-img-zone">
+          <img src="/warpage/reflow.webp" alt="Reflow Oven">
+          <div class="equip-img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 22 L10 14 L16 18 L22 10 L26 13" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+            <span>Insert Equipment Photo</span>
+          </div>
+        </div>
+        <div class="equip-body">
+          <div class="equip-num">Equipment 02 / 05</div>
+          <div class="equip-name">Reflow Oven</div>
+          <div class="equip-name-full">Horno de Reflujo — SAC305 Profile</div>
+          <div class="equip-desc">Industrial oven used to solder electronic components onto the PCB through a controlled thermal profile in which solder paste melts and establishes electrical connections. PCBs tend to curve due to thermal expansion of materials — measuring deformation before and after reflow allows characterizing and minimizing warpage problems. Reaches up to 260°C peak reflow temperature.</div>
+          <div class="equip-cost">
+            <span class="equip-cost-label">Approximate Cost</span>
+            <span class="equip-cost-val">$2,000 – $15,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="equip-card">
+        <div class="equip-img-zone">
+          <img src="/warpage/csam.webp" alt="CESAM Acoustic Microscope"> 
+          <div class="equip-img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 22 L10 14 L16 18 L22 10 L26 13" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+            <span>Insert Equipment Photo</span>
+          </div>
+        </div>
+        <div class="equip-body">
+          <div class="equip-num">Equipment 03 / 05</div>
+          <div class="equip-name">C-SAM Microscope</div>
+          <div class="equip-name-full">CESAM — Ultrasonic Acoustic Microscopy</div>
+          <div class="equip-desc">Uses ultrasonic waves to inspect the internal layers of a PCB and soldered components, detecting delaminations, voids, or bubbles not visible to the naked eye. This inspection is critical for identifying internal deformations that can cause or worsen warpage — ensuring internal planarity is adequate. Operates at 15–230 MHz for multi-layer ASIC package inspection.</div>
+          <div class="equip-cost">
+            <span class="equip-cost-label">Approximate Cost</span>
+            <span class="equip-cost-val">$30,000 – $100,000</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom 2 equipment cards — wider -->
+    <div class="equip-grid-bottom">
+
+      <div class="equip-card">
+        <div class="equip-img-zone">
+        <img src="/warpage/microscopio.webp" alt="Akrometrix Laser Flatness Microscope"> 
+          <div class="equip-img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 22 L10 14 L16 18 L22 10 L26 13" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+            <span>Insert Equipment Photo</span>
+          </div>
+        </div>
+        <div class="equip-body">
+          <div class="equip-num">Equipment 04 / 05</div>
+          <div class="equip-name">Laser Flatness Microscope</div>
+          <div class="equip-name-full">Akrometrix — Shadow Moiré / Laser Planarity System</div>
+          <div class="equip-desc">Employs a laser to scan the surface of the PCB and measure its planarity with great precision, generating a detailed topographic map. This allows verification of whether the surface is completely flat or presents deformations — critical for processes requiring high precision and exact component assembly. Compliant with JEDEC JESD22-B112 for warpage measurement as a function of temperature from 25°C to 260°C. Key systems: Akrometrix, Corning Tropel, PhaseShift Technology.</div>
+          <div class="equip-cost">
+            <span class="equip-cost-label">Approximate Cost</span>
+            <span class="equip-cost-val">$40,000 – $150,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="equip-card">
+        <div class="equip-img-zone">
+         <img src="/warpage/interfometro.webp" alt="Interferometer"> 
+          <div class="equip-img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><path d="M6 22 L10 14 L16 18 L22 10 L26 13" stroke="#00d4ff" stroke-width="0.8" opacity="0.4" fill="none"/></svg>
+            <span>Insert Equipment Photo</span>
+          </div>
+        </div>
+        <div class="equip-body">
+          <div class="equip-num">Equipment 05 / 05</div>
+          <div class="equip-name">Interferometer</div>
+          <div class="equip-name-full">Optical Interferometry Microscope — Nanometric Resolution</div>
+          <div class="equip-desc">Measures extremely small deformations and curvatures through light interference — detecting height differences at the nanometric scale. This method allows high-precision quantification of any warpage or planarity deviation in the PCB surface, including deformations too small for other measurement methods. Used in hybrid interferometry workflows for multi-scale ASIC flatness measurement across large substrate formats.</div>
+          <div class="equip-cost">
+            <span class="equip-cost-label">Approximate Cost</span>
+            <span class="equip-cost-val">$50,000 – $200,000</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Equipment summary note -->
+    <div style="margin-top:2rem;background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.15);padding:1.5rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
+      <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);opacity:0.7;flex-shrink:0;margin-top:0.2rem;">Lab Summary</div>
+      <p style="font-size:0.9rem;color:var(--text-dim);font-weight:300;line-height:1.75;flex:1;min-width:260px;">Together, these instruments enable us to characterize, control, and reduce warpage — ensuring that ASIC packages maintain their form, functionality, and compatibility with assembly processes. The controlled temperature cycle reveals how materials deform; the reflow oven evaluates the assembly process itself; the ultrasonic microscope detects internal structural damage; the laser planarity system maps surface topology; and the interferometer captures nanometric deviations invisible to all other methods.</p>
+    </div>
+
+    <!-- IMAGE ZONE — lab overview -->
+    <div class="img-zone" style="width:100%;height:320px;margin-top:2rem;">
+<img src="/warpage/img4.webp" alt="ZacTechSemi Warpage Lab"> 
+      <div class="img-zone-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="1" opacity="0.4"/><path d="M4 28 L12 18 L20 23 L28 12 L36 16" stroke="#00d4ff" stroke-width="1" opacity="0.4" fill="none"/></svg>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -500,6 +574,7 @@
       <span class="company-name">AMD</span>
       <span class="company-name">Rapidus</span>
       <span class="company-name">Corning</span>
+      <span class="company-name">Akrometrix</span>
     </div>
   </div>
 </div>
@@ -511,6 +586,16 @@
       <div class="section-tag">ASIC Substrate Comparison</div>
       <h2 class="section-title">ASIC Package Substrate<br/><span>Performance</span> Matrix</h2>
     </div>
+
+    <!-- IMAGE ZONE — substrate comparison -->
+    <div class="img-zone" style="width:100%;height:320px;margin-bottom:2rem;">
+      <img src="/warpage/img5.png" alt="Substrate Types">
+      <div class="img-zone-placeholder">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="3" width="30" height="30" stroke="#00d4ff" stroke-width="0.8" opacity="0.4"/><rect x="8" y="8" width="7" height="20" fill="#00d4ff" opacity="0.1"/><rect x="18" y="14" width="7" height="14" fill="#00d4ff" opacity="0.07"/><rect x="28" y="10" width="1" height="18" fill="#00d4ff" opacity="0.15"/></svg>
+   
+      </div>
+    </div>
+
     <table class="comp-table">
       <thead>
         <tr>
@@ -544,29 +629,35 @@
       <div class="section-tag">Technical Methods</div>
       <h2 class="section-title">ASIC Measurement <span>Capabilities</span></h2>
     </div>
+
+
+
     <div class="method-grid">
       <div class="method-card">
-        <div class="method-card-title">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" stroke="#00d4ff" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="2 1.5"/><line x1="1" y1="11" x2="6" y2="11" stroke="#00d4ff" stroke-width="1"/><line x1="16" y1="11" x2="21" y2="11" stroke="#00d4ff" stroke-width="1"/></svg>
-          Shadow Moire Interferometry
-        </div>
+        <div class="method-card-title"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" stroke="#00d4ff" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#00d4ff" stroke-width="0.7" stroke-dasharray="2 1.5"/><line x1="1" y1="11" x2="6" y2="11" stroke="#00d4ff" stroke-width="1"/><line x1="16" y1="11" x2="21" y2="11" stroke="#00d4ff" stroke-width="1"/></svg>Shadow Moire Interferometry</div>
         <div class="method-card-sub">JEDEC JESD22-B112 — Full-Field ASIC Optical Planarity</div>
-        <p>Non-contact, full-field technique creating contour maps of out-of-plane displacement across the entire ASIC package. Interference between the reference grating and its shadow on the ASIC generates fringe patterns — each fringe a fixed height interval, producing a topographic warpage map.</p>
-        <p>Phase-stepping increases resolution by laterally shifting the grating in sub-pitch increments, enabling sub-micron height sensitivity across large ASIC substrate panels through the entire thermal profile.</p>
+        <!-- Image zone inside method card -->
+        <div class="img-zone" style="width:100%;height:200px;margin-bottom:1rem;border-radius:0;">
+          <img src="/warpage/img6.jpg" alt="Moire Fringe Pattern"> 
+          <div class="img-zone-placeholder"><span>Shadow Moire Fringe Map Result</span></div>
+        </div>
+        <p>Non-contact, full-field technique creating contour maps of out-of-plane displacement across the entire ASIC package. Interference between the reference grating and its shadow on the ASIC generates fringe patterns — each fringe a fixed height interval, producing a topographic warpage map. Phase-stepping enables sub-micron height sensitivity through the entire thermal profile.</p>
         <div class="spec-row"><span class="spec-key">Standard</span><span class="spec-val">JEDEC JESD22-B112</span></div>
         <div class="spec-row"><span class="spec-key">Temperature Range</span><span class="spec-val">25°C to 260°C</span></div>
         <div class="spec-row"><span class="spec-key">Method</span><span class="spec-val">Phase Stepping + Full-Field</span></div>
         <div class="spec-row"><span class="spec-key">Contact</span><span class="spec-val">Non-Contact</span></div>
         <div class="spec-row" style="border:none"><span class="spec-key">Output</span><span class="spec-val">ASIC Warpage vs. Temp Curve</span></div>
       </div>
+
       <div class="method-card">
-        <div class="method-card-title">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 18 Q7 12 11 14 Q15 16 19 10" stroke="#00d4ff" stroke-width="1" fill="none"/><circle cx="3" cy="18" r="1.5" fill="#00d4ff" opacity="0.7"/><circle cx="11" cy="14" r="1.5" fill="#00d4ff" opacity="0.5"/><circle cx="19" cy="10" r="1.5" fill="#00d4ff" opacity="0.7"/></svg>
-          C-SAM Acoustic Microscopy
-        </div>
+        <div class="method-card-title"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 18 Q7 12 11 14 Q15 16 19 10" stroke="#00d4ff" stroke-width="1" fill="none"/><circle cx="3" cy="18" r="1.5" fill="#00d4ff" opacity="0.7"/><circle cx="11" cy="14" r="1.5" fill="#00d4ff" opacity="0.5"/><circle cx="19" cy="10" r="1.5" fill="#00d4ff" opacity="0.7"/></svg>C-SAM Acoustic Microscopy</div>
         <div class="method-card-sub">C-Mode Scanning Acoustic Microscopy — ASIC Internal Defect Imaging</div>
-        <p>High-frequency ultrasonic pulses (15–230 MHz) focused into the ASIC package. Reflections from material boundaries — especially air gaps from delamination — produce C-mode images of every internal ASIC interface: die-to-underfill, underfill-to-substrate, inter-laminar layers.</p>
-        <p>Delamination, voids, cracks, and moisture-induced damage appear as bright contrast regions. Scanning is performed layer by layer before and after stress conditioning to quantify ASIC damage progression.</p>
+        <!-- Image zone inside method card -->
+        <div class="img-zone" style="width:100%;height:200px;margin-bottom:1rem;border-radius:0;">
+          <img src="/warpage/img7.jpg" alt="CSAM Delamination Map"> 
+          <div class="img-zone-placeholder"><span>CSAM Delamination / Defect Map Result</span></div>
+        </div>
+        <p>High-frequency ultrasonic pulses (15–230 MHz) focused into the ASIC package. Reflections from material boundaries — especially air gaps from delamination — produce C-mode images of every internal ASIC interface. Delamination, voids, cracks, and moisture-induced damage appear as bright contrast regions. Scanning is performed layer by layer before and after stress conditioning.</p>
         <div class="spec-row"><span class="spec-key">Detection</span><span class="spec-val">Delamination, Voids, Cracks</span></div>
         <div class="spec-row"><span class="spec-key">Frequency Range</span><span class="spec-val">15 – 230 MHz</span></div>
         <div class="spec-row"><span class="spec-key">Scan Mode</span><span class="spec-key" style="color:var(--cyan)">C-Mode (layer-by-layer)</span></div>
@@ -574,6 +665,7 @@
         <div class="spec-row" style="border:none"><span class="spec-key">Output</span><span class="spec-val">ASIC Internal Defect Map</span></div>
       </div>
     </div>
+
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
       <div style="flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
         <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">AI-Enhanced DIC</div>
@@ -602,6 +694,8 @@
       <div class="section-tag">Deliverables</div>
       <h2 class="section-title">What You Receive:<br/>The ASIC <span>Characterization</span> Report</h2>
     </div>
+
+
     <div class="report-grid">
       <div class="report-card">
         <div class="report-card-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/><polyline points="8,28 14,18 20,22 28,10 35,13" stroke="#00d4ff" stroke-width="1.5" fill="none"/><line x1="8" y1="32" x2="35" y2="32" stroke="#1e2d3d" stroke-width="1"/></svg></div>
@@ -640,17 +734,17 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-title">We Lead in ASIC Package<br/>Characterization and Qualification</div>
-  <p class="cta-sub">Whether you are developing next-generation AI ASIC accelerators, glass substrate SoC packages, or advanced chiplet assemblies — our warpage characterization protocol delivers the engineering data your team needs before your ASIC reaches the market.</p>
+  <p class="cta-sub">Whether you are developing next-generation AI ASIC accelerators, glass substrate SoC packages, or advanced chiplet assemblies — our warpage characterization protocol and dedicated laboratory deliver the engineering data your team needs before your ASIC reaches the market.</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-    <a href="mailto:engineering@packagelab.com" class="btn-primary">Request for Quote</a>
-    <a href="#process" class="btn-secondary">Review ASIC Test Process</a>
+    <a href="mailto:engineering@zactechsemi.com" class="btn-primary">Request for Quote</a>
+    <a href="#equipment" class="btn-secondary">Our Equipment</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-left">PackageLab / ASIC Warpage Analysis Division<br/>JEDEC JESD22-B112 Compliant — IPC-9701 — JEDEC JESD22-A104</div>
-  <div class="footer-right">ASIC Package Characterization and Qualification Testing<br/><span style="color:var(--border)">Shadow Moire · CSAM · Thermal Cycling · Reflow Analysis</span></div>
+  <div class="footer-left">ZacTechSemi &amp; Tech Meol Group / ASIC Warpage Analysis Division<br/>JEDEC JESD22-B112 Compliant — IPC-9701 — JEDEC JESD22-A104</div>
+  <div class="footer-right">ASIC Package Characterization and Qualification Testing<br/><span style="color:var(--border)">Shadow Moire · CSAM · Thermal Cycling · Reflow · Interferometry</span></div>
 </footer>
 
 <script>
@@ -662,9 +756,9 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.report-card,.method-card,.step-card,.stat-item,.asic-type-card').forEach(el => {
+  document.querySelectorAll('.report-card,.method-card,.step-card,.stat-item,.asic-type-card,.equip-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
