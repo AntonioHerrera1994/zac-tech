@@ -37,7 +37,7 @@ nav.scrolled {
 /* Nav links */
 .zt-nav-links { display: flex; gap: 36px; list-style: none; }
 .zt-nav-links a {
-  color: rgba(255, 230, 200, 0.65);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: .85rem; font-weight: 400;
   letter-spacing: .04em; text-transform: uppercase;
