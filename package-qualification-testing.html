@@ -3,165 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feature Analysis — Zac Tech Semi</title>
+<title>Encapsulation Package Test — Zac Tech Semi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="services.css">
+
 <style>
-  /* ── FEATURE GRID LAYOUT ── */
-  .feature-section {
-    padding: 80px;
-  }
+/* ═══ WHAT IS section ═══ */
+#what-is {
+  padding: 120px 80px;
+  background: var(--white);
+  overflow: hidden;
+}
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.what-text-col { display: flex; flex-direction: column; }
 
-  .feature-level-header {
-    margin-bottom: 56px;
-  }
+.what-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--orange-light);
+  font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; font-weight: 600;
+  margin-bottom: 22px;
+}
+.what-eyebrow::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--spectrum);
+  border-radius: 2px;
+}
 
-  .feature-level-tag {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin-bottom: 14px;
-  }
+.what-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  color: var(--black); line-height: 1.05;
+  letter-spacing: -.03em; margin-bottom: 36px;
+}
+.what-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, #C43010, #E8720A, #F0A820);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .feature-level-num {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
-    background: var(--gold); color: #fff;
-    padding: 4px 10px; border-radius: 4px;
-  }
+.what-body {
+  font-size: 1rem; color: #6A4030;
+  line-height: 1.85; font-weight: 300;
+  margin-bottom: 20px;
+}
 
-  .feature-level-label {
-    font-family: 'Syne', sans-serif; font-size: 0.8rem;
-    font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; opacity: 0.3;
-  }
+/* Highlight pills */
+.what-pills {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 44px; margin-top: 8px;
+}
+.what-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(212,86,26,.22);
+  color: var(--orange);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+.what-pill::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--orange-light);
+  border-radius: 50%;
+}
 
-  .feature-level-divider {
-    width: 40px; height: 2px;
-    background: var(--gold-gradient);
-    margin-bottom: 18px; border-radius: 2px;
-  }
+/* Quote button row */
+.what-btn-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
-  .feature-level-title {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-    line-height: 1.1; letter-spacing: -0.03em;
-  }
+/* Image column */
+.what-img-col {
+  position: relative;
+  border-radius: 24px; overflow: hidden;
+  /* Sunset border */
+  padding: 2px;
+  background: var(--spectrum);
+}
+.what-img-inner {
+  border-radius: 22px; overflow: hidden;
+  position: relative;
+}
+.what-img-inner img {
+  width: 100%; aspect-ratio: 4/3;
+  object-fit: cover; display: block;
+  transition: transform 6s ease;
+}
+.what-img-col:hover .what-img-inner img { transform: scale(1.03); }
 
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
+/* Floating badge */
+.what-badge {
+  position: absolute;
+  bottom: 28px; left: 28px;
+  background: rgba(13,8,6,.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,86,26,.25);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.what-badge-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg,#C43010,#E8720A);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.what-badge-icon svg { width: 18px; height: 18px; stroke: #fff; }
+.what-badge-text { font-size: .78rem; }
+.what-badge-text strong {
+  display: block;
+  color: #FFF8F2; font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: .82rem; margin-bottom: 2px;
+}
+.what-badge-text span { color: rgba(255,200,140,.50); font-size: .72rem; }
 
-  .feature-card {
-    display: flex; flex-direction: column;
-    overflow: hidden; position: relative;
-  }
+/* ═══ TYPES section ═══ */
+#pkg-types {
+  padding: 120px 80px;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+#pkg-types::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--spectrum);
+  opacity: .55;
+}
+.types-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: end;
+  margin-bottom: 70px;
+}
+.types-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--white); letter-spacing: -.03em;
+  line-height: 1.1;
+}
+.types-subtitle {
+  font-size: .95rem; color: rgba(255,210,170,.45);
+  line-height: 1.75; font-weight: 300;
+}
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(212,86,26,.08);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.type-card {
+  background: var(--dark2);
+  padding: 40px 36px;
+  position: relative;
+  transition: background .3s;
+  cursor: default;
+}
+.type-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--spectrum);
+  transform: scaleX(0);
+  transition: transform .35s ease;
+}
+.type-card:hover { background: #22100A; }
+.type-card:hover::after { transform: scaleX(1); }
 
-  .feature-card-img-wrap {
-    position: relative; overflow: hidden;
-    aspect-ratio: 4 / 3;
-  }
+.type-abbr {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1.5rem; letter-spacing: -.02em;
+  background: linear-gradient(135deg,#E8720A,#F5C840);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+.type-name {
+  font-size: .7rem; color: rgba(255,200,140,.40);
+  text-transform: uppercase; letter-spacing: .1em;
+  font-weight: 600; margin-bottom: 18px;
+}
+.type-desc {
+  font-size: .85rem; color: rgba(255,200,140,.42);
+  line-height: 1.7; font-weight: 300;
+}
 
-  .feature-card-img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
-    transition: transform 7s ease;
-  }
+/* ═══ PROCESS section ═══ */
+#process {
+  padding: 120px 80px;
+  background: var(--white);
+  position: relative;
+}
+.process-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  margin-bottom: 80px;
+}
+.process-intro-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: var(--black); letter-spacing: -.03em;
+  line-height: 1.1;
+}
+.process-intro-body {
+  font-size: .95rem; color: #6A4030;
+  line-height: 1.80; font-weight: 300;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: #F0DDD0;
+  border-radius: 18px; overflow: hidden;
+}
+.step-card {
+  background: var(--white);
+  padding: 40px 32px;
+  position: relative;
+  transition: background .3s;
+}
+.step-card:hover { background: var(--dark2); }
+.step-card:hover .step-num  { -webkit-text-fill-color: transparent; }
+.step-card:hover .step-title { color: #F0A820; }
+.step-card:hover .step-desc  { color: rgba(255,200,140,.45); }
+.step-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--spectrum);
+  transform: scaleX(0);
+  transition: transform .35s ease;
+}
+.step-card:hover::after { transform: scaleX(1); }
 
-  .feature-card:hover .feature-card-img { transform: scale(1.05); }
+.step-num {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 3rem; line-height: 1;
+  letter-spacing: -.04em; margin-bottom: 18px;
+  color: rgba(212,86,26,.15);
+  transition: color .3s;
+}
+/* Each step number gets a tint on hover via parent .step-card:hover */
+.step-card:nth-child(1) .step-num { background: linear-gradient(135deg,#8B1A0A,#C43010); -webkit-background-clip:text; background-clip:text; }
+.step-card:nth-child(2) .step-num { background: linear-gradient(135deg,#C43010,#E8720A); -webkit-background-clip:text; background-clip:text; }
+.step-card:nth-child(3) .step-num { background: linear-gradient(135deg,#E8720A,#F0A820); -webkit-background-clip:text; background-clip:text; }
+.step-card:nth-child(4) .step-num { background: linear-gradient(135deg,#F0A820,#F5C840); -webkit-background-clip:text; background-clip:text; }
+.step-card:hover .step-num { -webkit-text-fill-color: transparent; }
 
-  .feature-card-body {
-    padding: 32px 36px 40px;
-    display: flex; flex-direction: column;
-    flex: 1;
-  }
+.step-title {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 1rem; color: var(--black);
+  margin-bottom: 12px; transition: color .3s;
+}
+.step-desc {
+  font-size: .83rem; color: #9A7060;
+  line-height: 1.68; transition: color .3s;
+}
 
-  .feature-card-name {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 1.1rem; letter-spacing: -0.01em;
-    margin-bottom: 14px; line-height: 1.2;
-  }
+/* ═══ CTA ═══ */
+#cta {
+  position: relative; overflow: hidden;
+  padding: 140px 80px;
+  min-height: 560px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cta-bg {
+  position: absolute; inset: 0;
+  background-image: url('package.webp');
+  background-size: cover; background-position: center;
+  filter: brightness(.18) saturate(.4) sepia(.35);
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(13,8,6,.94) 0%, rgba(139,26,10,.10) 100%);
+}
+/* Sunset line top */
+#cta::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--spectrum);
+  opacity: .60; z-index: 3;
+}
+.cta-content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 720px;
+}
+.cta-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(212,86,26,.42);
+  color: var(--orange-lighter);
+  padding: 5px 16px; border-radius: 100px;
+  font-size: .7rem; letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 600;
+  margin-bottom: 24px;
+}
+.cta-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  color: var(--white); letter-spacing: -.04em;
+  line-height: 1.05; margin-bottom: 18px;
+}
+.cta-title span {
+  background: linear-gradient(90deg, #E8720A, #F5C840);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-sub {
+  font-size: 1rem; color: rgba(255,210,170,.62);
+  line-height: 1.75; font-weight: 300; margin-bottom: 40px;
+}
+.cta-perks {
+  display: flex; justify-content: center;
+  gap: 28px; margin-bottom: 48px; flex-wrap: wrap;
+}
+.cta-perk {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,200,140,.58); font-size: .88rem;
+}
+.cta-perk-dot {
+  width: 6px; height: 6px;
+  background: var(--orange-light); border-radius: 50%; flex-shrink: 0;
+}
+.cta-perk strong { color: var(--white); font-weight: 600; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #C43010, #E8720A);
+  color: #fff; padding: 16px 44px; border-radius: 8px;
+  font-weight: 600; font-size: .92rem;
+  text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
+  transition: opacity .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 12px 40px rgba(196,48,16,.42);
+}
+.cta-btn:hover { opacity:.88; transform:translateY(-2px); box-shadow:0 18px 50px rgba(196,48,16,.58); }
+.cta-btn svg { width: 18px; height: 18px; }
 
-  .feature-card-desc {
-    font-size: 1rem; line-height: 1.8;
-    font-weight: 300; flex: 1; margin-bottom: 28px;
-    text-align: justify;
-  }
-
-  /* Dark level variants */
-  .feature-dark { background: var(--dark); }
-  .feature-dark .feature-level-label { color: white; }
-  .feature-dark .feature-level-title { color: var(--white); }
-  .feature-dark .feature-card-name   { color: var(--gold-light); }
-  .feature-dark .feature-card-desc   { color: rgba(255,255,255,0.55); }
-  .feature-dark .feature-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.05); }
-
-  /* Transition level variants */
-  .feature-mid { background: #1a1a1a; }
-  .feature-mid .feature-level-label { color: white; }
-  .feature-mid .feature-level-title { color: var(--white); }
-  .feature-mid .feature-card-name   { color: var(--gold-light); }
-  .feature-mid .feature-card-desc   { color: rgba(255,255,255,0.55); }
-  .feature-mid .feature-card { background: #222; border: 1px solid rgba(255,255,255,0.06); }
-
-  /* Light level variants */
-  .feature-light { background: var(--white); }
-  .feature-light .feature-level-label { color: var(--black); }
-  .feature-light .feature-level-title { color: var(--black); }
-  .feature-light .feature-card-name   { color: var(--gold); }
-  .feature-light .feature-card-desc   { color: #555; }
-  .feature-light .feature-card { background: #f7f7f7; border: 1px solid rgba(0,0,0,0.06); }
-
-  /* Divider between levels */
-  .level-divider {
-    width: 100%; height: 1px;
-  }
-  .level-divider-dark  { background: rgba(255,255,255,0.06); }
-  .level-divider-light { background: rgba(0,0,0,0.07); }
-
-  /* Gradient bridge from dark to light */
-  .feature-bridge {
-    height: 80px;
-    background: linear-gradient(to bottom, #1a1a1a, var(--white));
-  }
-
-  @media (max-width: 900px) {
-    .feature-section { padding: 48px 24px; }
-    .feature-grid { grid-template-columns: 1fr; gap: 16px; }
-    .feature-card-img-wrap { aspect-ratio: 16/9; }
-    .feature-card-body { padding: 24px; }
-  }
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  #what-is, #pkg-types, #process, #cta { padding: 80px 24px; }
+  .what-grid, .types-header, .process-intro { grid-template-columns:1fr; gap:48px; }
+  .types-grid { grid-template-columns:1fr; }
+  .steps-grid { grid-template-columns:1fr 1fr; }
+  .hero-content { padding: 0 24px 56px; }
+}
+@media(max-width:560px){
+  .steps-grid { grid-template-columns:1fr; }
+  .cta-perks { flex-direction:column; align-items:center; gap:16px; }
+}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- NAVBAR (injected by component.js) -->
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-bg" style="background-image:url('/package.webp');"></div>
+  <div class="hero-bg" style="background-image:url('package.webp')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="breadcrumb">
+    <nav class="breadcrumb">
       <a href="index.html">Home</a>
       <span class="breadcrumb-sep">›</span>
       <a href="index.html#services">Services</a>
       <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-cur">Feature Analysis</span>
-    </div>
-    <div class="hero-label">Analysis Division</div>
-    <h1 class="hero-title">Feature<br><em>Analysis</em></h1>
+      <span class="breadcrumb-cur">Package Qualification Testing</span>
+    </nav>
+    <div class="hero-label">Qualification Testing</div>
+    <h1 class="hero-title">Encapsulation<br><em>Package Test</em></h1>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        3-Level Methodology
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        JEDEC JESD22 Compliant
       </div>
       <div class="hero-meta-item">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-        Full Failure Report
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+        ISO-Certified Cleanroom
       </div>
       <div class="hero-meta-item">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803z"/></svg>
-        Visual to SEM / EDX
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        24-hr Turnaround Available
       </div>
     </div>
   </div>
@@ -171,244 +411,215 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>Visual Inspection</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>X-ray</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Optical Microscopy</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Infrared Thermography</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Decapsulation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>SEM</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>EDS / EDX</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Visual Inspection</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>X-ray</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Optical Microscopy</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Infrared Thermography</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Decapsulation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>SEM</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>EDS / EDX</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Preconditioning</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thermal Cycling</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Moisture Sensitivity</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Board-Level Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JESD22</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100 / Q101</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Solder Joint Integrity</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Preconditioning</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thermal Cycling</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Moisture Sensitivity</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Board-Level Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>JEDEC JESD22</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AEC-Q100 / Q101</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Solder Joint Integrity</span>
   </div>
 </div>
 
-<!-- ════ LEVEL 1 — EXTERNAL VISUAL INSPECTION ════ -->
-<div class="feature-dark">
-  <div class="feature-section">
+<!-- ══════════════════════════════════
+     SECTION 1 — WHAT IS
+══════════════════════════════════ -->
+<section id="what-is">
+  <div class="what-grid">
 
-    <div class="feature-level-header reveal">
-      <div class="feature-level-tag">
-        <span class="feature-level-num">Level 1</span>
-        <span class="feature-level-num" style="background:transparent;color:rgba(255,255,255,0.25);font-size:0.8rem;padding:0;border-radius:0;letter-spacing:0.1em;">01 / 03</span>
+    <!-- Text col -->
+    <div class="what-text-col reveal-left">
+      <div class="what-eyebrow">Package Qualification Testing</div>
+      <h2 class="what-title">What is a<br><em>Semiconductor<br>Package?</em></h2>
+
+      <p class="what-body">
+        A semiconductor package is the protective enclosure around a silicon chip. Its main purpose is to shield the chip and its delicate internal connections from environmental stress such as humidity, temperature fluctuations, chemicals, and mechanical pressure.
+      </p>
+      <p class="what-body">
+        In addition to protection, the package connects the chip to the outside world, allowing it to interface with other components or systems through pins, leads, or solder balls (BGA). Essentially, the package ensures that the semiconductor functions reliably while safely integrating into electronic devices.
+      </p>
+
+      <div class="what-pills">
+        <span class="what-pill">Environmental Protection</span>
+        <span class="what-pill">Mechanical Shielding</span>
+        <span class="what-pill">Electrical Interconnect</span>
+        <span class="what-pill">Thermal Management</span>
       </div>
-      <div class="feature-level-divider"></div>
-      <h2 class="feature-level-title">External Visual<br>Inspection</h2>
+
+      <div class="what-btn-row">
+        <a href="#cta" class="btn-quote btn-quote-light">
+          Get a Quote
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="#process" class="btn-quote btn-quote-ghost-dark" style="border-color:rgba(180,80,20,.28);color:#9A7060;">
+          View Process
+        </a>
+      </div>
     </div>
 
-    <div class="feature-grid">
-
-      <div class="feature-card reveal-left">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat1.webp" alt="PCB Inspection" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">PCB and External Component Inspection</h3>
-          <p class="feature-card-desc">We detect burn marks, fractures, discoloration, and any signs of overheating or localized electrical failure. Every external surface is systematically examined under controlled lighting conditions before any further testing proceeds.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="feature-card reveal">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat2.webp" alt="Solder Joint Testing" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Solder Joint Stress Testing</h3>
-          <p class="feature-card-desc">We evaluate solder thickening or cracking caused by mechanical stress that could compromise reliability. Early-stage joint degradation is identified and documented before it propagates into a functional failure in the field.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
+    <!-- Image col -->
+    <div class="what-img-col reveal-right">
+      <div class="what-img-inner">
+        <img src="package.webp" alt="Semiconductor Package Testing">
+        <div class="what-badge">
+          <div class="what-badge-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+          </div>
+          <div class="what-badge-text">
+            <strong>Full Package Qualification</strong>
+            <span>JEDEC · AEC-Q · MIL-STD</span>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="feature-card reveal-right">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat3.webp" alt="Delamination Detection" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Delamination Detection</h3>
-          <p class="feature-card-desc">Through optical and acoustic inspection, we locate internal separations between the molding compound and the substrate. Delamination events that are invisible to the naked eye are mapped and documented with precise location data.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════
+     SECTION 2 — PACKAGE TYPES
+══════════════════════════════════ -->
+<section id="pkg-types">
+  <div class="types-header reveal">
+    <div>
+      <div class="what-eyebrow" style="color:var(--orange-lighter)">What We Test</div>
+      <h2 class="types-title">Package Types<br>We Qualify</h2>
+    </div>
+    <p class="types-subtitle">
+      Our laboratory handles the full spectrum of modern semiconductor package formats — from legacy through-hole designs to advanced 3D-stacked configurations used in cutting-edge applications.
+    </p>
+  </div>
+
+  <div class="types-grid reveal">
+    <div class="type-card">
+      <div class="type-abbr">BGA</div>
+      <div class="type-name">Ball Grid Array</div>
+      <div class="type-desc">High-density I/O packaging used in processors and FPGAs. We evaluate solder ball integrity, warpage, and board-level drop/shock resistance.</div>
+    </div>
+    <div class="type-card">
+      <div class="type-abbr">QFP</div>
+      <div class="type-name">Quad Flat Package</div>
+      <div class="type-desc">Surface-mount package with leads on all four sides. Qualification includes lead co-planarity, solderability, and thermal fatigue cycling.</div>
+    </div>
+    <div class="type-card">
+      <div class="type-abbr">WLP</div>
+      <div class="type-name">Wafer-Level Package</div>
+      <div class="type-desc">Advanced packaging where the chip is packaged at wafer scale. Critical tests include dicing stress, HAST, and board-level reliability under thermal shock.</div>
+    </div>
+    <div class="type-card">
+      <div class="type-abbr">LGA</div>
+      <div class="type-name">Land Grid Array</div>
+      <div class="type-desc">Contact-pad based packages common in RF and power modules. Testing covers contact resistance, mechanical durability, and humidity exposure.</div>
+    </div>
+    <div class="type-card">
+      <div class="type-abbr">SIP</div>
+      <div class="type-name">System in Package</div>
+      <div class="type-desc">Multi-die integrated packages demanding comprehensive qualification: inter-die thermal stress, EMI shielding, and moisture-sensitivity levels (MSL).</div>
+    </div>
+    <div class="type-card">
+      <div class="type-abbr">3D-IC</div>
+      <div class="type-name">3D-Stacked IC</div>
+      <div class="type-desc">Chiplet-based stacked packages with TSV interconnects. Our protocols address inter-layer delamination, thermal resistance, and electromigration under high current density.</div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="level-divider level-divider-dark"></div>
-
-<!-- ════ LEVEL 2 — NON-DESTRUCTIVE ANALYSIS ════ -->
-<div class="feature-mid">
-  <div class="feature-section">
-
-    <div class="feature-level-header reveal">
-      <div class="feature-level-tag">
-        <span class="feature-level-num">Level 2</span>
-        <span class="feature-level-num" style="background:transparent;color:rgba(255,255,255,0.25);font-size:0.8rem;padding:0;border-radius:0;letter-spacing:0.1em;">02 / 03</span>
-      </div>
-      <div class="feature-level-divider"></div>
-      <h2 class="feature-level-title">Non-Destructive<br>Analysis</h2>
+<!-- ══════════════════════════════════
+     SECTION 3 — PROCESS
+══════════════════════════════════ -->
+<section id="process">
+  <div class="process-intro reveal">
+    <div>
+      <div class="what-eyebrow">Our Methodology</div>
+      <h2 class="process-intro-title">How Package<br>Qualification Works</h2>
     </div>
+    <p class="process-intro-body">
+      Every qualification engagement follows a structured four-phase protocol aligned with JEDEC JESD22, AEC-Q100/Q101, and customer-specific acceptance criteria. From initial sample receipt through final data delivery, each step is documented and traceable.
+    </p>
+  </div>
 
-    <div class="feature-grid">
-
-      <div class="feature-card reveal-left">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat4.webp" alt="X-ray Inspection" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">X-ray Inspection</h3>
-          <p class="feature-card-desc">We check internal connections, solder joints, and possible shorts or discontinuities. 2D and CT X-ray imaging provide a non-invasive cross-sectional view of package internals without disturbing the device structure or requiring decapsulation.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="feature-card reveal">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat5.webp" alt="Optical Microscopy" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Optical and Digital Microscopy</h3>
-          <p class="feature-card-desc">We analyze surfaces at high magnification to reveal microdefects invisible to the naked eye. High-resolution optical systems resolve surface cracks, contamination, bonding anomalies, and metal layer irregularities across the entire component area.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="feature-card reveal-right">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat6.webp" alt="Infrared Thermography" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Infrared Thermography</h3>
-          <p class="feature-card-desc">We detect hot spots that indicate electrical leakage or overloading. Thermal maps are generated under active bias conditions, revealing localized power dissipation anomalies and thermally-driven failure precursors before they reach a critical threshold.</p>
-          <a href="#cta" class="btn-quote btn-quote-dark">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
+  <div class="steps-grid reveal">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">Sample Intake &amp; Preconditioning</div>
+      <div class="step-desc">Incoming samples are logged, inspected under optical and X-ray microscopy, then subjected to MSL preconditioning (reflow simulation) to replicate the board-assembly environment before stress testing begins.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">Environmental Stress Testing</div>
+      <div class="step-desc">Accelerated protocols including Thermal Cycling (TC), Highly Accelerated Stress Test (HAST), Temperature-Humidity-Bias (THB), and Unbiased HAST expose packages to worst-case field conditions in compressed timeframes.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">Mechanical &amp; Board-Level Evaluation</div>
+      <div class="step-desc">Solder joint reliability is assessed via thermal cycling on board (CoB), drop/shock testing, and vibration. Warpage and co-planarity measurements ensure assembly compatibility with automated pick-and-place lines.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-title">Analysis &amp; Reporting</div>
+      <div class="step-desc">Post-stress electrical parametric testing isolates any degradation. SEM and cross-section analysis identify failure modes. A comprehensive engineering report with Weibull statistics and corrective action recommendations is delivered.</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Bridge gradient -->
-<div class="feature-bridge"></div>
-
-<!-- ════ LEVEL 3 — DESTRUCTIVE AND LABORATORY ANALYSIS ════ -->
-<div class="feature-light">
-  <div class="feature-section">
-
-    <div class="feature-level-header reveal">
-      <div class="feature-level-tag">
-        <span class="feature-level-num">Level 3</span>
-        <span class="feature-level-num" style="background:transparent;color:rgba(0,0,0,0.2);font-size:0.8rem;padding:0;border-radius:0;letter-spacing:0.1em;">03 / 03</span>
-      </div>
-      <div class="feature-level-divider"></div>
-      <h2 class="feature-level-title">Destructive and<br>Laboratory Analysis</h2>
-    </div>
-
-    <div class="feature-grid">
-
-      <div class="feature-card reveal-left">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat7.webp" alt="Decapsulation" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Chemical or Mechanical Decapsulation</h3>
-          <p class="feature-card-desc">We remove the package to expose the silicon die. Precise chemical or plasma-assisted decapsulation techniques grant access to the die surface, bond wires, and interconnect layers — enabling direct inspection of structures impossible to reach non-destructively.</p>
-          <a href="#cta" class="btn-quote btn-quote-light">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="feature-card reveal">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat8.webp" alt="SEM" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Scanning Electron Microscopy (SEM)</h3>
-          <p class="feature-card-desc">We study microscopic details such as fractures in tracks, metal migration, or contamination. Sub-micron resolution SEM imaging resolves failure sites at the transistor level — providing irrefutable evidence of crack propagation paths, electromigration voids, and dielectric breakdown mechanisms.</p>
-          <a href="#cta" class="btn-quote btn-quote-light">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="feature-card reveal-right">
-        <div class="feature-card-img-wrap">
-          <img class="feature-card-img" src="feat9.webp" alt="EDS/EDX" loading="lazy">
-        </div>
-        <div class="feature-card-body">
-          <h3 class="feature-card-name">Energy Dispersive X-ray Spectroscopy (EDS/EDX)</h3>
-          <p class="feature-card-desc">We determine the chemical composition of residues or contaminants that caused the failure. Element mapping integrated with SEM identifies foreign material, oxide layers, ionic contamination, and alloy phase changes at the exact failure site with full elemental attribution.</p>
-          <a href="#cta" class="btn-quote btn-quote-light">
-            Get Your Quote
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- CTA -->
+<!-- ══════════════════════════════════
+     CTA
+══════════════════════════════════ -->
 <section id="cta">
   <div class="cta-bg"></div>
   <div class="cta-overlay"></div>
   <div class="cta-content reveal">
-    <div class="cta-tag">Request a Quote Today</div>
-    <h2 class="cta-title">Ready to Analyze Your<br><span>Components?</span></h2>
-    <p class="cta-sub">From external visual inspection to SEM and EDX laboratory analysis, our three-level methodology delivers the complete failure picture your engineering team needs — with full traceability and a structured report.</p>
+    <div class="cta-tag">Ready to Qualify Your Package?</div>
+    <h2 class="cta-title">Start Your<br><span>Package Qualification</span><br>Today</h2>
+    <p class="cta-sub">
+      Tell us your package type, target standard, and timeline — our engineers will design a custom qualification flow and return a detailed proposal within 24 hours.
+    </p>
     <div class="cta-perks">
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Non-Destructive First</strong> — Preserve device integrity</span></div>
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Root Cause Analysis</strong> — Down to the atomic level</span></div>
-      <div class="cta-perk"><span class="cta-perk-dot"></span><span><strong>Full Report</strong> — Images, data, and conclusions</span></div>
+      <div class="cta-perk">
+        <div class="cta-perk-dot"></div>
+        <span><strong>24-hr</strong> quote turnaround</span>
+      </div>
+      <div class="cta-perk">
+        <div class="cta-perk-dot"></div>
+        <span><strong>JEDEC &amp; AEC-Q</strong> accredited</span>
+      </div>
+      <div class="cta-perk">
+        <div class="cta-perk-dot"></div>
+        <span><strong>ISO</strong> cleanroom handling</span>
+      </div>
+      <div class="cta-perk">
+        <div class="cta-perk-dot"></div>
+        <span><strong>Full FA</strong> report included</span>
+      </div>
     </div>
     <a href="mailto:info@zactechsemi.com" class="cta-btn">
-      Get Your Quote Now
-      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      Get a Quote
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
     </a>
   </div>
 </section>
 
+<!-- FOOTER (injected by component.js) -->
+
 <script>
-const io = new IntersectionObserver(entries => {
+window.addEventListener('load', () => {
+  document.getElementById('hero').classList.add('loaded');
+});
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
-
-window.addEventListener('load', () => {
-  document.getElementById('hero')?.classList.add('loaded');
-});
+}, { threshold: 0.10 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
 </script>
 <script src="component.js"></script>
 </body>
