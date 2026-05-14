@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aerospace and Defense — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+  /* ══ SPLIT SECTIONS ══ */
+  .ai-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+    overflow: hidden;
+  }
+
+  /* Image side */
+  .ai-img-col {
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-img-col img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 7s ease;
+  }
+  .ai-section:hover .ai-img-col img { transform: scale(1.04); }
+
+  /* Overlay fade toward content */
+  .ai-img-col::after {
+    content: '';
+    position: absolute; inset: 0;
+  }
+  .ai-img-right .ai-img-col::after {
+    background: linear-gradient(to left, transparent 55%, var(--bg-section, #f0f0ee) 100%);
+  }
+  .ai-img-left .ai-img-col::after {
+    background: linear-gradient(to right, transparent 55%, var(--bg-section, #111) 100%);
+  }
+
+  /* Content side */
+  .ai-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px;
+  }
+
+  /* Reversed layout (image right) */
+  .ai-img-right { direction: rtl; }
+  .ai-img-right > * { direction: ltr; }
+
+  /* Section backgrounds */
+  .ai-light  { background: #f0f0ee; --bg-section: #f0f0ee; }
+  .ai-dark   { background: var(--dark); --bg-section: var(--dark); }
+  .ai-dark2  { background: #f0f0ee; --bg-section: #f0f0ee; }
+
+  /* Typography — light bg */
+  .ai-light .ai-tag,
+  .ai-dark2 .ai-tag {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-light);
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 18px;
+  }
+  .ai-light .ai-tag::before,
+  .ai-dark2 .ai-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .ai-light .ai-title,
+  .ai-dark2 .ai-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: var(--black); line-height: 1.1;
+    letter-spacing: -0.03em; margin-bottom: 24px;
+  }
+  .ai-light .ai-title em,
+  .ai-dark2 .ai-title em { font-style: normal; color: var(--gold); }
+  .ai-light .ai-body,
+  .ai-dark2 .ai-body {
+    font-size: 1rem; line-height: 1.85;
+    color: #444; font-weight: 300;
+  }
+  .ai-light .ai-divider,
+  .ai-dark2 .ai-divider {
+    width: 40px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 24px; border-radius: 2px;
+  }
+
+  /* Typography — dark bg */
+  .ai-dark .ai-tag {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: white;
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 18px;
+  }
+  .ai-dark .ai-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .ai-dark .ai-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: #ffffff; line-height: 1.1;
+    letter-spacing: -0.03em; margin-bottom: 24px;
+  }
+  .ai-dark .ai-title em { font-style: normal; color: var(--gold-light); }
+  .ai-dark .ai-body {
+    font-size: 1rem; line-height: 1.85;
+    color: rgba(255,255,255,0.6); font-weight: 300;
+  }
+  .ai-dark .ai-divider {
+    width: 40px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 24px; border-radius: 2px;
+  }
+
+  /* Chip list bullets */
+  .ai-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 28px;
+  }
+  .ai-chip {
+    display: inline-flex; align-items: center;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .ai-chip-dark {
+    background: rgba(160,120,48,0.12);
+    border: 1px solid rgba(160,120,48,0.3);
+    color: white;
+  }
+  .ai-chip-light {
+    background: rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: #333;
+  }
+
+  /* Stat row */
+  .ai-stats {
+    display: flex; gap: 36px; margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .ai-stat { }
+  .ai-stat-val {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.8rem; line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .ai-stat-label {
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-top: 4px; opacity: 0.45;
+  }
+  .ai-dark .ai-stat-val  { color: white; }
+  .ai-dark .ai-stat-label { color: rgba(255, 255, 255, 0.9); }
+  .ai-light .ai-stat-val, .ai-dark2 .ai-stat-val { color: var(--gold); }
+  .ai-light .ai-stat-label, .ai-dark2 .ai-stat-label { color: #555; }
+
+  /* Spectrum accent line at bottom of hero */
+  .ai-hero-line {
+    height: 2px;
+    background: var(--spectrum);
+    opacity: 0.55;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ai-section  { grid-template-columns: 1fr; min-height: auto; }
+    .ai-img-col  { height: 260px; }
+    .ai-img-right { direction: ltr; }
+    .ai-content  { padding: 48px 24px; }
+    .ai-img-col::after { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('/space/aerobg2.jpg'); background-position: center 35%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#markets">Markets</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">Aerospace and Defense</span>
+    </div>
+    <div class="hero-label">Markets</div>
+    <h1 class="hero-title">Aerospace <br><em>& Defense</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+       100% Authorized Stock • Active Devices
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        Licensed Manufacturing • Obsolete Products • Rigorous Testing
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+       Lifecycle Support • Long-Term Inventory
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Aerospace and Defense</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Procurement Requirements</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Qualification Testing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Product Lifecycle</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Supply Solutions</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Authorized Stock</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>End-of-Life (EOL)</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Licensed Manufacturing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Obsolete Products</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Aerospace and Defense<</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Procurement Requirements</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Qualification Testing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Product Lifecycle</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Supply Solutions</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Authorized Stock</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>End-of-Life (EOL)</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Licensed Manufacturing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Obsolete Products</span>
+    
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — Enabling Advanced Computation
+     Light bg / Image LEFT / Content RIGHT
+══════════════════════════════════════ -->
+<div class="ai-section ai-light ai-img-right reveal">
+
+  <!-- Image -->
+  <div class="ai-img-col">
+    <img src="/space/space1.webp" alt="Semiconductor chip for AI computation">
+  </div>
+
+  <!-- Content -->
+  <div class="ai-content">
+    <span class="ai-tag">Aerospace and Defense Procurement</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Extended Program Durations in Defense</h2>
+    <div class="ai-body">
+      <p>The defense and aerospace industries face some of the most challenging procurement and supply chain requirements, long design cycles, and exceptionally long program durations. With more rigorous qualification testing, products from these industries face conditions that are not aligned with the general semiconductor market.</p>
+    </div>
+    <div class="ai-chips">
+      <span class="ai-chip ai-chip-light">Aerospace and Defense</span>
+      <span class="ai-chip ai-chip-light">Procurement Requirements</span>
+      <span class="ai-chip ai-chip-light">Semiconductor Market</span>
+      <span class="ai-chip ai-chip-light">Qualification Testing</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-divider-light"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — Optimized Hardware for AI Workloads
+     Dark bg / Image RIGHT / Content LEFT
+══════════════════════════════════════ -->
+<div class="ai-section ai-dark reveal">
+
+  <!-- Content -->
+  <div class="ai-content">
+    <span class="ai-tag">Lifecycle Support</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Programs for Long-Term Needs</h2>
+    <div class="ai-body">
+      <p>Since our inception, we have understood these challenges and established programs to support inventory throughout product lifecycles. </p>
+    </div>
+
+    <div class="ai-chips" style="margin-top:24px;">
+      <span class="ai-chip ai-chip-dark">Product Lifecycle</span>
+      <span class="ai-chip ai-chip-dark">Inventory Support</span>
+      <span class="ai-chip ai-chip-dark">Supply Solutions</span>
+    </div>
+  </div>
+
+  <!-- Image -->
+  <div class="ai-img-col" style="--bg-section:var(--dark);">
+    <img src="/space/space2.webp" alt="AI Data Center infrastructure">
+  </div>
+
+</div>
+
+<div class="card-divider-dark"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — Accelerating Innovation in AI
+     Light bg / Image RIGHT / Content LEFT
+══════════════════════════════════════ -->
+<div class="ai-section ai-dark2 reveal">
+
+  <!-- Content -->
+  <div class="ai-content">
+    <span class="ai-tag">Overcoming Obsolescence</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Authorized Stock and Licensed Manufacturing</h2>
+    <div class="ai-body">
+      <p>Our partnerships with numerous semiconductor suppliers enable us to:</p>
+      <ul>
+        <li>Provide 100% authorized stock for active and end-of-life (EOL) devices</li>
+        <li>Purchase stock during discontinuation cycles and maintain inventory beyond the last shipment date  </li>
+        <li>Provide licensed manufacturing services for obsolete products for which demand continues after available stock has been depleted</li>
+      </ul>
+    </div>
+    <div class="ai-chips" style="margin-top:28px;">
+      <span class="ai-chip ai-chip-light">Authorized Stock</span>
+      <span class="ai-chip ai-chip-light">End-of-Life (EOL)</span>
+      <span class="ai-chip ai-chip-light">Licensed Manufacturing</span>
+      <span class="ai-chip ai-chip-light">Obsolete Products</span>
+
+    </div>
+  </div>
+
+  <!-- Image -->
+  <div class="ai-img-col">
+    <img src="/space/space3.webp4" alt="BGA chip held by technician">
+  </div>
+
+</div>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+</script>
+<script src="component.js"></script>
+</body>
+</html>

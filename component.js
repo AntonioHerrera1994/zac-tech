@@ -27,7 +27,6 @@ nav.scrolled {
   letter-spacing: -.02em; text-decoration: none;
 }
 .zt-logo span {
-  /* Degradado naranja-dorado en la parte acentuada */
   background: linear-gradient(90deg, #E8720A, #F5C840);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,22 +44,6 @@ nav.scrolled {
 }
 .zt-nav-links a:hover,
 .zt-nav-links a.active { color: #F0A820; }
-
-/* CTA button */
-.zt-nav-cta {
-  background: linear-gradient(135deg, #C43010, #E8720A) !important;
-  color: #fff !important;
-  padding: 9px 22px; border-radius: 4px;
-  font-weight: 500 !important;
-  box-shadow: 0 4px 18px rgba(196, 48, 16, 0.35);
-  transition: opacity .2s !important, transform .2s !important, box-shadow .2s !important;
-}
-.zt-nav-cta:hover {
-  opacity: .88 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 8px 28px rgba(196, 48, 16, 0.50) !important;
-  -webkit-text-fill-color: #fff !important; /* fixes gradient-text bleed */
-}
 
 /* ── Hamburger (mobile) ── */
 .zt-nav-hamburger {
@@ -94,10 +77,6 @@ nav.scrolled {
   transition: color .2s;
 }
 .zt-mobile-menu a:hover { color: #F0A820; }
-.zt-mobile-menu .zt-nav-cta {
-  font-size: 1rem !important;
-  padding: 14px 40px; border-radius: 6px;
-}
 
 @media (max-width: 768px) {
   nav { padding: 0 24px; }
@@ -170,34 +149,64 @@ nav.scrolled {
 }
 
 .logo-nav img{
-width:170px;
-height:auto;
+  width:170px;
+  height:auto;
 }
   </style>
 
   <nav id="zt-navbar">
-  <div class="logo-nav">
-    <a href="index.html" class="zt-logo"><img src="/logo2.png"/></a>
+    <div class="logo-nav">
+      <a href="index.html" class="zt-logo"><img src="/logo2.png"/></a>
     </div>
     <ul class="zt-nav-links">
-      <li><a href="index.html" data-page="home">Home</a></li>
-    <li class="zt-has-dropdown">
-  <a href="index.html#services" data-page="services">
-    Services
-    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-  </a>
-  <ul class="zt-dropdown">
-    <li><a href="reliability-tests.html">Reliability Tests</a></li>
-    <li><a href="package-qualification-testing.html">Package Qualification Testing</a></li>
-    <li><a href="esd-latchup-testing.html">ESD & Latch-Up</a></li>
-    <li><a href="failure-analysis.html">Failure Analysis</a></li>
-    <li><a href="forensic-services.html">Forensic Services</a></li>
-  </ul>
-</li>
-      <li><a href="index.html#innovation" data-page="about">About</a></li>
-      <li><a href="index.html#differentiators" data-page="why">Why Us</a></li>
-      <li><a href="index.html#locations" data-page="locations">Locations</a></li>
-      <li><a href="#cta" class="zt-nav-cta">Get a Quote</a></li>
+
+      <!-- Services -->
+      <li class="zt-has-dropdown">
+        <a href="index.html#services" data-page="services">
+          Services
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <ul class="zt-dropdown">
+          <li><a href="reliability-tests.html">Reliability Tests</a></li>
+          <li><a href="package-qualification-testing.html">Package Qualification Testing</a></li>
+          <li><a href="esd-latchup-testing.html">ESD &amp; Latch-Up</a></li>
+          <li><a href="failure-analysis.html">Failure Analysis</a></li>
+          <li><a href="forensic-services.html">Forensic Services</a></li>
+        </ul>
+      </li>
+
+      <!-- Markets -->
+      <li class="zt-has-dropdown">
+        <a href="#markets" data-page="markets">
+          Markets
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <ul class="zt-dropdown">
+          <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
+          <li><a href="maerospace-defense.html">Aerospace and Defense</a></li>
+          <li><a href="markets-automotive.html">Automotive</a></li>
+          <li><a href="markets-industrial.html">Industrial</a></li>
+          <li><a href="markets-medical.html">Medical</a></li>
+          <li><a href="markets-transportation.html">Transportation</a></li>
+        </ul>
+      </li>
+
+      <!-- About -->
+      <li class="zt-has-dropdown">
+        <a href="#about" data-page="about">
+          About
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <ul class="zt-dropdown">
+          <li><a href="group-services.html">Tech MeoL Group Services</a></li>
+          <li><a href="policy.html">Policy</a></li>
+          <li><a href="subscribe.html">Subscribe</a></li>
+        </ul>
+      </li>
+
+      <!-- Contact -->
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+
     </ul>
     <button class="zt-nav-hamburger" id="zt-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -205,12 +214,10 @@ height:auto;
   </nav>
 
   <div class="zt-mobile-menu" id="zt-mobile-menu">
-    <a href="index.html">Home</a>
     <a href="index.html#services">Services</a>
-    <a href="index.html#innovation">About</a>
-    <a href="index.html#differentiators">Why Us</a>
-    <a href="index.html#locations">Locations</a>
-    <a href="#cta" class="zt-nav-cta">Get a Quote</a>
+    <a href="#markets">Markets</a>
+    <a href="#about">About</a>
+    <a href="contact.html">Contact</a>
   </div>
   `;
 
@@ -227,7 +234,7 @@ height:auto;
   font-family: 'DM Sans', sans-serif;
 }
 
-/* Glow — ahora con tono ámbar-naranja cálido */
+/* Glow */
 .zt-footer-glow {
   position: absolute; top: -120px; left: 50%;
   transform: translateX(-50%);
@@ -303,7 +310,6 @@ height:auto;
 .zt-footer-col h5 {
   font-family: 'Syne', sans-serif; font-size: .75rem;
   font-weight: 700;
-  /* Subtle sunset tint on headings */
   color: rgba(240, 168, 32, 0.40);
   text-transform: uppercase; letter-spacing: .12em; margin-bottom: 20px;
 }
@@ -408,24 +414,24 @@ height:auto;
       </div>
 
       <div class="zt-footer-col">
-        <h5>Services</h5>
+        <h5>Markets</h5>
         <ul>
-          <li><a href="reliability-tests.html">Reliability Tests</a></li>
-          <li><a href="package.html">Package Qualification</a></li>
-          <li><a href="esd.html">ESD &amp; Latch-Up</a></li>
-          <li><a href="feature.html">Feature Analysis</a></li>
-          <li><a href="forensic.html">Forensic Services</a></li>
+          <li><a href="markets-ai.html">Artificial Intelligence</a></li>
+          <li><a href="markets-aerospace.html">Aerospace and Defense</a></li>
+          <li><a href="markets-automotive.html">Automotive</a></li>
+          <li><a href="markets-industrial.html">Industrial</a></li>
+          <li><a href="markets-medical.html">Medical</a></li>
+          <li><a href="markets-transportation.html">Transportation</a></li>
         </ul>
       </div>
 
       <div class="zt-footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#innovation">About Us</a></li>
-          <li><a href="index.html#locations">Locations</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="group-services.html">Tech MeoL Group Services</a></li>
+          <li><a href="policy.html">Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
@@ -459,7 +465,6 @@ height:auto;
     if (navPlaceholder) {
       navPlaceholder.outerHTML = NAV_HTML;
     } else {
-      // If no placeholder, prepend to body
       document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
     }
 
@@ -478,7 +483,7 @@ height:auto;
      NAV BEHAVIOUR
   ══════════════════════════════════════ */
   function initNav() {
-    const navbar = document.getElementById('zt-navbar');
+    const navbar    = document.getElementById('zt-navbar');
     const hamburger = document.getElementById('zt-hamburger');
     const mobileMenu = document.getElementById('zt-mobile-menu');
 
@@ -486,7 +491,6 @@ height:auto;
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
-    // Run once on load
     navbar.classList.toggle('scrolled', window.scrollY > 60);
 
     // Hamburger toggle
@@ -495,7 +499,6 @@ height:auto;
         hamburger.classList.toggle('open');
         mobileMenu.classList.toggle('open');
       });
-      // Close on link click
       mobileMenu.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
           hamburger.classList.remove('open');
@@ -504,10 +507,13 @@ height:auto;
       });
 
       window.addEventListener('scroll', () => {
-  const nav = document.getElementById('zt-navbar');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
+        const nav = document.getElementById('zt-navbar');
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+      window.addEventListener('load', () => {
+        const hero = document.getElementById('hero');
+        if (hero) hero.classList.add('loaded');
+      });
     }
 
     // Active link highlight based on current filename
@@ -519,16 +525,12 @@ window.addEventListener('load', () => document.getElementById('hero').classList.
         link.classList.add('active');
       }
     });
-    
   }
 
-  // Run when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inject);
   } else {
     inject();
   }
-
-
 
 })();
