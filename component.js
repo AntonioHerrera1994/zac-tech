@@ -10,7 +10,7 @@
 ═══════════════════════════════════ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0 60px; height: 72px;
+  padding: 0 60px; height: 75px;
   display: flex; align-items: center; justify-content: space-between;
   transition: background .4s, backdrop-filter .4s;
 }
@@ -168,10 +168,17 @@ nav.scrolled {
   background: rgba(212, 86, 26, 0.12);
   color: #F0A820 !important;
 }
+
+.logo-nav img{
+width:170px;
+height:auto;
+}
   </style>
 
   <nav id="zt-navbar">
-    <a href="index.html" class="zt-logo">Zac<span>Tech</span> Semi</a>
+  <div class="logo-nav">
+    <a href="index.html" class="zt-logo"><img src="/logo2.png"/></a>
+    </div>
     <ul class="zt-nav-links">
       <li><a href="index.html" data-page="home">Home</a></li>
     <li class="zt-has-dropdown">
