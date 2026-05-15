@@ -167,11 +167,11 @@ nav.scrolled {
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
         </a>
         <ul class="zt-dropdown">
-          <li><a href="reliability-tests.html">Reliability Tests</a></li>
-          <li><a href="package-qualification-testing.html">Package Qualification Testing</a></li>
+          <li><a href="/reliability-tests">Reliability Tests</a></li>
+          <li><a href="/package-qualification-testing">Package Qualification Testing</a></li>
           <li><a href="/esd-latchup-testing">ESD &amp; Latch-Up</a></li>
           <li><a href="/failure-analysis">Failure Analysis</a></li>
-          <li><a href="forensic-services.html">Forensic Services</a></li>
+          <li><a href="/forensic-services">Forensic Services</a></li>
         </ul>
       </li>
 
@@ -185,9 +185,9 @@ nav.scrolled {
           <li><a href="/artificial-intelligence">Artificial Intelligence</a></li>
           <li><a href="/aerospace-defense">Aerospace and Defense</a></li>
           <li><a href="/automotive">Automotive</a></li>
-          <li><a href="industrial.html">Industrial</a></li>
-          <li><a href="medical.html">Medical</a></li>
-          <li><a href="transportation.html">Transportation</a></li>
+          <li><a href="/industrial">Industrial</a></li>
+          <li><a href="/medical">Medical</a></li>
+          <li><a href="/transportation">Transportation</a></li>
         </ul>
       </li>
 
