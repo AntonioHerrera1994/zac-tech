@@ -191,20 +191,16 @@ nav.scrolled {
         </ul>
       </li>
 
-      <!-- About -->
-      <li class="zt-has-dropdown">
-        <a href="#about" data-page="about">
-          About
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-        </a>
-        <ul class="zt-dropdown">
-          <li><a href="policy.html">Policy</a></li>
-
-        </ul>
-      </li>
+          <!-- About -->
+      <li><a href="about-us.html" data-page="about-us">About Us</a></li>
 
           <!-- Warpage -->
       <li><a href="warpage.html" data-page="warpage">Warpage</a></li>
+
+      <!-- Warpage -->
+      <li><a href="patronage.html" data-page="patronage">Patronage</a></li>
+
+
       <!-- Contact -->
       <li><a href="contact.html" data-page="contact">Contact</a></li>
 

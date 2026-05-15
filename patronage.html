@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZ9V30RMZR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZ9V30RMZR');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESurplus Inc. — Fueling Futures Through Circular Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="patronage.css">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESurplus Inc. — Patronage</title>
+  <!-- tus fuentes y estilos van aquí -->
+  <style>
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.10);
+      border-radius: 100px;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      padding: 3px;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    #nav.solid .lang-toggle {
+      background: rgba(19,26,20,0.07);
+      border-color: rgba(19,26,20,0.14);
+    }
+    .lang-btn {
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: none;
+      font-family: inherit;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      transition: all .22s ease;
+    }
+    #nav.solid .lang-btn { color: rgba(19,26,20,0.45); }
+    .lang-btn.active {
+      background: var(--green-500, #2E8B57);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(46,139,87,.35);
+    }
+    /* suaviza el cambio de texto */
+    [data-i18n], [data-i18n-html] {
+      transition: opacity .18s ease;
+    }
+    body.lang-switching [data-i18n],
+    body.lang-switching [data-i18n-html] {
+      opacity: 0;
+    }
+
+    .nav-brand img{
+  width:170px;
+  height:auto;
+}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════
+     NAVIGATION
+══════════════════════════ -->
+<nav id="nav">
+  <div class="nav-brand">
+      <a href="/">
+   <img src="/logo2.png"/>
+   </a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#mission"  data-i18n="nav.mission">Mission</a></li>
+    <li><a href="#impact"   data-i18n="nav.impact">Impact</a></li>
+    <li><a href="#video"    data-i18n="nav.story">Our Story</a></li>
+    <li><a href="#gallery"  data-i18n="nav.gallery">Gallery</a></li>
+    <li><a href="#uaz">UAZ</a></li>
+    <li><a href="/" data-i18n="nav.itest">Zac Tech Semi</a></li>
+    <li><a href="#contact" class="nav-pill" data-i18n="nav.patron">Become a Patron</a></li>
+  </ul>
+
+  <!-- ── LANGUAGE TOGGLE ── -->
+  <div class="lang-toggle" id="langToggle">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn"        data-lang="es">ES</button>
+  </div>
+
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#mission" class="mm-link" data-i18n="nav.mission">Mission</a>
+  <a href="#impact"  class="mm-link" data-i18n="nav.impact">Impact</a>
+  <a href="#video"   class="mm-link" data-i18n="nav.story">Our Story</a>
+  <a href="#gallery" class="mm-link" data-i18n="nav.gallery">Gallery</a>
+  <a href="#uaz"     class="mm-link">UAZ</a>
+  <li><a href="/" data-i18n="nav.itest">Zac Tech Semi</a></li>
+  <a href="#contact" class="mm-link" data-i18n="nav.patron">Become a Patron</a>
+  <!-- toggle también en mobile -->
+  <div style="display:flex;gap:10px;margin-top:8px;">
+    <button class="lang-btn active" data-lang="en" style="background:var(--green-500,#2E8B57);color:#fff;border:none;padding:8px 22px;border-radius:100px;font-weight:700;font-size:.85rem;cursor:pointer;">EN</button>
+    <button class="lang-btn"        data-lang="es" style="background:rgba(255,255,255,.1);color:#2E8B57;border:none;padding:8px 22px;border-radius:100px;font-weight:700;font-size:.85rem;cursor:pointer;">ES</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     HERO
+══════════════════════════ -->
+<header class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      <span data-i18n="hero.eyebrow">Social Impact · México · Zacatecas</span>
+    </div>
+
+    <h1 class="hero-title" data-i18n-html="hero.title">
+      Turning <em>surplus<svg viewBox="0 0 200 12" fill="none" aria-hidden="true"><path d="M2 9 C50 2,150 2,198 9" stroke="#2E8B57" stroke-width="3" stroke-linecap="round"/></svg></em><br>into<br>scholarship.
+    </h1>
+
+    <p class="hero-body" data-i18n="hero.body">
+      Every year, corporations discard millions in industrial surplus. We redirect it — into the hands of brilliant engineering students at UAZ who have the talent, but simply need the tools.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Ready to Give Back?</a>
+      <a href="#mission" class="hero-link">
+        <span data-i18n="hero.cta2">See how it works</span>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats-row">
+      <div class="hero-stat-item">
+        <div class="hero-stat-num"><span class="counter" data-to="500">0</span><sup>+</sup></div>
+        <div class="hero-stat-lbl" data-i18n="hero.stat1">Tons Redirected</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-num"><span class="counter" data-to="100">0</span><sup>+</sup></div>
+        <div class="hero-stat-lbl" data-i18n="hero.stat2">Students Supported</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">$<span class="counter" data-to="0">0</span></div>
+        <div class="hero-stat-lbl" data-i18n="hero.stat3">Cost to Student</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-img"></div>
+    <div class="hero-right-pattern"></div>
+    <div class="hero-right-svg">
+      <svg class="hero-illo" viewBox="0 0 560 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="280" cy="240" r="165" stroke="rgba(163,216,176,0.18)" stroke-width="2"/>
+        <circle cx="280" cy="240" r="210" stroke="rgba(163,216,176,0.10)" stroke-width="2"/>
+        <rect x="60" y="170" width="100" height="130" rx="10" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+        <text x="95" y="142" text-anchor="middle" font-size="16">🏭</text>
+        <text x="110" y="285" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-weight="600">CORPORATE</text>
+        <text x="110" y="298" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.35)" font-family="sans-serif" font-weight="600">SURPLUS</text>
+        <rect x="400" y="160" width="105" height="140" rx="10" fill="rgba(255,255,255,0.09)" stroke="rgba(163,216,176,0.2)" stroke-width="1.5"/>
+        <rect x="410" y="180" width="85" height="24" rx="4" fill="rgba(163,216,176,0.12)"/>
+        <text x="452" y="197" text-anchor="middle" font-size="10" fill="rgba(163,216,176,0.7)" font-family="sans-serif" font-weight="700">U·A·Z</text>
+        <text x="452" y="320" text-anchor="middle" font-size="11" fill="rgba(163,216,176,0.5)" font-family="sans-serif" font-weight="600">UNIVERSIDAD</text>
+        <text x="452" y="333" text-anchor="middle" font-size="11" fill="rgba(163,216,176,0.5)" font-family="sans-serif" font-weight="600">AUTÓNOMA</text>
+        <text x="452" y="348" text-anchor="middle" font-size="10" fill="rgba(163,216,176,0.4)" font-family="sans-serif">ZACATECAS</text>
+        <circle cx="280" cy="218" r="42" fill="rgba(255,255,255,0.07)" stroke="rgba(163,216,176,0.25)" stroke-width="2"/>
+        <text x="280" y="234" text-anchor="middle" font-size="42">🎓</text>
+        <text x="280" y="286" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-weight="700">REVERSE ENGINEERING</text>
+        <text x="280" y="302" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.4)" font-family="sans-serif">FOR THE FUTURE</text>
+        <path d="M162 235 Q205 235 236 235" stroke="rgba(163,216,176,0.45)" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+        <path d="M324 235 Q360 235 398 235" stroke="rgba(74,156,201,0.45)" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrB)"/>
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="rgba(163,216,176,0.6)"/></marker>
+          <marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="rgba(74,156,201,0.6)"/></marker>
+        </defs>
+        <rect x="195" y="90" width="80" height="36" rx="9" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <text x="235" y="113" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.6)" font-family="sans-serif">♻️ Reuse</text>
+        <rect x="285" y="60" width="88" height="36" rx="9" fill="rgba(163,216,176,0.12)" stroke="rgba(163,216,176,0.2)" stroke-width="1"/>
+        <text x="329" y="83" text-anchor="middle" font-size="12" fill="rgba(163,216,176,0.8)" font-family="sans-serif">🌱 Impact</text>
+        <rect x="200" y="360" width="95" height="36" rx="9" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <text x="248" y="383" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">🔬 R&amp;D Lab</text>
+        <rect x="318" y="370" width="108" height="36" rx="9" fill="rgba(74,156,201,0.1)" stroke="rgba(74,156,201,0.2)" stroke-width="1"/>
+        <text x="372" y="393" text-anchor="middle" font-size="12" fill="rgba(74,156,201,0.75)" font-family="sans-serif">📦 → 🎓 Talent</text>
+      </svg>
+    </div>
+    <div class="hero-badge-float hero-badge-1">
+      <div class="badge-icon g">♻️</div>
+      <div class="badge-txt">
+        <h5 data-i18n="badge1.title">Circular Economy</h5>
+        <p data-i18n="badge1.sub">Zero waste. Full circle.</p>
+      </div>
+    </div>
+    <div class="hero-badge-float hero-badge-2">
+      <div class="badge-icon b">🎓</div>
+      <div class="badge-txt">
+        <h5 data-i18n="badge2.title">UAZ Partner</h5>
+        <p data-i18n="badge2.sub">Zacatecas, México</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ══ MISSION ══ -->
+<section class="section" id="mission">
+  <div class="container">
+    <div class="story-grid">
+      <div class="reveal-left">
+        <div class="story-cards">
+          <div class="stc stc-1">
+            <div class="stc-1-icon">♻️</div>
+            <p class="stc-1-quote" data-i18n="mission.quote">"We don't see waste or scrap — we see the raw materials for the next generation of innovators."</p>
+            <p class="stc-1-credit" data-i18n="mission.credit">— ESurplus Inc. Team</p>
+          </div>
+          <div class="stc stc-2">
+            <div class="stc-2-num">3</div>
+            <div class="stc-2-lbl" data-i18n="mission.phases">Phases of the Circular Education Model</div>
+          </div>
+          <div class="stc stc-3">
+            <div class="stc-3-ico">🌱</div>
+            <div class="stc-3-lbl" data-i18n="mission.approach">Education-First Approach</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-content reveal-right">
+        <div class="tag" data-i18n="mission.tag">Our Mission</div>
+        <h2><span data-i18n="mission.h2a">Bridging the gap between</span> <em data-i18n="mission.h2em">surplus</em> <span data-i18n="mission.h2b">and opportunity</span></h2>
+        <p data-i18n="mission.body">At the intersection of industrial efficiency and educational equity lies a missed opportunity. Every year, corporations grapple with outdated technology, industrial scrap, and warehouse overflow. At ESurplus Inc., we redirect it into the hands of students eager to build tomorrow.</p>
+        <div class="story-pillars">
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+            <div class="pillar-body">
+              <h4 data-i18n="pillar1.title">Surplus Gets a Second Life</h4>
+              <p data-i18n="pillar1.body">We take the headache out of managing warehouse overflow and industrial scrap by turning it into something meaningful.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+            <div class="pillar-body">
+              <h4 data-i18n="pillar2.title">Students at UAZ Benefit Directly</h4>
+              <p data-i18n="pillar2.body">Your surplus goes into the hands of engineering students who have the talent but lack the resources to experiment and learn.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+            <div class="pillar-body">
+              <h4 data-i18n="pillar3.title">A Cleaner Planet</h4>
+              <p data-i18n="pillar3.body">By partnering with us, you choose a path for your materials that favors education and reuse over a landfill or a furnace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT ══ -->
+<section class="section impact-band" id="impact">
+  <div class="container impact-inner">
+    <div class="tag reveal" style="margin:0 auto;justify-content:center;" data-i18n="impact.tag">Our Impact</div>
+    <h2 class="reveal d1"><span data-i18n="impact.h2a">Numbers that</span> <em data-i18n="impact.h2em">speak</em> <span data-i18n="impact.h2b">for themselves</span></h2>
+    <div class="impact-cards">
+      <div class="icard reveal d1">
+        <div class="icard-icon g"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+        <div class="icard-num"><span class="counter" data-to="500">0</span><span>+</span></div>
+        <div class="icard-lbl" data-i18n="impact.c1">Tons of surplus redirected to education</div>
+      </div>
+      <div class="icard reveal d2">
+        <div class="icard-icon b"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+        <div class="icard-num"><span class="counter" data-to="100">0</span><span>+</span></div>
+        <div class="icard-lbl" data-i18n="impact.c2">University students supported in Zacatecas</div>
+      </div>
+      <div class="icard reveal d3">
+        <div class="icard-icon g"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+        <div class="icard-num"><span class="counter" data-to="25">0</span><span>+</span></div>
+        <div class="icard-lbl" data-i18n="impact.c3">Corporate partners who trust our model</div>
+      </div>
+      <div class="icard reveal d4">
+        <div class="icard-icon gd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5"/>
+  <polyline points="6,10 9,13 14,7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+        <div class="icard-num">$<span class="counter" data-to="0">0</span></div>
+        <div class="icard-lbl" data-i18n="impact.c4">Cost to the student — fully free access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="section how-section" id="how">
+  <div class="how-bg-dots"></div>
+  <div class="how-bg-glow"></div>
+  <div class="container">
+    <div class="tag light reveal" data-i18n="how.tag">The Circular Model</div>
+    <h2 class="reveal d1"><span data-i18n="how.h2a">From corporate warehouse</span> <em data-i18n="how.h2em">to university classroom</em></h2>
+    <p class="reveal d2" data-i18n="how.body">We have pioneered a unique ecosystem that turns your surplus into a high-impact R&D pipeline, administered with precision and care.</p>
+    <div class="how-steps">
+      <div class="how-connector"></div>
+      <div class="how-step reveal d1">
+        <div class="how-step-num">01</div>
+        <h3 data-i18n="how.s1.title">Corporate Donation</h3>
+        <p data-i18n="how.s1.body">Your company transfers surplus, decommissioned tech, or industrial scrap to ESurplus Inc. — no extra logistical burden on your end.</p>
+      </div>
+      <div class="how-step reveal d2">
+        <div class="how-step-num">02</div>
+        <h3 data-i18n="how.s2.title">Sort & Prepare</h3>
+        <p data-i18n="how.s2.body">Our specialized team meticulously classifies, cleans, and prepares each material — determining its educational potential or resale value.</p>
+      </div>
+      <div class="how-step reveal d3">
+        <div class="how-step-num">03</div>
+        <h3 data-i18n="how.s3.title">Education in Action</h3>
+        <p data-i18n="how.s3.body">Materials reach UAZ students who deconstruct, analyze, and innovate — learning hands-on at the pace of the global tech market.</p>
+      </div>
+      <div class="how-step reveal d4">
+        <div class="how-step-num">04</div>
+        <h3 data-i18n="how.s4.title">Impact & Return</h3>
+        <p data-i18n="how.s4.body">Salvageable components re-enter the economy via our auction platforms. The cycle closes. The planet wins. The future wins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO ══ -->
+<section class="section video-section" id="video">
+  <div class="container">
+    <div class="video-layout">
+      <div class="reveal-left">
+        <div class="tag" data-i18n="video.tag">See It in Action</div>
+        <h2><span data-i18n="video.h2a">One picture is worth</span> <em data-i18n="video.h2em">a thousand futures</em></h2>
+        <p data-i18n="video.body">Watch how UAZ students transform what was once corporate scrap into real research projects that prepare them for the global workforce.</p>
+        <a href="#contact" class="btn btn-outline" data-i18n="video.cta">Support a Student</a>
+      </div>
+      <div class="reveal-right">
+        <div style="background:var(--paper);border-radius:20px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.06);">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:#E74C3C;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#F39C12;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#27AE60;"></div>
+            <span style="font-size:.78rem;color:var(--ink-35);margin-left:8px;" data-i18n="video.hint">Our Impact Story</span>
+          </div>
+          <p style="font-size:.82rem;color:var(--ink-60);line-height:1.6;" data-i18n="video.note">Add your video here by replacing the source below.</p>
+        </div>
+      </div>
+    </div>
+    <div class="video-stage reveal" id="videoStage">
+      <video id="miVideo" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata"
+        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:26px;">
+        <source src="/video2.mp4#t=0.5" type="video/mp4"/>
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="tag" data-i18n="gallery.tag">Gallery</div>
+      <h2><span data-i18n="gallery.h2a">Change captured</span> <em data-i18n="gallery.h2em">in pictures</em></h2>
+      <p data-i18n="gallery.body">Every photograph tells the story of a material that found new purpose — and a young mind that found its path.</p>
+    </div>
+    <div class="gallery-mosaic">
+      <div class="gitem reveal d1"><div class="gitem-inner gc1"><img src="/6.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g1">UAZ Laboratory · Active Deconstruction</div></div></div>
+      <div class="gitem reveal d2"><div class="gitem-inner gc2"><img src="/2.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g2">ESurplus Warehouse · Classification</div></div></div>
+      <div class="gitem reveal d3"><div class="gitem-inner gc3"><img src="/3.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g3">Students in Action · Innovation</div></div></div>
+      <div class="gitem reveal d4"><div class="gitem-inner gc4"><img src="/4.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g4">Partner Companies · Patronage</div></div></div>
+      <div class="gitem reveal d5"><div class="gitem-inner gc5"><img src="/5.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g5">Student Achievements · R&D Results</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="services-split">
+      <div class="services-left reveal-left">
+        <div class="tag" data-i18n="srv.tag">More Than Just Hauling</div>
+        <h2><span data-i18n="srv.h2a">What we bring to the</span> <em data-i18n="srv.h2em">partnership</em></h2>
+        <p data-i18n="srv.body">When you open your doors to ESurplus Inc., you aren't just hiring a warehouse or scrap service. You are becoming a patron of progress.</p>
+        <a href="mailto:patronage@esurplusinc.com" class="btn btn-primary" style="margin-top:32px;" data-i18n="srv.cta">Contact Our Team</a>
+      </div>
+      <div class="services-list reveal-right">
+        <div class="sitem"><div class="sitem-num">01</div><div class="sitem-body"><h4 data-i18n="s1.title">Giving Surplus a Second Life</h4><p data-i18n="s1.body">We take the headache out of managing warehouse overflow and industrial scrap by turning it into something deeply meaningful.</p></div></div>
+        <div class="sitem"><div class="sitem-num">02</div><div class="sitem-body"><h4 data-i18n="s2.title">Supporting Students at UAZ</h4><p data-i18n="s2.body">Your surplus goes directly into the hands of engineering students who have the talent but lack the resources to experiment and learn.</p></div></div>
+        <div class="sitem"><div class="sitem-num">03</div><div class="sitem-body"><h4 data-i18n="s3.title">Full Logistics — From Cleaning to Auctions</h4><p data-i18n="s3.body">From professional warehouse cleaning to eBay resale and auction platforms, we handle every step so you don't have to.</p></div></div>
+        <div class="sitem"><div class="sitem-num">04</div><div class="sitem-body"><h4 data-i18n="s4.title">Real World R&D for Students</h4><p data-i18n="s4.body">Students don't just "recycle" your items — they deconstruct them to understand how they work, gaining career-defining experience.</p></div></div>
+        <div class="sitem"><div class="sitem-num">05</div><div class="sitem-body"><h4 data-i18n="s5.title">A Partnership of Patronage</h4><p data-i18n="s5.body">Working with ESurplus Inc. means your company is directly fueling international educational equity and global workforce readiness.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ UAZ ══ -->
+<section class="uaz-section" id="uaz">
+  <div class="container">
+    <div class="uaz-grid">
+      <div class="uaz-card reveal-left">
+        <div class="uaz-emblem">🎓</div>
+        <h3 data-i18n-html="uaz.title">Universidad Autónoma<br>de Zacatecas</h3>
+        <h4 data-i18n="uaz.sub">Our Academic Partner in Mexico</h4>
+        <p data-i18n="uaz.body">UAZ is home to brilliant engineering minds who are eager to innovate but historically lacked the physical resources to experiment, build, and learn at the scale the global market demands.</p>
+        <div class="uaz-stats">
+          <div class="ustat"><div class="ustat-num">100+</div><div class="ustat-lbl" data-i18n="uaz.s1">Students in the program</div></div>
+          <div class="ustat"><div class="ustat-num">$0</div><div class="ustat-lbl" data-i18n="uaz.s2">Cost per student</div></div>
+          <div class="ustat"><div class="ustat-num">3</div><div class="ustat-lbl" data-i18n="uaz.s3">Core learning phases</div></div>
+          <div class="ustat"><div class="ustat-num">∞</div><div class="ustat-lbl" data-i18n="uaz.s4">Potential unlocked</div></div>
+        </div>
+      </div>
+      <div class="uaz-content reveal-right">
+        <div class="tag" data-i18n="uaz.ltag">What Students Learn</div>
+        <h2><span data-i18n="uaz.lh2a">Reverse Engineering</span> <em data-i18n="uaz.lh2em">for the Future</em></h2>
+        <p data-i18n="uaz.lbody">Under ESurplus guidance, UAZ students engage in hands-on R&D that would otherwise be cost-prohibitive. They emerge with the experience necessary to enter the global tech workforce.</p>
+        <div class="learn-list">
+          <div class="learn-item"><div class="learn-dot"></div><div><h5 data-i18n="learn1.title">Deconstructing</h5><p data-i18n="learn1.body">Understanding the intricate architecture of modern technology by taking it apart piece by piece.</p></div></div>
+          <div class="learn-item"><div class="learn-dot"></div><div><h5 data-i18n="learn2.title">Analyzing</h5><p data-i18n="learn2.body">Identifying materials and components that can be diverted back into the circular economy through specialized auction platforms.</p></div></div>
+          <div class="learn-item"><div class="learn-dot"></div><div><h5 data-i18n="learn3.title">Innovating</h5><p data-i18n="learn3.body">Using surplus to conduct R&D that gives them the hands-on experience necessary to compete in the global tech workforce.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-left reveal-left">
+        <div class="tag" data-i18n="faq.tag">Common Questions</div>
+        <h2><span data-i18n="faq.h2a">Everything you need to</span> <em data-i18n="faq.h2em">know</em></h2>
+        <p data-i18n="faq.body">Have more questions? Reach out to our team directly. We're transparent about every step of the process.</p>
+        <a href="mailto:patronage@esurplusinc.com" class="btn btn-outline" data-i18n="faq.cta">Ask Us Anything</a>
+      </div>
+      <div class="accordion reveal-right">
+        <div class="acc-item open">
+          <button class="acc-btn"><span class="acc-btn-text" data-i18n="faq.q1.q">What kinds of surplus does ESurplus Inc. accept?</span><span class="acc-ico">+</span></button>
+          <div class="acc-body" style="max-height:200px"><p data-i18n="faq.q1.a">We accept a wide range of industrial and corporate surplus — including decommissioned hardware, electronic scrap, warehouse overflow, outdated technology, and industrial byproducts.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-btn-text" data-i18n="faq.q2.q">How does my company benefit from partnering with you?</span><span class="acc-ico">+</span></button>
+          <div class="acc-body"><p data-i18n="faq.q2.a">Beyond the logistical benefit, you become a named patron of education and social equity. We provide impact reports, CSR recognition, and a meaningful story to share with your stakeholders.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-btn-text" data-i18n="faq.q3.q">Is there a cost for the students at UAZ?</span><span class="acc-ico">+</span></button>
+          <div class="acc-body"><p data-i18n="faq.q3.a">Absolutely none. Every student receives access to materials, mentorship, and resources completely free of charge. Removing the financial barrier is at the core of our mission.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-btn-text" data-i18n="faq.q4.q">What happens to items that can't be used for education?</span><span class="acc-ico">+</span></button>
+          <div class="acc-body"><p data-i18n="faq.q4.a">They go through our eBay stores and auction platforms, resold responsibly. Nothing goes to a landfill — the circular model ensures maximum value from every item.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-btn-text" data-i18n="faq.q5.q">How do I get started as a corporate partner?</span><span class="acc-ico">+</span></button>
+          <div class="acc-body"><p data-i18n="faq.q5.a">Reach out to us at patronage@esurplusinc.com. Our team will schedule a conversation to understand your situation and outline what a partnership looks like — no commitment required.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section" id="contact">
+  <div class="cta-rings">
+    <div class="cta-ring cta-ring-1"></div>
+    <div class="cta-ring cta-ring-2"></div>
+    <div class="cta-ring cta-ring-3"></div>
+  </div>
+  <div class="cta-glow"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="cta-eyebrow reveal" data-i18n="cta.eyebrow">Ready to Give Back?</div>
+    <h2 class="reveal d1"><span data-i18n="cta.h2a">Join us in transforming today's</span> <em data-i18n="cta.h2em">scrap</em> <span data-i18n="cta.h2b">into tomorrow's breakthrough.</span></h2>
+    <p class="reveal d2" data-i18n="cta.body">We are not just moving inventory. We are moving the needle on what is possible when industry and education work together.</p>
+    <div class="cta-btns reveal d3">
+      <a href="mailto:patronage@esurplusinc.com" class="btn btn-white" data-i18n="cta.btn1">Become a Patron</a>
+      <a href="#mission" class="btn btn-ghost-white" data-i18n="cta.btn2">Learn More First</a>
+    </div>
+    <div class="cta-email reveal d4">
+      <span data-i18n="cta.emailLabel">Or write to us directly at</span>&nbsp;
+      <a href="mailto:patronage@esurplusinc.com">patronage@esurplusinc.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="f-brand">
+        <div class="nav-brand" style="margin-bottom:0">
+          <span class="nav-brand-name">ESurplus<span> Inc.</span></span>
+        </div>
+        <p data-i18n="footer.brand">Turning industrial surplus into scholarships and real-world education for underserved students at UAZ, Zacatecas, México.</p>
+        <div class="f-socials">
+          <a href="#" class="f-soc" aria-label="LinkedIn">in</a>
+          <a href="#" class="f-soc" aria-label="Twitter">𝕏</a>
+          <a href="#" class="f-soc" aria-label="Facebook">f</a>
+          <a href="#" class="f-soc" aria-label="Instagram">◻</a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col1">Program</h5>
+        <ul>
+          <li><a href="#mission" data-i18n="footer.l1">Our Mission</a></li>
+          <li><a href="#how"     data-i18n="footer.l2">How It Works</a></li>
+          <li><a href="#uaz"     data-i18n="footer.l3">UAZ Partnership</a></li>
+          <li><a href="#gallery" data-i18n="footer.l4">Gallery</a></li>
+          <li><a href="#impact"  data-i18n="footer.l5">Impact Numbers</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col2">Services</h5>
+        <ul>
+          <li><a href="#services" data-i18n="footer.l6">Surplus Management</a></li>
+          <li><a href="#services" data-i18n="footer.l7">Warehouse Cleaning</a></li>
+          <li><a href="#services">eBay Resale</a></li>
+          <li><a href="#services" data-i18n="footer.l9">Auction Platforms</a></li>
+          <li><a href="#services" data-i18n="footer.l10">Corporate CSR</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5 data-i18n="footer.col3">Contact</h5>
+        <ul>
+          <li><a href="mailto:patronage@esurplusinc.com" data-i18n="footer.lc1">Become a Patron</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:patronage@esurplusinc.com" data-i18n="footer.lc3">Partner Inquiry</a></li>
+          <li><a href="mailto:patronage@esurplusinc.com" data-i18n="footer.lc4">Press & Media</a></li>
+        </ul>
+        <div style="margin-top:20px;padding:14px 16px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08);">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px;" data-i18n="footer.emailLabel">Email Us</div>
+          <a href="mailto:patronage@esurplusinc.com" style="font-size:.82rem;color:var(--green-200);word-break:break-all;">patronage@esurplusinc.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2025 ESurplus Inc. All rights reserved. Zacatecas, México.</span>
+      <div style="display:flex;gap:22px;">
+        <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.terms">Terms of Use</a>
+        <a href="#" data-i18n="footer.report">Impact Report</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════
+     JAVASCRIPT
+══════════════════════════ -->
+<script>
+/* ════════════════════════════════════════════
+   TRANSLATIONS — agrega / edita textos aquí
+════════════════════════════════════════════ */
+const T = {
+  en: {
+    /* NAV */
+    "nav.mission":"Mission","nav.impact":"Impact","nav.story":"Our Story",
+    "nav.gallery":"Gallery","nav.itest":"ITest","nav.patron":"Become a Patron",
+    /* HERO */
+    "hero.eyebrow":"Social Impact · México · Zacatecas",
+    "hero.title":`Turning <em>surplus<svg viewBox="0 0 200 12" fill="none" aria-hidden="true"><path d="M2 9 C50 2,150 2,198 9" stroke="#2E8B57" stroke-width="3" stroke-linecap="round"/></svg></em><br>into<br>scholarship.`,
+    "hero.body":"Every year, corporations discard millions in industrial surplus. We redirect it — into the hands of brilliant engineering students at UAZ who have the talent, but simply need the tools.",
+    "hero.cta1":"Ready to Give Back?","hero.cta2":"See how it works",
+    "hero.stat1":"Tons Redirected","hero.stat2":"Students Supported","hero.stat3":"Cost to Student",
+    /* BADGES */
+    "badge1.title":"Circular Economy","badge1.sub":"Zero waste. Full circle.",
+    "badge2.title":"UAZ Partner","badge2.sub":"Zacatecas, México",
+    /* TICKER */
+    "ticker":["Circular Economy","UAZ Zacatecas","Reverse Engineering","Industrial Surplus","University Scholarships","Social Impact","A Cleaner Planet","Student Innovation","Patron of Progress"],
+    /* MISSION */
+    "mission.quote":'"We don\'t see waste or scrap — we see the raw materials for the next generation of innovators."',
+    "mission.credit":"— ESurplus Inc. Team",
+    "mission.phases":"Phases of the Circular Education Model",
+    "mission.approach":"Education-First Approach",
+    "mission.tag":"Our Mission",
+    "mission.h2a":"Bridging the gap between","mission.h2em":"surplus","mission.h2b":"and opportunity",
+    "mission.body":"At the intersection of industrial efficiency and educational equity lies a missed opportunity. Every year, corporations grapple with outdated technology, industrial scrap, and warehouse overflow. At ESurplus Inc., we redirect it into the hands of students eager to build tomorrow.",
+    "pillar1.title":"Surplus Gets a Second Life","pillar1.body":"We take the headache out of managing warehouse overflow and industrial scrap by turning it into something meaningful.",
+    "pillar2.title":"Students at UAZ Benefit Directly","pillar2.body":"Your surplus goes into the hands of engineering students who have the talent but lack the resources to experiment and learn.",
+    "pillar3.title":"A Cleaner Planet","pillar3.body":"By partnering with us, you choose a path for your materials that favors education and reuse over a landfill or a furnace.",
+    /* IMPACT */
+    "impact.tag":"Our Impact","impact.h2a":"Numbers that","impact.h2em":"speak","impact.h2b":"for themselves",
+    "impact.c1":"Tons of surplus redirected to education","impact.c2":"University students supported in Zacatecas",
+    "impact.c3":"Corporate partners who trust our model","impact.c4":"Cost to the student — fully free access",
+    /* HOW */
+    "how.tag":"The Circular Model","how.h2a":"From corporate warehouse","how.h2em":"to university classroom",
+    "how.body":"We have pioneered a unique ecosystem that turns your surplus into a high-impact R&D pipeline, administered with precision and care.",
+    "how.s1.title":"Corporate Donation","how.s1.body":"Your company transfers surplus, decommissioned tech, or industrial scrap to ESurplus Inc. — no extra logistical burden on your end.",
+    "how.s2.title":"Sort & Prepare","how.s2.body":"Our specialized team meticulously classifies, cleans, and prepares each material — determining its educational potential or resale value.",
+    "how.s3.title":"Education in Action","how.s3.body":"Materials reach UAZ students who deconstruct, analyze, and innovate — learning hands-on at the pace of the global tech market.",
+    "how.s4.title":"Impact & Return","how.s4.body":"Salvageable components re-enter the economy via our auction platforms. The cycle closes. The planet wins. The future wins.",
+    /* VIDEO */
+    "video.tag":"See It in Action","video.h2a":"One picture is worth","video.h2em":"a thousand futures",
+    "video.body":"Watch how UAZ students transform what was once corporate scrap into real research projects that prepare them for the global workforce.",
+    "video.cta":"Support a Student","video.hint":"Our Impact Story","video.note":"Add your video here by replacing the source below.",
+    /* GALLERY */
+    "gallery.tag":"Gallery","gallery.h2a":"Change captured","gallery.h2em":"in pictures",
+    "gallery.body":"Every photograph tells the story of a material that found new purpose — and a young mind that found its path.",
+    "gallery.g1":"UAZ Laboratory · Active Deconstruction","gallery.g2":"ESurplus Warehouse · Classification",
+    "gallery.g3":"Students in Action · Innovation","gallery.g4":"Partner Companies · Patronage","gallery.g5":"Student Achievements · R&D Results",
+    /* SERVICES */
+    "srv.tag":"More Than Just Hauling","srv.h2a":"What we bring to the","srv.h2em":"partnership",
+    "srv.body":"When you open your doors to ESurplus Inc., you aren't just hiring a warehouse or scrap service. You are becoming a patron of progress.",
+    "srv.cta":"Contact Our Team",
+    "s1.title":"Giving Surplus a Second Life","s1.body":"We take the headache out of managing warehouse overflow and industrial scrap by turning it into something deeply meaningful.",
+    "s2.title":"Supporting Students at UAZ","s2.body":"Your surplus goes directly into the hands of engineering students who have the talent but lack the resources to experiment and learn.",
+    "s3.title":"Full Logistics — From Cleaning to Auctions","s3.body":"From professional warehouse cleaning to eBay resale and auction platforms, we handle every step so you don't have to.",
+    "s4.title":"Real World R&D for Students","s4.body":"Students don't just \"recycle\" your items — they deconstruct them to understand how they work, gaining career-defining experience.",
+    "s5.title":"A Partnership of Patronage","s5.body":"Working with ESurplus Inc. means your company is directly fueling international educational equity and global workforce readiness.",
+    /* UAZ */
+    "uaz.title":"Universidad Autónoma<br>de Zacatecas","uaz.sub":"Our Academic Partner in Mexico",
+    "uaz.body":"UAZ is home to brilliant engineering minds who are eager to innovate but historically lacked the physical resources to experiment, build, and learn at the scale the global market demands.",
+    "uaz.s1":"Students in the program","uaz.s2":"Cost per student","uaz.s3":"Core learning phases","uaz.s4":"Potential unlocked",
+    "uaz.ltag":"What Students Learn","uaz.lh2a":"Reverse Engineering","uaz.lh2em":"for the Future",
+    "uaz.lbody":"Under ESurplus guidance, UAZ students engage in hands-on R&D that would otherwise be cost-prohibitive. They emerge with the experience necessary to enter the global tech workforce.",
+    "learn1.title":"Deconstructing","learn1.body":"Understanding the intricate architecture of modern technology by taking it apart piece by piece.",
+    "learn2.title":"Analyzing","learn2.body":"Identifying materials and components that can be diverted back into the circular economy through specialized auction platforms.",
+    "learn3.title":"Innovating","learn3.body":"Using surplus to conduct R&D that gives them the hands-on experience necessary to compete in the global tech workforce.",
+    /* FAQ */
+    "faq.tag":"Common Questions","faq.h2a":"Everything you need to","faq.h2em":"know",
+    "faq.body":"Have more questions? Reach out to our team directly. We're transparent about every step of the process.",
+    "faq.cta":"Ask Us Anything",
+    "faq.q1.q":"What kinds of surplus does ESurplus Inc. accept?","faq.q1.a":"We accept a wide range of industrial and corporate surplus — including decommissioned hardware, electronic scrap, warehouse overflow, outdated technology, and industrial byproducts.",
+    "faq.q2.q":"How does my company benefit from partnering with you?","faq.q2.a":"Beyond the logistical benefit, you become a named patron of education and social equity. We provide impact reports, CSR recognition, and a meaningful story to share with your stakeholders.",
+    "faq.q3.q":"Is there a cost for the students at UAZ?","faq.q3.a":"Absolutely none. Every student receives access to materials, mentorship, and resources completely free of charge. Removing the financial barrier is at the core of our mission.",
+    "faq.q4.q":"What happens to items that can't be used for education?","faq.q4.a":"They go through our eBay stores and auction platforms, resold responsibly. Nothing goes to a landfill — the circular model ensures maximum value from every item.",
+    "faq.q5.q":"How do I get started as a corporate partner?","faq.q5.a":"Reach out to us at patronage@esurplusinc.com. Our team will schedule a conversation — no commitment required.",
+    /* CTA */
+    "cta.eyebrow":"Ready to Give Back?",
+    "cta.h2a":"Join us in transforming today's","cta.h2em":"scrap","cta.h2b":"into tomorrow's breakthrough.",
+    "cta.body":"We are not just moving inventory. We are moving the needle on what is possible when industry and education work together.",
+    "cta.btn1":"Become a Patron","cta.btn2":"Learn More First","cta.emailLabel":"Or write to us directly at",
+    /* FOOTER */
+    "footer.brand":"Turning industrial surplus into scholarships and real-world education for underserved students at UAZ, Zacatecas, México.",
+    "footer.col1":"Program","footer.col2":"Services","footer.col3":"Contact",
+    "footer.l1":"Our Mission","footer.l2":"How It Works","footer.l3":"UAZ Partnership","footer.l4":"Gallery","footer.l5":"Impact Numbers",
+    "footer.l6":"Surplus Management","footer.l7":"Warehouse Cleaning","footer.l9":"Auction Platforms","footer.l10":"Corporate CSR",
+    "footer.lc1":"Become a Patron","footer.lc3":"Partner Inquiry","footer.lc4":"Press & Media",
+    "footer.emailLabel":"Email Us",
+    "footer.copy":"© 2025 ESurplus Inc. All rights reserved. Zacatecas, México.",
+    "footer.privacy":"Privacy Policy","footer.terms":"Terms of Use","footer.report":"Impact Report",
+    "pageTitle":"ESurplus Inc. — Patronage"
+  },
+
+  es: {
+    /* NAV */
+    "nav.mission":"Misión","nav.impact":"Impacto","nav.story":"Nuestra Historia",
+    "nav.gallery":"Galería","nav.itest":"ITest","nav.patron":"Ser Patrocinador",
+    /* HERO */
+    "hero.eyebrow":"Impacto Social · México · Zacatecas",
+    "hero.title":`Convirtiendo el <em>excedente<svg viewBox="0 0 200 12" fill="none" aria-hidden="true"><path d="M2 9 C50 2,150 2,198 9" stroke="#2E8B57" stroke-width="3" stroke-linecap="round"/></svg></em><br>en becas.`,
+    "hero.body":"Cada año, las empresas descartan millones en excedente industrial. Lo redirigimos — a las manos de brillantes estudiantes de ingeniería en la UAZ que tienen el talento, pero simplemente necesitan las herramientas.",
+    "hero.cta1":"¿Listo para Contribuir?","hero.cta2":"Cómo funciona",
+    "hero.stat1":"Toneladas Redirigidas","hero.stat2":"Estudiantes Apoyados","hero.stat3":"Costo al Alumno",
+    /* BADGES */
+    "badge1.title":"Economía Circular","badge1.sub":"Cero residuos. Ciclo completo.",
+    "badge2.title":"Socio UAZ","badge2.sub":"Zacatecas, México",
+    /* TICKER */
+    "ticker":["Economía Circular","UAZ Zacatecas","Ingeniería Inversa","Excedente Industrial","Becas Universitarias","Impacto Social","Un Planeta Limpio","Innovación Estudiantil","Patrón del Progreso"],
+    /* MISSION */
+    "mission.quote":'"No vemos desperdicio — vemos las materias primas para la próxima generación de innovadores."',
+    "mission.credit":"— Equipo ESurplus Inc.",
+    "mission.phases":"Fases del Modelo de Educación Circular",
+    "mission.approach":"Enfoque Educativo Primero",
+    "mission.tag":"Nuestra Misión",
+    "mission.h2a":"Cerrando la brecha entre el","mission.h2em":"excedente","mission.h2b":"y la oportunidad",
+    "mission.body":"En la intersección de la eficiencia industrial y la equidad educativa existe una oportunidad perdida. Cada año, las empresas luchan con tecnología obsoleta, chatarra industrial y desbordamiento de almacenes. En ESurplus Inc., lo redirigimos a las manos de estudiantes ansiosos por construir el mañana.",
+    "pillar1.title":"El Excedente Tiene una Segunda Vida","pillar1.body":"Eliminamos el dolor de cabeza de gestionar el excedente de almacén y la chatarra industrial convirtiéndolo en algo significativo.",
+    "pillar2.title":"Los Estudiantes de la UAZ se Benefician Directamente","pillar2.body":"Tu excedente va a manos de estudiantes de ingeniería que tienen el talento pero carecen de recursos para experimentar y aprender.",
+    "pillar3.title":"Un Planeta Más Limpio","pillar3.body":"Al asociarte con nosotros, eliges un camino para tus materiales que favorece la educación y la reutilización sobre un vertedero o un horno.",
+    /* IMPACT */
+    "impact.tag":"Nuestro Impacto","impact.h2a":"Números que","impact.h2em":"hablan","impact.h2b":"por sí solos",
+    "impact.c1":"Toneladas de excedente redirigido a la educación","impact.c2":"Estudiantes universitarios apoyados en Zacatecas",
+    "impact.c3":"Empresas socias que confían en nuestro modelo","impact.c4":"Costo para el alumno — acceso completamente gratuito",
+    /* HOW */
+    "how.tag":"El Modelo Circular","how.h2a":"Del almacén corporativo","how.h2em":"al aula universitaria",
+    "how.body":"Hemos creado un ecosistema único que convierte tu excedente en un pipeline de I+D de alto impacto, administrado con precisión y cuidado.",
+    "how.s1.title":"Donación Corporativa","how.s1.body":"Tu empresa transfiere excedentes, tecnología retirada o chatarra industrial a ESurplus Inc. — sin carga logística adicional de tu parte.",
+    "how.s2.title":"Clasificar y Preparar","how.s2.body":"Nuestro equipo especializado clasifica, limpia y prepara meticulosamente cada material — determinando su potencial educativo o de reventa.",
+    "how.s3.title":"Educación en Acción","how.s3.body":"Los materiales llegan a los estudiantes de la UAZ, quienes los deconstruyen, analizan e innovan — aprendiendo a manos llenas al ritmo del mercado global.",
+    "how.s4.title":"Impacto y Retorno","how.s4.body":"Los componentes rescatables vuelven a la economía a través de nuestras plataformas de subasta. El ciclo se cierra. El planeta gana. El futuro gana.",
+    /* VIDEO */
+    "video.tag":"Véalo en Acción","video.h2a":"Una imagen vale","video.h2em":"mil futuros",
+    "video.body":"Mira cómo los estudiantes de la UAZ transforman lo que alguna vez fue chatarra corporativa en proyectos de investigación reales que los preparan para la fuerza laboral global.",
+    "video.cta":"Apoya a un Estudiante","video.hint":"Nuestra Historia de Impacto","video.note":"Añade tu video aquí reemplazando la fuente a continuación.",
+    /* GALLERY */
+    "gallery.tag":"Galería","gallery.h2a":"El cambio capturado","gallery.h2em":"en imágenes",
+    "gallery.body":"Cada fotografía cuenta la historia de un material que encontró un nuevo propósito — y de una mente joven que encontró su camino.",
+    "gallery.g1":"Laboratorio UAZ · Deconstrucción Activa","gallery.g2":"Almacén ESurplus · Clasificación",
+    "gallery.g3":"Estudiantes en Acción · Innovación","gallery.g4":"Empresas Socias · Patrocinio","gallery.g5":"Logros Estudiantiles · Resultados I+D",
+    /* SERVICES */
+    "srv.tag":"Más que Solo Transporte","srv.h2a":"Lo que aportamos a la","srv.h2em":"alianza",
+    "srv.body":"Cuando abres las puertas a ESurplus Inc., no solo contratas un almacén o servicio de chatarra. Te conviertes en un patrón del progreso.",
+    "srv.cta":"Contactar al Equipo",
+    "s1.title":"El Excedente Obtiene una Segunda Vida","s1.body":"Eliminamos el dolor de cabeza de gestionar el excedente y la chatarra convirtiéndolo en algo profundamente significativo.",
+    "s2.title":"Apoyo Directo a Estudiantes de la UAZ","s2.body":"Tu excedente va directamente a las manos de estudiantes de ingeniería que tienen el talento pero carecen de recursos.",
+    "s3.title":"Logística Completa — De la Limpieza a las Subastas","s3.body":"Desde la limpieza profesional del almacén hasta la reventa en eBay y plataformas de subasta, manejamos cada paso.",
+    "s4.title":"I+D del Mundo Real para Estudiantes","s4.body":"Los estudiantes no solo «reciclan» tus artículos — los deconstruyen para entender cómo funcionan, ganando experiencia que define sus carreras.",
+    "s5.title":"Una Alianza de Patrocinio","s5.body":"Trabajar con ESurplus Inc. significa que tu empresa está impulsando directamente la equidad educativa internacional.",
+    /* UAZ */
+    "uaz.title":"Universidad Autónoma<br>de Zacatecas","uaz.sub":"Nuestro Socio Académico en México",
+    "uaz.body":"La UAZ alberga mentes brillantes de ingeniería ansiosas por innovar pero que históricamente carecieron de los recursos físicos para experimentar, construir y aprender a la escala que el mercado global demanda.",
+    "uaz.s1":"Alumnos en el programa","uaz.s2":"Costo por alumno","uaz.s3":"Fases de aprendizaje","uaz.s4":"Potencial desbloqueado",
+    "uaz.ltag":"Qué Aprenden los Alumnos","uaz.lh2a":"Ingeniería Inversa","uaz.lh2em":"para el Futuro",
+    "uaz.lbody":"Bajo la guía de ESurplus, los estudiantes de la UAZ realizan I+D práctica que de otro modo sería demasiado costosa. Emergen con la experiencia necesaria para ingresar a la fuerza laboral tecnológica global.",
+    "learn1.title":"🔩 Deconstruyendo","learn1.body":"Comprendiendo la intrincada arquitectura de la tecnología moderna desmontándola pieza por pieza.",
+    "learn2.title":"🔬 Analizando","learn2.body":"Identificando materiales y componentes que pueden reintegrarse a la economía circular a través de plataformas de subasta especializadas.",
+    "learn3.title":"💡 Innovando","learn3.body":"Usando excedente para realizar I+D que les da la experiencia práctica necesaria para competir en la fuerza laboral tecnológica global.",
+    /* FAQ */
+    "faq.tag":"Preguntas Frecuentes","faq.h2a":"Todo lo que necesitas","faq.h2em":"saber",
+    "faq.body":"¿Más preguntas? Contáctanos directamente. Somos transparentes en cada paso del proceso.",
+    "faq.cta":"Pregúntanos lo que Sea",
+    "faq.q1.q":"¿Qué tipo de excedente acepta ESurplus Inc.?","faq.q1.a":"Aceptamos una amplia gama de excedente industrial y corporativo — incluyendo hardware retirado, chatarra electrónica, desbordamiento de almacén, tecnología obsoleta y subproductos industriales.",
+    "faq.q2.q":"¿Cómo se beneficia mi empresa al asociarse con ustedes?","faq.q2.a":"Más allá del beneficio logístico, te conviertes en un patrón nombrado de la educación y la equidad social. Proporcionamos informes de impacto, reconocimiento RSE y una historia significativa para compartir con tus grupos de interés.",
+    "faq.q3.q":"¿Tiene algún costo para los estudiantes de la UAZ?","faq.q3.a":"Absolutamente ninguno. Cada estudiante recibe acceso a materiales, mentoría y recursos completamente gratis. Eliminar la barrera financiera es el núcleo de nuestra misión.",
+    "faq.q4.q":"¿Qué pasa con los artículos que no se pueden usar para educación?","faq.q4.a":"Pasan por nuestras tiendas de eBay y plataformas de subasta, donde se revenden de manera responsable. Nada va a un vertedero.",
+    "faq.q5.q":"¿Cómo empiezo como socio corporativo?","faq.q5.a":"Contáctanos en patronage@esurplusinc.com. Nuestro equipo programará una conversación — sin compromiso para comenzar.",
+    /* CTA */
+    "cta.eyebrow":"¿Listo para Contribuir?",
+    "cta.h2a":"Únete a nosotros en la transformación de la chatarra de hoy en","cta.h2em":"el avance","cta.h2b":"del mañana.",
+    "cta.body":"No solo movemos inventario. Estamos moviendo la aguja de lo que es posible cuando la industria y la educación trabajan juntas.",
+    "cta.btn1":"Ser Patrocinador","cta.btn2":"Conocer Más Primero","cta.emailLabel":"O escríbenos directamente a",
+    /* FOOTER */
+    "footer.brand":"Convirtiendo el excedente industrial en becas y educación del mundo real para estudiantes de la UAZ, Zacatecas, México.",
+    "footer.col1":"Programa","footer.col2":"Servicios","footer.col3":"Contacto",
+    "footer.l1":"Nuestra Misión","footer.l2":"Cómo Funciona","footer.l3":"Alianza UAZ","footer.l4":"Galería","footer.l5":"Números de Impacto",
+    "footer.l6":"Gestión de Excedente","footer.l7":"Limpieza de Almacén","footer.l9":"Plataformas de Subasta","footer.l10":"RSE Corporativo",
+    "footer.lc1":"Ser Patrocinador","footer.lc3":"Consulta de Alianza","footer.lc4":"Prensa y Medios",
+    "footer.emailLabel":"Escríbenos",
+    "footer.copy":"© 2025 ESurplus Inc. Todos los derechos reservados. Zacatecas, México.",
+    "footer.privacy":"Política de Privacidad","footer.terms":"Términos de Uso","footer.report":"Informe de Impacto",
+    "pageTitle":"ESurplus Inc. — Patrocinio"
+  }
+};
+
+/* ════════════════════════════════════════════
+   MOTOR DE IDIOMA
+════════════════════════════════════════════ */
+let currentLang = localStorage.getItem('esurplus_lang') || 'en';
+
+function buildTicker(lang) {
+  const items = T[lang]['ticker'];
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  track.innerHTML = '';
+  [...items, ...items].forEach(item => {
+    const span = document.createElement('span');
+    span.className = 'ticker-item';
+    span.innerHTML = `${item} <span class="ticker-star">✦</span>`;
+    track.appendChild(span);
+  });
+}
+
+function applyLang(lang) {
+  const dict = T[lang];
+  document.documentElement.lang = lang;
+  document.title = dict['pageTitle'] || document.title;
+
+  // Texto plano
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+
+  // HTML (para <em>, SVG inline, etc.)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = dict[el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+
+  buildTicker(lang);
+
+  // Sincroniza TODOS los botones de idioma (nav + mobile)
+  document.querySelectorAll('[data-lang]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+    if (btn.classList.contains('active')) {
+      btn.style.background = 'var(--green-500, #2E8B57)';
+      btn.style.color = '#fff';
+    } else {
+      btn.style.background = 'transparent';
+      btn.style.color = '';
+    }
+  });
+
+  localStorage.setItem('esurplus_lang', lang);
+  currentLang = lang;
+}
+
+function switchLang(lang) {
+  if (lang === currentLang) return;
+  // fade suave
+  document.body.classList.add('lang-switching');
+  setTimeout(() => {
+    applyLang(lang);
+    document.body.classList.remove('lang-switching');
+  }, 200);
+}
+
+// Aplica idioma guardado al cargar
+applyLang(currentLang);
+
+// Hookea todos los botones [data-lang]
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+});
+
+/* ════ NAV SCROLL ════ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 60);
+}, { passive: true });
+
+/* ════ HAMBURGER ════ */
+const ham = document.getElementById('ham');
+const mob = document.getElementById('mobileMenu');
+const mobClose = document.getElementById('mobileClose');
+ham.addEventListener('click', () => mob.classList.add('open'));
+mobClose.addEventListener('click', () => mob.classList.remove('open'));
+mob.querySelectorAll('.mm-link').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+/* ════ REVEAL ════ */
+const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.tcard');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+/* ════ COUNTERS ════ */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.to, 10);
+  if (target === 0) return;
+  const duration = 1800, start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+    if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterIO.unobserve(e.target); }});
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+/* ════ ACCORDION ════ */
+document.querySelectorAll('.acc-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.acc-item');
+    const body = item.querySelector('.acc-body');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item').forEach(i => { i.classList.remove('open'); i.querySelector('.acc-body').style.maxHeight = '0'; });
+    if (!isOpen) { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+  });
+});
+const firstAcc = document.querySelector('.acc-item.open .acc-body');
+if (firstAcc) firstAcc.style.maxHeight = firstAcc.scrollHeight + 'px';
+
+/* ════ SMOOTH SCROLL ════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+  });
+});
+
+/* ════ NOTE ANIMATION ════ */
+const ns = document.createElement('style');
+ns.textContent = `@keyframes noteIn{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}`;
+document.head.appendChild(ns);
+</script>
+
+</body>
+</html>
+</html>
