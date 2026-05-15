@@ -425,8 +425,8 @@ nav.scrolled {
       <div class="zt-footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="group-services.html">Tech MeoL Group Services</a></li>
+          <li><a href="about-us.html">About</a></li>
+         
           <li><a href="policy.html">Policy</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -443,12 +443,8 @@ nav.scrolled {
     </div>
 
     <div class="zt-footer-bottom">
-      <div class="zt-footer-copy">© 2025 <span>Zac Tech Semi</span>. All rights reserved.</div>
-      <div class="zt-footer-links-bottom">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Quality Standards</a>
-      </div>
+      <div class="zt-footer-copy">© 2026 <span>Zac Tech Semi</span>. All rights reserved.</div>
+  
     </div>
   </footer>
   `;
