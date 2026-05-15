@@ -425,10 +425,10 @@ nav.scrolled {
       <div class="zt-footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="about-us.html">About</a></li>
+          <li><a href="/about-us">About</a></li>
          
           <li><a href="policy.html">Policy</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
 
