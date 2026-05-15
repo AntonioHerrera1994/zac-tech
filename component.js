@@ -156,7 +156,7 @@ nav.scrolled {
 
   <nav id="zt-navbar">
     <div class="logo-nav">
-      <a href="index.html" class="zt-logo"><img src="/logo2.png"/></a>
+      <a href="/" class="zt-logo"><img src="/logo2.png"/></a>
     </div>
     <ul class="zt-nav-links">
 
