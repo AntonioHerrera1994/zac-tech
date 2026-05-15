@@ -12,77 +12,142 @@
   /* ══════════════════════════════
      SECTION 1 — DARK STATEMENT
   ══════════════════════════════ */
-  .about-statement {
-    background: var(--dark);
-    padding: 120px 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-statement::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(160,120,48,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
+.about-statement {
+  background: var(--dark);
+  padding: 100px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.about-statement::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 30% 50%,
+    rgba(160,120,48,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* SPLIT GRID */
+.about-statement-inner {
+  position: relative; z-index: 1;
+  max-width: 1300px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* LEFT */
+.about-statement-text {
+  text-align: left;
+}
+.about-statement-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 22px;
+}
+.about-statement-tag span {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--gold); color: #fff;
+  padding: 4px 12px; border-radius: 4px;
+}
+.about-statement-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: white;
+  line-height: 1.15; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.about-statement-title em {
+  font-style: normal;
+  color: var(--gold-light);
+}
+.about-statement-divider {
+  width: 48px; height: 2px;
+  background: var(--gold-gradient);
+  margin-bottom: 28px; border-radius: 2px;
+}
+.about-statement-body {
+  font-size: 1rem; line-height: 1.85;
+  color: rgba(255,255,255,0.79);
+  font-weight: 300; margin-bottom: 16px;
+}
+
+/* Focus list */
+.about-focus-list {
+  display: flex; flex-direction: column; gap: 0;
+  margin: 24px 0 36px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 20px;
+}
+.about-focus-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 1rem; font-weight: 300;
+  color: rgba(255, 255, 255, 0.79);
+}
+.about-focus-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
+
+/* Stats */
+.about-stats {
+  display: flex; gap: 36px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 28px;
+  margin-top: 0;
+}
+.about-stat { text-align: left; }
+.about-stat-val {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1.8rem; color: white;
+  letter-spacing: -0.04em; line-height: 1;
+  display: block; margin-bottom: 4px;
+}
+.about-stat-label {
+  font-size: 0.75rem; font-weight: 400;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(255,255,255,0.97);
+}
+
+/* RIGHT — Image */
+.about-statement-img-col {
+  position: relative;
+}
+.about-statement-img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.about-statement-img-wrap img {
+  width: 100%; height: 520px;
+  object-fit: cover; display: block;
+  transition: transform 7s ease;
+}
+.about-statement-img-col:hover .about-statement-img-wrap img {
+  transform: scale(1.04);
+}
+/* Gold border glow */
+.about-statement-img-wrap::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(160,120,48,0.4), transparent 60%);
+  z-index: 1; pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .about-statement { padding: 60px 24px; }
   .about-statement-inner {
-    position: relative; z-index: 1;
-    max-width: 900px; margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
-  .about-statement-tag {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin-bottom: 28px;
-  }
-  .about-statement-tag span {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
-    background: var(--gold); color: #fff;
-    padding: 4px 12px; border-radius: 4px;
-  }
-  .about-statement-title {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: clamp(2rem, 4vw, 2.6rem);
-    color: white;
-    line-height: 1.15; letter-spacing: -0.03em;
-    margin-bottom: 48px;
-  }
-  .about-statement-body {
-    font-size: 1.05rem; line-height: 1.9;
-    color: rgba(255,255,255,0.6);
-    font-weight: 300; margin-bottom: 24px;
-    max-width: 860px; margin-left: auto; margin-right: auto;
-  }
-  .about-statement-body + .about-statement-body {
-    color: rgba(255,255,255,0.5);
-  }
-  .about-statement-divider {
-    width: 60px; height: 2px;
-    background: var(--gold-gradient);
-    margin: 0 auto 48px; border-radius: 2px;
-  }
-
-  /* Stats row */
-  .about-stats {
-    display: flex; justify-content: center;
-    gap: 60px; margin-top: 64px;
-    flex-wrap: wrap;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 48px;
-  }
-  .about-stat { text-align: center; }
-  .about-stat-val {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 2.2rem; color: white;
-    letter-spacing: -0.04em; line-height: 1;
-    display: block; margin-bottom: 6px;
-  }
-  .about-stat-label {
-    font-size: 0.75rem; font-weight: 400;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.743);
-  }
-
+  .about-statement-img-wrap img { height: 280px; }
+  .about-stats { gap: 24px; }
+}
   /* ══════════════════════════════
      SECTION 2 — SPLIT CARDS
   ══════════════════════════════ */
@@ -168,7 +233,7 @@
   }
   .about-card-desc {
     font-size: 0.98rem; line-height: 1.85;
-    color: rgba(255,255,255,0.55); font-weight: 300;
+    color: rgba(255,255,255,0.90); font-weight: 300;
   }
 
   /* ══════════════════════════════
@@ -225,8 +290,8 @@
     margin: 0 auto 32px; border-radius: 2px;
   }
   .about-cta-text {
-    font-size: 0.95rem; line-height: 1.85;
-    color: rgba(255,255,255,0.55); font-weight: 300;
+    font-size: 0.98rem; line-height: 1.85;
+    color: rgba(255,255,255,0.90); font-weight: 300;
     max-width: 640px; margin: 0 auto 44px;
   }
   .about-cta-btn {
@@ -297,44 +362,81 @@
 <section class="about-statement">
   <div class="about-statement-inner reveal">
 
-    <div class="about-statement-tag">
-      <span>Our Mission</span>
+    <!-- LEFT — Text -->
+    <div class="about-statement-text">
+      <div class="about-statement-tag">
+        <span>Who We Are</span>
+      </div>
+      <h2 class="about-statement-title">
+        Advanced Warpage<br>Characterization &amp;<br>
+        <em>Semiconductor Reliability</em>
+      </h2>
+      <div class="about-statement-divider"></div>
+
+      <p class="about-statement-body">
+        ZacTech Semi is a semiconductor engineering and laboratory development initiative operating as a subsidiary of <a href="https://www.techmeol.com" target="_blank" style="color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(160,120,48,0.4);">Tech Meol Group</a>, focused on advancing semiconductor reliability, packaging technologies, laboratory infrastructure, and high-precision engineering capabilities across North America.
+      </p>
+      <p class="about-statement-body">
+        Our mission is to support the future of semiconductor innovation through advanced characterization, metrology integration, process engineering, and reliability-focused laboratory environments designed for next-generation electronic devices.
+      </p>
+      <p class="about-statement-body" style="color:rgba(255,255,255,0.7);font-size:1rem;font-style:italic;">
+        "Engineering the infrastructure behind the future of semiconductor reliability, packaging, and advanced manufacturing."
+      </p>
+
+      <!-- Engineering focuses -->
+      <div class="about-focus-list">
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Semiconductor package warpage analysis
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Advanced packaging characterization
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Glass and organic substrate deformation studies
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Reliability and qualification engineering
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Failure analysis and root-cause investigation
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Thermal and mechanical behavior validation
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>High-precision metrology integration
+        </div>
+        <div class="about-focus-item">
+          <span class="about-focus-dot"></span>Semiconductor laboratory infrastructure development
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-val">24h</span>
+          <span class="about-stat-label">Response Time</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-val">FMV</span>
+          <span class="about-stat-label">Fair Market Reporting</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-val">2</span>
+          <span class="about-stat-label">Continents</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-val">100%</span>
+          <span class="about-stat-label">Industry Agnostic</span>
+        </div>
+      </div>
     </div>
 
-    <h2 class="about-statement-title">
-      Plan Ahead, Stay Informed<br>and Execute with Accuracy
-    </h2>
-
-    <div class="about-statement-divider"></div>
-
-    <p class="about-statement-body">
-      Zac Tech Semi was built as a value added partner to you, regardless of your industry, location or technology. We strongly believe that our value is in our honest opinion to your success and vitality of a strong core proactive strategy that will enable greater liquidity impact on live assets if a strict plan of action is established at the beginning of a process for accurate execution immediately at the end term life.
-    </p>
-
-    <p class="about-statement-body">
-      Our goal is not only to assist in liquidating and managing your surplus equipment, but also to enable you to establish an exit strategy with your live equipment from a perspective in relation to the purpose for acquisition. We are committed to proving and reporting to you current fair market values throughout the age of ownership and liquidate at the end of term with complete and effective accuracy.
-    </p>
-
-    <p class="about-statement-body" style="color:rgba(255,255,255,0.7);font-size:1.1rem;font-style:italic;margin-top:12px;">
-      "Let our team at Zac Tech Semi create a plan for your live assets, stay informed on current fair market values and execute a disposition plan with fine accuracy."
-    </p>
-
-    <div class="about-stats">
-      <div class="about-stat">
-        <span class="about-stat-val">24h</span>
-        <span class="about-stat-label">Response Time</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-val">FMV</span>
-        <span class="about-stat-label">Fair Market Reporting</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-val">2</span>
-        <span class="about-stat-label">Continents</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-val">100%</span>
-        <span class="about-stat-label">Industry Agnostic</span>
+    <!-- RIGHT — Image -->
+    <div class="about-statement-img-col">
+      <div class="about-statement-img-wrap">
+        <img src="/about/semi.jpg" alt="ZacTech Semi semiconductor lab">
+   
       </div>
     </div>
 
