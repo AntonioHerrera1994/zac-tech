@@ -90,7 +90,7 @@ nav::before {
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: white;

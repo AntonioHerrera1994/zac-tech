@@ -198,9 +198,8 @@ nav.scrolled {
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
         </a>
         <ul class="zt-dropdown">
-          <li><a href="group-services.html">Tech MeoL Group Services</a></li>
           <li><a href="policy.html">Policy</a></li>
-          <li><a href="subscribe.html">Subscribe</a></li>
+
         </ul>
       </li>
 

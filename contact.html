@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+  /* ── PAGE BACKGROUND ── */
+  body { background: #e8e8e6; }
+
+  /* ── CONTACT WRAPPER ── */
+  .contact-page {
+    min-height: calc(100vh - 72px);
+    padding: 120px 80px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── LEFT COLUMN ── */
+  .contact-left {}
+
+  .contact-eyebrow {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 20px;
+  }
+  .contact-eyebrow::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+  }
+
+  .contact-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    color: var(--black); line-height: 1.0;
+    letter-spacing: -0.04em;
+    margin-bottom: 36px;
+  }
+  .contact-title em { font-style: normal; color: var(--gold); }
+
+  .contact-divider {
+    width: 48px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 28px; border-radius: 2px;
+  }
+
+  .contact-desc {
+    font-size: 1rem; line-height: 1.85;
+    color: #444; font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 500px;
+  }
+
+  /* Location block */
+  .contact-location {
+    display: inline-flex; align-items: flex-start; gap: 12px;
+    padding: 18px 22px;
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+  .contact-location svg { flex-shrink: 0; margin-top: 2px; }
+  .contact-location-text {}
+  .contact-location-label {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .contact-location-val {
+    font-size: 0.92rem; font-weight: 500;
+    color: var(--black);
+  }
+
+  /* Info pills row */
+  .contact-info-row {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-top: 32px;
+  }
+  .contact-info-item {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.92rem; font-weight: 400; color: #333;
+  }
+  .contact-info-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(160,120,48,0.1);
+    border: 1px solid rgba(160,120,48,0.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-info-icon svg { color: var(--gold); }
+
+  /* ── RIGHT COLUMN — FORM ── */
+  .contact-right {}
+
+  .contact-form-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 16px;
+    padding: 44px 48px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+
+  .contact-form-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.3rem; color: var(--black);
+    letter-spacing: -0.02em; margin-bottom: 6px;
+  }
+  .contact-form-sub {
+    font-size: 0.85rem; color: #666; font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  /* Field groups */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-field {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 16px;
+  }
+  .form-label {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: #333;
+  }
+  .form-required {
+    font-family: 'DM Sans', sans-serif; font-weight: 300;
+    font-size: 0.65rem; color: #999; text-transform: lowercase;
+    margin-left: 4px;
+  }
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    padding: 13px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; font-weight: 400;
+    color: var(--black);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    appearance: none;
+  }
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: #aaa; font-weight: 300; }
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 0 3px rgba(160,120,48,0.12);
+  }
+  .form-textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  /* Service selector */
+  .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    padding: 13px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; font-weight: 400;
+    color: var(--black);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+  .form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(160,120,48,0.12);
+  }
+
+  /* Submit button */
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: #fff;
+    border: none; cursor: pointer;
+    border-radius: 10px;
+    padding: 15px 28px;
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 8px;
+    box-shadow: 0 8px 24px rgba(160,120,48,0.3);
+  }
+  .form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(160,120,48,0.4);
+  }
+  .form-submit svg { width: 16px; height: 16px; }
+
+  /* Form footer note */
+  .form-note {
+    font-size: 0.72rem; color: #999; font-weight: 300;
+    text-align: center; margin-top: 14px; line-height: 1.6;
+  }
+
+  /* ── BOTTOM STRIP ── */
+  .contact-strip {
+    background: var(--dark);
+    padding: 40px 80px;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 32px;
+    flex-wrap: wrap;
+  }
+  .contact-strip-text {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4);
+    font-weight: 300; line-height: 1.7;
+  }
+  .contact-strip-text strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+  .contact-strip-links {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .contact-strip-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--gold-light); text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .contact-strip-link:hover { color: var(--gold-lighter); }
+  .contact-strip-link svg { width: 14px; height: 14px; }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .contact-page {
+      grid-template-columns: 1fr;
+      gap: 48px; padding: 100px 24px 60px;
+    }
+    .contact-form-card { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-strip { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero" style="min-height:42vh;">
+  <div class="hero-bg" style="background-image:url('/contact.jpg'); background-position:center 40%; filter:brightness(0.35) saturate(0.6);"></div>
+  <div class="hero-overlay" style="background:linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,.5) 60%, rgba(10,10,10,.2) 100%);"></div>
+  <div class="hero-content" style="padding-bottom:60px;">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">Contact</span>
+    </div>
+    <div class="hero-label">Get in Touch</div>
+    <h1 class="hero-title">Let Us Help<br><em>You</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        Zacatecas, Mexico
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        info@zactechsemi.com
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        24h Response Available
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- CONTACT MAIN -->
+<div class="contact-page">
+
+  <!-- LEFT — Text -->
+  <div class="contact-left reveal-left">
+    <span class="contact-eyebrow">Contact Us</span>
+    <h2 class="contact-title">Let Us Help<br><em>You</em></h2>
+    <div class="contact-divider"></div>
+    <p class="contact-desc">
+      Looking for a trusted partner in semiconductor innovation? Our laboratory offers advanced testing, analysis, and development services to help you achieve the highest standards of quality and performance. From concept validation to final production support, our team of skilled engineers and technicians works closely with you at every stage of the process.
+    </p>
+    <p class="contact-desc" style="margin-bottom:36px;">
+      Whether you require precision measurements, reliability assessments, or custom solutions, we combine state-of-the-art equipment with deep industry expertise to deliver results you can depend on. Contact us today to discuss your project and discover how we can help you push the boundaries of technology.
+    </p>
+
+    <!-- Location -->
+    <div class="contact-location">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+      <div class="contact-location-text">
+        <div class="contact-location-label">Location</div>
+        <div class="contact-location-val">Zacatecas, Zacatecas, México</div>
+      </div>
+    </div>
+
+    <!-- Contact info items -->
+    <div class="contact-info-row" style="margin-top:24px;">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        </div>
+        info@zactechsemi.com
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        Response within 24 hours
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — Form -->
+  <div class="contact-right reveal-right">
+    <div class="contact-form-card">
+      <div class="contact-form-title">Send Us a Message</div>
+      <div class="contact-form-sub">Fill out the form and our team will get back to you shortly.</div>
+
+      <form action="mailto:info@zactechsemi.com" method="POST" enctype="text/plain" onsubmit="return handleSubmit(event)">
+
+        <!-- Name row -->
+        <div class="form-row">
+          <div class="form-field" style="margin-bottom:0;">
+            <label class="form-label">
+              Name <span class="form-required">(required)</span>
+            </label>
+            <input class="form-input" type="text" name="nombre" placeholder="First name" required>
+          </div>
+          <div class="form-field" style="margin-bottom:0;">
+            <label class="form-label">
+              Last Name <span class="form-required">(required)</span>
+            </label>
+            <input class="form-input" type="text" name="apellido" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label class="form-label">
+            Email <span class="form-required">(required)</span>
+          </label>
+          <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
+        </div>
+
+        <!-- Company -->
+        <div class="form-field">
+          <label class="form-label">Company / Organization</label>
+          <input class="form-input" type="text" name="company" placeholder="Company name">
+        </div>
+
+        <!-- Service interest -->
+        <div class="form-field">
+          <label class="form-label">Service of Interest</label>
+          <select class="form-select" name="service">
+            <option value="" disabled selected>Select a service…</option>
+            <option>Reliability Tests (HTOL, LTOL, ELFR, THB, HAST…)</option>
+            <option>Package Qualification Testing</option>
+            <option>ESD &amp; Latch-Up Testing</option>
+            <option>Feature Analysis</option>
+            <option>Forensic / Failure Analysis</option>
+            <option>Warpage Analysis (ASIC Characterization)</option>
+            <option>Other / General Inquiry</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div class="form-field">
+          <label class="form-label">
+            Message <span class="form-required">(required)</span>
+          </label>
+          <textarea class="form-textarea" name="message" placeholder="Describe your project, requirements, or any questions…" required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          Send Message
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </button>
+
+        <p class="form-note">We respect your privacy. Your information will never be shared with third parties.</p>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM STRIP -->
+<div class="contact-strip">
+  <div class="contact-strip-text">
+    <strong>Zac Tech Semi</strong> &amp; Tech Meol Group<br>
+    Advanced Semiconductor Testing · Zacatecas, México
+  </div>
+  <div class="contact-strip-links">
+    <a href="mailto:info@zactechsemi.com" class="contact-strip-link">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+      info@zactechsemi.com
+    </a>
+    <a href="index.html#services" class="contact-strip-link">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      View Services
+    </a>
+  </div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="toast" style="
+  position:fixed; bottom:32px; right:32px; z-index:999;
+  background:var(--dark); color:#fff;
+  padding:14px 22px; border-radius:10px;
+  border-left:4px solid var(--gold);
+  font-family:'DM Sans',sans-serif; font-size:0.88rem; font-weight:500;
+  box-shadow:0 8px 32px rgba(0,0,0,0.25);
+  transform:translateY(80px); opacity:0;
+  transition:transform 0.4s ease, opacity 0.4s ease;
+  pointer-events:none;
+">
+  Message sent — we will get back to you within 24h.
+</div>
+
+<script>
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+/* ── Hero load ── */
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+
+/* ── Form submit — mailto fallback + toast ── */
+function handleSubmit(e) {
+  // Let the mailto action proceed, but also show a toast
+  const toast = document.getElementById('toast');
+  setTimeout(() => {
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+    setTimeout(() => {
+      toast.style.transform = 'translateY(80px)';
+      toast.style.opacity = '0';
+    }, 4000);
+  }, 200);
+  return true; // allow form submission
+}
+
+/* ── Input floating focus ring color ── */
+document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(el => {
+  el.addEventListener('focus', () => el.style.borderColor = 'var(--gold)');
+  el.addEventListener('blur',  () => el.style.borderColor = '');
+});
+</script>
+<script src="component.js"></script>
+</body>
+</html>
