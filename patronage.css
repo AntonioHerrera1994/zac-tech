@@ -816,7 +816,7 @@ ul { list-style:none; }
   line-height:1.8; max-width:530px; margin:22px auto 52px;
 }
 .cta-btns { display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap; }
-.cta-email { margin-top:30px; font-size:.88rem; color:rgba(255,200,140,.40); }
+.cta-email { margin-top:30px; font-size:.88rem; color:white; }
 .cta-email a { color:var(--green-200); font-weight:600; }
 .cta-email a:hover { text-decoration:underline; }
 
@@ -838,7 +838,7 @@ footer::before {
 }
 .f-brand .nav-brand-name { color:#fff; }
 .f-brand .nav-brand-name span { color:var(--green-200); }
-.f-brand p { font-size:.86rem; color:rgba(255,220,180,.40); line-height:1.75; margin-top:16px; max-width:250px; }
+.f-brand p { font-size:.86rem; color:white; line-height:1.75; margin-top:16px; max-width:250px; }
 .f-socials { display:flex; gap:10px; margin-top:22px; }
 .f-soc {
   width:38px; height:38px; border-radius:10px;
@@ -856,7 +856,7 @@ footer::before {
   text-transform:uppercase; color:rgba(240,168,32,.40); margin-bottom:20px;
 }
 .f-col ul li { margin-bottom:10px; }
-.f-col ul a { font-size:.86rem; color:rgba(255,200,140,.45); transition:color .3s; }
+.f-col ul a { font-size:.86rem; color:white; transition:color .3s; }
 .f-col ul a:hover { color:var(--green-200); }
 .footer-bottom {
   display:flex; align-items:center; justify-content:space-between;
