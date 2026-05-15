@@ -175,6 +175,7 @@ nav::before {
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ── Buttons ── */
+
 .btn-primary {
   font-family: var(--mono);
   font-size: 0.72rem;
