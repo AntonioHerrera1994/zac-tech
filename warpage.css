@@ -79,6 +79,11 @@ nav::before {
   display: flex; align-items: center; gap: 0.6rem;
 }
 
+.nav-logo img{
+  width:170px;
+  height:auto;
+}
+
 /* Replace cyan SVG rects with orange tones */
 .nav-logo svg rect { stroke: var(--cyan); }
 
