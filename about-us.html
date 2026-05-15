@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+  /* ══════════════════════════════
+     SECTION 1 — DARK STATEMENT
+  ══════════════════════════════ */
+  .about-statement {
+    background: var(--dark);
+    padding: 120px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-statement::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%,
+      rgba(160,120,48,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .about-statement-inner {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto;
+  }
+  .about-statement-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 28px;
+  }
+  .about-statement-tag span {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--gold); color: #fff;
+    padding: 4px 12px; border-radius: 4px;
+  }
+  .about-statement-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    color: var(--gold-light);
+    line-height: 1.15; letter-spacing: -0.03em;
+    margin-bottom: 48px;
+  }
+  .about-statement-body {
+    font-size: 1.05rem; line-height: 1.9;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300; margin-bottom: 24px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .about-statement-body + .about-statement-body {
+    color: rgba(255,255,255,0.5);
+  }
+  .about-statement-divider {
+    width: 60px; height: 2px;
+    background: var(--gold-gradient);
+    margin: 0 auto 48px; border-radius: 2px;
+  }
+
+  /* Stats row */
+  .about-stats {
+    display: flex; justify-content: center;
+    gap: 60px; margin-top: 64px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 48px;
+  }
+  .about-stat { text-align: center; }
+  .about-stat-val {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 2.2rem; color: var(--gold-light);
+    letter-spacing: -0.04em; line-height: 1;
+    display: block; margin-bottom: 6px;
+  }
+  .about-stat-label {
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ══════════════════════════════
+     SECTION 2 — SPLIT CARDS
+  ══════════════════════════════ */
+  .about-split-section {
+    background: #e8e8e6;
+    padding: 100px 80px;
+  }
+  .about-split-header {
+    margin-bottom: 64px;
+  }
+  .about-split-tag {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+  }
+  .about-split-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+  }
+  .about-split-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--black); line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .about-split-title em { font-style: normal; color: var(--gold); }
+
+  /* Two cards side by side */
+  .about-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .about-card {
+    background: var(--dark2);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: background 0.3s;
+  }
+  .about-card:hover { background: #1e1e1e; }
+
+  .about-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative; overflow: hidden;
+    flex-shrink: 0;
+  }
+  .about-card-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    border-radius: 12px;
+    transition: transform 6s ease;
+  }
+  .about-card:hover .about-card-img img { transform: scale(1.05); }
+
+  /* Card content */
+  .about-card-body {
+    padding: 40px 44px 48px;
+    flex: 1;
+  }
+  .about-card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(160,120,48,0.12);
+    border: 1px solid rgba(160,120,48,0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .about-card-name {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    color: var(--gold-light); line-height: 1.15;
+    letter-spacing: -0.02em; margin-bottom: 16px;
+  }
+  .about-card-divider {
+    width: 32px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 18px; border-radius: 2px;
+  }
+  .about-card-desc {
+    font-size: 0.98rem; line-height: 1.85;
+    color: rgba(255,255,255,0.55); font-weight: 300;
+  }
+
+  /* ══════════════════════════════
+     SECTION 3 — QUOTE CTA
+  ══════════════════════════════ */
+  .about-cta {
+    position: relative;
+    min-height: 600px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .about-cta-bg {
+    position: absolute; inset: 0;
+    background-image: url('about_pcb.webp');
+    background-size: cover; background-position: center;
+    filter: brightness(0.22) saturate(0.6);
+    transform: scale(1.05);
+    transition: transform 8s ease;
+  }
+  .about-cta:hover .about-cta-bg { transform: scale(1); }
+  .about-cta-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg,
+      rgba(10,10,10,0.92) 0%,
+      rgba(160,120,48,0.08) 100%);
+  }
+  .about-cta-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 80px;
+    max-width: 900px;
+  }
+  .about-cta-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(160,120,48,0.15);
+    border: 1px solid rgba(160,120,48,0.35);
+    color: var(--gold-light);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+    margin-bottom: 32px;
+  }
+  .about-cta-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    color: var(--white); line-height: 1.15;
+    letter-spacing: -0.03em; margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .about-cta-title em { font-style: normal; color: var(--gold-light); }
+  .about-cta-divider {
+    width: 50px; height: 2px;
+    background: var(--gold-gradient);
+    margin: 0 auto 32px; border-radius: 2px;
+  }
+  .about-cta-text {
+    font-size: 0.95rem; line-height: 1.85;
+    color: rgba(255,255,255,0.55); font-weight: 300;
+    max-width: 640px; margin: 0 auto 44px;
+  }
+  .about-cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: #fff;
+    padding: 16px 42px; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 12px 40px rgba(160,120,48,0.4);
+    font-family: 'Syne', sans-serif;
+  }
+  .about-cta-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 50px rgba(160,120,48,0.55);
+  }
+  .about-cta-btn svg { width: 18px; height: 18px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-statement { padding: 80px 24px; }
+    .about-split-section { padding: 64px 24px; }
+    .about-cards { grid-template-columns: 1fr; }
+    .about-card-body { padding: 32px 24px; }
+    .about-cta-content { padding: 60px 24px; }
+    .about-stats { gap: 36px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('about_hero.webp'); background-position:center 40%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">About Us</span>
+    </div>
+    <div class="hero-label">Who We Are</div>
+    <h1 class="hero-title">About<br><em>Us</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Value Added Partner
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        Precision Execution
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        Zacatecas, México
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- ══════════════════════
+     SECTION 1 — STATEMENT
+══════════════════════ -->
+<section class="about-statement">
+  <div class="about-statement-inner reveal">
+
+    <div class="about-statement-tag">
+      <span>Our Mission</span>
+    </div>
+
+    <h2 class="about-statement-title">
+      Plan Ahead, Stay Informed<br>and Execute with Accuracy
+    </h2>
+
+    <div class="about-statement-divider"></div>
+
+    <p class="about-statement-body">
+      Zac Tech Semi was built as a value added partner to you, regardless of your industry, location or technology. We strongly believe that our value is in our honest opinion to your success and vitality of a strong core proactive strategy that will enable greater liquidity impact on live assets if a strict plan of action is established at the beginning of a process for accurate execution immediately at the end term life.
+    </p>
+
+    <p class="about-statement-body">
+      Our goal is not only to assist in liquidating and managing your surplus equipment, but also to enable you to establish an exit strategy with your live equipment from a perspective in relation to the purpose for acquisition. We are committed to proving and reporting to you current fair market values throughout the age of ownership and liquidate at the end of term with complete and effective accuracy.
+    </p>
+
+    <p class="about-statement-body" style="color:rgba(255,255,255,0.7);font-size:1.1rem;font-style:italic;margin-top:12px;">
+      "Let our team at Zac Tech Semi create a plan for your live assets, stay informed on current fair market values and execute a disposition plan with fine accuracy."
+    </p>
+
+    <div class="about-stats">
+      <div class="about-stat">
+        <span class="about-stat-val">24h</span>
+        <span class="about-stat-label">Response Time</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-val">FMV</span>
+        <span class="about-stat-label">Fair Market Reporting</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-val">2</span>
+        <span class="about-stat-label">Continents</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-val">100%</span>
+        <span class="about-stat-label">Industry Agnostic</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Testing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Asset Valuation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Industry Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Powerful Tools</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Disposition Planning</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Fair Market Value</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Zac Tech Semi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Tech Meol Group</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Semiconductor Testing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Asset Valuation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Industry Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Powerful Tools</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Disposition Planning</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Fair Market Value</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Zac Tech Semi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Tech Meol Group</span>
+  </div>
+</div>
+
+<!-- ══════════════════════
+     SECTION 2 — TWO CARDS
+══════════════════════ -->
+<section class="about-split-section">
+
+  <div class="about-split-header reveal">
+    <span class="about-split-tag">What We Offer</span>
+    <h2 class="about-split-title">The Tools &amp; Intelligence<br>to <em>Drive Your Strategy</em></h2>
+  </div>
+
+  <div class="about-cards">
+
+    <!-- Card 1 — Powerful Tools -->
+    <div class="about-card reveal-left">
+      <div class="about-card-img">
+        <img src="about_tools.webp" alt="Powerful laboratory tools">
+      </div>
+      <div class="about-card-body">
+        <div class="about-card-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="var(--gold-light)"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.654-4.654m5.065-5.065l3.03-2.496c.14-.468.382-.89.766-1.208M5.23 16.5H3m2.5-7.5H3m9.5-4V3"/></svg>
+        </div>
+        <div class="about-card-name">Powerful Tools</div>
+        <div class="about-card-divider"></div>
+        <p class="about-card-desc">
+          We bring you the determining tools in factoring out the value of your current surplus and honor their value as your initial guaranteed payment in disposition. State-of-the-art equipment combined with deep industry expertise to deliver results you can depend on.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 — Industry Analysis -->
+    <div class="about-card reveal-right">
+      <div class="about-card-img">
+        <img src="about_analysis.webp" alt="Industry analysis team">
+      </div>
+      <div class="about-card-body">
+        <div class="about-card-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="var(--gold-light)"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+        </div>
+        <div class="about-card-name">Industry Analysis</div>
+        <div class="about-card-divider"></div>
+        <p class="about-card-desc">
+          Through comprehensive continuous analysis we will enable you to identify weakening cost factors within live production equipment, where upgrading or changing processes be eminent to the vitality of the business. Stay ahead of the curve with data-driven insight.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════
+     SECTION 3 — QUOTE CTA
+══════════════════════ -->
+<section class="about-cta">
+  <div class="about-cta-bg"></div>
+  <div class="about-cta-overlay"></div>
+  <div class="about-cta-content reveal">
+
+    <div class="about-cta-label">Our Commitment</div>
+    <h2 class="about-cta-title">
+      Zac Tech Semi Will Keep You<br>
+      <em>Informed on FMV</em> Through the<br>
+      Life Expectancy of Your Assets
+    </h2>
+    <div class="about-cta-divider"></div>
+    <p class="about-cta-text">
+      And execute an effective disposition plan at end of term life. From concept validation to final production support, our team works closely with you at every stage — combining state-of-the-art equipment with honest opinion and deep industry expertise.
+    </p>
+
+    <a href="contact.html" class="about-cta-btn">
+      Get in Touch
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+    </a>
+
+  </div>
+</section>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+</script>
+<script src="component.js"></script>
+</body>
+</html>
