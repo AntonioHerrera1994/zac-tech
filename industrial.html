@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industrial — Zac Tech Semi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="services.css">
+<style>
+
+  /* ══ SPLIT SECTIONS ══ */
+  .ai-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+    overflow: hidden;
+  }
+
+  /* Image side */
+  .ai-img-col {
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-img-col img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 7s ease;
+  }
+  .ai-section:hover .ai-img-col img { transform: scale(1.04); }
+
+  /* Overlay fade toward content */
+  .ai-img-col::after {
+    content: '';
+    position: absolute; inset: 0;
+  }
+  .ai-img-right .ai-img-col::after {
+    background: linear-gradient(to left, transparent 55%, var(--bg-section, #f0f0ee) 100%);
+  }
+  .ai-img-left .ai-img-col::after {
+    background: linear-gradient(to right, transparent 55%, var(--bg-section, #111) 100%);
+  }
+
+  /* Content side */
+  .ai-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px;
+  }
+
+  /* Reversed layout (image right) */
+  .ai-img-right { direction: rtl; }
+  .ai-img-right > * { direction: ltr; }
+
+  /* Section backgrounds */
+  .ai-light  { background: #f0f0ee; --bg-section: #f0f0ee; }
+  .ai-dark   { background: var(--dark); --bg-section: var(--dark); }
+  .ai-dark2  { background: #f0f0ee; --bg-section: #f0f0ee; }
+
+  /* Typography — light bg */
+  .ai-light .ai-tag,
+  .ai-dark2 .ai-tag {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-light);
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 18px;
+  }
+  .ai-light .ai-tag::before,
+  .ai-dark2 .ai-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .ai-light .ai-title,
+  .ai-dark2 .ai-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: var(--black); line-height: 1.1;
+    letter-spacing: -0.03em; margin-bottom: 24px;
+  }
+  .ai-light .ai-title em,
+  .ai-dark2 .ai-title em { font-style: normal; color: var(--gold); }
+  .ai-light .ai-body,
+  .ai-dark2 .ai-body {
+    font-size: 1rem; line-height: 1.85;
+    color: #444; font-weight: 300;
+  }
+  .ai-light .ai-divider,
+  .ai-dark2 .ai-divider {
+    width: 40px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 24px; border-radius: 2px;
+  }
+
+  /* Typography — dark bg */
+  .ai-dark .ai-tag {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: white;
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 18px;
+  }
+  .ai-dark .ai-tag::before {
+    content: '';
+    width: 24px; height: 2px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .ai-dark .ai-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    color: #ffffff; line-height: 1.1;
+    letter-spacing: -0.03em; margin-bottom: 24px;
+  }
+  .ai-dark .ai-title em { font-style: normal; color: var(--gold-light); }
+  .ai-dark .ai-body {
+    font-size: 1rem; line-height: 1.85;
+    color: rgba(255,255,255,0.6); font-weight: 300;
+  }
+  .ai-dark .ai-divider {
+    width: 40px; height: 2px;
+    background: var(--gold-gradient);
+    margin-bottom: 24px; border-radius: 2px;
+  }
+
+  /* Chip list bullets */
+  .ai-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 28px;
+  }
+  .ai-chip {
+    display: inline-flex; align-items: center;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .ai-chip-dark {
+    background: rgba(160,120,48,0.12);
+    border: 1px solid rgba(160,120,48,0.3);
+    color: white;
+  }
+  .ai-chip-light {
+    background: rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: #333;
+  }
+
+  /* Stat row */
+  .ai-stats {
+    display: flex; gap: 36px; margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .ai-stat { }
+  .ai-stat-val {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.8rem; line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .ai-stat-label {
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-top: 4px; opacity: 0.45;
+  }
+  .ai-dark .ai-stat-val  { color: white; }
+  .ai-dark .ai-stat-label { color: rgba(255, 255, 255, 0.9); }
+  .ai-light .ai-stat-val, .ai-dark2 .ai-stat-val { color: var(--gold); }
+  .ai-light .ai-stat-label, .ai-dark2 .ai-stat-label { color: #555; }
+
+  /* Spectrum accent line at bottom of hero */
+  .ai-hero-line {
+    height: 2px;
+    background: var(--spectrum);
+    opacity: 0.55;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ai-section  { grid-template-columns: 1fr; min-height: auto; }
+    .ai-img-col  { height: 260px; }
+    .ai-img-right { direction: ltr; }
+    .ai-content  { padding: 48px 24px; }
+    .ai-img-col::after { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('/industrial/indus1.webp'); background-position: center 35%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#markets">Markets</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">Industrial</span>
+    </div>
+    <div class="hero-label">Markets</div>
+    <h1 class="hero-title">Industrial</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+       Automation • Control Systems • Robotics
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        High Reliability • Harsh Environments
+      </div>
+      <div class="hero-meta-item">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+       Long Operational Lifetimes • Strict Compliance
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Industrial Electronics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Smart Manufacturing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Automation & Robotics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>High Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Harsh Environments</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Reliability Qualification</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Time-to-Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Strict Compliance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Industrial Infrastructure</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Industrial Electronics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Smart Manufacturing</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Automation & Robotics</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>High Reliability</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Harsh Environments</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Reliability Qualification</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Failure Analysis</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Time-to-Market</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Strict Compliance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Industrial Infrastructure</span>
+  </div>
+</div>
+
+<div class="ai-section ai-light ai-img-right reveal">
+
+  <div class="ai-img-col">
+    <img src="/industrial/indus2.webp" alt="Semiconductor chip for Industrial Electronics">
+  </div>
+
+  <div class="ai-content">
+    <span class="ai-tag">Powering Smart Manufacturing</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Increasing Demand for Industrial Electronics</h2>
+    <div class="ai-body">
+      <p>The industrial sector has seen a rapid adoption of semiconductor technology to power automation, control systems, robotics, and smart manufacturing. High reliability, long operational lifetimes, and resistance to harsh environments are essential requirements for industrial-grade components. Fluctuations in production cycles and integration with multiple subsystem suppliers add complexity to the design and validation process.</p>
+    </div>
+    <div class="ai-chips">
+      <span class="ai-chip ai-chip-light">Automation</span>
+      <span class="ai-chip ai-chip-light">Control Systems</span>
+      <span class="ai-chip ai-chip-light">Robotics</span>
+      <span class="ai-chip ai-chip-light">Smart Manufacturing</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-divider-light"></div>
+
+<div class="ai-section ai-dark reveal">
+
+  <div class="ai-content">
+    <span class="ai-tag">Simulating Real-World Conditions</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Advanced Testing Capabilities</h2>
+    <div class="ai-body">
+      <p>Our capabilities include ESD & Latch-Up testing, reliability qualification, failure analysis, and encapsulation evaluation. We simulate real-world industrial conditions — temperature extremes, mechanical stress, voltage spikes, and long operational cycles — to guarantee that every component performs reliably in demanding environments.</p>
+    </div>
+
+    <div class="ai-chips" style="margin-top:24px;">
+      <span class="ai-chip ai-chip-dark">ESD & Latch-Up</span>
+      <span class="ai-chip ai-chip-dark">Reliability Qualification</span>
+      <span class="ai-chip ai-chip-dark">Failure Analysis</span>
+      <span class="ai-chip ai-chip-dark">Mechanical Stress</span>
+    </div>
+  </div>
+
+  <div class="ai-img-col" style="--bg-section:var(--dark);">
+    <img src="/industrial/indus3.webp" alt="Industrial Testing Infrastructure">
+  </div>
+
+</div>
+
+<div class="card-divider-dark"></div>
+
+<div class="ai-section ai-dark2 reveal">
+
+  <div class="ai-content">
+    <span class="ai-tag">Supporting Infrastructure</span>
+    <div class="ai-divider"></div>
+    <h2 class="ai-title">Our Commitment</h2>
+    <div class="ai-body">
+      <p>We are dedicated to helping industrial semiconductor companies accelerate time-to-market, improve reliability, and maintain strict compliance — ensuring every device supports the backbone of modern industrial infrastructure.</p>
+    </div>
+    <div class="ai-chips" style="margin-top:28px;">
+      <span class="ai-chip ai-chip-light">Time-to-Market</span>
+      <span class="ai-chip ai-chip-light">Improve Reliability</span>
+      <span class="ai-chip ai-chip-light">Strict Compliance</span>
+      <span class="ai-chip ai-chip-light">Industrial Infrastructure</span>
+    </div>
+  </div>
+
+  <div class="ai-img-col">
+    <img src="/industrial/indus4.webp" alt="Industrial Electronic Component">
+  </div>
+
+</div>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+window.addEventListener('load', () => document.getElementById('hero')?.classList.add('loaded'));
+</script>
+<script src="component.js"></script>
+</body>
+</html>

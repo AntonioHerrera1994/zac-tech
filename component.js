@@ -183,11 +183,11 @@ nav.scrolled {
         </a>
         <ul class="zt-dropdown">
           <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
-          <li><a href="maerospace-defense.html">Aerospace and Defense</a></li>
-          <li><a href="markets-automotive.html">Automotive</a></li>
-          <li><a href="markets-industrial.html">Industrial</a></li>
-          <li><a href="markets-medical.html">Medical</a></li>
-          <li><a href="markets-transportation.html">Transportation</a></li>
+          <li><a href="aerospace-defense.html">Aerospace and Defense</a></li>
+          <li><a href="automotive.html">Automotive</a></li>
+          <li><a href="industrial.html">Industrial</a></li>
+          <li><a href="medical.html">Medical</a></li>
+          <li><a href="transportation.html">Transportation</a></li>
         </ul>
       </li>
 
@@ -283,7 +283,7 @@ nav.scrolled {
 
 /* Tagline */
 .zt-footer-tagline {
-  font-size: .83rem; color: rgba(255, 220, 180, 0.38);
+  font-size: .83rem; color: white;
   line-height: 1.75; font-weight: 300;
   margin-bottom: 28px; max-width: 240px;
 }
@@ -317,14 +317,14 @@ nav.scrolled {
 /* Column links */
 .zt-footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .zt-footer-col ul a {
-  font-size: .85rem; color: rgba(255, 210, 170, 0.42);
+  font-size: .85rem; color: white;
   text-decoration: none; transition: color .2s;
 }
 .zt-footer-col ul a:hover { color: #F0A820; }
 
 /* Newsletter */
 .zt-newsletter-p {
-  font-size: .83rem; color: rgba(255, 210, 170, 0.38);
+  font-size: .83rem; color: white;
   margin-bottom: 18px; line-height: 1.65; font-weight: 300;
 }
 .zt-newsletter-form { display: flex; flex-direction: column; gap: 10px; }
@@ -416,12 +416,12 @@ nav.scrolled {
       <div class="zt-footer-col">
         <h5>Markets</h5>
         <ul>
-          <li><a href="markets-ai.html">Artificial Intelligence</a></li>
-          <li><a href="markets-aerospace.html">Aerospace and Defense</a></li>
-          <li><a href="markets-automotive.html">Automotive</a></li>
-          <li><a href="markets-industrial.html">Industrial</a></li>
-          <li><a href="markets-medical.html">Medical</a></li>
-          <li><a href="markets-transportation.html">Transportation</a></li>
+          <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
+          <li><a href="aerospace-defense.html">Aerospace and Defense</a></li>
+          <li><a href="automotive.html">Automotive</a></li>
+          <li><a href="industrial.html">Industrial</a></li>
+          <li><a href="medical.html">Medical</a></li>
+          <li><a href="transportation.html">Transportation</a></li>
         </ul>
       </div>
 
