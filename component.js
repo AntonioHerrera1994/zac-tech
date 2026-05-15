@@ -169,8 +169,8 @@ nav.scrolled {
         <ul class="zt-dropdown">
           <li><a href="reliability-tests.html">Reliability Tests</a></li>
           <li><a href="package-qualification-testing.html">Package Qualification Testing</a></li>
-          <li><a href="esd-latchup-testing.html">ESD &amp; Latch-Up</a></li>
-          <li><a href="failure-analysis.html">Failure Analysis</a></li>
+          <li><a href="/esd-latchup-testing">ESD &amp; Latch-Up</a></li>
+          <li><a href="/failure-analysis">Failure Analysis</a></li>
           <li><a href="forensic-services.html">Forensic Services</a></li>
         </ul>
       </li>
@@ -182,9 +182,9 @@ nav.scrolled {
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
         </a>
         <ul class="zt-dropdown">
-          <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
-          <li><a href="aerospace-defense.html">Aerospace and Defense</a></li>
-          <li><a href="automotive.html">Automotive</a></li>
+          <li><a href="/artificial-intelligence">Artificial Intelligence</a></li>
+          <li><a href="/aerospace-defense">Aerospace and Defense</a></li>
+          <li><a href="/automotive">Automotive</a></li>
           <li><a href="industrial.html">Industrial</a></li>
           <li><a href="medical.html">Medical</a></li>
           <li><a href="transportation.html">Transportation</a></li>
@@ -192,17 +192,17 @@ nav.scrolled {
       </li>
 
           <!-- About -->
-      <li><a href="about-us.html" data-page="about-us">About Us</a></li>
+      <li><a href="/about-us" data-page="about-us">About Us</a></li>
 
           <!-- Warpage -->
-      <li><a href="warpage.html" data-page="warpage">Asic Warpage Analisis</a></li>
+      <li><a href="/warpage" data-page="warpage">Asic Warpage Analisis</a></li>
 
-      <!-- Warpage -->
-      <li><a href="patronage.html" data-page="patronage">Patronage</a></li>
+      <!-- Patronage -->
+      <li><a href="/patronage" data-page="patronage">Patronage</a></li>
 
 
       <!-- Contact -->
-      <li><a href="contact.html" data-page="contact">Contact</a></li>
+      <li><a href="/contact" data-page="contact">Contact</a></li>
 
     </ul>
     <button class="zt-nav-hamburger" id="zt-hamburger" aria-label="Menu">
