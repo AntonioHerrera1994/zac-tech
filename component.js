@@ -427,7 +427,7 @@ nav.scrolled {
         <ul>
           <li><a href="/about-us">About</a></li>
          
-          <li><a href="policy.html">Policy</a></li>
+          <li><a href="/">Privacy Policy</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
