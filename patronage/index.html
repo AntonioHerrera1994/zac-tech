@@ -936,13 +936,39 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('solid', window.scrollY > 60);
 }, { passive: true });
 
-/* ════ HAMBURGER ════ */
-const ham = document.getElementById('ham');
-const mob = document.getElementById('mobileMenu');
+const ham     = document.getElementById('ham');
+const mob     = document.getElementById('mobileMenu');
 const mobClose = document.getElementById('mobileClose');
-ham.addEventListener('click', () => mob.classList.add('open'));
-mobClose.addEventListener('click', () => mob.classList.remove('open'));
-mob.querySelectorAll('.mm-link').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+// Toggle al hacer clic en el hamburger (abre Y cierra)
+ham.addEventListener('click', () => {
+  const isOpen = mob.classList.toggle('open');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+// Botón X interno
+if (mobClose) {
+  mobClose.addEventListener('click', () => {
+    mob.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+}
+
+// Links del menú mobile
+mob.querySelectorAll('.mm-link').forEach(a =>
+  a.addEventListener('click', () => {
+    mob.classList.remove('open');
+    document.body.style.overflow = '';
+  })
+);
+
+// Cerrar al hacer clic en el backdrop (fuera del menú)
+mob.addEventListener('click', e => {
+  if (e.target === mob) {
+    mob.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
 
 /* ════ REVEAL ════ */
 const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.tcard');

@@ -1138,4 +1138,7 @@ footer::before {
   .asic-warpage-banner { flex-direction: column; gap: 1.5rem; }
   .asic-banner-stats { justify-content: center; }
   .hero-img-zone { display: none; }
+  .chip-animacion{
+    display: none;
+  }
 }

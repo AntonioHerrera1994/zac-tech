@@ -474,3 +474,184 @@ body {
 .zt-nav-links a.active    { color:#F0A820 !important; }
 .zt-dropdown li a:hover   { color:#F0A820 !important; background:rgba(212,86,26,.10) !important; }
 .breadcrumb a:hover       { color: var(--orange-lighter); }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Reliability Tests Page
+   tablet  → max-width: 1024px
+   mobile  → max-width: 768px
+   xs      → max-width: 480px
+═══════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────
+   TABLET  (≤ 1024px)
+────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Hero */
+  .hero-content { padding: 0 48px 56px; }
+  .hero-title   { letter-spacing: -.03em; }
+
+  /* Test cards */
+  .test-card { grid-template-columns: 1fr 1fr; min-height: 440px; }
+  .test-content { padding: 56px 48px; }
+  .test-card.reverse .test-content { padding: 56px 48px 56px 40px; }
+  .test-title { font-size: clamp(1.3rem, 2vw, 1.8rem); }
+
+  /* CTA */
+  #cta { padding: 100px 48px; }
+  .cta-perks { gap: 20px; }
+}
+
+
+/* ──────────────────────────────────
+   MOBILE  (≤ 768px)
+────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Hero ── */
+  #hero { height: auto; min-height: 56vh; align-items: flex-end; }
+  .hero-content { padding: 0 24px 48px; }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    letter-spacing: -.025em;
+    line-height: 1.05;
+    text-align: left;
+  }
+  .hero-label   { font-size: .66rem; }
+  .hero-meta    { flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+  .hero-meta-item { font-size: .75rem; }
+
+  .breadcrumb a,
+  .breadcrumb-cur { font-size: .68rem; }
+
+  /* ── Ticker ── */
+  .ticker-item { font-size: .68rem; padding: 0 16px; gap: 10px; }
+
+  /* ── Test cards — apilados ── */
+  .test-card {
+    grid-template-columns: 1fr;
+    min-height: unset;
+    direction: ltr !important;    /* anula el .reverse en mobile */
+  }
+  .test-card > * { direction: ltr !important; }
+
+  /* La imagen siempre arriba */
+  .test-img-col {
+    height: 240px;
+    order: 0;
+  }
+
+  /* Elimina los gradientes laterales en mobile (ya no tienen sentido) */
+  .dark-card  .test-img-col::after,
+  .dark-card.reverse .test-img-col::after,
+  .light-card .test-img-col::after,
+  .light-card.reverse .test-img-col::after {
+    background: linear-gradient(to bottom, transparent 55%, var(--dark) 100%);
+  }
+  .light-card .test-img-col::after,
+  .light-card.reverse .test-img-col::after {
+    background: linear-gradient(to bottom, transparent 55%, var(--white) 100%);
+  }
+
+  /* Contenido siempre abajo, texto a la izquierda */
+  .test-content {
+    padding: 32px 24px 44px !important;
+    order: 1;
+    text-align: left;
+  }
+
+  /* Títulos más pequeños y a la izquierda */
+  .test-title {
+    font-size: clamp(1.3rem, 6vw, 1.7rem);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    text-align: left;
+  }
+  .test-full-name { font-size: .85rem; margin-bottom: 10px; }
+  .test-desc      { font-size: .88rem; line-height: 1.75; }
+  .test-standard  { font-size: .67rem; }
+  .test-divider   { margin-bottom: 16px; }
+
+  .test-code-tag  { margin-bottom: 14px; }
+  .test-code      { font-size: .6rem; }
+  .test-num       { font-size: .75rem; }
+
+  /* Botones a ancho completo en mobile */
+  .btn-quote {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  /* ── CTA ── */
+  #cta {
+    padding: 80px 24px;
+    min-height: unset;
+    align-items: flex-start;
+  }
+  .cta-content { text-align: left; max-width: 100%; }
+  .cta-tag     { font-size: .67rem; }
+
+  .cta-title {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    letter-spacing: -.03em;
+    line-height: 1.05;
+    text-align: left;
+  }
+  .cta-sub { font-size: .88rem; text-align: left; }
+
+  .cta-perks {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .cta-perk { font-size: .82rem; }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 28px;
+    font-size: .86rem;
+  }
+
+  /* ── Section titles globales ── */
+  .section-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    letter-spacing: -.025em;
+    text-align: left;
+    margin-bottom: 36px;
+  }
+  .section-label { font-size: .66rem; }
+}
+
+
+/* ──────────────────────────────────
+   XS  (≤ 480px)
+────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Hero */
+  .hero-content { padding: 0 20px 40px; }
+  .hero-title   { font-size: clamp(1.75rem, 10vw, 2.4rem); }
+  .hero-meta    { gap: 10px; }
+
+  /* Test cards */
+  .test-img-col   { height: 200px; }
+  .test-content   { padding: 26px 20px 36px !important; }
+  .test-title     { font-size: clamp(1.2rem, 7vw, 1.5rem); }
+  .test-desc      { font-size: .84rem; }
+  .test-full-name { font-size: .8rem; }
+
+  /* CTA */
+  #cta         { padding: 64px 20px; }
+  .cta-title   { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+  .cta-sub     { font-size: .84rem; }
+  .cta-perks   { gap: 10px; }
+  .cta-perk    { font-size: .78rem; }
+  .cta-btn     { padding: 14px 22px; font-size: .82rem; }
+
+  /* Ticker */
+  .ticker-item { font-size: .64rem; padding: 0 12px; }
+}

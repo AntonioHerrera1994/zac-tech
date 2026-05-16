@@ -152,11 +152,13 @@ ul { list-style:none; }
    NAVIGATION
 ════════════════════════════════════════════ */
 #nav {
-  position:fixed; top:0; left:0; right:0; z-index:900;
-  padding:22px 64px;
-  display:flex; align-items:center; justify-content:space-between;
-  transition:all .4s var(--ease-out);
-  background:rgba(255,248,242,.96);
+ position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 22px 64px;
+  display: flex; align-items: center;
+  gap: 32px;                          /* links pegados al brand */
+  justify-content: flex-start;        /* todo empieza desde la izquierda */
+  transition: all .4s var(--ease-out);
+  background: rgba(255,248,242,.96);
 }
 /* Sunset line on top */
 #nav::before {
@@ -234,6 +236,11 @@ ul { list-style:none; }
 }
 .nav-pill::after { display:none !important; }
 .nav-pill:hover { opacity:.88 !important; transform:translateY(-1px); }
+
+.lang-toggle {
+  margin-left: auto;                  /* ← esto hace el truco */
+  display: flex; gap: 6px;
+}
 
 .hamburger {
   display:none; flex-direction:column; gap:5px;
@@ -1062,8 +1069,12 @@ footer::before {
   .cta-section { padding:90px 32px; }
 }
 @media (max-width:768px) {
-  .nav-links { display:none; }
-  .hamburger { display:flex; }
+
+  #nav { padding: 16px 24px; gap: 0; }
+  .nav-links  { display: none; }
+  .lang-toggle { margin-left: auto; }
+  .hamburger  { display: flex; }
+
   .impact-cards { grid-template-columns:1fr 1fr; gap:14px; }
   .how-steps { grid-template-columns:1fr; }
   .gallery-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
