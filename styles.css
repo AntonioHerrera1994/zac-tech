@@ -147,7 +147,7 @@ body {
 }
 .hero-sub {
   font-size: 1.05rem;
-  color: rgba(255,240,220,0.60);
+  color: rgb(255, 240, 220);
   line-height: 1.75;
   max-width: 520px;
   margin-bottom: 44px;
@@ -918,7 +918,7 @@ body {
     max-width: 100%;
   }
   .hero-tag   { font-size: 0.68rem; padding: 5px 13px; }
-  .hero-title { letter-spacing: -0.025em; font-size: clamp(2.4rem, 5.5vw, 5rem); }
+  .hero-title { letter-spacing: -0.025em; font-size: clamp(2rem, 5.5vw, 5rem); }
   .hero-sub   { font-size: 0.92rem; max-width: 100%; margin-bottom: 36px; }
   .hero-btns  { flex-direction: column; gap: 12px; }
   .btn-primary,

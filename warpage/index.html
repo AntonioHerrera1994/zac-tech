@@ -23,9 +23,10 @@
 <nav>
   <div class="nav-logo">
     <a href="/">
-   <img src="/logo2.png"/>
-   </a>
+      <img src="/logo2.png"/>
+    </a>
   </div>
+ 
   <ul class="nav-links">
     <li><a href="#asic">ASIC</a></li>
     <li><a href="#problem">Problem</a></li>
@@ -34,10 +35,28 @@
     <li><a href="#methods">Methods</a></li>
     <li><a href="#comparison">Comparison</a></li>
     <li><a href="#report">Report</a></li>
-     <li><a href="/">Zach Tec Semi</a></li>
-      <li><a href="mailto:info@zacsemi.com.mx" >Contact Us</a></li>
+    <li><a href="/">Zach Tec Semi</a></li>
+    <li><a href="mailto:info@zacsemi.com.mx">Contact Us</a></li>
   </ul>
+ 
+  <!-- Hamburger — solo visible en mobile via CSS -->
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+ 
+
+ 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#asic">ASIC</a>
+  <a href="#problem">Problem</a>
+  <a href="#process">Process</a>
+  <a href="#equipment">Equipment</a>
+  <a href="#methods">Methods</a>
+  <a href="#comparison">Comparison</a>
+  <a href="#report">Report</a>
+  <a href="/" class="mobile-cta">Zach Tec Semi ↗</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -604,6 +623,7 @@
       </div>
     </div>
 
+    <div class="table-responsive-wrap">
     <table class="comp-table">
       <thead>
         <tr>
@@ -624,6 +644,7 @@
         <tr><td class="feature-name">Characterization Complexity</td><td><span class="badge badge-mid">Standard</span></td><td><span class="badge badge-mid">High</span></td><td class="highlight-col"><span class="badge badge-bad">Emerging — Critical</span></td></tr>
       </tbody>
     </table>
+    </div>
     <p style="font-size:0.8rem;color:var(--text-dim);margin-top:1rem;font-family:var(--mono);">Both organic and glass ASIC packages require rigorous warpage characterization — TGV manufacturing complexity and brittle handling of glass panels demand validated test protocols at every stage.</p>
   </div>
 </section>
@@ -675,19 +696,19 @@
     </div>
 
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
-      <div style="flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
+      <div style="flex:1;min-width:180px;border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
         <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">AI-Enhanced DIC</div>
         <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Digital Image Correlation for full-field ASIC strain mapping and deformation analysis correlated with FEM simulation models.</div>
       </div>
-      <div style="flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
+      <div style="flex:1;min-width:180px;border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
         <div style="font-family:var(--mono);font-size:.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">Hybrid Interferometry</div>
         <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Combined optical interferometry methods for multi-scale ASIC package flatness measurement across large format substrates.</div>
       </div>
-      <div style="flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
+      <div style="flex:1;min-width:180px;border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
         <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">FEM Correlation</div>
         <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Digital twin and FEM correlation to validate ASIC simulation results and predict package behavior under next-generation thermal loading conditions.</div>
       </div>
-      <div style="flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
+      <div style="flex:1;min-width:180px;border:1px solid var(--border);padding:1.2rem;border-top:2px solid var(--amber);">
         <div style="font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;">Inline Vision</div>
         <div style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.6;">Machine vision warpage estimation for rapid inline ASIC quality screening in high-volume manufacturing environments.</div>
       </div>
@@ -756,7 +777,7 @@
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
@@ -765,14 +786,17 @@
       }
     });
   }, { threshold: 0.1 });
-
-  document.querySelectorAll('.report-card,.method-card,.step-card,.stat-item,.asic-type-card,.equip-card').forEach(el => {
+ 
+  document.querySelectorAll(
+    '.report-card,.method-card,.step-card,.stat-item,.asic-type-card,.equip-card'
+  ).forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
     observer.observe(el);
   });
-
+ 
+  /* ── Active nav link on scroll ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -781,6 +805,33 @@
     navLinks.forEach(link => {
       link.style.color = link.getAttribute('href') === '#' + current ? 'var(--cyan)' : '';
     });
+  });
+ 
+  /* ── Hamburger / Mobile menu ── */
+  const ham         = document.getElementById('ham');
+  const mobileMenu  = document.getElementById('mobileMenu');
+ 
+  ham.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    ham.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+ 
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      ham.classList.remove('open');
+      document.body.style.overflow = '';
+    })
+  );
+ 
+  /* Cerrar al hacer click en el fondo del overlay */
+  mobileMenu.addEventListener('click', e => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.remove('open');
+      ham.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   });
 </script>
 </body>
