@@ -210,11 +210,13 @@ nav.scrolled {
     </button>
   </nav>
 
-  <div class="zt-mobile-menu" id="zt-mobile-menu">
+<div class="zt-mobile-menu" id="zt-mobile-menu">
     <a href="index.html#services">Services</a>
     <a href="#markets">Markets</a>
-    <a href="#about">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="/about-us">About Us</a>
+    <a href="/warpage">Asic Warpage Analisis</a>
+    <a href="/patronage">Patronage</a>
+    <a href="/contact">Contact</a>
   </div>
   `;
 
