@@ -631,7 +631,7 @@ ul { list-style:none; }
 /* ── Grid de videos ── */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas por defecto */
+  grid-template-columns: repeat(1, 1fr); /* 2 columnas por defecto */
   gap: 20px;
 }
 
