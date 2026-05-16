@@ -853,3 +853,218 @@ body {
   height: 20px;
   background: transparent;
 }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — ZacTech Semi
+   Breakpoints:  tablet  → max-width: 1024px
+                 mobile  → max-width: 768px
+                 xs      → max-width: 480px
+═══════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────
+   TABLET  (≤ 1024px)
+────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Hero */
+  .hero-content { padding: 0 48px; }
+
+  /* Stats */
+  .stats-bar { padding: 40px 48px; gap: 0; }
+  .stat-num  { font-size: 2.6rem; }
+
+  /* Services */
+  #services { padding: 100px 48px; }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Innovation */
+  .innovation-inner { grid-template-columns: 1fr; min-height: unset; }
+  .innovation-text  { padding: 80px 48px 48px; }
+  .innovation-img-wrap {
+    height: 420px;
+    border-radius: 0;
+  }
+  .innovation-img-overlay {
+    background: linear-gradient(to bottom, var(--dark) 0%, transparent 30%);
+  }
+
+  /* Differentiators */
+  #differentiators { padding: 100px 48px; }
+  .diff-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .diff-img-col {
+    position: static;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Locations */
+  #locations { padding: 100px 48px; }
+}
+
+
+/* ──────────────────────────────────
+   MOBILE  (≤ 768px)
+────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Hero ── */
+  #hero { min-height: 100svh; }
+  .hero-content {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+  .hero-tag   { font-size: 0.68rem; padding: 5px 13px; }
+  .hero-title { letter-spacing: -0.025em; }
+  .hero-sub   { font-size: 0.92rem; max-width: 100%; margin-bottom: 36px; }
+  .hero-btns  { flex-direction: column; gap: 12px; }
+  .btn-primary,
+  .btn-ghost  { width: 100%; text-align: center; padding: 15px 28px; }
+  .hero-scroll { bottom: 28px; }
+
+  /* ── Ticker ── */
+  .ticker-item { font-size: 0.72rem; padding: 0 18px; gap: 10px; }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+  .stat-item {
+    max-width: 100%;
+    width: 100%;
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(212, 86, 26, 0.10);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+  }
+  /* Quita el separador vertical en desktop */
+  .stat-item + .stat-item::before { display: none; }
+  .stat-num {
+    font-size: 2.4rem;
+    flex-shrink: 0;
+    min-width: 90px;
+  }
+  .stat-label {
+    font-size: 0.73rem;
+    line-height: 1.5;
+  }
+
+  /* ── Section labels & titles ── */
+  .section-title  { margin-bottom: 40px; }
+  .section-label  { font-size: 0.68rem; }
+
+  /* ── Services ── */
+  #services { padding: 72px 24px; }
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border-radius: 12px;
+  }
+  /* Última card ocupa todo el ancho si hay 5 */
+  .services-grid .service-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .service-img { aspect-ratio: 16/10; }
+  .service-card-body { padding: 16px 18px 22px; }
+  .service-card-title { font-size: 0.88rem; }
+  .service-card-desc  { font-size: 0.76rem; }
+  .service-icon       { width: 30px; height: 30px; margin-bottom: 10px; }
+  .service-icon svg   { width: 15px; height: 15px; }
+
+  /* ── Innovation ── */
+  #innovation::before { background-attachment: scroll; }
+  .innovation-text {
+    padding: 64px 24px 44px;
+  }
+  .innovation-body { font-size: 0.88rem; margin-bottom: 32px; }
+  .innovation-img-wrap { height: 300px; }
+  .innovation-badge {
+    bottom: 20px; right: 20px;
+    padding: 14px 18px;
+    font-size: 0.7rem;
+  }
+
+  /* ── Differentiators ── */
+  #differentiators { padding: 72px 24px; }
+  .diff-layout { gap: 48px; }
+
+  .diff-item {
+    grid-template-columns: 40px 1fr;
+    gap: 0 16px;
+    padding: 22px 0;
+  }
+  .diff-item:hover {
+    margin: 0 -18px;
+    padding: 22px 18px;
+  }
+  .diff-num   { font-size: 0.9rem; }
+  .diff-title { font-size: 0.92rem; }
+  .diff-text  { font-size: 0.8rem; }
+
+  .diff-img-col { max-width: 340px; }
+  .diff-img-wrap { aspect-ratio: 4/3; }
+
+  /* ── Locations ── */
+  #locations {
+    padding: 72px 24px;
+    background-attachment: scroll;
+  }
+  #locations::before { background-attachment: scroll; }
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .location-card { aspect-ratio: 16/9; }
+  .location-overlay { padding: 24px; }
+  .location-flag  { font-size: 1.3rem; margin-bottom: 6px; }
+  .location-name  { font-size: 1.3rem; margin-bottom: 14px; }
+  .location-btn   { opacity: 1; transform: translateY(0); }
+
+  /* ── Horizontal rule ── */
+  .h-line { opacity: 0.14; }
+}
+
+
+/* ──────────────────────────────────
+   XS  (≤ 480px)
+────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Hero */
+  .hero-title { letter-spacing: -0.02em; }
+  .hero-btns  { gap: 10px; }
+  .btn-primary, .btn-ghost { padding: 14px 22px; font-size: 0.85rem; }
+
+  /* Stats */
+  .stat-num  { font-size: 2rem; min-width: 76px; }
+  .stat-item { padding: 22px 20px; }
+
+  /* Services — una sola columna en pantallas muy pequeñas */
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid .service-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  .service-img { aspect-ratio: 3/2; }
+
+  /* Innovation */
+  .innovation-text { padding: 52px 20px 36px; }
+  .innovation-img-wrap { height: 240px; }
+
+  /* Differentiators */
+  #differentiators { padding: 60px 20px; }
+  .diff-item:hover { margin: 0 -14px; padding: 22px 14px; }
+
+  /* Locations */
+  #locations   { padding: 60px 20px; }
+  .location-card { aspect-ratio: 4/3; }
+  .location-name { font-size: 1.15rem; }
+  .location-country { font-size: 0.65rem; }
+}
