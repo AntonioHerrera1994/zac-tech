@@ -381,15 +381,46 @@
             <div style="width:10px;height:10px;border-radius:50%;background:#27AE60;"></div>
             <span style="font-size:.78rem;color:var(--ink-35);margin-left:8px;" data-i18n="video.hint">Our Impact Story</span>
           </div>
-          <p style="font-size:.82rem;color:var(--ink-60);line-height:1.6;" data-i18n="video.note">Add your video here by replacing the source below.</p>
+          <p style="font-size:.82rem;color:var(--ink-60);line-height:1.6;" data-i18n="video.note">Add your videos here by replacing the sources below.</p>
         </div>
       </div>
     </div>
-    <div class="video-stage reveal" id="videoStage">
-      <video id="miVideo" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata"
-        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:26px;">
-        <source src="/patronage-img/video2.mp4" type="video/mp4"/>
-      </video>
+
+    <!-- VIDEO GRID — agrega o quita .video-card para tener 1, 2 o 3 -->
+    <div class="video-grid reveal">
+
+      <div class="video-card">
+        <div class="video-card-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M8 5v14l11-7z"/></svg>
+          <span data-i18n="video.label1"></span>
+        </div>
+        <video controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
+          <source src="/patronage-img/video2.mp4" type="video/mp4"/>
+        </video>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M8 5v14l11-7z"/></svg>
+          <span data-i18n="video.label2"></span>
+        </div>
+        <video controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
+          <source src="/patronage-img/video3.mp4" type="video/mp4"/>
+        </video>
+      </div>
+
+      <!-- TERCER VIDEO — descomenta cuando lo tengas
+      <div class="video-card">
+        <div class="video-card-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M8 5v14l11-7z"/></svg>
+          <span data-i18n="video.label3">Lab Tour · 2024</span>
+        </div>
+        <video controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
+          <source src="/patronage-img/video4.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      -->
+
     </div>
   </div>
 </section>
@@ -402,16 +433,69 @@
       <h2><span data-i18n="gallery.h2a">Change captured</span> <em data-i18n="gallery.h2em">in pictures</em></h2>
       <p data-i18n="gallery.body">Every photograph tells the story of a material that found new purpose — and a young mind that found its path.</p>
     </div>
-    <div class="gallery-mosaic">
-      <div class="gitem reveal d1"><div class="gitem-inner gc1"><img src="/patronage-img/6.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g1">UAZ Laboratory · Active Deconstruction</div></div></div>
-      <div class="gitem reveal d2"><div class="gitem-inner gc2"><img src="/patronage-img/2.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g2">Warehouse · Classification</div></div></div>
-      <div class="gitem reveal d3"><div class="gitem-inner gc3"><img src="/patronage-img/3.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g3">Students in Action · Innovation</div></div></div>
-      <div class="gitem reveal d4"><div class="gitem-inner gc4"><img src="/patronage-img/4.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g4">Partner Companies · Patronage</div></div></div>
-      <div class="gitem reveal d5"><div class="gitem-inner gc5"><img src="/patronage-img/5.jpg"/></div><div class="gitem-overlay"><div class="gitem-overlay-txt" data-i18n="gallery.g5">Student Achievements · R&D Results</div></div></div>
+
+    <div class="gallery-slider">
+
+      <!-- ← PREV -->
+      <button class="gallery-arrow gallery-arrow--prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- TRACK -->
+      <div class="gallery-track-wrapper">
+        <div class="gallery-track">
+
+          <!-- SLIDE 1 -->
+          <div class="gallery-slide">
+            <div class="gallery-mosaic">
+              <div class="gitem d1"><div class="gitem-inner gc1"><img src="/patronage-img/6.jpg"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d2"><div class="gitem-inner gc2"><img src="/patronage-img/7.jpg"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d3"><div class="gitem-inner gc3"><img src="/patronage-img/3.jpg"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d4"><div class="gitem-inner gc4"><img src="/patronage-img/4.jpg"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d5"><div class="gitem-inner gc5"><img src="/patronage-img/5.jpg"/></div><div class="gitem-overlay"></div></div>
+            </div>
+          </div>
+
+          <!-- SLIDE -->
+          <div class="gallery-slide">
+            <div class="gallery-mosaic">
+              <div class="gitem d1"><div class="gitem-inner gc3"><img src="/patronage-img/7.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d2"><div class="gitem-inner gc5"><img src="/patronage-img/9.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d3"><div class="gitem-inner gc1"><img src="/patronage-img/10.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d4"><div class="gitem-inner gc2"><img src="/patronage-img/11.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d5"><div class="gitem-inner gc4"><img src="/patronage-img/2.jpg"/></div><div class="gitem-overlay"></div></div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+               <div class="gallery-slide">
+            <div class="gallery-mosaic">
+              <div class="gitem d1"><div class="gitem-inner gc3"><img src="/patronage-img/13.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d2"><div class="gitem-inner gc5"><img src="/patronage-img/14.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d3"><div class="gitem-inner gc1"><img src="/patronage-img/15.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d4"><div class="gitem-inner gc2"><img src="/patronage-img/16.webp"/></div><div class="gitem-overlay"></div></div>
+              <div class="gitem d5"><div class="gitem-inner gc4"><img src="/patronage-img/17.webp"/></div><div class="gitem-overlay"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- → NEXT -->
+      <button class="gallery-arrow gallery-arrow--next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <!-- DOTS -->
+      <div class="gallery-dots" id="galleryDots"></div>
+
     </div>
   </div>
 </section>
-
 <!-- ══ SERVICES ══ -->
 <section class="section services-section" id="services">
   <div class="container">
@@ -908,6 +992,54 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 const ns = document.createElement('style');
 ns.textContent = `@keyframes noteIn{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}`;
 document.head.appendChild(ns);
+
+(function () {
+  const track   = document.querySelector('.gallery-track');
+  const slides  = document.querySelectorAll('.gallery-slide');
+  const prevBtn = document.querySelector('.gallery-arrow--prev');
+  const nextBtn = document.querySelector('.gallery-arrow--next');
+  const dotsEl  = document.getElementById('galleryDots');
+
+  if (!track || slides.length === 0) return;
+
+  let current = 0;
+  const total = slides.length;
+
+  /* Crear dots */
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    document.querySelectorAll('.gallery-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+
+    /* deshabilitar flechas en extremos si no es loop — quita estas líneas si quieres loop infinito */
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  /* Swipe touch */
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
+
+  goTo(0); /* inicializar estado de botones */
+})();
 </script>
 
 </body>

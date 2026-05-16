@@ -607,6 +607,93 @@ ul { list-style:none; }
 #miVideo { border-radius:26px; }
 .video-stage.playing .video-label { opacity:0; pointer-events:none; transition:opacity .3s; }
 
+.video-section { background: var(--white); }
+
+.video-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.video-layout h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 3.4rem);
+  font-weight: 700;
+  color: var(--green-900);
+  line-height: 1.1;
+  margin-top: 14px;
+}
+.video-layout h2 em { font-style: italic; color: var(--blue-500); }
+.video-layout p { font-size: .96rem; line-height: 1.8; color: var(--ink-60); margin-top: 18px; }
+.video-layout .btn { margin-top: 28px; }
+
+/* ── Grid de videos ── */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas por defecto */
+  gap: 20px;
+}
+
+/* Con 3 videos: agrega esta clase al .video-grid o usa :has() */
+.video-grid:has(.video-card:nth-child(3)) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Cada card */
+.video-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16/9;
+  box-shadow: 0 24px 60px rgba(196, 48, 16, .15);
+  transition: transform .35s var(--ease-out, cubic-bezier(.22,1,.36,1)),
+              box-shadow .35s;
+}
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 80px rgba(196, 48, 16, .22);
+}
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Etiqueta inferior */
+.video-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 18px 14px;
+  background: linear-gradient(to top, rgba(13,8,6,.75) 0%, transparent 100%);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.video-card:hover .video-card-label { opacity: 1; }
+
+/* Mobile: apilar en 1 columna */
+@media (max-width: 680px) {
+  .video-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .video-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
 /* ════════════════════════════════════════════
    GALLERY
 ════════════════════════════════════════════ */
@@ -657,6 +744,83 @@ ul { list-style:none; }
 .gc-emoji { font-size:3rem; }
 .gc-label { font-size:.86rem; font-weight:700; color:rgba(255,255,255,.85); text-align:center; padding:0 16px; }
 .gc-sub   { font-size:.74rem; color:rgba(255,255,255,.50); text-align:center; padding:0 16px; }
+
+/* ── Slider wrapper ── */
+.gallery-slider {
+  position: relative;
+}
+
+.gallery-track-wrapper {
+  overflow: hidden;
+  border-radius: 22px; /* misma curvatura de las cards */
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+  will-change: transform;
+}
+
+.gallery-slide {
+  min-width: 100%;
+}
+
+/* ── Flechas ── */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-900, #1a3a1a);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  transition: background .2s, transform .2s, opacity .2s;
+}
+.gallery-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+.gallery-arrow--prev { left: -24px; }
+.gallery-arrow--next { right: -24px; }
+.gallery-arrow:hover {
+  background: var(--green-500, #4a8c4a);
+  transform: translateY(-50%) scale(1.08);
+}
+.gallery-arrow:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Dots ── */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--green-900, #1a3a1a);
+  opacity: 0.2;
+  transition: opacity .25s, transform .25s;
+  padding: 0;
+}
+.gallery-dot.active {
+  opacity: 1;
+  transform: scale(1.3);
+}
 
 /* ════════════════════════════════════════════
    SERVICES
