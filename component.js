@@ -1,6 +1,39 @@
 (function () {
 
   /* ══════════════════════════════════════
+     NOSCRIPT SEO BLOCK
+     Crawlers que no ejecutan JS leen esto.
+     Usuarios nunca lo ven (display:none).
+  ══════════════════════════════════════ */
+  const NOSCRIPT_SEO = `
+<noscript>
+  <style>.zt-seo-links{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}</style>
+  <nav class="zt-seo-links" aria-hidden="true">
+    <a href="/">Home</a>
+    <a href="/about-us">About Us</a>
+    <a href="/contact">Contact</a>
+    <a href="/warpage">ASIC Warpage Analysis</a>
+    <a href="/patronage">Patronage</a>
+
+    <span>Services</span>
+    <a href="/reliability-tests">Reliability Tests</a>
+    <a href="/package-qualification-testing">Package Qualification Testing</a>
+    <a href="/esd-latchup-testing">ESD &amp; Latch-Up</a>
+    <a href="/failure-analysis">Failure Analysis</a>
+    <a href="/forensic-services">Forensic Services</a>
+
+    <span>Markets</span>
+    <a href="/artificial-intelligence">Artificial Intelligence</a>
+    <a href="/aerospace-defense">Aerospace and Defense</a>
+    <a href="/automotive">Automotive</a>
+    <a href="/industrial">Industrial</a>
+    <a href="/medical">Medical</a>
+    <a href="/transportation">Transportation</a>
+  </nav>
+</noscript>
+`;
+
+  /* ══════════════════════════════════════
      NAVBAR HTML
   ══════════════════════════════════════ */
   const NAV_HTML = `
@@ -61,7 +94,7 @@ nav.scrolled {
 .zt-nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ══════════════════════════════════════
-   MOBILE MENU — Rediseño estético
+   MOBILE MENU
 ══════════════════════════════════════ */
 .zt-mobile-menu {
   display: none;
@@ -75,7 +108,6 @@ nav.scrolled {
 }
 .zt-mobile-menu.open { display: flex; }
 
-/* Línea sunset superior */
 .zt-mobile-menu::before {
   content: '';
   position: absolute;
@@ -87,7 +119,6 @@ nav.scrolled {
   opacity: 0.4;
 }
 
-/* Glow decorativo */
 .zt-mobile-menu::after {
   content: '';
   position: fixed;
@@ -101,7 +132,6 @@ nav.scrolled {
   pointer-events: none;
 }
 
-/* Item principal */
 .zt-mobile-item {
   border-bottom: 1px solid rgba(212, 86, 26, 0.08);
 }
@@ -129,7 +159,6 @@ nav.scrolled {
   text-transform: uppercase;
 }
 
-/* Flecha del acordeón */
 .zt-mobile-arrow {
   width: 28px; height: 28px;
   border: 1px solid rgba(212, 86, 26, 0.2);
@@ -152,7 +181,6 @@ nav.scrolled {
 .zt-mobile-item.open .zt-mobile-arrow svg { stroke: #F0A820; }
 .zt-mobile-item.open .zt-mobile-item-header span { color: #F0A820; }
 
-/* Submenú acordeón */
 .zt-mobile-submenu {
   max-height: 0;
   overflow: hidden;
@@ -192,7 +220,6 @@ nav.scrolled {
 }
 .zt-mobile-submenu a:hover::before { background: #F0A820; }
 
-/* Link simple (sin dropdown) */
 .zt-mobile-link {
   display: flex; align-items: center;
   height: 62px; padding: 0 28px;
@@ -210,7 +237,6 @@ nav.scrolled {
   color: #F0A820;
 }
 
-/* Botón CTA mobile */
 .zt-mobile-cta {
   margin: 28px 28px 0;
   display: flex;
@@ -308,7 +334,7 @@ nav.scrolled {
     </div>
     <ul class="zt-nav-links">
       <li class="zt-has-dropdown">
-        <a href="index.html#services" data-page="services">
+        <a href="/index.html#services" data-page="services">
           Services
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
         </a>
@@ -335,7 +361,7 @@ nav.scrolled {
         </ul>
       </li>
       <li><a href="/about-us"   data-page="about-us">About Us</a></li>
-      <li><a href="/warpage"    data-page="warpage">Asic Warpage Analisis</a></li>
+      <li><a href="/warpage"    data-page="warpage">Asic Warpage Analysis</a></li>
       <li><a href="/patronage"  data-page="patronage">Patronage</a></li>
       <li><a href="/contact"    data-page="contact">Contact</a></li>
     </ul>
@@ -347,7 +373,6 @@ nav.scrolled {
   <!-- ══ MOBILE MENU ══ -->
   <div class="zt-mobile-menu" id="zt-mobile-menu">
 
-    <!-- Services (acordeón) -->
     <div class="zt-mobile-item" data-accordion>
       <div class="zt-mobile-item-header" data-accordion-toggle>
         <span>Services</span>
@@ -366,7 +391,6 @@ nav.scrolled {
       </div>
     </div>
 
-    <!-- Markets (acordeón) -->
     <div class="zt-mobile-item" data-accordion>
       <div class="zt-mobile-item-header" data-accordion-toggle>
         <span>Markets</span>
@@ -386,13 +410,10 @@ nav.scrolled {
       </div>
     </div>
 
-    <!-- Links simples -->
     <a href="/about-us"  class="zt-mobile-link">About Us</a>
     <a href="/warpage"   class="zt-mobile-link">Asic Warpage</a>
     <a href="/patronage" class="zt-mobile-link">Patronage</a>
-
-    <!-- CTA Contact -->
-    <a href="/contact" class="zt-mobile-cta">Contact Us →</a>
+    <a href="/contact"   class="zt-mobile-cta">Contact Us →</a>
 
   </div>
   `;
@@ -432,7 +453,6 @@ nav.scrolled {
   opacity: 0.65;
 }
 
-/* ── Top grid (desktop) ── */
 .zt-footer-top {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
@@ -517,7 +537,6 @@ nav.scrolled {
   box-shadow: 0 8px 28px rgba(196, 48, 16, 0.48);
 }
 
-/* ── Bottom bar ── */
 .zt-footer-bottom {
   padding: 28px 80px;
   display: flex; align-items: center; justify-content: space-between;
@@ -533,18 +552,13 @@ nav.scrolled {
 }
 
 /* ════════════════════════════════════
-   RESPONSIVE FOOTER — Rediseño móvil
+   RESPONSIVE FOOTER
 ════════════════════════════════════ */
 @media (max-width: 768px) {
-
   .zt-footer-top {
     grid-template-columns: 1fr;
-    padding: 0;
-    gap: 0;
-    border-bottom: none;
+    padding: 0; gap: 0; border-bottom: none;
   }
-
-  /* Bloque 1: logo + tagline + social */
   .zt-footer-brand-block {
     padding: 44px 24px 36px;
     border-bottom: 1px solid rgba(212, 86, 26, 0.10);
@@ -553,94 +567,59 @@ nav.scrolled {
   .zt-footer-logo { margin-bottom: 14px; font-size: 1.3rem; }
   .zt-footer-tagline { max-width: 100%; margin-bottom: 22px; font-size: .82rem; }
   .zt-footer-social { justify-content: center; }
-
-  /* Columnas de links → acordeón */
   .zt-footer-col {
     border-bottom: 1px solid rgba(212, 86, 26, 0.08);
   }
-
   .zt-footer-col h5 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0;
-    padding: 18px 24px;
-    cursor: pointer;
-    font-size: .72rem;
-    letter-spacing: .14em;
-    transition: color .2s;
-    user-select: none;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 0; padding: 18px 24px;
+    cursor: pointer; font-size: .72rem; letter-spacing: .14em;
+    transition: color .2s; user-select: none;
   }
   .zt-footer-col h5::after {
     content: '';
-    display: block;
-    width: 16px; height: 16px;
+    display: block; width: 16px; height: 16px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F0A820' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
-    transition: transform .3s;
-    flex-shrink: 0;
-    opacity: .5;
+    background-repeat: no-repeat; background-size: contain;
+    transition: transform .3s; flex-shrink: 0; opacity: .5;
   }
   .zt-footer-col.open h5::after { transform: rotate(180deg); opacity: 1; }
   .zt-footer-col.open h5 { color: rgba(240, 168, 32, 0.80); }
-
   .zt-footer-col ul {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 0; overflow: hidden;
     transition: max-height .35s cubic-bezier(.4,0,.2,1), padding .35s;
-    padding: 0 24px;
-    gap: 0;
+    padding: 0 24px; gap: 0;
   }
   .zt-footer-col.open ul {
-    max-height: 400px;
-    padding: 4px 24px 20px;
-    gap: 2px;
+    max-height: 400px; padding: 4px 24px 20px; gap: 2px;
   }
   .zt-footer-col ul a {
-    display: block;
-    padding: 9px 0;
-    font-size: .83rem;
+    display: block; padding: 9px 0; font-size: .83rem;
     color: rgba(255, 210, 160, 0.5);
     border-bottom: 1px solid rgba(212, 86, 26, 0.05);
   }
   .zt-footer-col ul li:last-child a { border-bottom: none; }
   .zt-footer-col ul a:hover { color: #F0A820; padding-left: 6px; }
-
-  /* Newsletter */
   .zt-footer-newsletter-block {
     padding: 32px 24px 36px;
     border-bottom: 1px solid rgba(212, 86, 26, 0.10);
   }
   .zt-footer-col h5.newsletter-title {
-    cursor: default;
-    padding: 0 0 16px;
-    justify-content: flex-start;
-    gap: 0;
-    margin-bottom: 0;
+    cursor: default; padding: 0 0 16px;
+    justify-content: flex-start; gap: 0; margin-bottom: 0;
   }
   .zt-footer-col h5.newsletter-title::after { display: none; }
   .zt-newsletter-form { flex-direction: column; }
   .zt-newsletter-input, .zt-newsletter-btn { width: 100%; }
-
-  /* Bottom bar */
   .zt-footer-bottom {
-    flex-direction: column;
-    gap: 6px;
-    padding: 24px;
-    text-align: center;
+    flex-direction: column; gap: 6px;
+    padding: 24px; text-align: center;
   }
   .zt-footer-copy { font-size: .72rem; }
-
-  /* Ocultar el bloque brand de desktop dentro del grid flow,
-     ya lo sacamos con brand-block */
-  .zt-footer-top > div:first-child {
-    display: none;
-  }
+  .zt-footer-top > div:first-child { display: none; }
   .zt-footer-brand-block { display: block; }
 }
 
-/* En desktop el brand block no existe como elemento extra */
 @media (min-width: 769px) {
   .zt-footer-brand-block { display: none; }
   .zt-footer-top > div:first-child { display: block; }
@@ -652,9 +631,8 @@ nav.scrolled {
   <footer id="zt-footer">
     <div class="zt-footer-glow"></div>
 
-    <!-- Bloque brand solo móvil -->
     <div class="zt-footer-brand-block">
-      <a href="index.html" class="zt-footer-logo">Zac<span>Tech</span> Semi</a>
+      <a href="/" class="zt-footer-logo">Zac<span>Tech</span> Semi</a>
       <p class="zt-footer-tagline">Pushing the limits of semiconductor precision. Two continents. One standard of excellence.</p>
       <div class="zt-footer-social">
         <a href="#" class="zt-social-btn" aria-label="LinkedIn">
@@ -670,10 +648,8 @@ nav.scrolled {
     </div>
 
     <div class="zt-footer-top">
-
-      <!-- Col 1: Brand (desktop) -->
       <div>
-        <a href="index.html" class="zt-footer-logo">Zac<span>Tech</span> Semi</a>
+        <a href="/" class="zt-footer-logo">Zac<span>Tech</span> Semi</a>
         <p class="zt-footer-tagline">Pushing the limits of semiconductor precision. Two continents. One standard of excellence.</p>
         <div class="zt-footer-social">
           <a href="#" class="zt-social-btn" aria-label="LinkedIn">
@@ -688,7 +664,6 @@ nav.scrolled {
         </div>
       </div>
 
-      <!-- Col 2: Markets -->
       <div class="zt-footer-col" id="zt-fcol-markets">
         <h5>Markets</h5>
         <ul>
@@ -701,7 +676,6 @@ nav.scrolled {
         </ul>
       </div>
 
-      <!-- Col 3: Company -->
       <div class="zt-footer-col" id="zt-fcol-company">
         <h5>Company</h5>
         <ul>
@@ -711,7 +685,6 @@ nav.scrolled {
         </ul>
       </div>
 
-      <!-- Col 4: Newsletter -->
       <div class="zt-footer-col">
         <h5 class="newsletter-title">Stay Updated</h5>
         <p class="zt-newsletter-p">Latest news on semiconductor testing and our capabilities.</p>
@@ -720,10 +693,8 @@ nav.scrolled {
           <button class="zt-newsletter-btn">Subscribe →</button>
         </div>
       </div>
-
     </div>
 
-    <!-- Newsletter solo móvil -->
     <div class="zt-footer-newsletter-block">
       <div class="zt-footer-col">
         <h5 class="newsletter-title" style="padding:0 0 14px; cursor:default;">Stay Updated</h5>
@@ -745,6 +716,11 @@ nav.scrolled {
      INJECT
   ══════════════════════════════════════ */
   function inject() {
+
+    /* ── 1. Noscript SEO block (siempre primero en el <head>) ── */
+    document.head.insertAdjacentHTML('beforeend', NOSCRIPT_SEO);
+
+    /* ── 2. Navbar ── */
     const navPlaceholder = document.getElementById('zt-nav-placeholder');
     if (navPlaceholder) {
       navPlaceholder.outerHTML = NAV_HTML;
@@ -752,6 +728,7 @@ nav.scrolled {
       document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
     }
 
+    /* ── 3. Footer ── */
     const footerPlaceholder = document.getElementById('zt-footer-placeholder');
     if (footerPlaceholder) {
       footerPlaceholder.outerHTML = FOOTER_HTML;
@@ -771,12 +748,10 @@ nav.scrolled {
     const hamburger  = document.getElementById('zt-hamburger');
     const mobileMenu = document.getElementById('zt-mobile-menu');
 
-    // Scroll → dark bg
     const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
     window.addEventListener('scroll', onScroll);
     onScroll();
 
-    // Hamburger
     if (hamburger && mobileMenu) {
       hamburger.addEventListener('click', () => {
         const isOpen = hamburger.classList.toggle('open');
@@ -785,12 +760,10 @@ nav.scrolled {
       });
     }
 
-    // ── Acordeón mobile ──
     document.querySelectorAll('[data-accordion]').forEach(item => {
       const toggle = item.querySelector('[data-accordion-toggle]');
       if (!toggle) return;
       toggle.addEventListener('click', () => {
-        // Cierra los demás
         document.querySelectorAll('[data-accordion].open').forEach(other => {
           if (other !== item) other.classList.remove('open');
         });
@@ -798,7 +771,6 @@ nav.scrolled {
       });
     });
 
-    // Cierra menú al hacer click en link simple
     document.querySelectorAll('.zt-mobile-link, .zt-mobile-cta, .zt-mobile-submenu a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger?.classList.remove('open');
@@ -807,18 +779,15 @@ nav.scrolled {
       });
     });
 
-    // Hero load animation
     window.addEventListener('load', () => {
       const hero = document.getElementById('hero');
       if (hero) hero.classList.add('loaded');
     });
 
-    // Active link highlight
-    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.zt-nav-links a').forEach(link => {
-      const href = link.getAttribute('href') || '';
-      const linkFile = href.split('/').pop().split('#')[0];
-      if (linkFile === currentFile && !href.includes('#')) {
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    document.querySelectorAll('.zt-nav-links a[href]').forEach(link => {
+      const linkPath = link.getAttribute('href').split('#')[0].replace(/\/$/, '') || '/';
+      if (linkPath === currentPath && !link.getAttribute('href').includes('#')) {
         link.classList.add('active');
       }
     });
@@ -832,7 +801,6 @@ nav.scrolled {
       heading.addEventListener('click', () => {
         const col = heading.closest('.zt-footer-col');
         if (!col) return;
-        // Cierra otros
         document.querySelectorAll('.zt-footer-col.open').forEach(other => {
           if (other !== col) other.classList.remove('open');
         });
