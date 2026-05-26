@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eneron Power Monitoring — Wholesale Distribution by Zac Tech Semi</title>
+<link rel="stylesheet" href="/eneron.css">
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-brand">
+    <a href="/" style="text-decoration: none;">
+    <span class="nav-company">ZAC TECH SEMI</span><br>
+    <span class="nav-sub" data-i18n="nav_sub">Authorized Distributor</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#how" data-i18n="nav_how">How It Works</a></li>
+    <li><a href="#catalog" data-i18n="nav_catalog">Devices</a></li>
+    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+    <li><a href="#compare" data-i18n="nav_compare">Why Eneron</a></li>
+    <li><a href="#specs" data-i18n="nav_specs">Specs</a></li>
+    <li><a href="#wholesale" data-i18n="nav_wholesale">Wholesale</a></li>
+    <li><a href="/" data-i18n="nav_zactec">Zac Tech Semi</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span id="langLabel">ES</span>
+    </button>
+    <a href="mailto:eneron@zacsemi.com.mx" class="nav-cta" data-i18n="nav_cta">Request Quote</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <div class="dist-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <span data-i18n="badge_dist">Authorized Distributor — Data Center &amp; Industrial</span>
+    </div>
+    <h1 class="hero-heading">
+      <span class="h-brand">ENERON</span> <span data-i18n="hero_h1">Real-Time Power Monitoring for</span><br><span class="h-accent" style="color:var(--orange);">Data Centers</span> & Crucial <span class="h-accent" style="color:var(--orange);">Industrial Operations</span>
+    </h1>
+    <p class="hero-sub"><span data-i18n="hero_sub">Know which servers are on, detect electrical load variations, and prevent failures before they happen — without shutting down a single rack. Non-invasive clamp-on installation, live cloud data, zero downtime.</span></p>
+    <div class="moq-pill">
+      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+      <span data-i18n="moq_pre">Wholesale Distribution</span> &nbsp;·&nbsp; <span class="moq-n">100</span>&nbsp;<span data-i18n="moq_post">units minimum order</span>
+    </div>
+    <div class="hero-actions">
+      <a href="mailto:eneron@zacsemi.com.mx" class="btn-p">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="btn_quote">Request a Quote</span>
+      </a>
+      <a href="#how" class="btn-s">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span data-i18n="btn_learn">Learn More</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="s-num">0 <b>min</b></div><div class="s-lbl" data-i18n="stat1">Downtime to Install</div></div>
+      <div><div class="s-num">24<b>/7</b></div><div class="s-lbl" data-i18n="stat2">Live Monitoring</div></div>
+      <div><div class="s-num">250 <b>A</b></div><div class="s-lbl" data-i18n="stat3">Max Current Range</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+
+        <img class="hero-img" src="/eneron/eneron.png" alt="Eneron Power Monitoring Device">
+
+      <!-- Floating chip — top right -->
+      <div class="f-tag tr">
+        <div class="td g"></div>
+        Live Cloud Sync
+      </div>
+
+      <!-- Floating chip — center right — load variation alert -->
+      <div class="f-tag tm">
+        <svg style="width:13px;height:13px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Load spike — Rack 4B
+      </div>
+
+      <!-- Floating chip — bottom left -->
+      <div class="f-tag bl">
+        <div class="td b"></div>
+        3-Phase · Non-Invasive
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dstrip">
+  <span class="dstrip-lbl" data-i18n="dstrip_lbl">Distributed by Zac Tech Semi</span>
+  <div class="dstrip-items">
+    <div class="dstrip-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span data-i18n="dstrip_1">Authorized Reseller</span></div>
+    <div class="dstrip-item"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span data-i18n="dstrip_2">100+ Units MOQ</span></div>
+    <div class="dstrip-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="dstrip_3">Zacatecas MX &amp; Fremont CA</span></div>
+    <div class="dstrip-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-i18n="dstrip_4">Tech Meol Group</span></div>
+  </div>
+</div>
+
+<section class="how-bg" id="how">
+  <div class="stag">How It Works</div>
+  <h2 class="stitle reveal" data-i18n-html="how_title">Deploy across your entire<br>data center in <span class="acc">hours</span></h2>
+  <p class="ssub reveal" data-i18n="how_sub">No rack shutdowns. No licensed electrician. No rewiring. Clamp each sensor onto the power feed and configure through the Eneron mobile app — servers stay online throughout.</p>
+  <div class="steps-grid">
+    <div class="sc reveal" data-n="1">
+      <div class="si"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+      <h3 data-i18n="step1_h">Clamp onto the Cable</h3>
+      <p data-i18n="step1_p">Attach the sensor to any power cable 6–21 mm in diameter. No tools, no panel access, no disconnection. Works on live cables during active equipment operation.</p>
+    </div>
+    <div class="sc reveal" data-n="2">
+      <div class="si"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <h3 data-i18n="step2_h">Configure via Mobile App</h3>
+      <p data-i18n="step2_p">Download the Eneron app (iOS or Android). Activate, connect to Wi-Fi, and calibrate — all guided step by step within the app in minutes.</p>
+    </div>
+    <div class="sc reveal" data-n="3">
+      <div class="si"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3 data-i18n="step3_h">Data Streams to the Cloud</h3>
+      <p data-i18n="step3_p">The sensor transmits live electrical data continuously — power state, load variations, voltage, current. Stored securely in Eneron's cloud with timestamps for every event.</p>
+    </div>
+    <div class="sc reveal" data-n="4">
+      <div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3 data-i18n="step4_h">Monitor from Anywhere</h3>
+      <p data-i18n="step4_p">Access live server power dashboards via mobile or web at my.eneron.ai. Get instant alerts when a rack drops power or load spikes unexpectedly — from any browser, 24/7.</p>
+    </div>
+  </div>
+</section>
+
+<section class="catalog-sec" id="catalog">
+  <div class="catalog-header">
+    <div class="stag">Hardware Catalog</div>
+    <h2 class="stitle reveal" data-i18n="cat_title">Power Monitoring Devices</h2>
+    <p class="ssub reveal" data-i18n="cat_sub">Choose the right device for your power monitoring needs. Both models feature Eneron's patented non-invasive technology.</p>
+  </div>
+  <div class="catalog-grid">
+
+    <!-- ── Single Phase ── -->
+    <div class="prod-card reveal">
+      <div class="prod-badge-wrap">
+        <span class="prod-badge">1 Phase (symmetric)</span>
+      </div>
+      <div class="prod-image-wrap">
+        <img src="/eneron/eneron.png" alt="Eneron Single Phase Device" class="prod-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+ 
+      </div>
+      <div class="prod-info">
+        <h3 data-i18n="prod1_name">Single Phase Device</h3>
+        <p class="prod-sub" data-i18n="prod_sub">Multicore Cable or Single Wire</p>
+        <div class="prod-spec-table">
+          <div class="pst-row"><span class="pst-label">Cable type</span><span class="pst-value">SO, SOOW, SOJ</span></div>
+          <div class="pst-row"><span class="pst-label">Cable size</span><span class="pst-value">6–22mm · 22–45mm · 45mm+</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage range</span><span class="pst-value">10V – 300V</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage Resolution</span><span class="pst-value">300mV</span></div>
+          <div class="pst-row"><span class="pst-label">Current range</span><span class="pst-value">60mA – 100A</span></div>
+          <div class="pst-row"><span class="pst-label">Current resolution</span><span class="pst-value">20mA</span></div>
+          <div class="pst-row"><span class="pst-label">Current Precision</span><span class="pst-value pst-bold">Wire - 1%, Cable - 5%</span></div>
+          <div class="pst-row"><span class="pst-label">Power Factor</span><span class="pst-value">0–1</span></div>
+          <div class="pst-row"><span class="pst-label">Frequency</span><span class="pst-value">50Hz – 60Hz</span></div>
+          <div class="pst-row"><span class="pst-label">Battery</span><span class="pst-value pst-bold">Rechargeable Li, Solar</span></div>
+          <div class="pst-row"><span class="pst-label">Battery Life</span><span class="pst-value pst-bold">Up to 1 year</span></div>
+          <div class="pst-row"><span class="pst-label">Communication</span><span class="pst-value pst-bold">Wifi, Lora WAN, LTE, HiLow</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage type</span><span class="pst-value pst-bold">AC</span></div>
+        </div>
+        <a href="#cta" class="prod-cta">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Request Wholesale Quote
+        </a>
+      </div>
+    </div>
+
+    <!-- ── 3 Phase ── -->
+    <div class="prod-card reveal">
+      <div class="prod-badge-wrap">
+        <span class="prod-badge">1 – 3 Phase (symmetric)</span>
+      </div>
+      <div class="prod-image-wrap">
+        <img src="/eneron/eneron-3phase.png" alt="Eneron 3 Phase Device" class="prod-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+
+      </div>
+      <div class="prod-info">
+        <h3 data-i18n="prod2_name">3 Phase Device</h3>
+        <p class="prod-sub" data-i18n="prod_sub">Multicore Cable or Single Wire</p>
+        <div class="prod-spec-table">
+          <div class="pst-row"><span class="pst-label">Cable type</span><span class="pst-value">SO, SOOW, SOJ</span></div>
+          <div class="pst-row"><span class="pst-label">Cable size</span><span class="pst-value">6mm – 50mm</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage range</span><span class="pst-value">10V – 1000V</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage Resolution</span><span class="pst-value">300mV</span></div>
+          <div class="pst-row"><span class="pst-label">Current range</span><span class="pst-value">60mA – 1000A</span></div>
+          <div class="pst-row"><span class="pst-label">Current resolution</span><span class="pst-value">20mA</span></div>
+          <div class="pst-row"><span class="pst-label">Current Precision</span><span class="pst-value pst-bold">Wire - 1%, Cable - 5%</span></div>
+          <div class="pst-row"><span class="pst-label">Power Factor</span><span class="pst-value">0–1</span></div>
+          <div class="pst-row"><span class="pst-label">Frequency</span><span class="pst-value">50Hz – 60Hz</span></div>
+          <div class="pst-row"><span class="pst-label">Battery</span><span class="pst-value pst-bold">Rechargeable Li, Solar</span></div>
+          <div class="pst-row"><span class="pst-label">Battery Life</span><span class="pst-value pst-bold">Up to 1 year</span></div>
+          <div class="pst-row"><span class="pst-label">Communication</span><span class="pst-value pst-bold">Wifi, Lora WAN, LTE, HiLow</span></div>
+          <div class="pst-row"><span class="pst-label">Voltage type</span><span class="pst-value pst-bold">AC</span></div>
+        </div>
+        <a href="#cta" class="prod-cta">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Request Wholesale Quote
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="datacenter" style="background:#0a0a0a; padding:92px 6%;">
+  <div class="dc-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+    <div>
+      <div class="stag" style="background:rgba(255,94,26,.13);color:var(--orange);"><span data-i18n="dc_tag">Data Center Priority</span></div>
+      <h2 class="stitle reveal" style="color:#fff;max-width:100%;"><span data-i18n="dc_title_1">Monitor every server.</span><br><span data-i18n="dc_title_2">Detect every</span><br><span style="color:var(--orange);" data-i18n="dc_title_3">load variation.</span></h2>
+      <p class="ssub reveal" style="color:rgba(255,255,255,.52);max-width:100%;"><span data-i18n="dc_sub">Data centers run on power. A single undetected load anomaly can cascade into a rack failure, a tripped breaker, or an unplanned outage. Eneron gives your operations team continuous, per-circuit visibility — without touching a running server.</span></p>
+      <div style="display:flex;flex-direction:column;gap:.85rem;margin-top:2rem;">
+        <div class="reveal" style="display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;">
+          <div style="width:38px;height:38px;border-radius:9px;background:rgba(255,94,26,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <div><div style="color:#fff;font-weight:600;font-size:.91rem;margin-bottom:.2rem;"><span data-i18n="dc_f1_h">Server ON/OFF State — Per Unit</span></div><div style="color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6;"><span data-i18n="dc_f1_p">Know exactly which servers are powered on, which are idle, and which have gone dark — updated in real time from the cloud dashboard.</span></div></div>
+        </div>
+        <div class="reveal" style="display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;">
+          <div style="width:38px;height:38px;border-radius:9px;background:rgba(255,94,26,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div><div style="color:#fff;font-weight:600;font-size:.91rem;margin-bottom:.2rem;"><span data-i18n="dc_f2_h">Load Variation &amp; Spike Detection</span></div><div style="color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6;"><span data-i18n="dc_f2_p">Continuous current measurement catches anomalies the moment they appear — spikes, drops, or sustained overloads — before they trip a breaker or damage hardware.</span></div></div>
+        </div>
+        <div class="reveal" style="display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;">
+          <div style="width:38px;height:38px;border-radius:9px;background:rgba(255,94,26,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <div><div style="color:#fff;font-weight:600;font-size:.91rem;margin-bottom:.2rem;"><span data-i18n="dc_f3_h">Instant Alerts — Mobile &amp; Web</span></div><div style="color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6;"><span data-i18n="dc_f3_p">Push notifications the moment a circuit behaves abnormally. Your team gets alerted before the impact reaches your uptime SLA or your clients.</span></div></div>
+        </div>
+        <div class="reveal" style="display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;">
+          <div style="width:38px;height:38px;border-radius:9px;background:rgba(255,94,26,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div><div style="color:#fff;font-weight:600;font-size:.91rem;margin-bottom:.2rem;"><span data-i18n="dc_f4_h">PUE &amp; Rack-Level Energy Reporting</span></div><div style="color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6;"><span data-i18n="dc_f4_p">Track power consumption per rack, per row, or per facility. Export reports for PUE calculation, sustainability compliance, and cost allocation per tenant or workload.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: mock DC dashboard -->
+    <div class="reveal">
+      <div style="background:#111111;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);">
+        <!-- Titlebar -->
+        <div style="background:#181818;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);">
+          <div style="display:flex;align-items:center;gap:.5rem;">
+            <div style="width:9px;height:9px;border-radius:50%;background:#dc2626;"></div>
+            <div style="width:9px;height:9px;border-radius:50%;background:#d97706;"></div>
+            <div style="width:9px;height:9px;border-radius:50%;background:#15803d;"></div>
+            <span style="font-family:var(--font-mono);font-size:.67rem;color:rgba(255,255,255,.3);margin-left:.5rem;">my.eneron.ai / datacenter</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;color:#15803d;font-weight:600;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#15803d;animation:blink 2s ease-in-out infinite;"></div>
+            LIVE
+          </div>
+        </div>
+        <div style="padding:1.2rem;">
+          <!-- Summary row -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.8rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:9px;padding:.8rem;"><div style="font-size:.57rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;">Active Servers</div><div style="font-family:var(--font-mono);font-weight:600;font-size:1.05rem;color:#fff;margin-top:.15rem;">186 / 192</div></div>
+            <div style="background:rgba(255,255,255,.04);border-radius:9px;padding:.8rem;"><div style="font-size:.57rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;">Total Draw</div><div style="font-family:var(--font-mono);font-weight:600;font-size:1.05rem;color:#fff;margin-top:.15rem;">142.8 kW</div></div>
+            <div style="background:rgba(255,255,255,.04);border-radius:9px;padding:.8rem;"><div style="font-size:.57rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;">Alerts Today</div><div style="font-family:var(--font-mono);font-weight:600;font-size:1.05rem;color:var(--orange);margin-top:.15rem;">2 spikes</div></div>
+          </div>
+          <!-- Load chart -->
+          <div style="background:rgba(255,255,255,.03);border-radius:9px;padding:.9rem;height:76px;margin-bottom:.8rem;display:flex;align-items:flex-end;justify-content:space-around;gap:3px;">
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:52%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:61%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:48%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:73%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:58%;"></div>
+            <div style="background:linear-gradient(to top,#dc2626,rgba(220,38,38,.3));border-radius:3px 3px 0 0;flex:1;height:95%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:67%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:54%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:62%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:44%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:70%;"></div>
+            <div style="background:linear-gradient(to top,var(--orange),rgba(255,94,26,.25));border-radius:3px 3px 0 0;flex:1;height:59%;"></div>
+          </div>
+          <!-- Rack table -->
+          <div style="background:rgba(255,255,255,.03);border-radius:9px;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:.4rem;padding:.42rem .72rem;border-bottom:1px solid rgba(255,255,255,.05);">
+              <span style="font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;">Rack / Unit</span>
+              <span style="font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;">Current</span>
+              <span style="font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;">Power</span>
+              <span style="font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;">Status</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:.4rem;padding:.42rem .72rem;border-bottom:1px solid rgba(255,255,255,.03);">
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">Row-A · Rack 02</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">38 A</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">8.4 kW</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:#15803d;">ON</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:.4rem;padding:.42rem .72rem;border-bottom:1px solid rgba(255,255,255,.03);">
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">Row-B · Rack 04</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:var(--orange);">71 A</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:var(--orange);">15.6 kW</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:var(--orange);">SPIKE</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:.4rem;padding:.42rem .72rem;border-bottom:1px solid rgba(255,255,255,.03);">
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">Row-C · Rack 11</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">42 A</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">9.2 kW</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:#15803d;">ON</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:.4rem;padding:.42rem .72rem;">
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">Row-D · Rack 07</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">0 A</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:rgba(255,255,255,.55);">0.0 kW</span>
+              <span style="font-family:var(--font-mono);font-size:.64rem;color:#dc2626;">OFF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="background:#fff;">
+  <div class="stag">Features</div>
+  <h2 class="stitle reveal" data-i18n-html="feat_title">Complete electrical visibility<br>for <span class="acc">every machine</span></h2>
+  <p class="ssub reveal" data-i18n="feat_sub">One non-invasive device delivers a full spectrum of industrial power intelligence — real-time monitoring, anomaly detection, and cloud analytics.</p>
+  <div class="feat-grid">
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3 data-i18n="feat_1_h">Real-Time Power Monitoring</h3><p data-i18n="feat_1_p">Continuous measurement of voltage, current, active power, and power factor across all phases. High-accuracy live data with no delay.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3 data-i18n="feat_2_h">Equipment Health Tracking</h3><p data-i18n="feat_2_p">Know whether a machine is ON, OFF, idle, or behaving abnormally. Electrical signatures reveal wear or impending failure before it occurs.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><h3 data-i18n="feat_3_h">Smart Alerts</h3><p data-i18n="feat_3_p">Instant push notifications for abnormal loads, unexpected shutdowns, or voltage anomalies — delivered to mobile or web the moment they occur.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 data-i18n="feat_4_h">Cloud Analytics</h3><p data-i18n="feat_4_p">Visualize consumption trends over time. Compare machines, shifts, or facilities. Generate and export reports for operations and management.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 data-i18n="feat_5_h">Multi-Location Management</h3><p data-i18n="feat_5_p">Administer all sensors across multiple facilities from a single platform. Ideal for industrial groups managing distributed assets.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3 data-i18n="feat_6_h">Up to 1-Year Battery Life</h3><p data-i18n="feat_6_p">Engineered for hard-to-reach power lines. Internal rechargeable battery operates up to one year before a USB recharge.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3 data-i18n="feat_7_h">Single &amp; 3-Phase Support</h3><p data-i18n="feat_7_p">Compatible with single and three-phase industrial equipment. Supports unlimited voltage range across all machinery types.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-i18n="feat_8_h">Zero Downtime Installation</h3><p data-i18n="feat_8_p">Install while equipment is running. Cable is never disconnected or modified. No licensed electrician required.</p></div>
+    <div class="fc reveal"><div class="fi"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3 data-i18n="feat_9_h">Energy Cost Visibility</h3><p data-i18n="feat_9_p">Know exactly what each machine or shift costs in energy. Identify waste and act on real consumption data — not utility estimates.</p></div>
+  </div>
+</section>
+
+<section class="compare-sec" id="compare">
+  <div class="compare-header">
+    <div class="stag">Competitive Analysis</div>
+    <h2 class="stitle reveal" data-i18n-html="cmp_title">Why would you<br>choose Eneron</h2>
+    <p class="ssub reveal" data-i18n="cmp_sub">See how Eneron compares to traditional monitoring approaches used in data centers and industrial facilities.</p>
+  </div>
+  <div class="compare-grid">
+    <div class="cmp-card reveal">
+      <div class="cmp-header">
+        <div class="cmp-dot red"></div>
+        <span class="cmp-label legacy" data-i18n="cmp_legacy">Legacy System — Deprecated</span>
+      </div>
+      <div class="cmp-items">
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_1">Requires invasive electrical work and panel modifications</span></div>
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_2">Mandatory site shutdowns during installation</span></div>
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_3">Limited data points and sampling rates</span></div>
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_4">High deployment cost per monitoring point</span></div>
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_5">Complex wiring and infrastructure requirements</span></div>
+        <div class="cmp-item"><div class="cmp-icon x"><svg viewBox="0 0 14 14"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></div><span class="cmp-text" data-i18n="leg_6">Requires certified electrician for every install</span></div>
+      </div>
+    </div>
+    <div class="cmp-card eneron reveal">
+      <div class="cmp-header">
+        <div class="cmp-dot orange"></div>
+        <span class="cmp-label active" data-i18n="cmp_active">Eneron System — Active</span>
+      </div>
+      <div class="cmp-items">
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_1">Non-invasive installation — attach around cables safely</span></div>
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_2">Zero downtime — operations continue uninterrupted</span></div>
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_3">Equipment-level visibility with real-time data streaming</span></div>
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_4">Cost-effective deployment with rapid ROI</span></div>
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_5">Wireless connectivity — no complex wiring needed</span></div>
+        <div class="cmp-item"><div class="cmp-icon check"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></div><span class="cmp-text" data-i18n="en_6">Any person can install — no certification required</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="specs-bg" id="specs">
+  <div class="stag">Technical Specifications</div>
+  <h2 class="stitle reveal">Engineered for demanding industrial environments</h2>
+  <p class="ssub reveal">Precision hardware with robust wireless connectivity for reliable long-term deployment on any production floor.</p>
+  <div class="specs-layout">
+    <table class="spec-tbl reveal">
+      <tr><td>Current Range</td><td>0.25 A – 250 A</td></tr>
+      <tr><td>Voltage Range</td><td>Unlimited</td></tr>
+      <tr><td>Phase Support</td><td>Single-phase &amp; 3-phase</td></tr>
+      <tr><td>Cable Diameter</td><td>6 – 21 mm</td></tr>
+      <tr><td>Cable Types</td><td>SO, SJO, SOW, SOOW</td></tr>
+      <tr><td>Battery Life</td><td>Up to 1 year</td></tr>
+      <tr><td>Charging</td><td>USB (any 5V source)</td></tr>
+      <tr><td>Wireless</td><td>Wi-Fi 2.4 GHz</td></tr>
+      <tr><td>Dimensions</td><td>81 × 46 × 48 mm</td></tr>
+      <tr><td>Weight</td><td>150 g</td></tr>
+      <tr><td>Web Platform</td><td>my.eneron.ai</td></tr>
+      <tr><td>Mobile App</td><td>iOS &amp; Android</td></tr>
+      <tr><td>Patent Status</td><td>Patent Pending</td></tr>
+    </table>
+    <div class="spec-cards reveal">
+      <div class="spc"><div class="spc-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Patented Technology</h4><p>First-of-its-kind non-invasive industrial power monitoring system with patent-pending protection from Eneron Corporation</p></div></div>
+      <div class="spc"><div class="spc-ico"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div><div><h4>Non-Invasive by Design</h4><p>Clamp-on installation with zero panel access required. Works on live cables during active equipment operation without interruption</p></div></div>
+      <div class="spc"><div class="spc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><h4>Always-On Cloud Sync</h4><p>Data streams continuously to a secure cloud, accessible from any browser or mobile app with no local server required</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases-bg" id="usecases">
+  <div class="stag">Use Cases</div>
+  <h2 class="stitle reveal" data-i18n-html="uc_title">Built for <span class="acc">Data Centers</span>,<br>ready for any facility</h2>
+  <p class="ssub reveal" data-i18n="uc_sub">Server uptime monitoring, load variation detection, and energy reporting — across every rack, row, and facility, without a single shutdown.</p>
+  <div class="cases-grid">
+    <div class="cc feat reveal">
+      <div class="cc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+      <div class="ctag-pill" data-i18n="uc1_tag">Primary Use Case</div>
+      <h3 data-i18n="uc1_h">Data Center Server Monitoring</h3>
+      <p data-i18n="uc1_p">Know the exact power state of every server, rack, and PDU — in real time. Detect when a unit goes dark unexpectedly, identify load spikes that could trip breakers, and track consumption per rack without touching a single cable during operation.</p>
+      <div class="csav">100%<small data-i18n="uc1_small">non-invasive · no rack downtime</small></div>
+    </div>
+    <div class="cc reveal">
+      <div class="cc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="ctag-pill" data-i18n="uc2_tag">Critical Detection</div>
+      <h3 data-i18n="uc2_h">Electrical Load Variation Detection</h3>
+      <p data-i18n="uc2_p">Real-time current monitoring detects abnormal load spikes, sudden drops, or sustained overloads across server circuits. Get alerted the moment current behavior deviates from baseline — before a thermal event or power failure occurs.</p>
+    </div>
+    <div class="cc reveal">
+      <div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="ctag-pill" data-i18n="uc3_tag">Maintenance</div>
+      <h3 data-i18n="uc3_h">Predictive Hardware Failure</h3>
+      <p data-i18n="uc3_p">Electrical anomalies — irregular draws, power factor shifts, or unstable voltage — are early indicators of failing PSUs, UPS degradation, or cooling load changes. Catch them before they become outages.</p>
+    </div>
+    <div class="cc reveal">
+      <div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="ctag-pill" data-i18n="uc4_tag">Compliance &amp; PUE</div>
+      <h3 data-i18n="uc4_h">Energy Audits &amp; PUE Reporting</h3>
+      <p data-i18n="uc4_p">Generate rack-level and facility-level energy consumption reports. Track Power Usage Effectiveness (PUE), prove compliance with sustainability targets, and reduce your data center's operating cost with granular data.</p>
+    </div>
+  </div>
+</section>
+
+<section class="app-bg" id="app">
+  <div class="app-layout">
+    <div>
+      <div class="stag">Mobile Application</div>
+      <h2 class="stitle reveal" data-i18n-html="app_title">Device configuration and monitoring in <span class="acc">your pocket</span></h2>
+      <p class="ssub reveal" data-i18n="app_sub">The official Eneron app for iOS and Android is required for initial device setup — activation, Wi-Fi pairing, and calibration are handled entirely through it.</p>
+      <div class="app-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-i18n="app_note">The Eneron app is published by Eneron Corporation. Zac Tech Semi provides full setup guidance and technical onboarding as part of every wholesale order.</span></div>
+      <div class="app-feats">
+        <div class="af reveal"><div class="af-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.21 3.1 2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><h4 data-i18n="app_f1_h">Device Activation &amp; Pairing</h4><p data-i18n="app_f1_p">Wake, connect to Wi-Fi, and calibrate — fully guided through the app in minutes.</p></div></div>
+        <div class="af reveal"><div class="af-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4 data-i18n="app_f2_h">Real-Time Live Data</h4><p data-i18n="app_f2_p">View instantaneous power, current, voltage, and machine state from your mobile device anywhere.</p></div></div>
+        <div class="af reveal"><div class="af-ico"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><div><h4 data-i18n="app_f3_h">Push Alerts</h4><p data-i18n="app_f3_p">Instant notifications for anomalies, abnormal loads, and unexpected shutdowns.</p></div></div>
+        <div class="af reveal"><div class="af-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div><h4 data-i18n="app_f4_h">Multi-Device Management</h4><p data-i18n="app_f4_p">Monitor all sensors across locations from one unified mobile interface.</p></div></div>
+      </div>
+      <div class="store-btns">
+        <a href="https://apps.apple.com/mx/app/eneron/id1555413932" class="sb" target="_blank"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><span class="s-lbl2">Download on the</span><span class="s-name">App Store</span></div></a>
+        <a href="#" class="sb"><svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.65.19.98.08l12.49-7.19-2.78-2.78-10.69 9.89zm-1.97-20.7C1.08 3.3 1 3.64 1 4v16c0 .36.08.7.21 1l11.04-11.04L1.21 3.06zm20.5 8.48L19.4 9.35l-3.07 3.07 3.07 3.07 2.34-1.35c.67-.39.67-1.35-.03-1.74zM4.16.24c-.33-.11-.68-.09-.98.08L13.71 10l2.78-2.78L4.16.24z"/></svg><div><span class="s-lbl2">Get it on</span><span class="s-name">Google Play</span></div></a>
+      </div>
+    </div>
+    <div class="phone-wrap reveal">
+<img src="/eneron/screenapp.png"/>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" style="background:#fff;">
+  <div class="stag">Web Platform</div>
+  <div class="dash-layout">
+    <div class="dash-mock reveal">
+      <div class="dash-top"><div class="dd" style="background:#dc2626;"></div><div class="dd" style="background:#d97706;"></div><div class="dd" style="background:#15803d;"></div><div class="d-url">my.eneron.ai</div></div>
+      <div class="dash-body">
+        <div class="dash-row"><div class="dw"><div class="dw-l">Total Power</div><div class="dw-v">48.2 kW <b>+3%</b></div></div><div class="dw"><div class="dw-l">Active Devices</div><div class="dw-v">12 / 14</div></div><div class="dw"><div class="dw-l">This Month</div><div class="dw-v">3,421 kWh</div></div></div>
+        <div class="dchart"><div class="db" style="height:45%;"></div><div class="db" style="height:62%;"></div><div class="db" style="height:37%;"></div><div class="db" style="height:83%;"></div><div class="db" style="height:56%;"></div><div class="db" style="height:91%;"></div><div class="db" style="height:67%;"></div><div class="db" style="height:75%;"></div><div class="db" style="height:49%;"></div><div class="db" style="height:87%;"></div><div class="db" style="height:64%;"></div><div class="db" style="height:47%;"></div></div>
+        <div class="dtbl"><div class="dt-h"><span>Equipment</span><span>Power</span><span>Current</span><span>Status</span></div><div class="dt-r"><span>CNC Machine 1</span><span>12.4 kW</span><span>98 A</span><span class="on">ON</span></div><div class="dt-r"><span>Compressor A</span><span>8.1 kW</span><span>64 A</span><span class="on">ON</span></div><div class="dt-r"><span>Conveyor Belt</span><span>0.0 kW</span><span>0 A</span><span class="off">OFF</span></div></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="stitle reveal" data-i18n-html="dash_title">Enterprise Dashboard at <span class="acc">my.eneron.ai</span></h2>
+      <p class="ssub reveal" data-i18n="dash_sub">After initial configuration via the mobile app, the web platform gives full visibility across all sensors, sites, and machines from any browser.</p>
+      <div class="dash-feats" style="margin-top:2rem;">
+        <div class="df reveal"><div class="df-n">01</div><div><h4 data-i18n="dash_f1_h">Multi-Location Overview</h4><p data-i18n="dash_f1_p">Monitor all facilities and machines from one centralized interface — accessible from any computer, anywhere.</p></div></div>
+        <div class="df reveal"><div class="df-n">02</div><div><h4 data-i18n="dash_f2_h">Historical Trends &amp; Exports</h4><p data-i18n="dash_f2_p">Analyze consumption over days, months, years. Export reports by machine, shift, or facility.</p></div></div>
+        <div class="df reveal"><div class="df-n">03</div><div><h4 data-i18n="dash_f3_h">Team Access Controls</h4><p data-i18n="dash_f3_p">Add users with role-based permissions for maintenance, operations, and executive teams.</p></div></div>
+        <div class="df reveal"><div class="df-n">04</div><div><h4 data-i18n="dash_f4_h">No Software Installation</h4><p data-i18n="dash_f4_p">Fully browser-based. Log in and start monitoring — no downloads or IT deployment required.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wh-bg" id="wholesale">
+  <div class="stag">Wholesale Distribution</div>
+  <h2 class="stitle reveal" data-i18n-html="wh_title">Industrial-scale deployment through <span style="color:var(--orange);">Zac Tech Semi</span></h2>
+  <p class="ssub reveal" data-i18n="wh_sub">We supply Eneron devices to industrial operators, system integrators, and EPC contractors across North America with dedicated engineering support.</p>
+  <div class="wh-grid">
+    <div class="wc reveal"><div class="wc-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><h3 data-i18n="wh1_h">Bulk Order Processing</h3><p data-i18n="wh1_p">Minimum 100 units. Flexible fulfillment from Zacatecas, Mexico and Fremont, California — serving clients throughout North America.</p></div>
+    <div class="wc reveal"><div class="wc-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h3 data-i18n="wh2_h">Technical Deployment Support</h3><p data-i18n="wh2_p">Our engineering team provides full installation guidance, calibration support, and platform onboarding for every wholesale order.</p></div>
+    <div class="wc reveal"><div class="wc-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.21 3.1 2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3 data-i18n="wh3_h">24-Hour Response</h3><p data-i18n="wh3_p">Dedicated account contact for every wholesale client. Technical inquiries addressed within 24 business hours, guaranteed.</p></div>
+  </div>
+  <div class="moq-banner reveal">
+    <div class="moq-t"><h3 data-i18n="moq_h">Minimum Order Quantity</h3><p data-i18n="moq_p">Available for industrial buyers, system integrators, and plant operators</p></div>
+    <div class="moq-big">100<small>units / order</small></div>
+    <a href="#cta" class="btn-p"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.21 3.1 2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 005 5l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="btn_quote_wh">Request Wholesale Quote</span></a>
+  </div>
+</section>
+
+<section class="cta-sec" id="cta">
+  <div class="stag">Get Started</div>
+  <h2 data-i18n="cta_h">Ready to deploy Eneron at scale?</h2>
+  <p data-i18n="cta_p">Contact Zac Tech Semi for pricing, availability, and technical specifications. Our engineering team responds within 24 hours for orders of 100 units or more.</p>
+  <div class="cta-btns">
+    <a href="mailto:ztsmex@zacsemi.com.mx" class="btn-w"><span data-i18n="cta_btn1">Request a Quote</span></a>
+    <a href="https://www.zacsemi.com.mx" class="btn-ow" target="_blank"><span data-i18n="cta_btn2">Visit zacsemi.com.mx</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div><div class="f-logo">ZAC TECH <span style="color:var(--orange);">SEMI</span></div><div class="f-byline" data-i18n="ft_byline">Authorized Eneron Distributor — Tech Meol Group</div><p class="f-desc" data-i18n="ft_desc">Semiconductor engineering initiative distributing Eneron non-invasive power monitoring systems to industrial operations across North America. Zacatecas, Mexico &amp; Fremont, California.</p></div>
+    <div class="fc-col"><h4 data-i18n="ft_col1">Eneron Product</h4><ul><li><a href="#how" data-i18n="nav_how">How It Works</a></li><li><a href="#catalog" data-i18n="ft_catalog">Hardware Catalog</a></li><li><a href="#features" data-i18n="nav_features">Features</a></li><li><a href="#specs" data-i18n="ft_specs">Specifications</a></li></ul></div>
+    <div class="fc-col"><h4 data-i18n="ft_col2">Platform</h4><ul><li><a href="https://my.eneron.ai" target="_blank">Web Dashboard</a></li><li><a href="https://apps.apple.com/mx/app/eneron/id1555413932" target="_blank">iOS App</a></li><li><a href="#app">Android App</a></li><li><a href="https://eneron.ai" target="_blank">eneron.ai</a></li></ul></div>
+    <div class="fc-col"><h4 data-i18n="ft_col3">Zac Tech Semi</h4><ul><li><a href="https://www.zacsemi.com.mx" target="_blank">zacsemi.com.mx</a></li><li><a href="mailto:ztsmex@zacsemi.com.mx">ztsmex@zacsemi.com.mx</a></li><li><a href="#">Zacatecas, Mexico</a></li><li><a href="#">Fremont, CA — USA</a></li></ul></div>
+  </div>
+  <div class="f-bottom"><span>© 2024 Zac Tech Semi — Tech Meol Group. Eneron is a trademark of Eneron Corporation. Patent Pending.</span><a href="https://eneron.ai" target="_blank">eneron.ai</a></div>
+</footer>
+
+<script>
+/* ── Scroll nav ── */
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+/* ── Reveal on scroll ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); obs.unobserve(e.target); } });
+}, { threshold: 0.09, rootMargin: '0px 0px -28px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Dashboard chart ── */
+const dc = document.querySelector('.dchart');
+if (dc) new IntersectionObserver((entries) => { if (entries[0].isIntersecting) { document.querySelectorAll('.db').forEach((b, i) => { const h = b.style.height; b.style.height='0%'; setTimeout(() => { b.style.transition='height .52s ease'; b.style.height=h; }, i*52+160); }); } }, { threshold:0.3 }).observe(dc);
+
+/* ════════════════════════════════════════
+   LANGUAGE TOGGLE — EN / ES
+════════════════════════════════════════ */
+const T = {
+  en: {
+    nav_sub: 'Authorized Distributor',
+    nav_how: 'How It Works', nav_catalog: 'Devices', nav_features: 'Features',
+    nav_compare: 'Why Eneron', nav_specs: 'Specs', nav_wholesale: 'Wholesale',
+    nav_cta: 'Request Quote',
+    badge_dist: 'Authorized Distributor — Data Center & Industrial',
+    hero_h1: 'Real-Time Power Monitoring for',
+    hero_h2: 'Data Centers', hero_h3_pre: 'Crucial', hero_h3: 'Industrial Operations',
+    hero_sub: 'Know which servers are on, detect electrical load variations, and prevent failures before they happen — without shutting down a single rack. Non-invasive clamp-on installation, live cloud data, zero downtime.',
+    moq_pre: 'Wholesale Distribution', moq_post: 'units minimum order',
+    btn_quote: 'Request a Quote', btn_learn: 'Learn More',
+    stat1: 'Downtime to Install', stat2: 'Live Monitoring', stat3: 'Max Current Range',
+    dstrip_lbl: 'Distributed by Zac Tech Semi',
+    dstrip_1: 'Authorized Reseller', dstrip_2: '100+ Units MOQ',
+    dstrip_3: 'Zacatecas MX & Fremont CA', dstrip_4: 'Tech Meol Group',
+    how_title: 'Deploy across your entire<br>data center in <span class="acc">hours</span>',
+    how_sub: 'No rack shutdowns. No licensed electrician. No rewiring. Clamp each sensor onto the power feed and configure through the Eneron mobile app — servers stay online throughout.',
+    step1_h: 'Clamp onto the Cable', step1_p: 'Attach the sensor to any power cable 6–21 mm in diameter. No tools, no panel access, no disconnection. Works on live cables during active equipment operation.',
+    step2_h: 'Configure via Mobile App', step2_p: 'Download the Eneron app (iOS or Android). Activate, connect to Wi-Fi, and calibrate — all guided step by step within the app in minutes.',
+    step3_h: 'Data Streams to the Cloud', step3_p: "The sensor transmits live electrical data continuously — power state, load variations, voltage, current. Stored securely in Eneron's cloud with timestamps for every event.",
+    step4_h: 'Monitor from Anywhere', step4_p: 'Access live server power dashboards via mobile or web at my.eneron.ai. Get instant alerts when a rack drops power or load spikes unexpectedly — from any browser, 24/7.',
+    cat_title: 'Power Monitoring Devices', cat_sub: "Choose the right device for your power monitoring needs. Both models feature Eneron's patented non-invasive technology.",
+    prod1_name: 'Single Phase Device', prod2_name: '3 Phase Device',
+    prod_sub: 'Multicore Cable or Single Wire', prod_cta: 'Request Wholesale Quote',
+    dc_tag: 'Data Center Priority',
+    dc_title_1: 'Monitor every server.', dc_title_2: 'Detect every', dc_title_3: 'load variation.',
+    dc_sub: 'Data centers run on power. A single undetected load anomaly can cascade into a rack failure, a tripped breaker, or an unplanned outage. Eneron gives your operations team continuous, per-circuit visibility — without touching a running server.',
+    dc_f1_h: 'Server ON/OFF State — Per Unit', dc_f1_p: 'Know exactly which servers are powered on, which are idle, and which have gone dark — updated in real time from the cloud dashboard.',
+    dc_f2_h: 'Load Variation & Spike Detection', dc_f2_p: 'Continuous current measurement catches anomalies the moment they appear — spikes, drops, or sustained overloads — before they trip a breaker or damage hardware.',
+    dc_f3_h: 'Instant Alerts — Mobile & Web', dc_f3_p: 'Push notifications the moment a circuit behaves abnormally. Your team gets alerted before the impact reaches your uptime SLA or your clients.',
+    dc_f4_h: 'PUE & Rack-Level Energy Reporting', dc_f4_p: 'Track power consumption per rack, per row, or per facility. Export reports for PUE calculation, sustainability compliance, and cost allocation per tenant or workload.',
+    feat_title: 'Complete electrical visibility<br>for <span class="acc">every machine</span>',
+    feat_sub: 'One non-invasive device delivers a full spectrum of industrial power intelligence — real-time monitoring, anomaly detection, and cloud analytics.',
+    feat_1_h: 'Real-Time Power Monitoring', feat_1_p: 'Continuous measurement of voltage, current, active power, and power factor across all phases. High-accuracy live data with no delay.',
+    feat_2_h: 'Equipment Health Tracking', feat_2_p: 'Know whether a machine is ON, OFF, idle, or behaving abnormally. Electrical signatures reveal wear or impending failure before it occurs.',
+    feat_3_h: 'Smart Alerts', feat_3_p: 'Instant push notifications for abnormal loads, unexpected shutdowns, or voltage anomalies — delivered to mobile or web the moment they occur.',
+    feat_4_h: 'Cloud Analytics', feat_4_p: 'Visualize consumption trends over time. Compare machines, shifts, or facilities. Generate and export reports for operations and management.',
+    feat_5_h: 'Multi-Location Management', feat_5_p: 'Administer all sensors across multiple facilities from a single platform. Ideal for industrial groups managing distributed assets.',
+    feat_6_h: 'Up to 1-Year Battery Life', feat_6_p: 'Engineered for hard-to-reach power lines. Internal rechargeable battery operates up to one year before a USB recharge.',
+    feat_7_h: 'Single & 3-Phase Support', feat_7_p: 'Compatible with single and three-phase industrial equipment. Supports unlimited voltage range across all machinery types.',
+    feat_8_h: 'Zero Downtime Installation', feat_8_p: 'Install while equipment is running. Cable is never disconnected or modified. No licensed electrician required.',
+    feat_9_h: 'Energy Cost Visibility', feat_9_p: 'Know exactly what each machine or shift costs in energy. Identify waste and act on real consumption data — not utility estimates.',
+    cmp_title: 'Why would you<br>choose Eneron',
+    cmp_sub: 'See how Eneron compares to traditional monitoring approaches used in data centers and industrial facilities.',
+    cmp_legacy: 'Legacy System — Deprecated', cmp_active: 'Eneron System — Active',
+    leg_1: 'Requires invasive electrical work and panel modifications',
+    leg_2: 'Mandatory site shutdowns during installation',
+    leg_3: 'Limited data points and sampling rates',
+    leg_4: 'High deployment cost per monitoring point',
+    leg_5: 'Complex wiring and infrastructure requirements',
+    leg_6: 'Requires certified electrician for every install',
+    en_1: 'Non-invasive installation — attach around cables safely',
+    en_2: 'Zero downtime — operations continue uninterrupted',
+    en_3: 'Equipment-level visibility with real-time data streaming',
+    en_4: 'Cost-effective deployment with rapid ROI',
+    en_5: 'Wireless connectivity — no complex wiring needed',
+    en_6: 'Any person can install — no certification required',
+    uc_title: 'Built for <span class="acc">Data Centers</span>,<br>ready for any facility',
+    uc_sub: 'Server uptime monitoring, load variation detection, and energy reporting — across every rack, row, and facility, without a single shutdown.',
+    uc1_tag: 'Primary Use Case', uc1_h: 'Data Center Server Monitoring',
+    uc1_p: 'Know the exact power state of every server, rack, and PDU — in real time. Detect when a unit goes dark unexpectedly, identify load spikes that could trip breakers, and track consumption per rack without touching a single cable during operation.',
+    uc1_small: 'non-invasive · no rack downtime',
+    uc2_tag: 'Critical Detection', uc2_h: 'Electrical Load Variation Detection',
+    uc2_p: 'Real-time current monitoring detects abnormal load spikes, sudden drops, or sustained overloads across server circuits. Get alerted the moment current behavior deviates from baseline — before a thermal event or power failure occurs.',
+    uc3_tag: 'Maintenance', uc3_h: 'Predictive Hardware Failure',
+    uc3_p: 'Electrical anomalies — irregular draws, power factor shifts, or unstable voltage — are early indicators of failing PSUs, UPS degradation, or cooling load changes. Catch them before they become outages.',
+    uc4_tag: 'Compliance & PUE', uc4_h: 'Energy Audits & PUE Reporting',
+    uc4_p: "Generate rack-level and facility-level energy consumption reports. Track Power Usage Effectiveness (PUE), prove compliance with sustainability targets, and reduce your data center's operating cost with granular data.",
+    app_title: 'Device configuration and monitoring in <span class="acc">your pocket</span>',
+    app_sub: 'The official Eneron app for iOS and Android is required for initial device setup — activation, Wi-Fi pairing, and calibration are handled entirely through it.',
+    app_note: 'The Eneron app is published by Eneron Corporation. Zac Tech Semi provides full setup guidance and technical onboarding as part of every wholesale order.',
+    app_f1_h: 'Device Activation & Pairing', app_f1_p: 'Wake, connect to Wi-Fi, and calibrate — fully guided through the app in minutes.',
+    app_f2_h: 'Real-Time Live Data', app_f2_p: 'View instantaneous power, current, voltage, and machine state from your mobile device anywhere.',
+    app_f3_h: 'Push Alerts', app_f3_p: 'Instant notifications for anomalies, abnormal loads, and unexpected shutdowns.',
+    app_f4_h: 'Multi-Device Management', app_f4_p: 'Monitor all sensors across locations from one unified mobile interface.',
+    dash_title: 'Enterprise Dashboard at <span class="acc">my.eneron.ai</span>',
+    dash_sub: 'After initial configuration via the mobile app, the web platform gives full visibility across all sensors, sites, and machines from any browser.',
+    dash_f1_h: 'Multi-Location Overview', dash_f1_p: 'Monitor all facilities and machines from one centralized interface — accessible from any computer, anywhere.',
+    dash_f2_h: 'Historical Trends & Exports', dash_f2_p: 'Analyze consumption over days, months, years. Export reports by machine, shift, or facility.',
+    dash_f3_h: 'Team Access Controls', dash_f3_p: 'Add users with role-based permissions for maintenance, operations, and executive teams.',
+    dash_f4_h: 'No Software Installation', dash_f4_p: 'Fully browser-based. Log in and start monitoring — no downloads or IT deployment required.',
+    wh_title: 'Industrial-scale deployment through <span style="color:var(--orange);">Zac Tech Semi</span>',
+    wh_sub: 'We supply Eneron devices to industrial operators, system integrators, and EPC contractors across North America with dedicated engineering support.',
+    wh1_h: 'Bulk Order Processing', wh1_p: 'Minimum 100 units. Flexible fulfillment from Zacatecas, Mexico and Fremont, California — serving clients throughout North America.',
+    wh2_h: 'Technical Deployment Support', wh2_p: 'Our engineering team provides full installation guidance, calibration support, and platform onboarding for every wholesale order.',
+    wh3_h: '24-Hour Response', wh3_p: 'Dedicated account contact for every wholesale client. Technical inquiries addressed within 24 business hours, guaranteed.',
+    moq_h: 'Minimum Order Quantity', moq_p: 'Available for industrial buyers, system integrators, and plant operators',
+    btn_quote_wh: 'Request Wholesale Quote',
+    cta_h: 'Ready to deploy Eneron at scale?',
+    cta_p: 'Contact Zac Tech Semi for pricing, availability, and technical specifications. Our engineering team responds within 24 hours for orders of 100 units or more.',
+    cta_btn1: 'Request a Quote', cta_btn2: 'Visit zacsemi.com.mx',
+    ft_byline: 'Authorized Eneron Distributor — Tech Meol Group',
+    ft_desc: 'Semiconductor engineering initiative distributing Eneron non-invasive power monitoring systems to industrial operations across North America. Zacatecas, Mexico & Fremont, California.',
+    ft_col1: 'Eneron Product', ft_col2: 'Platform', ft_col3: 'Zac Tech Semi',
+    ft_catalog: 'Hardware Catalog', ft_specs: 'Specifications',
+  },
+  es: {
+    nav_sub: 'Distribuidor Autorizado',
+    nav_how: 'Cómo Funciona', nav_catalog: 'Dispositivos', nav_features: 'Características',
+    nav_compare: 'Por qué Eneron', nav_specs: 'Especificaciones', nav_wholesale: 'Mayoreo',
+    nav_cta: 'Solicitar Cotización',
+    badge_dist: 'Distribuidor Autorizado — Data Centers e Industrial',
+    hero_h1: 'Monitoreo de Energía en Tiempo Real para',
+    hero_h2: 'Data Centers', hero_h3_pre: 'Crucial', hero_h3: 'Industrial Operations',
+    hero_sub: 'Sabe cuáles servidores están encendidos, detecta variaciones de carga eléctrica y previene fallas antes de que ocurran — sin apagar un solo rack. Instalación no invasiva, datos en la nube en tiempo real, cero tiempo de inactividad.',
+    moq_pre: 'Distribución Mayorista', moq_post: 'unidades mínimo',
+    btn_quote: 'Solicitar Cotización', btn_learn: 'Más Información',
+    stat1: 'Tiempo de Inactividad', stat2: 'Monitoreo en Vivo', stat3: 'Corriente Máxima',
+    dstrip_lbl: 'Distribuido por Zac Tech Semi',
+    dstrip_1: 'Revendedor Autorizado', dstrip_2: 'Mínimo 100 Unidades',
+    dstrip_3: 'Zacatecas MX y Fremont CA', dstrip_4: 'Tech Meol Group',
+    how_title: 'Implementa en todo tu data center<br>en <span class="acc">horas</span>',
+    how_sub: 'Sin apagar racks. Sin electricista certificado. Sin recableado. Coloca el sensor en el cable de alimentación y configúralo desde la app de Eneron — los servidores siguen operando.',
+    step1_h: 'Coloca el Sensor', step1_p: 'Fija el sensor en cualquier cable de 6–21 mm de diámetro. Sin herramientas, sin acceso al panel, sin desconexión. Funciona en cables activos durante la operación.',
+    step2_h: 'Configura desde la App', step2_p: 'Descarga la app de Eneron (iOS o Android). Activa el dispositivo, conéctalo a Wi-Fi y calibra — todo guiado paso a paso en minutos.',
+    step3_h: 'Datos en la Nube', step3_p: 'El sensor transmite datos eléctricos en tiempo real de forma continua — estado de energía, variaciones de carga, voltaje, corriente. Almacenados con marca de tiempo en la nube de Eneron.',
+    step4_h: 'Monitorea desde Cualquier Lugar', step4_p: 'Accede a dashboards de energía en tiempo real desde la app o en my.eneron.ai. Recibe alertas cuando un rack pierde energía o hay un pico de carga — desde cualquier navegador, 24/7.',
+    cat_title: 'Dispositivos de Monitoreo de Energía', cat_sub: 'Elige el dispositivo correcto para tus necesidades. Ambos modelos integran la tecnología no invasiva patentada de Eneron.',
+    prod1_name: 'Dispositivo Monofásico', prod2_name: 'Dispositivo Trifásico',
+    prod_sub: 'Cable Multiconductor o Hilo Simple', prod_cta: 'Solicitar Cotización Mayorista',
+    dc_tag: 'Prioridad Data Center',
+    dc_title_1: 'Monitorea cada servidor.', dc_title_2: 'Detecta cada', dc_title_3: 'variación de carga.',
+    dc_sub: 'Los data centers dependen de la energía. Una anomalía de carga no detectada puede derivar en la falla de un rack, el disparo de un interruptor o una interrupción no planificada. Eneron da a tu equipo visibilidad continua por circuito — sin tocar un servidor en operación.',
+    dc_f1_h: 'Estado ON/OFF del Servidor — Por Unidad', dc_f1_p: 'Sabe exactamente qué servidores están encendidos, cuáles están inactivos y cuáles se apagaron — actualizado en tiempo real desde el dashboard en la nube.',
+    dc_f2_h: 'Detección de Variaciones y Picos de Carga', dc_f2_p: 'La medición continua de corriente detecta anomalías al instante — picos, caídas o sobrecargas sostenidas — antes de que disparen un interruptor o dañen hardware.',
+    dc_f3_h: 'Alertas Instantáneas — Móvil y Web', dc_f3_p: 'Notificaciones push en el momento en que un circuito se comporta de forma anormal. Tu equipo recibe la alerta antes de que impacte tu SLA de disponibilidad.',
+    dc_f4_h: 'Reportes PUE por Rack', dc_f4_p: 'Rastrea el consumo por rack, fila o instalación. Exporta reportes para el cálculo de PUE, cumplimiento de sostenibilidad y asignación de costos por tenant o carga de trabajo.',
+    feat_title: 'Visibilidad eléctrica completa<br>para <span class="acc">cada máquina</span>',
+    feat_sub: 'Un solo dispositivo no invasivo entrega inteligencia industrial completa — monitoreo en tiempo real, detección de anomalías y analítica en la nube.',
+    feat_1_h: 'Monitoreo de Energía en Tiempo Real', feat_1_p: 'Medición continua de voltaje, corriente, potencia activa y factor de potencia en todas las fases. Datos en vivo de alta precisión sin demora.',
+    feat_2_h: 'Seguimiento del Estado del Equipo', feat_2_p: 'Sabe si una máquina está ON, OFF, inactiva o con comportamiento anormal. Las firmas eléctricas revelan desgaste o falla inminente antes de que ocurra.',
+    feat_3_h: 'Alertas Inteligentes', feat_3_p: 'Notificaciones push instantáneas por cargas anormales, apagados inesperados o anomalías de voltaje — enviadas a móvil o web en el momento en que ocurren.',
+    feat_4_h: 'Analítica en la Nube', feat_4_p: 'Visualiza tendencias de consumo en el tiempo. Compara máquinas, turnos o instalaciones. Genera y exporta reportes para operaciones y dirección.',
+    feat_5_h: 'Gestión Multi-Sitio', feat_5_p: 'Administra todos los sensores en múltiples instalaciones desde una sola plataforma. Ideal para grupos industriales con activos distribuidos.',
+    feat_6_h: 'Hasta 1 Año de Batería', feat_6_p: 'Diseñado para cables de difícil acceso. La batería recargable interna opera hasta un año antes de necesitar recarga por USB.',
+    feat_7_h: 'Compatible Mono y Trifásico', feat_7_p: 'Compatible con equipos industriales mono y trifásicos. Soporta rango de voltaje ilimitado para todo tipo de maquinaria.',
+    feat_8_h: 'Instalación Sin Tiempo de Paro', feat_8_p: 'Instala con el equipo en operación. El cable nunca se desconecta ni modifica. No se requiere electricista certificado.',
+    feat_9_h: 'Visibilidad del Costo Energético', feat_9_p: 'Sabe exactamente cuánto cuesta energéticamente cada máquina o turno. Identifica desperdicios y actúa con datos reales — no estimados.',
+    cmp_title: '¿Por qué elegir<br>Eneron?',
+    cmp_sub: 'Así se compara Eneron con los enfoques tradicionales de monitoreo en data centers e instalaciones industriales.',
+    cmp_legacy: 'Sistema Tradicional — Obsoleto', cmp_active: 'Sistema Eneron — Activo',
+    leg_1: 'Requiere trabajos eléctricos invasivos y modificación de paneles',
+    leg_2: 'Paros obligatorios del sitio durante la instalación',
+    leg_3: 'Puntos de datos y frecuencias de muestreo limitados',
+    leg_4: 'Alto costo de despliegue por punto de monitoreo',
+    leg_5: 'Cableado complejo e infraestructura adicional requerida',
+    leg_6: 'Requiere electricista certificado para cada instalación',
+    en_1: 'Instalación no invasiva — se fija alrededor del cable sin riesgo',
+    en_2: 'Cero tiempo de inactividad — operaciones continúan sin interrupciones',
+    en_3: 'Visibilidad por equipo con transmisión de datos en tiempo real',
+    en_4: 'Despliegue rentable con ROI rápido',
+    en_5: 'Conectividad inalámbrica — sin cableado complejo',
+    en_6: 'Cualquier persona puede instalar — sin certificación requerida',
+    uc_title: 'Diseñado para <span class="acc">Data Centers</span>,<br>listo para cualquier instalación',
+    uc_sub: 'Monitoreo de disponibilidad de servidores, detección de variaciones de carga y reportes de energía — en cada rack, fila e instalación, sin un solo paro.',
+    uc1_tag: 'Caso de Uso Principal', uc1_h: 'Monitoreo de Servidores en Data Center',
+    uc1_p: 'Conoce el estado exacto de energía de cada servidor, rack y PDU — en tiempo real. Detecta cuando una unidad se apaga inesperadamente, identifica picos de carga que podrían disparar interruptores y rastrea el consumo por rack sin tocar un solo cable en operación.',
+    uc1_small: 'no invasivo · sin paro de rack',
+    uc2_tag: 'Detección Crítica', uc2_h: 'Detección de Variaciones de Carga Eléctrica',
+    uc2_p: 'El monitoreo de corriente en tiempo real detecta picos anormales, caídas repentinas o sobrecargas sostenidas en los circuitos de los servidores. Recibe alerta en el momento en que la corriente se desvía de la línea base — antes de un evento térmico o falla de energía.',
+    uc3_tag: 'Mantenimiento', uc3_h: 'Predicción de Fallas de Hardware',
+    uc3_p: 'Las anomalías eléctricas — consumos irregulares, cambios en el factor de potencia o voltaje inestable — son indicadores tempranos de PSUs fallando, degradación de UPS o cambios de carga en enfriamiento. Detéctelas antes de que se conviertan en interrupciones.',
+    uc4_tag: 'Cumplimiento y PUE', uc4_h: 'Auditorías de Energía y Reportes PUE',
+    uc4_p: 'Genera reportes de consumo energético por rack y por instalación. Rastrea el PUE (Power Usage Effectiveness), demuestra cumplimiento con objetivos de sostenibilidad y reduce el costo operativo del data center con datos granulares.',
+    app_title: 'Configuración y monitoreo del dispositivo<br>en <span class="acc">tu bolsillo</span>',
+    app_sub: 'La app oficial de Eneron para iOS y Android es requerida para la configuración inicial del dispositivo — activación, conexión Wi-Fi y calibración se realizan completamente desde ella.',
+    app_note: 'La app de Eneron es publicada por Eneron Corporation. Zac Tech Semi proporciona orientación completa de configuración y onboarding técnico como parte de cada pedido mayorista.',
+    app_f1_h: 'Activación y Vinculación del Dispositivo', app_f1_p: 'Activa, conecta al Wi-Fi y calibra — guiado paso a paso desde la app en minutos.',
+    app_f2_h: 'Datos en Tiempo Real', app_f2_p: 'Consulta potencia, corriente, voltaje y estado del equipo desde tu celular en cualquier lugar.',
+    app_f3_h: 'Alertas Push', app_f3_p: 'Notificaciones instantáneas por anomalías, cargas anormales y apagados inesperados.',
+    app_f4_h: 'Gestión Multi-Dispositivo', app_f4_p: 'Monitorea todos los sensores en distintas ubicaciones desde una sola interfaz móvil.',
+    dash_title: 'Dashboard Empresarial en <span class="acc">my.eneron.ai</span>',
+    dash_sub: 'Después de la configuración inicial desde la app móvil, la plataforma web da visibilidad total de todos los sensores, sitios y máquinas desde cualquier navegador.',
+    dash_f1_h: 'Vista Multi-Sitio', dash_f1_p: 'Monitorea todas las instalaciones y máquinas desde una interfaz centralizada — accesible desde cualquier computadora.',
+    dash_f2_h: 'Tendencias Históricas y Exportaciones', dash_f2_p: 'Analiza el consumo por días, meses y años. Exporta reportes por máquina, turno o instalación.',
+    dash_f3_h: 'Control de Acceso por Equipo', dash_f3_p: 'Agrega usuarios con permisos por rol para mantenimiento, operaciones y dirección.',
+    dash_f4_h: 'Sin Instalación de Software', dash_f4_p: 'Totalmente basado en navegador. Inicia sesión y comienza a monitorear — sin descargas ni despliegue de TI.',
+    wh_title: 'Despliegue a escala industrial a través de <span style="color:var(--orange);">Zac Tech Semi</span>',
+    wh_sub: 'Suministramos dispositivos Eneron a operadores industriales, integradores de sistemas y contratistas EPC en Norteamérica con soporte de ingeniería dedicado.',
+    wh1_h: 'Pedidos al Mayoreo', wh1_p: 'Mínimo 100 unidades. Envíos desde Zacatecas, México y Fremont, California — atendiendo clientes en toda Norteamérica.',
+    wh2_h: 'Soporte Técnico de Despliegue', wh2_p: 'Nuestro equipo de ingeniería provee orientación de instalación, soporte de calibración y onboarding de plataforma para cada pedido mayorista.',
+    wh3_h: 'Respuesta en 24 Horas', wh3_p: 'Contacto dedicado para cada cliente mayorista. Consultas técnicas atendidas en 24 horas hábiles, garantizado.',
+    moq_h: 'Cantidad Mínima de Pedido', moq_p: 'Disponible para compradores industriales, integradores de sistemas y operadores de plantas',
+    btn_quote_wh: 'Solicitar Cotización Mayorista',
+    cta_h: '¿Listo para desplegar Eneron a escala?',
+    cta_p: 'Contacta a Zac Tech Semi para precios, disponibilidad y especificaciones técnicas. Nuestro equipo de ingeniería responde en 24 horas para pedidos de 100 unidades o más.',
+    cta_btn1: 'Solicitar Cotización', cta_btn2: 'Visitar zacsemi.com.mx',
+    ft_byline: 'Distribuidor Autorizado de Eneron — Tech Meol Group',
+    ft_desc: 'Iniciativa de ingeniería en semiconductores que distribuye sistemas de monitoreo de energía no invasivo Eneron a operaciones industriales en Norteamérica. Zacatecas, México y Fremont, California.',
+    ft_col1: 'Producto Eneron', ft_col2: 'Plataforma', ft_col3: 'Zac Tech Semi',
+    ft_catalog: 'Catálogo de Hardware', ft_specs: 'Especificaciones',
+  }
+};
+
+let currentLang = 'en';
+
+function applyLang(lang) {
+  const dict = T[lang];
+  // Text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  // HTML nodes (headings with inner spans)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  // Update toggle button label (shows opposite lang)
+  document.getElementById('langLabel').textContent = lang === 'en' ? 'ES' : 'EN';
+  // Update html lang attribute
+  document.documentElement.lang = lang === 'en' ? 'en' : 'es';
+  // Persist choice
+  localStorage.setItem('zts_lang', lang);
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'es' : 'en';
+  applyLang(currentLang);
+}
+
+// Init: restore saved lang or default to EN
+(function init() {
+  const saved = localStorage.getItem('zts_lang');
+  if (saved && saved !== 'en') {
+    currentLang = saved;
+    applyLang(currentLang);
+  }
+})();
+</script>
+</body>
+</html>
