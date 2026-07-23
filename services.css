@@ -48,7 +48,6 @@ body {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  
   background-size: cover; background-position: center 40%;
   transform: scale(1.04);
   transition: transform 7s ease;
@@ -360,6 +359,121 @@ body {
 .card-divider-dark  { width:100%; height:1px; background: rgba(212,86,26,.08); }
 .card-divider-light { width:100%; height:1px; background: rgba(180,80,20,.07); }
 
+/* ═══════════════════════════════════
+   CTA SECTION  ← (bloque que faltaba)
+═══════════════════════════════════ */
+#cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 130px 80px 140px;
+  background: var(--black);
+  overflow: hidden;
+}
+.cta-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 82% 8%,  rgba(232,114,10,.16), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 8% 92%,  rgba(196,48,16,.14),  transparent 60%);
+  pointer-events: none;
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,8,6,.55) 0%, transparent 35%);
+  pointer-events: none;
+}
+.cta-content {
+  position: relative; z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex; flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta-tag {
+  font-size: .74rem; font-weight: 600;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--orange-lighter);
+  margin-bottom: 24px;
+  padding-left: 44px;
+  position: relative;
+}
+.cta-tag::before {
+  content: '';
+  position: absolute; left: 0; top: 50%;
+  width: 32px; height: 2px;
+  background: var(--spectrum);
+  border-radius: 2px;
+}
+
+.cta-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  line-height: 1.02; letter-spacing: -.04em;
+  color: var(--white);
+  margin-bottom: 26px;
+}
+.cta-title span {
+  background: linear-gradient(90deg, #E8720A, #F5C840);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-sub {
+  font-size: 1.02rem; font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,210,170,.55);
+  max-width: 640px;
+  margin-bottom: 42px;
+}
+
+.cta-perks {
+  display: flex; flex-wrap: wrap;
+  gap: 16px 40px;
+  margin-bottom: 48px;
+}
+.cta-perk {
+  display: flex; align-items: center; gap: 12px;
+  font-size: .9rem; font-weight: 300;
+  color: rgba(255,220,180,.68);
+}
+.cta-perk strong {
+  font-weight: 600;
+  color: var(--white);
+}
+.cta-perk-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--orange-light);
+  box-shadow: 0 0 10px rgba(232,114,10,.65);
+  flex-shrink: 0;
+}
+
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Syne', sans-serif;
+  font-size: .92rem; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #C43010, #E8720A);
+  padding: 19px 40px;
+  border-radius: 100px;
+  box-shadow: 0 10px 34px rgba(196,48,16,.38);
+  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+}
+.cta-btn svg {
+  width: 18px; height: 18px;
+  transition: transform .25s ease;
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  opacity: .92;
+  box-shadow: 0 18px 48px rgba(196,48,16,.55);
+}
+.cta-btn:hover svg { transform: translateX(5px); }
 
 /* ═══════════════════════════════════
    ANIMATIONS
@@ -582,7 +696,7 @@ body {
   position: relative;
   overflow: hidden;
 }
- 
+
 /* Ambient glow */
 .founders-section::before {
   content: '';
@@ -592,7 +706,7 @@ body {
     radial-gradient(ellipse 40% 50% at 15% 70%, rgba(240,168,32,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
- 
+
 /* Top spectrum line */
 .founders-section::after {
   content: '';
@@ -601,13 +715,13 @@ body {
     transparent 0%, #C43010 15%, #D4561A 30%, #E8720A 50%,
     #F0A820 70%, #F5C840 85%, transparent 100%);
 }
- 
+
 .founders-inner {
   position: relative; z-index: 1;
   max-width: 1440px; margin: 0 auto;
   padding: 0 80px;
 }
- 
+
 /* ──────────────────────────
    TOP HEADER — full width
 ────────────────────────── */
@@ -643,7 +757,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
- 
+
 /* ──────────────────────────
    MAIN GRID: quote + photo
 ────────────────────────── */
@@ -654,10 +768,10 @@ body {
   align-items: start;
   margin-bottom: 0;
 }
- 
+
 /* ── LEFT — Quote block ── */
 .founders-quote-col { display: flex; flex-direction: column; }
- 
+
 .founders-quote-mark {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 8rem; line-height: 0.6;
@@ -665,22 +779,22 @@ body {
   opacity: 0.22; margin-bottom: 0;
   user-select: none; display: block;
 }
- 
+
 blockquote.founders-quote {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.4rem, 2.2vw, 1rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
   font-weight: 500; font-style: italic;
   color: rgba(255,248,242,0.93);
   line-height: 1.70;
   margin: 0 0 14px 0; padding: 0; border: none;
 }
- 
+
 .founders-quote-sub {
   font-size: 1rem; font-weight: 300;
-    color: rgba(255, 255, 255, 0.79);
+  color: rgba(255, 255, 255, 0.79);
   line-height: 1.85; margin-bottom: 10px;
 }
- 
+
 .founders-quote-attr {
   display: flex; flex-direction: column; gap: 5px;
   margin: 32px 0 60px;
@@ -693,9 +807,9 @@ blockquote.founders-quote {
 }
 .founders-attr-role {
   font-size: 0.90rem; font-weight: 300;
-     color: rgba(255, 255, 255, 0.79); letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.79); letter-spacing: 0.04em;
 }
- 
+
 /* Mission pillars */
 .founders-pillars {
   display: flex; flex-direction: column;
@@ -724,12 +838,12 @@ blockquote.founders-quote {
 }
 .founders-pillar-desc {
   font-size: .98rem; font-weight: 300;
-color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
+  color: rgba(255, 255, 255, 0.79); line-height: 1.72;
 }
- 
+
 /* ── RIGHT — Profile card ── */
 .founders-profile-col { position: sticky; top: 100px; }
- 
+
 .founders-profile-card {
   background: rgba(255,248,242,0.025);
   border: 1px solid rgba(212,86,26,0.18);
@@ -740,7 +854,7 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
   border-color: rgba(240,168,32,0.38);
   box-shadow: 0 24px 80px rgba(212,86,26,0.14);
 }
- 
+
 /* Photo */
 .founders-photo-wrap {
   position: relative; width: 100%;
@@ -753,7 +867,7 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
   display: block; transition: transform 8s ease;
 }
 .founders-profile-card:hover .founders-photo { transform: scale(1.05); }
- 
+
 /* Fallback initials */
 .founders-photo-fallback {
   width: 100%; height: 100%; display: none;
@@ -769,14 +883,14 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
   background-clip: text; opacity: 0.50;
   letter-spacing: -0.06em;
 }
- 
+
 /* Gradient over bottom of photo */
 .founders-photo-wrap::after {
   content: ''; pointer-events: none;
   position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
   background: linear-gradient(to top, rgba(20,12,8,0.92) 0%, rgba(20,12,8,0.4) 50%, transparent 100%);
 }
- 
+
 /* Name overlay on photo */
 .founders-photo-name-overlay {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -803,10 +917,10 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
   color: rgba(255,210,170,0.55); letter-spacing: 0.03em;
   display: block; margin-top: 4px;
 }
- 
+
 /* Credentials body */
 .founders-profile-body { padding: 28px 28px 32px; }
- 
+
 .founders-credentials-label {
   font-family: 'Syne', sans-serif; font-weight: 700;
   font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -841,13 +955,13 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
 }
 .founders-cred-field {
   font-size: 0.86rem; font-weight: 300;
-    color: rgba(255, 255, 255, 0.79); line-height: 1.4;
+  color: rgba(255, 255, 255, 0.79); line-height: 1.4;
 }
 .founders-cred-inst {
   font-size: 0.78rem; font-weight: 400;
   color: var(--spec-amber, #E8820A); letter-spacing: 0.01em;
 }
- 
+
 /* ──────────────────────────
    BOTTOM BAND — full bleed dark strip
    (flush against next section)
@@ -864,7 +978,6 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
 .founders-band-stats {
   display: flex; gap: 60px; flex-wrap: wrap;
 }
-.founders-band-stat {}
 .founders-band-stat-val {
   font-family: 'Syne', sans-serif; font-weight: 800;
   font-size: 2rem; color: var(--white, #FFF8F2);
@@ -880,17 +993,17 @@ color: rgba(255, 255, 255, 0.79);; line-height: 1.72;
 .founders-band-stat-label {
   font-size: 0.9rem; font-weight: 400;
   letter-spacing: 0.08em; text-transform: uppercase;
-     color: rgba(255, 255, 255, 0.79);
+  color: rgba(255, 255, 255, 0.79);
 }
 .founders-band-tagline {
   max-width: 420px;
-  font-size: 0.92rem; line-height: 1.75; font-weight: 300;
-    color: rgba(255, 255, 255, 0.79);
+  line-height: 1.75; font-weight: 300;
+  color: rgba(255, 255, 255, 0.79);
   font-style: italic;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.05rem;
 }
- 
+
 /* ── Responsive ── */
 @media (max-width: 1200px) {
   .founders-main-grid { grid-template-columns: 1fr 400px; gap: 64px; }
